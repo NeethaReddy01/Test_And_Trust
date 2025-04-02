@@ -37,9 +37,8 @@ public class Product {
     private String description;
     private String imageUrl;
 
-    @DecimalMin(value = "0.0", message = "Rating cannot be negative")
-    @DecimalMax(value = "5.0", message = "Rating cannot exceed 5")
-    private Double rating;
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Review> reviews;
 
     @DecimalMin(value = "0.0", message = "Discount cannot be negative")
     private Double discount;
