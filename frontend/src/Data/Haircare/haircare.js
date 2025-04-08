@@ -145,14 +145,26 @@ const haircare = [
 
     {
         
-        "image": "https://m.media-amazon.com/images/I/5118wpCroeL._SX522_.jpg",
-        "brand": "BBLUNT",
-        "title": "7 in 1 Repair & Revive Shampoo",
+        "image": "https://www.thriveco.in/cdn/shop/files/Coloring_shampoo_PDP_1st_image_2_1.webp?v=1738918213&width=500",
+        "brand": "ThriveCo",
+        "title": "Color Buddy Bond Repair For Colored Hair",
         "color": "White",
-        "selling_price": "₹70",
-        "price": "₹99",
-        "disscount": "30% off",
-        "size": "20ml"  
+        "selling_price": "₹120",
+        "price": "₹149",
+        "disscount": "20% off",
+        "size": "10ml"  
+    },
+
+    {
+        
+        "image": "https://m.media-amazon.com/images/I/61lxDMs9NoL._SX522_.jpg",
+        "brand": "Brillare",
+        "title": "Dandruff Control Shampoo",
+        "color": "White",
+        "selling_price": "₹86",
+        "price": "₹95",
+        "disscount": "10% off",
+        "size": "30ml"  
     },
 
     
