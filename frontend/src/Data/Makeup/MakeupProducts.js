@@ -200,14 +200,14 @@ const MakepupProducts = [
         "size":"25 wipes"
     },
     {
-        "image": "",
-        "brand": "",
-        "title": "",
-        "color": "",
-        "selling_price": "₹",
-        "price": "₹",
-        "disscount": "% off",
-        "size":""
+        "image": "https://th.bing.com/th/id/OIP.shXI1LuXGanHYqtnZKurOAHaJr?w=130&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+        "brand": "Swiss Beauty",
+        "title": "Cream N' Tint - Cinnamon",
+        "color": "brown",
+        "selling_price": "₹99",
+        "price": "₹199",
+        "disscount": "50% off",
+        "size":"8gm"
     },
     {
         "image": "",
