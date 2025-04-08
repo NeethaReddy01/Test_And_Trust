@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "@emotion/styled": "^11.14.0",
+    "@heroicons/react": "^2.0.17",
+    "@mui/material": "^5.17.1",
+    "@testing-library/react": "^13.4.0",
+    "axios": "^1.4.0",
+    "react": "^18.2.0",
+    "react-apexcharts": "^1.4.0",
+    "react-redux": "^8.0.5",
+    "react-scripts": "^5.0.1",
+    "redux-thunk": "^2.4.2"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
