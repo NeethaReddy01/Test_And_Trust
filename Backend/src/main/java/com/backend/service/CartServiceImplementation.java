@@ -1,12 +1,14 @@
+package com.backend.service;
+
 import org.springframework.stereotype.Service;
 
 import com.backend.exception.ProductException;
 import com.backend.modal.Cart;
+import com.backend.modal.CartItem;
 import com.backend.modal.Product;
 import com.backend.modal.User;
 import com.backend.repository.CartRepository;
-
-
+import com.backend.request.AddItemRequest;
 
 @Service
 public class CartServiceImplementation implements CartService{
