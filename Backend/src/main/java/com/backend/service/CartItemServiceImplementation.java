@@ -9,10 +9,9 @@ import com.backend.exception.UserException;
 import com.backend.modal.Cart;
 import com.backend.modal.CartItem;
 import com.backend.modal.Product;
+import com.backend.modal.User;
 import com.backend.repository.CartItemRepository;
 import com.backend.repository.CartRepository;
-
-
 
 @Service
 public class CartItemServiceImplementation implements CartItemService {

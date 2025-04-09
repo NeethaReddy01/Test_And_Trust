@@ -1,12 +1,12 @@
 package com.backend.repository;
 
-mport org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.zosh.modal.Cart;
-import com.zosh.modal.CartItem;
-import com.zosh.modal.Product;
+import com.backend.modal.Cart;
+import com.backend.modal.CartItem;
+import com.backend.modal.Product;
 
 public interface CartItemRepository extends JpaRepository<CartItem, Long>{
 

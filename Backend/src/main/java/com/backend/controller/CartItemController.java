@@ -1,6 +1,5 @@
 package com.backend.controller;
 
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,10 +14,10 @@ import com.backend.exception.CartItemException;
 import com.backend.exception.UserException;
 import com.backend.modal.CartItem;
 import com.backend.modal.User;
+import com.backend.response.ApiResponse;
 import com.backend.service.CartItemService;
 import com.backend.service.UserService;
 
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
@@ -57,4 +56,3 @@ public class CartItemController {
 		return new ResponseEntity<>(updatedCartItem,HttpStatus.ACCEPTED);
 	}
 }
-

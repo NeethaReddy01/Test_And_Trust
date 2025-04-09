@@ -385,3 +385,5 @@ const haircare = [
 
     
 ]
+
+export default haircare;
