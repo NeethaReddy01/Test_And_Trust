@@ -1,4 +1,4 @@
-const fragrance = [
+const fragnance = [
     {
       "image": "https://m.media-amazon.com/images/I/51o29AsEL2L._SX679_.jpg",
       "brand": "Derek Lam",
@@ -310,4 +310,4 @@ const fragrance = [
       "size": "5ml"
     }
   ];
-  
+export default fragnance;
