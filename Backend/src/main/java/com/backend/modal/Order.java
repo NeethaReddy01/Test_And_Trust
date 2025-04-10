@@ -1,6 +1,8 @@
 package com.backend.modal;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.backend.user.domain.OrderStatus;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
@@ -16,6 +18,7 @@ import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -34,7 +37,7 @@ public class Order {
     private Long id;
 
     private String orderId;
-
+  
     @ManyToOne
     private User user;
 
@@ -49,17 +52,19 @@ public class Order {
     private Address shippingAddress;
 
     @Embedded
-    private PaymentDetails paymentDetails = new PaymentDetails();
+    private PaymentDetails paymentDetails=new PaymentDetails();
 
     private double totalPrice;
-
+    
     private Integer totalDiscountedPrice;
-
+    
     private Integer discount;
 
     private OrderStatus orderStatus;
-
+    
     private int totalItem;
-
+    
     private LocalDateTime createdAt;
+
+
 }

@@ -1,5 +1,13 @@
 package com.backend.repository;
 
-public class CartRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
+import com.backend.modal.Cart;
+
+public interface CartRepository extends JpaRepository<Cart,Long>{
+
+	@Query("SELECT c From Cart c where c.user.id=:userId")
+	public Cart findByUserId(@Param("userId")Long userId);
 }

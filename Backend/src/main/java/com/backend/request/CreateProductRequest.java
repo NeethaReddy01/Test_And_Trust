@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 import com.backend.modal.Category;
 import com.backend.modal.Size;
-import com.backend.user.domain.ProductSize;
+//import com.backend.user.domain.ProductSize;
 
 
 public class CreateProductRequest {

@@ -1,7 +1,5 @@
 package com.backend.controller;
 
-package com.zosh.controller;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -14,16 +12,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.zosh.config.JwtTokenProvider;
-import com.zosh.exception.UserException;
-import com.zosh.modal.Cart;
-import com.zosh.modal.User;
-import com.zosh.repository.UserRepository;
-import com.zosh.request.LoginRequest;
-import com.zosh.response.AuthResponse;
-import com.zosh.service.CartService;
-import com.zosh.service.CustomUserDetails;
-import com.zosh.user.domain.UserRole;
+import com.backend.config.JwtTokenProvider;
+import com.backend.exception.UserException;
+import com.backend.modal.Cart;
+import com.backend.modal.User;
+import com.backend.repository.UserRepository;
+import com.backend.request.LoginRequest;
+import com.backend.response.AuthResponse;
+import com.backend.service.CartService;
+import com.backend.service.CustomUserDetails;
+import com.backend.user.domain.UserRole;
 
 import jakarta.validation.Valid;
 
