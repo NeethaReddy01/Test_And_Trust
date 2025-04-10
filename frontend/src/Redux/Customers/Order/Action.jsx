@@ -9,7 +9,7 @@ import {
   GET_ORDER_HISTORY_FAILURE,
   GET_ORDER_HISTORY_REQUEST,
   GET_ORDER_HISTORY_SUCCESS,
-} from "./ActionType";
+} from "./ActionTypes";
 import api, { API_BASE_URL } from "../../../config/api";
 
 export const createOrder = (reqData) => async (dispatch) => {
