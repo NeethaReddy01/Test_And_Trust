@@ -11,7 +11,7 @@ import Navigation from "../customer/Components/Navbar/Navigation";
 import Cart from "../customer/Components/Cart/Cart";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {Button} from "@mui/material";
-import { customTheme, customerTheme } from "../Admin/them/customeThem";
+import { customTheme, darkTheme, customerTheme }  from "../Admin/them/customeThem";
 import Order from "../customer/Components/orders/Order";
 import OrderDetails from "../customer/Components/orders/OrderDetails";
 import Checkout from "../customer/Components/Checkout/Checkout";
