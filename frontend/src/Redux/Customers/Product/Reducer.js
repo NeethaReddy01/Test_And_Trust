@@ -16,7 +16,7 @@ import {
   DELETE_PRODUCT_FAILURE,
   DELETE_PRODUCT_SUCCESS,
   SEARCH_PRODUCT_SUCCESS,
-} from "./ActionType";
+} from "./ActionTypes";
 
 const initialState = {
   products: [],
