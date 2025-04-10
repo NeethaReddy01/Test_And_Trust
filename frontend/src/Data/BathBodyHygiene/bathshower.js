@@ -150,4 +150,4 @@ const bathshower=[
       "size": "20ml"
     }
   ]
-  
+  export default bathshower;

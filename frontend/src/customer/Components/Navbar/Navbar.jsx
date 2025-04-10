@@ -41,7 +41,7 @@ function Navbar() {
                   to="/women"
                   className="font-medium text-white hover:text-black"
                 >
-                  Women
+                  Fragnance
                 </Link>
               </li>
               <li>
