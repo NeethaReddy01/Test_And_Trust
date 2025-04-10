@@ -9,8 +9,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { findProductById } from "../../../../Redux/Customers/Product/Action";
 import { addItemToCart } from "../../../../Redux/Customers/Cart/Action";
 import { getAllReviews } from "../../../../Redux/Customers/Review/Action";
-import { lengha_page1 } from "../../../../Data/Women/LenghaCholi";
-import { gounsPage1 } from "../../../../Data/Gouns/gouns";
+import  cleanser  from "../../../../Data/Skincare/cleanser";
+import  haircare  from "../../../../Data/Haircare/haircare";
 
 const product = {
   name: "Basic Tee 6-Pack",
@@ -494,7 +494,7 @@ export default function ProductDetails() {
         <section className=" pt-10">
           <h1 className="py-5 text-xl font-bold">Similer Products</h1>
           <div className="flex flex-wrap space-y-5">
-            {gounsPage1 .map((item) => (
+            {haircare .map((item) => (
               <HomeProductCard product={item} />
             ))}
           </div>

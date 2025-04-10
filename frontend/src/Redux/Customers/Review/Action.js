@@ -8,7 +8,7 @@ import {
     CREATE_RATING_FAILURE,
     GET_ALL_RATINGS_SUCCESS,
     GET_ALL_RATINGS_FAILURE
-  } from './ActionTyp';
+  } from './ActionTypes';
 import api from '../../../config/api';
 
 export const createReview = (resData) => {
