@@ -8,7 +8,7 @@ import {
     GET_ORDER_HISTORY_REQUEST,
     GET_ORDER_HISTORY_SUCCESS,
     GET_ORDER_HISTORY_FAILURE,
-  } from './ActionType';
+  } from './ActionTypes';
 
   const initialState={
     orders:[],

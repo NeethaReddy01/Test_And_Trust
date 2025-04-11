@@ -19,7 +19,7 @@ import {
   SEARCH_PRODUCT_REQUEST,
   SEARCH_PRODUCT_SUCCESS,
   SEARCH_PRODUCT_FAILURE,
-} from "./ActionType";
+} from "./ActionTypes";
 import api, { API_BASE_URL } from "../../../config/api";
 
 export const findProducts = (reqData) => async (dispatch) => {

@@ -15,7 +15,7 @@ import {
   UPDATE_CART_ITEM_FAILURE,
   UPDATE_CART_ITEM_REQUEST,
   UPDATE_CART_ITEM_SUCCESS,
-} from "./ActionType";
+} from "./ActionTypes";
 
 export const addItemToCart = (reqData) => async (dispatch) => {
     console.log("req data ",reqData)
