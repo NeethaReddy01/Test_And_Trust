@@ -1,5 +1,5 @@
 import { Grid, TextField, Button, Box, Snackbar, Alert, MenuItem, Select, InputLabel, FormControl } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";``
 import { useDispatch, useSelector } from "react-redux";
 import { getUser, register } from "../../../Redux/Auth/Action";
 import { Fragment, useEffect, useState } from "react";
