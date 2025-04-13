@@ -10,7 +10,7 @@ export const sunscreen = [
     "size": "20g",
     "quantity": 70,
     "level1Category": "Skincare",
-    "level2Category": "Sunscreen"
+    "level2Category": "sunscreen"
   },
   {
     "imageUrl": "https://www.dotandkey.com/cdn/shop/files/vitcsun80_6d354c0c-118e-4763-b38a-e0666f185414.jpg?v=1727354539",
@@ -23,7 +23,7 @@ export const sunscreen = [
     "size": "25g",
     "quantity": 100,
     "level1Category": "Skincare",
-    "level2Category": "Sunscreen"
+    "level2Category": "sunscreen"
   },
   {
     "imageUrl": "https://thedermaco.com/product/1-hyaluronic-sunscreen-aqua-gel-with-spf-50-pa-80g?utm_source=google&utm_medium=cpc&utm_term=20241285097&gad_source=1&gbraid=0AAAAACgKvnLNS4cjq2z5R5fWZQOJgEpoS&gclid=Cj0KCQjwqcO_BhDaARIsACz62vNBQALefO3KwHcEKHbsM8A2W5C99znfyPo6DGXn1RbDilRX_MYuYK4aAoYkEALw_wcB",
@@ -36,7 +36,7 @@ export const sunscreen = [
     "size": "20g",
     "quantity": 50,
     "level1Category": "Skincare",
-    "level2Category": "Sunscreen"
+    "level2Category": "sunscreen"
   },
   {
     "imageUrl": "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/original/1002795/9p1Dql06WO-1002795_1.jpg?dpr=2",
@@ -49,7 +49,7 @@ export const sunscreen = [
     "size": "20g",
     "quantity": 80,
     "level1Category": "Skincare",
-    "level2Category": "Sunscreen"
+    "level2Category": "sunscreen"
   },
   {
     "imageUrl": "https://foxtale.in/cdn/shop/files/MATTE_SUNSCREEN_PDP_fd1a6e57-f191-4c52-97f8-395058bb1c58.jpg?v=1743842525&width=900",
@@ -62,7 +62,7 @@ export const sunscreen = [
     "size": "20g",
     "quantity": 50,
     "level1Category": "Skincare",
-    "level2Category": "Sunscreen"
+    "level2Category": "sunscreen"
   },
   {
     "imageUrl": "https://earthrhythm.com/cdn/shop/files/ultradefencehybridsunscreenspf50.jpg?v=1684403290&width=1200",
@@ -75,7 +75,7 @@ export const sunscreen = [
     "size": "20g",
     "quantity": 70,
     "level1Category": "Skincare",
-    "level2Category": "Sunscreen"
+    "level2Category": "sunscreen"
   },
   {
     "imageUrl": "https://www.reequil.com/cdn/shop/files/1_30.png?v=1726226979",
@@ -88,7 +88,7 @@ export const sunscreen = [
     "size": "20g",
     "quantity": 100,
     "level1Category": "Skincare",
-    "level2Category": "Sunscreen"
+    "level2Category": "sunscreen"
   },
   {
     "imageUrl": "https://images.thedermaco.com/catalog/product/1/-/1-wid-orange-bg..jpg?auto=format&fit=contain&width=720&auto=compress?format=auto",
@@ -101,7 +101,7 @@ export const sunscreen = [
     "size": "20g",
     "quantity": 100,
     "level1Category": "Skincare",
-    "level2Category": "Sunscreen"
+    "level2Category": "sunscreen"
   },
   {
     "imageUrl": "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/original/1067711/ZKbhuYZoYX-1067711_1.jpg?dpr=2",
@@ -114,7 +114,7 @@ export const sunscreen = [
     "size": "20g",
     "quantity": 50,
     "level1Category": "Skincare",
-    "level2Category": "Sunscreen"
+    "level2Category": "sunscreen"
   },
   {
     "imageUrl": "https://thedeconstruct.in/cdn/shop/files/8.jpg?v=1740747164&width=1780",
@@ -127,7 +127,7 @@ export const sunscreen = [
     "size": "20g",
     "quantity": 100,
     "level1Category": "Skincare",
-    "level2Category": "Sunscreen"
+    "level2Category": "sunscreen"
   },
   {
     "imageUrl": "https://foxtale.in/cdn/shop/products/Dewyfinishsunscreen.jpg?v=1689787758",
@@ -140,7 +140,7 @@ export const sunscreen = [
     "size": "20ml",
     "quantity": 90,
     "level1Category": "Skincare",
-    "level2Category": "Sunscreen"
+    "level2Category": "sunscreen"
   },
   {
     "imageUrl": "https://foxtale.in/cdn/shop/files/1_7_25983d24-38d2-40cb-80c0-26e52b9bfbf9.jpg?v=1743840991&width=900",
@@ -153,7 +153,7 @@ export const sunscreen = [
     "size": "20ml",
     "quantity": 90,
     "level1Category": "Skincare",
-    "level2Category": "Sunscreen"
+    "level2Category": "sunscreen"
   },
   {
     "imageUrl": "https://aqualogica.in/cdn/shop/files/1_f632cc6c-4d07-4b94-a72e-5b5f50406c47.jpg?v=1713161358&width=823",
@@ -166,7 +166,7 @@ export const sunscreen = [
     "size": "20g",
     "quantity": 100,
     "level1Category": "Skincare",
-    "level2Category": "Sunscreen"
+    "level2Category": "sunscreen"
   },
   {
     "imageUrl": "https://images.thedermaco.com/catalog/product/u/l/ultra_matte_sunscreen.jpg?auto=format&fit=contain&width=720&auto=compress?format=auto",
@@ -179,7 +179,7 @@ export const sunscreen = [
     "size": "20g",
     "quantity": 100,
     "level1Category": "Skincare",
-    "level2Category": "Sunscreen"
+    "level2Category": "sunscreen"
   },
   {
     "imageUrl": "https://juicychemistry.com/cdn/shop/files/MoisturisingMineralSunscreen_1500x1500px_5.jpg?v=1741066655&width=1500",
@@ -192,7 +192,7 @@ export const sunscreen = [
     "size": "15ml",
     "quantity": 70,
     "level1Category": "Skincare",
-    "level2Category": "Sunscreen"
+    "level2Category": "sunscreen"
   },
   {
     "imageUrl": "https://www.vilvahstore.com/cdn/shop/files/1_52d0cd21-7edd-4c0c-8cb5-6b86821dd468.jpg?v=1692080721&width=1000",
@@ -205,7 +205,7 @@ export const sunscreen = [
     "size": "20g",
     "quantity": 60,
     "level1Category": "Skincare",
-    "level2Category": "Sunscreen"
+    "level2Category": "sunscreen"
   },
   {
     "imageUrl": "https://aqualogica.in/cdn/shop/files/radience_-sunscreen-02_40b49294-7035-4a82-af4e-7c574da1b3f1.jpg?v=1702898246&width=823",
@@ -218,7 +218,7 @@ export const sunscreen = [
     "size": "20g",
     "quantity": 70,
     "level1Category": "Skincare",
-    "level2Category": "Sunscreen"
+    "level2Category": "sunscreen"
   },
   {
     "imageUrl": "https://images.ctfassets.net/aub2fvcyp2t8/4oa6YGDxctTkbVmX3sVA9i/cfa7d387860a2ef2c96d4a0a982f1e59/neutrogena-ultra-sheer-dry-touch-sunblock-spf-50-front1-en-in",
@@ -231,7 +231,7 @@ export const sunscreen = [
     "size": "20ml",
     "quantity": 100,
     "level1Category": "Skincare",
-    "level2Category": "Sunscreen"
+    "level2Category": "sunscreen"
   }
 ];
   
