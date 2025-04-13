@@ -1,3 +1,4 @@
+const cleanser=
 [
   {
     "imageUrl": "https://plumgoodness.com/cdn/shop/files/01_638b9a26-3d6a-4373-a383-c2bc17088e96.jpg?v=1732282647&width=900",
@@ -259,4 +260,5 @@
     "level1Category": "Skincare",
     "level2Category": "Cleanser"
   }
-]
+];
+export default cleanser;
