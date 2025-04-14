@@ -14,7 +14,6 @@ export const homeCarouselData=[
     {
         image:"https://vanitywagon.in/cdn/shop/collections/Mamaearth_1797x499.jpg?v=1613450843",
         path:"/women/clothing/women_saree"
-    }
+    }
 
 ]
-

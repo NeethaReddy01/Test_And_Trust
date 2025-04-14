@@ -63,7 +63,9 @@ export default function Navigation() {
       handleClose();
     }
     if (location.pathname === "/login" || location.pathname === "/register") {
-      navigate(-1);
+      navigate('/');
+      
+    window.location.reload()
     }
   }, [auth.user]);
 
@@ -247,7 +249,7 @@ export default function Navigation() {
 
       <header className="relative bg-white">
         <p className="flex h-10 items-center justify-center bg-indigo-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
-          Get free delivery on orders over $100
+          Get free delivery on orders over ₹200
         </p>
 
         <nav aria-label="Top" className="mx-auto">
