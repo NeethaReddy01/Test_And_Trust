@@ -10,7 +10,7 @@ const body = [
     "size": "25g",
     "quantity": "14",
     "level1Category": "bathbodyhygiene",
-    "level2Category": "body"
+    "level2Category": "Body"
   },
   {
     "imageUrl": "https://m.media-amazon.com/images/I/31sNDUY5JJL._SX300_SY300_QL70_FMwebp_.jpg",
@@ -23,7 +23,7 @@ const body = [
     "size": "10ml",
     "quantity": "19",
     "level1Category": "bathbodyhygiene",
-    "level2Category": "body"
+    "level2Category": "Body"
   },
   {
     "imageUrl": "https://m.media-amazon.com/images/I/51ZHa25y+PL._AC_UL480_FMwebp_QL65_.jpg",
@@ -36,7 +36,7 @@ const body = [
     "size": "50gm",
     "quantity": "7",
     "level1Category": "bathbodyhygiene",
-    "level2Category": "body"
+    "level2Category": "Body"
   },
   {
     "imageUrl": "https://m.media-amazon.com/images/I/313ZNl17gCL._SX300_SY300_QL70_FMwebp_.jpg",
@@ -49,7 +49,7 @@ const body = [
     "size": "15ml",
     "quantity": "37",
     "level1Category": "bathbodyhygiene",
-    "level2Category": "body"
+    "level2Category": "Body"
   },
   {
     "imageUrl": "https://m.media-amazon.com/images/I/71qaVoOOa3L._SX522_.jpg",
@@ -62,7 +62,7 @@ const body = [
     "size": "20ml",
     "quantity": "15",
     "level1Category": "bathbodyhygiene",
-    "level2Category": "body"
+    "level2Category": "Body"
   },
   {
     "imageUrl": "https://m.media-amazon.com/images/I/51H30sYSBSL._SX522_.jpg",
@@ -75,7 +75,7 @@ const body = [
     "size": "20ml",
     "quantity": 25,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "body"
+    "level2Category": "Body"
   },
   {
     "imageUrl": "https://m.media-amazon.com/images/I/51TJcM1fTmL._SX522_.jpg",
@@ -88,7 +88,7 @@ const body = [
     "size": "20gms",
     "quantity": "22",
     "level1Category": "bathbodyhygiene",
-    "level2Category": "body"
+    "level2Category": "Body"
   },
   {
     "imageUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSJWtUSGNe_Wdwtj1JyzDKbzr9mCCN-vDF39Gf015FaJAxU3PXxlJl5G5toOGHL83d5pcMF3ErF12XvJWrCKFlRj808iUoEJo6qBfVAZLLJEsOmvvTWZ4U1E0pI6MqA0O-Bh0nQHQ&usqp=CAc",
@@ -101,7 +101,7 @@ const body = [
     "size": "20ml",
     "quantity": "14",
     "level1Category": "bathbodyhygiene",
-    "level2Category": "body"
+    "level2Category": "Body"
   },
   {
     "imageUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcR1W3XScs6tvJ2mkcwN4uufCaIub6E5_caUhVzPVY8AAADyEriqTtYfUxau4Jw36U0Sq32StFrHyxeDsRZDjgGvm07d7t2HvubCW5iSSGw7nW2MWfEuaxL5&usqp=CAc",
@@ -114,7 +114,7 @@ const body = [
     "size": "250ml",
     "quantity": "39",
     "level1Category": "bathbodyhygiene",
-    "level2Category": "body"
+    "level2Category": "Body"
   },
   {
     "imageUrl": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRJuOwHa2KH9UHkZys_6LI2eL93kCitD6t1g1vdEIt5IKZgRBTAgpUatVe0aWZn1B8ngzIGxTpfMiaXzOTZB56Fui0eM4jkHi4BiRVivFbXxQtRAs82P0zQYMniMCpFJXQDm-g9ripU0A&usqp=CAc",
@@ -127,7 +127,7 @@ const body = [
     "size": "30ml",
     "quantity": "9",
     "level1Category": "bathbodyhygiene",
-    "level2Category": "body"
+    "level2Category": "Body"
   },
   {
     "imageUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ1qPvOSiCQDNT48kVO5u3xsVKLY4w0gqoFb2pgWc5vKuom-yuHloIY2wi3SSIxgCj4bGG6U3CiM1mK3GIOE5PkZVa9oO-BH1YQuZTAG_3ZF1jZEeiuBrJUNYTZOCgge0gf5_0xgTk&usqp=CAc",
@@ -140,7 +140,7 @@ const body = [
     "size": "100ml",
     "quantity": "31",
     "level1Category": "bathbodyhygiene",
-    "level2Category": "body"
+    "level2Category": "Body"
   },
   {
     "imageUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSFv-Fvwvvju_DGi0eoIr8RQ33cBx2QsfP576wQSl3yW8i-swLeIfkcxI5TtBxB_J6EA61C_Va0xrgoE4-S1E3XmfQJOTTaTWv0NN8e1UP2",
@@ -153,7 +153,7 @@ const body = [
     "size": "10gm",
     "quantity": "7",
     "level1Category": "bathbodyhygiene",
-    "level2Category": "body"
+    "level2Category": "Body"
   },
   {
     "imageUrl": "https://m.media-amazon.com/images/I/61Yjsa0AspL._AC_UL480_FMwebp_QL65_.jpg",
@@ -166,7 +166,7 @@ const body = [
     "size": "200ml",
     "quantity": "17",
     "level1Category": "bathbodyhygiene",
-    "level2Category": "body"
+    "level2Category": "Body"
   },
   {
     "imageUrl": "https://m.media-amazon.com/images/I/71c3jZZK59L._AC_UL480_FMwebp_QL65_.jpg",
@@ -179,7 +179,7 @@ const body = [
     "size": "100gm",
     "quantity": "29",
     "level1Category": "bathbodyhygiene",
-    "level2Category": "body"
+    "level2Category": "Body"
   },
   {
     "imageUrl": "https://m.media-amazon.com/images/I/61dlltB-qaL._AC_UL480_FMwebp_QL65_.jpg",
@@ -192,7 +192,7 @@ const body = [
     "size": "100gm",
     "quantity": "11",
     "level1Category": "bathbodyhygiene",
-    "level2Category": "body"
+    "level2Category": "Body"
   }
 ];
 export default body;

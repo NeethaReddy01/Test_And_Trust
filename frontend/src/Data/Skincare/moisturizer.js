@@ -11,7 +11,7 @@ const moisturizer=[
     "size": "15ml",
     "quantity": 80,
     "level1Category": "skincare",
-    "level2Category": "moisturizer"
+    "level2Category": "Moisturizer"
   },
   {
     "imageUrl": "https://www.dotandkey.com/cdn/shop/files/1c-72-Hrs-Probiotics-Gel_c64487ce-3dc1-4077-b492-b8f092a2cd66.jpg?v=1735980200",
@@ -24,7 +24,7 @@ const moisturizer=[
     "size": "15ml",
     "quantity": 75,
     "level1Category": "skincare",
-    "level2Category": "moisturizer"
+    "level2Category": "Moisturizer"
   },
   {
     "imageUrl": "https://foxtale.in/cdn/shop/files/Hydrating_Moisturizer_with_Ceramide-01.jpg?v=1743841369&width=900",
@@ -37,7 +37,7 @@ const moisturizer=[
     "size": "15ml",
     "quantity": 90,
     "level1Category": "skincare",
-    "level2Category": "moisturizer"
+    "level2Category": "Moisturizer"
   },
   {
     "imageUrl": "https://aqualogica.in/cdn/shop/files/1b_f8cb6cae-382a-4793-94f1-5f627f0dd73f.jpg?v=1719466573&width=823",
@@ -50,7 +50,7 @@ const moisturizer=[
     "size": "15ml",
     "quantity": 85,
     "level1Category": "skincare",
-    "level2Category": "moisturizer"
+    "level2Category": "Moisturizer"
   },
   {
     "imageUrl": "https://www.mcaffeine.com/cdn/shop/files/card_1_4.jpg?v=1728384907",
@@ -63,7 +63,7 @@ const moisturizer=[
     "size": "15ml",
     "quantity": 100,
     "level1Category": "skincare",
-    "level2Category": "moisturizer"
+    "level2Category": "Moisturizer"
   },
   {
     "imageUrl": "https://images.mamaearth.in/catalog/product/o/i/oil-free_face_moisturizer_1.jpg?format=auto&height=600",
@@ -76,7 +76,7 @@ const moisturizer=[
     "size": "15ml",
     "quantity": 95,
     "level1Category": "skincare",
-    "level2Category": "moisturizer"
+    "level2Category": "Moisturizer"
   },
   {
     "imageUrl": "https://discoverpilgrim.com/cdn/shop/products/hyaluronic-acid-oil-free-gel-moisturiser-858855.jpg?v=1683282196&width=1000",
@@ -89,7 +89,7 @@ const moisturizer=[
     "size": "20ml",
     "quantity": 70,
     "level1Category": "skincare",
-    "level2Category": "moisturizer"
+    "level2Category": "Moisturizer"
   },
   {
     "imageUrl": "https://aqualogica.in/cdn/shop/products/d8a2e5ea-5bfd-4af4-86e-7cc09feb364a__20_a_b4df8b55-b871-4df7-8ed3-1adcc246be57.jpg?v=1701345962&width=823",
@@ -102,7 +102,7 @@ const moisturizer=[
     "size": "15ml",
     "quantity": 90,
     "level1Category": "skincare",
-    "level2Category": "moisturizer"
+    "level2Category": "Moisturizer"
   },
   {
     "imageUrl": "https://aqualogica.in/cdn/shop/products/02290b-2ab6-46-b3ce-22c58aabad__20_a.jpg?v=1701345778&width=823",
@@ -115,7 +115,7 @@ const moisturizer=[
     "size": "20ml",
     "quantity": 80,
     "level1Category": "skincare",
-    "level2Category": "moisturizer"
+    "level2Category": "Moisturizer"
   },
   {
     "imageUrl": "https://sfycdn.speedsize.com/56385b25-4e17-4a9a-9bec-c421c18686fb/beminimalist.co/cdn/shop/files/Marula_New.png?crop=center&height=1260&v=1721398128&width=840",
@@ -128,7 +128,7 @@ const moisturizer=[
     "size": "15ml",
     "quantity": 70,
     "level1Category": "skincare",
-    "level2Category": "moisturizer"
+    "level2Category": "Moisturizer"
   },
   {
     "imageUrl": "https://foxtale.in/cdn/shop/files/1_14.jpg?v=1743842225&width=900",
@@ -141,7 +141,7 @@ const moisturizer=[
     "size": "15ml",
     "quantity": 95,
     "level1Category": "skincare",
-    "level2Category": "moisturizer"
+    "level2Category": "Moisturizer"
   },
   {
     "imageUrl": "https://www.dotandkey.com/cdn/shop/files/barfccopy.jpg?v=1727354099",
@@ -154,7 +154,7 @@ const moisturizer=[
     "size": "15ml",
     "quantity": 78,
     "level1Category": "skincare",
-    "level2Category": "moisturizer"
+    "level2Category": "Moisturizer"
   },
   {
     "imageUrl": "https://www.dotandkey.com/cdn/shop/files/1c-Vit-C-Moisturizer_adcbccb6-945c-4c1a-ac7f-d8a40e3bf5ec.jpg?v=1740647106",
@@ -167,7 +167,7 @@ const moisturizer=[
     "size": "15ml",
     "quantity": 90,
     "level1Category": "skincare",
-    "level2Category": "moisturizer"
+    "level2Category": "Moisturizer"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/discover_product/1689848885_Derma%20Co%20Cremaide%20Face%20Moisturiser_1.jpg",
@@ -180,7 +180,7 @@ const moisturizer=[
     "size": "15ml",
     "quantity": 82,
     "level1Category": "skincare",
-    "level2Category": "moisturizer"
+    "level2Category": "Moisturizer"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/discover_product/1684130150_01.jpg",
@@ -193,7 +193,7 @@ const moisturizer=[
     "size": "15ml",
     "quantity": 68,
     "level1Category": "skincare",
-    "level2Category": "moisturizer"
+    "level2Category": "Moisturizer"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/FXT0008AB1F1.jpg",
@@ -206,7 +206,7 @@ const moisturizer=[
     "size": "15ml",
     "quantity": 68,
     "level1Category": "skincare",
-    "level2Category": "moisturizer"
+    "level2Category": "Moisturizer"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/discover_product/1732020529_DAQG0051AB2-D1.jpg",
@@ -219,7 +219,7 @@ const moisturizer=[
     "size": "15ml",
     "quantity": 68,
     "level1Category": "skincare",
-    "level2Category": "moisturizer"
+    "level2Category": "Moisturizer"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/CIL0020BB1.jpg",
@@ -232,7 +232,7 @@ const moisturizer=[
     "size": "15ml",
     "quantity": 68,
     "level1Category": "skincare",
-    "level2Category": "moisturizer"
+    "level2Category": "Moisturizer"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/PIM0205AB31.jpg",
@@ -245,7 +245,7 @@ const moisturizer=[
     "size": "15ml",
     "quantity": 68,
     "level1Category": "skincare",
-    "level2Category": "moisturizer"
+    "level2Category": "Moisturizer"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/SIP0017AB1N1.jpg",
@@ -258,7 +258,7 @@ const moisturizer=[
     "size": "15ml",
     "quantity": 68,
     "level1Category": "skincare",
-    "level2Category": "moisturizer"
+    "level2Category": "Moisturizer"
   }
 ];
 export default moisturizer;

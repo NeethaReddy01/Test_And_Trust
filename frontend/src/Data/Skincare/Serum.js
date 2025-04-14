@@ -10,7 +10,7 @@ const serum = [
     "size": "10ml",
     "quantity": 50,
     "level1Category": "skincare",
-    "level2Category": "serum"
+    "level2Category": "Serum"
   },
   {
     "imageUrl": "https://plumgoodness.com/cdn/shop/files/Nia-Serum-30ml_Amazon_1001x1001_01_e7356f8f-1335-45ae-828c-701be4c3e4a7.jpg?v=1743751855&width=900",
@@ -23,7 +23,7 @@ const serum = [
     "size": "10ml",
     "quantity": 120,
     "level1Category": "skincare",
-    "level2Category": "serum"
+    "level2Category": "Serum"
   },
   {
     "imageUrl": "https://swissbeauty.in/cdn/shop/files/SB-SC51_FOPWSwatch_1800x1800.jpg?v=1743403932",
@@ -36,7 +36,7 @@ const serum = [
     "size": "5ml",
     "quantity": 100,
     "level1Category": "skincare",
-    "level2Category": "serum"
+    "level2Category": "Serum"
   },
   {
     "imageUrl": "https://www.reneecosmetics.in/cdn/shop/files/KoreanGlowSerum_01.jpg?v=1742483914",
@@ -49,7 +49,7 @@ const serum = [
     "size": "7ml",
     "quantity": 90,
     "level1Category": "skincare",
-    "level2Category": "serum"
+    "level2Category": "Serum"
   },
   {
     "imageUrl": "https://aqualogica.in/cdn/shop/products/6fd403df-fe7-45a9-a78b-222ec97f69__20_a.jpg?v=1701346095&width=823",
@@ -62,7 +62,7 @@ const serum = [
     "size": "7ml",
     "quantity": 110,
     "level1Category": "skincare",
-    "level2Category": "serum"
+    "level2Category": "Serum"
   },
   {
     "imageUrl": "https://files.myglamm.com/site-images/1200x1200/vitc1.jpg",
@@ -75,7 +75,7 @@ const serum = [
     "size": "10ml",
     "quantity": 75,
     "level1Category": "skincare",
-    "level2Category": "serum"
+    "level2Category": "Serum"
   },
   {
     "imageUrl": "https://images.thedermaco.com/catalog/product/1/_/1_-hyaluronic-sunscreen-serum-2.jpg?auto=format&fit=contain&width=720&auto=compress?format=auto",
@@ -88,7 +88,7 @@ const serum = [
     "size": "7ml",
     "quantity": 50,
     "level1Category": "skincare",
-    "level2Category": "serum"
+    "level2Category": "Serum"
   },
   {
     "imageUrl": "https://foxtale.in/cdn/shop/files/1_19.jpg?v=1743841183&width=900",
@@ -101,7 +101,7 @@ const serum = [
     "size": "10ml",
     "quantity": 85,
     "level1Category": "skincare",
-    "level2Category": "serum"
+    "level2Category": "Serum"
   },
   {
     "imageUrl": "https://sfycdn.speedsize.com/56385b25-4e17-4a9a-9bec-c421c18686fb/beminimalist.co/cdn/shop/products/Niacinamide5_1200-1-min.png?crop=center&height=1260&v=1646458955&width=840",
@@ -114,7 +114,7 @@ const serum = [
     "size": "10ml",
     "quantity": 160,
     "level1Category": "skincare",
-    "level2Category": "serum"
+    "level2Category": "Serum"
   },
   {
     "imageUrl": "https://www.dotandkey.com/cdn/shop/files/1c-25ml.jpg?v=1721026895",
@@ -127,7 +127,7 @@ const serum = [
     "size": "10ml",
     "quantity": 100,
     "level1Category": "skincare",
-    "level2Category": "serum"
+    "level2Category": "Serum"
   },
   {
     "imageUrl": "https://www.themancompany.com/cdn/shop/files/TMC_Retinol_Primary_Image_6_f8db1763-afdb-4f54-a1ff-48b3b67a2f4d_765x.jpg?v=1720693365",
@@ -140,7 +140,7 @@ const serum = [
     "size": "10ml",
     "quantity": 95,
     "level1Category": "skincare",
-    "level2Category": "serum"
+    "level2Category": "Serum"
   },
   {
     "imageUrl": "https://discoverpilgrim.com/cdn/shop/products/2-hyaluronic-acid-hydration-super-serum-386710.jpg?v=1683280710&width=1000",
@@ -153,7 +153,7 @@ const serum = [
     "size": "10ml",
     "quantity": 40,
     "level1Category": "skincare",
-    "level2Category": "serum"
+    "level2Category": "Serum"
   },
   {
     "imageUrl": "https://plumgoodness.com/cdn/shop/files/011_60360bbc-c8e2-409b-a694-1520e2c64408.jpg?v=1736165248&width=900",
@@ -166,7 +166,7 @@ const serum = [
     "size": "7ml",
     "quantity": 55,
     "level1Category": "skincare",
-    "level2Category": "serum"
+    "level2Category": "Serum"
   },
   {
     "imageUrl": "https://www.reneecosmetics.in/cdn/shop/files/Rice-Water-_-Niacinamide-Serum_01.jpg?v=1742486020",
@@ -179,7 +179,7 @@ const serum = [
     "size": "7ml",
     "quantity": 80,
     "level1Category": "skincare",
-    "level2Category": "serum"
+    "level2Category": "Serum"
   },
   {
     "imageUrl": "https://aqualogica.in/cdn/shop/products/acf8324d-2df9-450b-8c2-ed540076f60__20_a.jpg?v=1701346066&width=823",
@@ -192,7 +192,7 @@ const serum = [
     "size": "7ml",
     "quantity": 100,
     "level1Category": "skincare",
-    "level2Category": "serum"
+    "level2Category": "Serum"
   },
   {
     "imageUrl": "https://www.myglamm.com/_next/image?url=https%3A%2F%2Ffiles.myglamm.com%2Fsite-images%2F800x800%2FSTBOT490-2.jpg&w=750&q=75",
@@ -205,7 +205,7 @@ const serum = [
     "size": "7ml",
     "quantity": 90,
     "level1Category": "skincare",
-    "level2Category": "serum"
+    "level2Category": "Serum"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/1726798405_TDC0081BB9SEP1.jpg",
@@ -218,7 +218,7 @@ const serum = [
     "size": "10ml",
     "quantity": 150,
     "level1Category": "skincare",
-    "level2Category": "serum"
+    "level2Category": "Serum"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/DAK0077AB18F1.jpg",
@@ -231,7 +231,7 @@ const serum = [
     "size": "10ml",
     "quantity": 50,
     "level1Category": "skincare",
-    "level2Category": "serum"
+    "level2Category": "Serum"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/FXT0017AB1K1.jpg",
@@ -244,7 +244,7 @@ const serum = [
     "size": "10ml",
     "quantity": 70,
     "level1Category": "skincare",
-    "level2Category": "serum"
+    "level2Category": "Serum"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/FXT0015AB1N1.jpg",
@@ -257,7 +257,7 @@ const serum = [
     "size": "7ml",
     "quantity": 90,
     "level1Category": "skincare",
-    "level2Category": "serum"
+    "level2Category": "Serum"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/MIN0015AB1AUG1.jpg",
@@ -270,7 +270,7 @@ const serum = [
     "size": "7ml",
     "quantity": 110,
     "level1Category": "skincare",
-    "level2Category": "serum"
+    "level2Category": "Serum"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/PLU0344AB31F1.jpg",
@@ -283,7 +283,7 @@ const serum = [
     "size": "10ml",
     "quantity": 80,
     "level1Category": "skincare",
-    "level2Category": "serum"
+    "level2Category": "Serum"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/FXT0034AB2N1.jpg",
@@ -296,7 +296,7 @@ const serum = [
     "size": "10ml",
     "quantity": 75,
     "level1Category": "skincare",
-    "level2Category": "serum"
+    "level2Category": "Serum"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/DAK0039AB3K1.jpg",
@@ -309,7 +309,7 @@ const serum = [
     "size": "10ml",
     "quantity": 30,
     "level1Category": "skincare",
-    "level2Category": "serum"
+    "level2Category": "Serum"
   }
 ];
   

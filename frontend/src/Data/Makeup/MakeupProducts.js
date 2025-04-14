@@ -9,8 +9,8 @@ const MakeupProducts = [
         "disscount": "60",
         "size": "10 gm",
         "quantity":20,
-        "level1Category":"makeup",
-        "level2Category":"makeupproducts"
+        "level1Category":"makeupproducts",
+        "level2Category":"Makeup"
     },
     {
         "imageUrl": "https://m.media-amazon.com/images/I/61NP4uNW7qL._SX522_.jpg",
@@ -22,8 +22,8 @@ const MakeupProducts = [
         "disscount": "20",
         "size": "15 gm",
         "quantity":15,
-        "level1Category":"makeup",
-        "level2Category":"makeupproducts"
+        "level1Category":"makeupproducts",
+        "level2Category":"Makeup"
 
     },
     {
@@ -36,8 +36,8 @@ const MakeupProducts = [
         "disscount": "40",
         "size": "20gm",
         "quantity":25,
-        "level1Category":"makeup",
-        "level2Category":"makeupproducts"
+        "level1Category":"makeupproducts",
+        "level2Category":"Makeup"
     },
     {
         "imageUrl": "https://th.bing.com/th/id/OIP.QbrDXSPAnKj__P78ZsmLWwHaJr?w=133&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
@@ -49,8 +49,8 @@ const MakeupProducts = [
         "disscount": "70",
         "size": "20gm",
         "quantity":17,
-        "level1Category":"makeup",
-        "level2Category":"makeupproducts"
+        "level1Category":"makeupproducts",
+        "level2Category":"Makeup"
     },
     {
         "imageUrl": "https://m.media-amazon.com/images/I/610-c1TUdlL._SX522_.jpg",
@@ -62,8 +62,8 @@ const MakeupProducts = [
         "disscount": "48",
         "size": "6gm",
         "quantity":14,
-        "level1Category":"makeup",
-        "level2Category":"makeupproducts"
+        "level1Category":"makeupproducts",
+        "level2Category":"Makeup"
     },
     {
         "imageUrl": "https://imgmedia.lbb.in/media/2023/12/65719f0a9c7c895294de2dd0_1701945098140.jpg",
@@ -75,8 +75,8 @@ const MakeupProducts = [
         "disscount": "50",
         "size": "75ml",
         "quantity":19,
-        "level1Category":"makeup",
-        "level2Category":"makeupproducts"
+        "level1Category":"makeupproducts",
+        "level2Category":"Makeup"
     },
     {
         "imageUrl": "https://www.eshaistic.pk/wp-content/uploads/2023/02/wet-n-wild-color-icon-eyeshadow-10-pan-palette-stop-playing-safe.jpg",
@@ -88,8 +88,8 @@ const MakeupProducts = [
         "disscount": "20",
         "size": "10g",
         "quantity":20,
-        "level1Category":"makeup",
-        "level2Category":"makeupproducts"
+        "level1Category":"makeupproducts",
+        "level2Category":"Makeup"
     },
     {
         "imageUrl": "https://swissbeauty.in/cdn/shop/files/SB-212_09C_1400x.jpg?v=1709549592",
@@ -101,8 +101,8 @@ const MakeupProducts = [
         "disscount": "20",
         "size": "1 unit",
         "quantity":11,
-        "level1Category":"makeup",
-        "level2Category":"makeupproducts"
+        "level1Category":"makeupproducts",
+        "level2Category":"Makeup"
     },
     {
         "imageUrl": "https://thesparkleindia.com/cdn/shop/files/8904052461470.jpg?v=1694945226&width=533",
@@ -114,8 +114,8 @@ const MakeupProducts = [
         "disscount": "45",
         "size":"30 wipes",
         "quantity":23,
-        "level1Category":"makeup",
-        "level2Category":"makeupproducts"
+        "level1Category":"makeupproducts",
+        "level2Category":"Makeup"
     },
     {
         "imageUrl": "https://th.bing.com/th/id/OPAC.mk1YtDPK49FCVA474C474?w=220&h=210&c=17&o=5&dpr=1.3&pid=21.1",
@@ -127,8 +127,8 @@ const MakeupProducts = [
         "disscount": "50",
         "size":"1ml",
         "quantity":19,
-        "level1Category":"makeup",
-        "level2Category":"makeupproducts"
+        "level1Category":"makeupproducts",
+        "level2Category":"Makeup"
     },
     {
         "imageUrl": "https://5.imimg.com/data5/SELLER/Default/2021/3/AV/NN/ZT/2197889/coat-me-bonjour-paris-nano-pearl-powder-s02-500x500.jpg",
@@ -140,8 +140,8 @@ const MakeupProducts = [
         "disscount": "40",
         "size":"4gm",
         "quantity":19,
-        "level1Category":"makeup",
-        "level2Category":"makeupproducts"
+        "level1Category":"makeupproducts",
+        "level2Category":"Makeup"
     },
     {
         "imageUrl": "https://www.bing.com/th/id/OIP.7Xn5nMu56PpplAlvrgKWpAHaJr?w=150&h=196&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2",
@@ -153,8 +153,8 @@ const MakeupProducts = [
         "disscount": "27",
         "size":"5gm",
         "quantity":25,
-        "level1Category":"makeup",
-        "level2Category":"makeupproducts"
+        "level1Category":"makeupproducts",
+        "level2Category":"Makeup"
     },
     {
         "imageUrl": "https://th.bing.com/th/id/OIP.VcQpRbYP16IliNLxmLjQEQHaHa?pid=ImgDet&w=184&h=184&c=7&dpr=1.3",
@@ -166,8 +166,8 @@ const MakeupProducts = [
         "disscount": "31",
         "size":"10gm",
         "quantity":31,
-        "level1Category":"makeup",
-        "level2Category":"makeupproducts"
+        "level1Category":"makeupproducts",
+        "level2Category":"Makeup"
     },
     {
         "imageUrl": "https://glamourusus.com/cdn/shop/products/glamour-us-beauty-creations-flawless-stay-hydrating-face-primer-makeup-phs01-147378.jpg?v=1672485798&width=1500",
@@ -179,8 +179,8 @@ const MakeupProducts = [
         "disscount": "47",
         "size":"30ml",
         "quantity":4,
-        "level1Category":"makeup",
-        "level2Category":"makeupproducts"
+        "level1Category":"makeupproducts",
+        "level2Category":"Makeup"
     },
     {
         "imageUrl": "https://www.reneecosmetics.in/cdn/shop/files/RENEE_DCFilter_Dark_ListingPI_01_edb360de-21f9-447c-a94a-607f6988347d.jpg?v=1742484985",
@@ -192,8 +192,8 @@ const MakeupProducts = [
         "disscount": "30",
         "size":"10gm",
         "quantity":49,
-        "level1Category":"makeup",
-        "level2Category":"makeupproducts"
+        "level1Category":"makeupproducts",
+        "level2Category":"Makeup"
     },
     {
         "imageUrl": "https://i5.walmartimages.com/seo/Relove-by-Revolution-Pore-Vanish-Face-Primer_4d98b83c-3ba2-4b41-8dd1-5937efaa45ee.0c8aa105b19a64d39e47a5bcfb8703d7.jpeg",
@@ -205,8 +205,8 @@ const MakeupProducts = [
         "disscount": "57",
         "size":"12ml",
         "quantity":29,
-        "level1Category":"makeup",
-        "level2Category":"makeupproducts"
+        "level1Category":"makeupproducts",
+        "level2Category":"Makeup"
     },
     {
         "imageUrl": "https://images-static.nykaa.com/media/catalog/product/5/8/5806cb2676538924660_5.jpg",
@@ -218,8 +218,8 @@ const MakeupProducts = [
         "disscount": "71",
         "size":"1ml",
         "quantity":11,
-        "level1Category":"makeup",
-        "level2Category":"makeupproducts"
+        "level1Category":"makeupproducts",
+        "level2Category":"Makeup"
     },
     {
         "imageUrl": "https://cdn.fcglcdn.com/brainbees/images/products/583x720/19907621a.webp",
@@ -231,8 +231,8 @@ const MakeupProducts = [
         "disscount": "26",
         "size":"5ml",
         "quantity":32,
-        "level1Category":"makeup",
-        "level2Category":"makeupproducts"
+        "level1Category":"makeupproducts",
+        "level2Category":"Makeup"
     },
     {
         "imageUrl": "https://www.netmeds.com/images/product-v1/600x600/1142525/renee_stars_face_and_body_glitter_rose_gold_5_gm_757105_3_0.jpg",
@@ -244,8 +244,8 @@ const MakeupProducts = [
         "disscount": "57",
         "size":"5g",
         "quantity":3,
-        "level1Category":"makeup",
-        "level2Category":"makeupproducts"
+        "level1Category":"makeupproducts",
+        "level2Category":"Makeup"
     },
     {
         "imageUrl": "https://m.media-amazon.com/images/I/51ZVtvs+ozL._SX522_.jpg",
@@ -257,8 +257,8 @@ const MakeupProducts = [
         "disscount": "21",
         "size":"25 wipes",
         "quantity":10,
-        "level1Category":"makeup",
-        "level2Category":"makeupproducts"
+        "level1Category":"makeupproducts",
+        "level2Category":"Makeup"
     },
     {
         "imageUrl": "https://th.bing.com/th/id/OIP.shXI1LuXGanHYqtnZKurOAHaJr?w=130&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
@@ -270,8 +270,8 @@ const MakeupProducts = [
         "disscount": "50",
         "size":"8gm",
         "quantity":25,
-        "level1Category":"makeup",
-        "level2Category":"makeupproducts"
+        "level1Category":"makeupproducts",
+        "level2Category":"Makeup"
     }
 ];
 export default MakeupProducts;
