@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.backend.exception.CartItemException;
 import com.backend.exception.UserException;
 import com.backend.modal.CartItem;
@@ -51,7 +50,7 @@ public class CartItemController {
 		
 		CartItem updatedCartItem =cartItemService.updateCartItem(user.getId(), cartItemId, cartItem);
 		
-		//ApiResponse res=new ApiResponse("Item Updated",true);
+		
 		
 		return new ResponseEntity<>(updatedCartItem,HttpStatus.ACCEPTED);
 	}
