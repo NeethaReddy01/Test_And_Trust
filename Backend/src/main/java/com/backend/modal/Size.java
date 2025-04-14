@@ -1,59 +1,16 @@
 package com.backend.modal;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.backend.user.domain.UserRole;
-
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
+import jakarta.persistence.Embeddable;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Entity
-@Table(name = "users")
+@Embeddable
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class User {
+public class Size {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	private String name;
+	private int quantity;
 
-    @Column(name = "first_name")
-    private String firstName;
-    
-    @Column(name = "last_name")
-    private String lastName;
-
-    @Column(name = "password")
-    private String password;
-
-    @Column(name = "email")
-    private String email;
-
-//    @Enumerated(EnumType.STRING)
-    private String role;
-    
-    private String mobile;
-
-    
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Address> addresses=new ArrayList<>();
-
-
-    @JsonIgnore
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL,orphanRemoval = true)
-    private List<Rating>ratings=new ArrayList<>();
-    
-    @JsonIgnore
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL,orphanRemoval = true)
-    private List<Review>reviews=new ArrayList<>();
-    
-    private LocalDateTime createdAt;
-
-    
 }
