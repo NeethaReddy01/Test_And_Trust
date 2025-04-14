@@ -16,16 +16,16 @@ import MailIcon from "@mui/icons-material/Mail";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import { customTheme } from "./them/customeThem";
 import AdminNavbar from "./Navigation/AdminNavbar";
-import Dashboard from "./Views/Admin";
+import Dashboard from "./Views/Dashboard";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import DemoAdmin from "./Views/DemoAdmin";
-import CreateProductForm from "./componets/createProduct/CreateProductFrom";
+import CreateProductForm from "./components/createProduct/CreateProductForm";
 
 import "./AdminPannel.css";
-import ProductsTable from "./componets/Products/ProductsTable";
-import OrdersTable from "./componets/Orders/OrdersTable";
-import Customers from "./componets/customers/customers";
-import UpdateProductForm from "./componets/updateProduct/UpdateProduct";
+import ProductsTable from "./components/Products/ProductsTable";
+import OrdersTable from "./components/Orders/OrdersTable";
+import Customers from "./components/customers/customers";
+import UpdateProduct from "./components/updateProduct/UpdateProduct";
 
 const drawerWidth = 240;
 
@@ -132,7 +132,7 @@ export default function AdminPannel() {
           <Routes>
             <Route path="/" element={ <Dashboard />}></Route>
             <Route path="/product/create" element={<CreateProductForm/>}></Route>
-            <Route path="/product/update/:productId" element={<UpdateProductForm/>}></Route>
+            <Route path="/product/update/:productId" element={<UpdateProduct/>}></Route>
             <Route path="/products" element={<ProductsTable/>}></Route>
             <Route path="/orders" element={<OrdersTable/>}></Route>
             <Route path="/customers" element={<Customers/>}></Route>
