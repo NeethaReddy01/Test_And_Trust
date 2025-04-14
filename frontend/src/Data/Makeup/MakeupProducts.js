@@ -9,7 +9,7 @@ const MakepupProducts = [
         "disscount": "60",
         "size": "10 gm",
         "quantity":20,
-        "level1Category":"",
+        "level1Category":"bathbodyhygiene",
         "level2Category":""
     },
     {
@@ -22,7 +22,7 @@ const MakepupProducts = [
         "disscount": "20",
         "size": "15 gm",
         "quantity":15,
-        "level1Category":"",
+        "level1Category":"bathbodyhygiene",
         "level2Category":""
 
     },
@@ -36,7 +36,7 @@ const MakepupProducts = [
         "disscount": "40",
         "size": "20gm",
         "quantity":25,
-        "level1Category":"",
+        "level1Category":"bathbodyhygiene",
         "level2Category":""
     },
     {
@@ -49,7 +49,7 @@ const MakepupProducts = [
         "disscount": "70",
         "size": "20gm",
         "quantity":17,
-        "level1Category":"",
+        "level1Category":"bathbodyhygiene",
         "level2Category":""
     },
     {
@@ -62,7 +62,7 @@ const MakepupProducts = [
         "disscount": "48",
         "size": "6gm",
         "quantity":14,
-        "level1Category":"",
+        "level1Category":"bathbodyhygiene",
         "level2Category":""
     },
     {
@@ -75,7 +75,7 @@ const MakepupProducts = [
         "disscount": "50",
         "size": "75ml",
         "quantity":19,
-        "level1Category":"",
+        "level1Category":"bathbodyhygiene",
         "level2Category":""
     },
     {
@@ -88,7 +88,7 @@ const MakepupProducts = [
         "disscount": "20",
         "size": "10g",
         "quantity":20,
-        "level1Category":"",
+        "level1Category":"bathbodyhygiene",
         "level2Category":""
     },
     {
@@ -101,7 +101,7 @@ const MakepupProducts = [
         "disscount": "20",
         "size": "1 unit",
         "quantity":11,
-        "level1Category":"",
+        "level1Category":"bathbodyhygiene",
         "level2Category":""
     },
     {
@@ -114,7 +114,7 @@ const MakepupProducts = [
         "disscount": "45",
         "size":"30 wipes",
         "quantity":23,
-        "level1Category":"",
+        "level1Category":"bathbodyhygiene",
         "level2Category":""
     },
     {
@@ -127,7 +127,7 @@ const MakepupProducts = [
         "disscount": "50",
         "size":"1ml",
         "quantity":19,
-        "level1Category":"",
+        "level1Category":"bathbodyhygiene",
         "level2Category":""
     },
     {
@@ -140,7 +140,7 @@ const MakepupProducts = [
         "disscount": "40",
         "size":"4gm",
         "quantity":19,
-        "level1Category":"",
+        "level1Category":"bathbodyhygiene",
         "level2Category":""
     },
     {
@@ -153,7 +153,7 @@ const MakepupProducts = [
         "disscount": "27",
         "size":"5gm",
         "quantity":25,
-        "level1Category":"",
+        "level1Category":"bathbodyhygiene",
         "level2Category":""
     },
     {
@@ -166,7 +166,7 @@ const MakepupProducts = [
         "disscount": "31",
         "size":"10gm",
         "quantity":31,
-        "level1Category":"",
+        "level1Category":"bathbodyhygiene",
         "level2Category":""
     },
     {
