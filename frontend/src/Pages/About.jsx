@@ -8,7 +8,7 @@ const About = () => {
       <div className="bg-indigo-50 py-16">
         <div className="max-w-4xl mx-auto text-center px-6">
           <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 to-indigo-800 bg-clip-text text-transparent">
-            About Test&Trust
+            About Us
           </h1>
           <p className="text-xl mb-8 leading-relaxed text-gray-700 max-w-3xl mx-auto">
             <strong>Test&Trust</strong> is revolutionizing the beauty and personal care industry by bridging the gap between customers and emerging brands through our innovative try-before-you-buy platform.
