@@ -10,7 +10,7 @@ const moisturizer=[
     "disscount": 20,
     "size": "15ml",
     "quantity": 80,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "moisturizer"
   },
   {
@@ -23,7 +23,7 @@ const moisturizer=[
     "disscount": 24,
     "size": "15ml",
     "quantity": 75,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "moisturizer"
   },
   {
@@ -36,7 +36,7 @@ const moisturizer=[
     "disscount": 30,
     "size": "15ml",
     "quantity": 90,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "moisturizer"
   },
   {
@@ -49,7 +49,7 @@ const moisturizer=[
     "disscount": 25,
     "size": "15ml",
     "quantity": 85,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "moisturizer"
   },
   {
@@ -62,7 +62,7 @@ const moisturizer=[
     "disscount": 25,
     "size": "15ml",
     "quantity": 100,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "moisturizer"
   },
   {
@@ -75,7 +75,7 @@ const moisturizer=[
     "disscount": 25,
     "size": "15ml",
     "quantity": 95,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "moisturizer"
   },
   {
@@ -88,7 +88,7 @@ const moisturizer=[
     "disscount": 25,
     "size": "20ml",
     "quantity": 70,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "moisturizer"
   },
   {
@@ -101,7 +101,7 @@ const moisturizer=[
     "disscount": 25,
     "size": "15ml",
     "quantity": 90,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "moisturizer"
   },
   {
@@ -114,7 +114,7 @@ const moisturizer=[
     "disscount": 21,
     "size": "20ml",
     "quantity": 80,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "moisturizer"
   },
   {
@@ -127,7 +127,7 @@ const moisturizer=[
     "disscount": 21,
     "size": "15ml",
     "quantity": 70,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "moisturizer"
   },
   {
@@ -140,7 +140,7 @@ const moisturizer=[
     "disscount": 25,
     "size": "15ml",
     "quantity": 95,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "moisturizer"
   },
   {
@@ -153,7 +153,7 @@ const moisturizer=[
     "disscount": 25,
     "size": "15ml",
     "quantity": 78,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "moisturizer"
   },
   {
@@ -166,7 +166,7 @@ const moisturizer=[
     "disscount": 25,
     "size": "15ml",
     "quantity": 90,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "moisturizer"
   },
   {
@@ -179,7 +179,7 @@ const moisturizer=[
     "disscount": 25,
     "size": "15ml",
     "quantity": 82,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "moisturizer"
   },
   {
@@ -192,7 +192,7 @@ const moisturizer=[
     "disscount": 25,
     "size": "15ml",
     "quantity": 68,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "moisturizer"
   },
   {
@@ -205,7 +205,7 @@ const moisturizer=[
     "disscount": 25,
     "size": "15ml",
     "quantity": 68,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "moisturizer"
   },
   {
@@ -218,7 +218,7 @@ const moisturizer=[
     "disscount": 25,
     "size": "15ml",
     "quantity": 68,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "moisturizer"
   },
   {
@@ -231,7 +231,7 @@ const moisturizer=[
     "disscount": 25,
     "size": "15ml",
     "quantity": 68,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "moisturizer"
   },
   {
@@ -244,7 +244,7 @@ const moisturizer=[
     "disscount": 25,
     "size": "15ml",
     "quantity": 68,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "moisturizer"
   },
   {
@@ -257,7 +257,7 @@ const moisturizer=[
     "disscount": 25,
     "size": "15ml",
     "quantity": 68,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "moisturizer"
   }
 ];
