@@ -30,9 +30,13 @@ const initialState = {
 const customerProductReducer = (state = initialState, action) => {
   switch (action.type) {
     case FIND_PRODUCTS_BY_CATEGORY_REQUEST:
-      return { ...state, loading: true, error: null,products:[] };
-    case FIND_PRODUCTS_BY_CATEGORY_SUCCESS:
-      return { ...state, products: action.payload, loading: false };
+      return { ...state, loading: true, error: null,
+        
+        products:[] };
+        case FIND_PRODUCTS_BY_CATEGORY_SUCCESS:
+      console.log("Reducer received payload:", action.payload);
+      console.log("Is payload an array?", Array.isArray(action.payload));
+      return { ...state,  products: Array.isArray(action.payload) ? action.payload : [], loading: false };
     case FIND_PRODUCTS_BY_CATEGORY_FAILURE:
       return { ...state, loading: false, products:[], error: action.payload };
     case FIND_PRODUCT_BY_ID_REQUEST:

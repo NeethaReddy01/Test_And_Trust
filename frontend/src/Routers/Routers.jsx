@@ -1,5 +1,5 @@
 // import { Navigation } from "mdi-material-ui";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Homepage from "../Pages/Homepage";
 // import About from "../Pages/About";
@@ -10,11 +10,18 @@ import Product from "../customer/Components/Product/Product/Product";
 import ProductDetails from "../customer/Components/Product/ProductDetails/ProductDetails";
 import Cart from "../customer/Components/Product/Cart/Cart";
 
-// import DemoAdmin from "../Admin/Views/DemoAdmin";
-// import AdminPannel from "../Admin/AdminPannel";
+import DemoAdmin from "../Admin/Views/DemoAdmin";
+import AdminPannel from "../Admin/AdminPannel";
 import Navigation from "../customer/Components/Navbar/Navigation";
 
 const Routers = () => {
+  // const [logout, setLogout] = useState(false)
+
+  // useEffect(() => {
+  //   if (logout) 
+  //     window.location.reload()
+  // }, [logout])
+
   return (
     <div>
         <div>
@@ -34,8 +41,8 @@ const Routers = () => {
         <Route path="/cart" element={<Cart/>}></Route>
       
 
-        {/* <Route path="/admin" element={<AdminPannel/>}></Route>
-        <Route path="/demo" element={<DemoAdmin/>}></Route> */}
+        <Route path="/admin" element={<AdminPannel/>}></Route>
+        <Route path="/demo" element={<DemoAdmin/>}></Route>
 
       </Routes>
        </div>
