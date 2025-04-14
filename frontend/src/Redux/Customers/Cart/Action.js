@@ -18,7 +18,7 @@ import {
 } from "./ActionTypes";
 
 export const addItemToCart = (reqData) => async (dispatch) => {
-    console.log("req data ",reqData)
+    console.log(" cart req data ",reqData)
   try {
    
     dispatch({ type: ADD_ITEM_TO_CART_REQUEST });
@@ -37,6 +37,7 @@ console.log("add item to cart ",data)
       type: ADD_ITEM_TO_CART_SUCCESS,
       payload: data,
     });
+    dispatch(getCart(reqData.jwt));
   } catch (error) {
     dispatch({
       type: ADD_ITEM_TO_CART_FAILURE,
@@ -88,6 +89,7 @@ export const removeCartItem = (reqData) => async (dispatch) => {
         type: REMOVE_CART_ITEM_SUCCESS,
         payload: reqData.cartItemId,
       });
+      dispatch(getCart(reqData.jwt));
     } catch (error) {
       dispatch({
         type: REMOVE_CART_ITEM_FAILURE,
@@ -117,6 +119,7 @@ export const removeCartItem = (reqData) => async (dispatch) => {
         type: UPDATE_CART_ITEM_SUCCESS,
         payload: data,
       });
+      dispatch(getCart(reqData.jwt));
     } catch (error) {
       dispatch({
         type: UPDATE_CART_ITEM_FAILURE,
