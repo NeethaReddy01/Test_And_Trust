@@ -194,7 +194,7 @@ const jwt=localStorage.getItem("jwt")
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={6} sm={4}>
+          {/* <Grid item xs={6} sm={4}>
             <FormControl fullWidth>
               <InputLabel>Third Level Category</InputLabel>
               <Select
@@ -203,14 +203,14 @@ const jwt=localStorage.getItem("jwt")
                 onChange={handleChange}
                 label="Third Level Category"
               >
-                <MenuItem value="top">Tops</MenuItem>
+                <MenuItem value="haircare">Haircare</MenuItem>
                 <MenuItem value="women_dress">Dresses</MenuItem>
                 <MenuItem value="t-shirts">T-Shirts</MenuItem>
                 <MenuItem value="saree">Saree</MenuItem>
                 <MenuItem value="lengha_choli">Lengha Choli</MenuItem>
               </Select>
             </FormControl>
-          </Grid>
+          </Grid> */}
           <Grid item xs={12}>
             <TextField
               fullWidth
@@ -223,7 +223,7 @@ const jwt=localStorage.getItem("jwt")
               value={productData.description}
             />
           </Grid>
-          {productData.size.map((size, index) => (
+          {/* {productData.size.map((size, index) => (
             <Grid container item spacing={3} >
               <Grid item xs={12} sm={6}>
                 <TextField
@@ -246,7 +246,7 @@ const jwt=localStorage.getItem("jwt")
                 />
               </Grid> </Grid>
             
-          ))}
+          ))} */}
           <Grid item xs={12} >
             <Button
               variant="contained"

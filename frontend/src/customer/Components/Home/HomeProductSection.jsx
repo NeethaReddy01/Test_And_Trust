@@ -3,42 +3,59 @@ import HomeProductCard from "./HomeProductCard";
 import "./HomeProductSection.css";
 import { Button } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { findProducts } from "../../../Redux/Customers/Product/Action"; 
 
-const HomeProductSection = ({ section, data }) => {
+const HomeProductSection = ({ section,category }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [maxIndex, setMaxIndex] = useState(0);
+  const dispatch = useDispatch();
+  const { products } = useSelector(
+    (state) => state.customersProduct
+  );
+  useEffect(() => {
+    dispatch(
+      findProducts({
+        colors: "Transparent",
+        category,
+        // add other filters as needed
+      })
+    );
+  }, []);
+  const responsive = {
+    0: { items: 2 },
+    568: { items: 3 },
+    1024: { items: 5 },
+  };
 
-  const slidePrev = () => setActiveIndex(activeIndex - 1);
-  const slideNext = () => setActiveIndex(activeIndex + 1);
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      let itemsPerPage = 5;
+      if (width < 568) itemsPerPage = 2;
+      else if (width < 1024) itemsPerPage = 3;
+      setMaxIndex(Math.max(0, products.length - itemsPerPage));
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [products.length]);
+
+  const slidePrev = () => setActiveIndex(Math.max(0, activeIndex - 1));
+  const slideNext = () => setActiveIndex(Math.min(maxIndex, activeIndex + 1));
   const syncActiveIndex = ({ item }) => setActiveIndex(item);
 
-  const responsive = {
-    0: {
-      items: 2,
-      itemsFit: "contain",
-    },
-    568: {
-      items: 3,
-      itemsFit: "contain",
-    },
-    1024: {
-      items: 5.5,
-      itemsFit: "contain",
-    },
-  };
-  const items = data?.slice(0, 10).map((item) => (
-    <div className="">
-      {" "}
+  const items = products.map((item) => (
+    <div key={item.id}>
       <HomeProductCard product={item} />
     </div>
   ));
 
-  // const slideInFromRight = (t) => {
-  //   return `translateX(${100 - t * 100}%)`;
-  // };
-
   return (
-    <div className="relative px-4 sm:px-6 lg:px-8 ">
+    
+    <div className="relative px-4 sm:px-6 lg:px-8">
       <h2 className="text-2xl font-extrabold text-gray-900 py-5">{section}</h2>
       <div className="relative border p-5">
         <AliceCarousel
@@ -50,47 +67,36 @@ const HomeProductSection = ({ section, data }) => {
           responsive={responsive}
           onSlideChanged={syncActiveIndex}
           animationType="fadeout"
-          animationDuration={2000}
+          animationDuration={600}
         />
-        {activeIndex !== items.length - 5 && (
+
+        {activeIndex < maxIndex && (
           <Button
             onClick={slideNext}
             variant="contained"
-            className="z-50 bg-[]"
             sx={{
               position: "absolute",
               top: "8rem",
               right: "0rem",
               transform: "translateX(50%) rotate(90deg)",
             }}
-            color="white"
-            aria-label="next"
           >
-            <ArrowForwardIosIcon
-              className=""
-              sx={{ transform: "rotate(-90deg)" }}
-            />
+            <ArrowForwardIosIcon sx={{ transform: "rotate(-90deg)" }} />
           </Button>
         )}
 
-        {activeIndex !== 0 && (
+        {activeIndex > 0 && (
           <Button
             onClick={slidePrev}
             variant="contained"
-            className="z-50 bg-[]"
-            color="white"
             sx={{
               position: "absolute",
               top: "8rem",
               left: "0rem",
-              transform: "translateX(-50%)  rotate(90deg)",
+              transform: "translateX(-50%) rotate(90deg)",
             }}
-            aria-label="next"
           >
-            <ArrowForwardIosIcon
-              className=""
-              sx={{ transform: " rotate(90deg)" }}
-            />
+            <ArrowForwardIosIcon sx={{ transform: "rotate(90deg)" }} />
           </Button>
         )}
       </div>

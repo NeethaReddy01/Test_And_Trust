@@ -10,7 +10,7 @@ const bath=
     "disscount": 20,
     "size": "10ml",
     "quantity": 60,
-    "level1Category": "BathBodyHygiene",
+    "level1Category": "bathbodyhygiene",
     "level2Category": "bath"
   },
   {
@@ -23,7 +23,7 @@ const bath=
     "disscount": 24,
     "size": "20ml",
     "quantity": 75,
-    "level1Category": "BathBodyHygiene",
+    "level1Category": "bathbodyhygiene",
     "level2Category": "bath"
   },
   {
@@ -36,7 +36,7 @@ const bath=
     "disscount": 29,
     "size": "10ml",
     "quantity": 100,
-    "level1Category": "BathBodyHygiene",
+    "level1Category": "bathbodyhygiene",
     "level2Category": "bath"
   },
   {
@@ -49,7 +49,7 @@ const bath=
     "disscount": 25,
     "size": "15ml",
     "quantity": 85,
-    "level1Category": "BathBodyHygiene",
+    "level1Category": "bathbodyhygiene",
     "level2Category": "bath"
   },
   {
@@ -62,7 +62,7 @@ const bath=
     "disscount": 25,
     "size": "15ml",
     "quantity": 90,
-    "level1Category": "BathBodyHygiene",
+    "level1Category": "bathbodyhygiene",
     "level2Category": "bath"
     
   },
@@ -76,7 +76,7 @@ const bath=
     "disscount": 20,
     "size": "20ml",
     "quantity": 70,
-    "level1Category": "BathBodyHygiene",
+    "level1Category": "bathbodyhygiene",
     "level2Category": "bath"
   },
   {
@@ -89,7 +89,7 @@ const bath=
     "disscount": 25,
     "size": "15ml",
     "quantity": 80,
-    "level1Category": "BathBodyHygiene",
+    "level1Category": "bathbodyhygiene",
     "level2Category": "bath"
   },
   {
@@ -102,7 +102,7 @@ const bath=
     "disscount": 25,
     "size": "15ml",
     "quantity": 95,
-    "level1Category": "BathBodyHygiene",
+    "level1Category": "bathbodyhygiene",
     "level2Category": "bath"
   },
   {
@@ -115,7 +115,7 @@ const bath=
     "disscount": 25,
     "size": "15ml",
     "quantity": 70,
-    "level1Category": "BathBodyHygiene",
+    "level1Category": "bathbodyhygiene",
     "level2Category": "bath"
     
   },
@@ -129,7 +129,7 @@ const bath=
     "disscount": 25,
     "size": "15ml",
     "quantity": 80,
-    "level1Category": "BathBodyHygiene",
+    "level1Category": "bathbodyhygiene",
     "level2Category": "bath"
   },
   {
@@ -142,7 +142,7 @@ const bath=
     "disscount": 25,
     "size": "10ml",
     "quantity": 90,
-    "level1Category": "BathBodyHygiene",
+    "level1Category": "bathbodyhygiene",
     "level2Category": "bath"
   },
   {
@@ -155,7 +155,7 @@ const bath=
     "disscount": 25,
     "size": "20ml",
     "quantity": 75,
-    "level1Category": "BathBodyHygiene",
+    "level1Category": "bathbodyhygiene",
     "level2Category": "bath"
   },
   {
@@ -168,7 +168,7 @@ const bath=
     "disscount": 25,
     "size": "15ml",
     "quantity": 65,
-    "level1Category": "BathBodyHygiene",
+    "level1Category": "bathbodyhygiene",
     "level2Category": "bath"
   },
   {
@@ -181,7 +181,7 @@ const bath=
     "disscount": 25,
     "size": "20ml",
     "quantity": 80,
-    "level1Category": "BathBodyHygiene",
+    "level1Category": "bathbodyhygiene",
     "level2Category": "bath"
   },
   {
@@ -194,7 +194,7 @@ const bath=
     "disscount": 25,
     "size": "10ml",
     "quantity": 105,
-    "level1Category": "BathBodyHygiene",
+    "level1Category": "bathbodyhygiene",
     "level2Category": "bath"
   },
   {
@@ -207,7 +207,7 @@ const bath=
     "disscount": 25,
     "size": "15ml",
     "quantity": 80,
-    "level1Category": "BathBodyHygiene",
+    "level1Category": "bathbodyhygiene",
     "level2Category": "bath"
   },
   {
@@ -220,7 +220,7 @@ const bath=
     "disscount": 25,
     "size": "15ml",
     "quantity": 95,
-    "level1Category": "BathBodyHygiene",
+    "level1Category": "bathbodyhygiene",
     "level2Category": "bath"
     
   },
@@ -234,7 +234,7 @@ const bath=
     "disscount": 25,
     "size": "20ml",
     "quantity": 65,
-    "level1Category": "BathBodyHygiene",
+    "level1Category": "bathbodyhygiene",
     "level2Category": "bath"
   },
   {
@@ -247,7 +247,7 @@ const bath=
     "disscount": 30,
     "size": "15ml",
     "quantity": 85,
-    "level1Category": "BathBodyHygiene",
+    "level1Category": "bathbodyhygiene",
     "level2Category": "bath"
   },
   {
@@ -260,7 +260,7 @@ const bath=
     "disscount": 30,
     "size": "15ml",
     "quantity": 85,
-    "level1Category": "BathBodyHygiene",
+    "level1Category": "bathbodyhygiene",
     "level2Category": "bath"
   }
 ];

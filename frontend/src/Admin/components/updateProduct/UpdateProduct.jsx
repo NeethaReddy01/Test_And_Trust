@@ -26,7 +26,7 @@ const initialSizes = [
   { name: "L", quantity: 0 },
 ];
 
-const UpdateProductForm = () => {
+const UpdateProduct = () => {
   const [productData, setProductData] = useState({
     imageUrl: "",
     brand: "",
@@ -289,4 +289,4 @@ const UpdateProductForm = () => {
   );
 };
 
-export default UpdateProductForm;
+export default UpdateProduct;

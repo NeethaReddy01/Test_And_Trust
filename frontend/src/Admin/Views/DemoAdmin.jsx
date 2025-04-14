@@ -10,7 +10,7 @@ import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemButton from '@mui/material/ListItemButton';
-import Dashboard from './Admin';
+import Dashboard from './Dashboard';
 import { ThemeProvider } from '@emotion/react';
 import { customTheme } from '../them/customeThem';
 import useMediaQuery from '@mui/material/useMediaQuery';

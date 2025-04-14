@@ -1,4 +1,4 @@
-const bath=
+const hygiene=
 [
     {
       "imageUrl": "https://m.media-amazon.com/images/I/71LvA4HouGL._SX679_PIbundle-2,TopRight,0,0_AA679SH20_.jpg",
@@ -10,7 +10,7 @@ const bath=
       "disscount": 25,
       "size": "50ml",
       "quantity": 80,
-      "level1Category": "BathBodyHygiene",
+      "level1Category": "bathbodyhygiene",
       "level2Category": "Hygiene"
     },
     {
@@ -23,7 +23,7 @@ const bath=
       "disscount": 25,
       "size": "50ml",
       "quantity": 80,
-      "level1Category": "BathBodyHygiene",
+      "level1Category": "bathbodyhygiene",
       "level2Category": "Hygiene"
     },
     {
@@ -36,7 +36,7 @@ const bath=
       "disscount": 25,
       "size": "50ml",
       "quantity": 80,
-      "level1Category": "BathBodyHygiene",
+      "level1Category": "bathbodyhygiene",
       "level2Category": "Hygiene"
     },
     {
@@ -49,7 +49,7 @@ const bath=
       "disscount": 25,
       "size": "50ml",
       "quantity": 80,
-      "level1Category": "BathBodyHygiene",
+      "level1Category": "bathbodyhygiene",
       "level2Category": "Hygiene"
     },
     {
@@ -62,7 +62,7 @@ const bath=
       "disscount": 25,
       "size": "50ml",
       "quantity": 80,
-      "level1Category": "BathBodyHygiene",
+      "level1Category": "bathbodyhygiene",
       "level2Category": "Hygiene"
     },
     {
@@ -75,7 +75,7 @@ const bath=
       "disscount": 24,
       "size": "500ml",
       "quantity": 80,
-      "level1Category": "BathBodyHygiene",
+      "level1Category": "bathbodyhygiene",
       "level2Category": "Hygiene"
     },
     {
@@ -88,7 +88,7 @@ const bath=
       "disscount": 25,
       "size": "200ml",
       "quantity": 80,
-      "level1Category": "BathBodyHygiene",
+      "level1Category": "bathbodyhygiene",
       "level2Category": "Hygiene"
     },
     {
@@ -101,7 +101,7 @@ const bath=
       "disscount": 24,
       "size": "200ml",
       "quantity": 80,
-      "level1Category": "BathBodyHygiene",
+      "level1Category": "bathbodyhygiene",
       "level2Category": "Hygiene"
     },
     {
@@ -114,7 +114,7 @@ const bath=
       "disscount": 28,
       "size": "50ml",
       "quantity": 80,
-      "level1Category": "BathBodyHygiene",
+      "level1Category": "bathbodyhygiene",
       "level2Category": "Hygiene"
     },
     {
@@ -127,7 +127,7 @@ const bath=
       "disscount": 29,
       "size": "50ml",
       "quantity": 80,
-      "level1Category": "BathBodyHygiene",
+      "level1Category": "bathbodyhygiene",
       "level2Category": "Hygiene"
     },
     {
@@ -140,7 +140,7 @@ const bath=
       "disscount": 27,
       "size": "Pack of 10",
       "quantity": 80,
-      "level1Category": "BathBodyHygiene",
+      "level1Category": "bathbodyhygiene",
       "level2Category": "Hygiene"
     },
     {
@@ -153,7 +153,7 @@ const bath=
       "disscount": 25,
       "size": "50ml",
       "quantity": 80,
-      "level1Category": "BathBodyHygiene",
+      "level1Category": "bathbodyhygiene",
       "level2Category": "Hygiene"
     },
     {
@@ -166,7 +166,7 @@ const bath=
       "disscount": 25,
       "size": "50ml",
       "quantity": 80,
-      "level1Category": "BathBodyHygiene",
+      "level1Category": "bathbodyhygiene",
       "level2Category": "Hygiene"
     },
     {
@@ -179,8 +179,9 @@ const bath=
       "disscount": 25,
       "size": "50ml",
       "quantity": 80,
-      "level1Category": "BathBodyHygiene",
+      "level1Category": "bathbodyhygiene",
       "level2Category": "Hygiene"
     }
-  ]
+  ];
+  export default hygiene;
   
