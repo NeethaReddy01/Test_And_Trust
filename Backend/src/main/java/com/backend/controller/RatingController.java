@@ -48,4 +48,3 @@ public class RatingController {
 		return new ResponseEntity<>(ratings,HttpStatus.OK);
 	}
 }
-

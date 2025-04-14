@@ -14,4 +14,3 @@ public class Size {
 	private int quantity;
 
 }
-

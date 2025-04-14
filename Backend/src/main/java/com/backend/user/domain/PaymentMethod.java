@@ -9,4 +9,3 @@ public enum PaymentMethod {
     PAYPAL,
     GOOGLE_PAY,
 }
-

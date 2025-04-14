@@ -1,5 +1,4 @@
 package com.backend.user.domain;
-
 public enum OrderStatus {
 	PENDING,
     PLACED,
