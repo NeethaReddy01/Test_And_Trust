@@ -10,7 +10,7 @@ const fragrances = [
     size: "10ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://m.media-amazon.com/images/I/51zejuDkKZL._SX522_.jpg",
@@ -23,7 +23,7 @@ const fragrances = [
     size: "15ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRiYhyXa3oeWoxm4tDKokU75n2TdudZoSEc4vedQbI3ZxeFRFWyA3S2NRECWspL5-zD8gHaYuZ1ubWdlmKcwIwzUHqPVXmZkPghGhlJJD6e1_2ubFjYfzph&usqp=CAE",
@@ -36,7 +36,7 @@ const fragrances = [
     size: "10ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://m.media-amazon.com/images/I/51uf-7uoORL._SX522_.jpg",
@@ -49,7 +49,7 @@ const fragrances = [
     size: "5ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://m.media-amazon.com/images/I/61xfuYt+5tL._SX679_.jpg",
@@ -62,7 +62,7 @@ const fragrances = [
     size: "10ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://m.media-amazon.com/images/I/51M73SOIdhL._SX679_.jpg",
@@ -75,7 +75,7 @@ const fragrances = [
     size: "12ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://m.media-amazon.com/images/I/71ZyEJdF2wL._SX679_.jpg",
@@ -88,7 +88,7 @@ const fragrances = [
     size: "5ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://m.media-amazon.com/images/I/718nUyjgVeL._SX679_.jpg",
@@ -101,7 +101,7 @@ const fragrances = [
     size: "15ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://m.media-amazon.com/images/I/51t4t86NrNL._SX679_.jpg",
@@ -114,7 +114,7 @@ const fragrances = [
     size: "10ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://m.media-amazon.com/images/I/61B9zH2NAdL._SX522_.jpg",
@@ -127,7 +127,7 @@ const fragrances = [
     size: "5ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://m.media-amazon.com/images/I/61hrvNougIL._SX522_.jpg",
@@ -140,7 +140,7 @@ const fragrances = [
     size: "8ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://m.media-amazon.com/images/I/61FBJgFNscL._SX679_.jpg",
@@ -153,7 +153,7 @@ const fragrances = [
     size: "10ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://m.media-amazon.com/images/I/615ovi+7udL._SX679_.jpg",
@@ -166,7 +166,7 @@ const fragrances = [
     size: "15ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://m.media-amazon.com/images/I/31PSozebQgL._SX300_SY300_QL70_FMwebp_.jpg",
@@ -179,7 +179,7 @@ const fragrances = [
     size: "10ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://m.media-amazon.com/images/I/41Mc0xxLgJL._SX300_SY300_QL70_FMwebp_.jpg",
@@ -192,7 +192,7 @@ const fragrances = [
     size: "10ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://m.media-amazon.com/images/I/51ELqVhIDvL._SX522_.jpg",
@@ -205,7 +205,7 @@ const fragrances = [
     size: "5ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://m.media-amazon.com/images/I/61hrvNougIL._SX522_.jpg",
@@ -218,7 +218,7 @@ const fragrances = [
     size: "8ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://m.media-amazon.com/images/I/71YUCR2uZAL._SY879_.jpg",
@@ -231,7 +231,7 @@ const fragrances = [
     size: "5ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://m.media-amazon.com/images/I/51foMTO3O5L._SX679_.jpg",
@@ -244,7 +244,7 @@ const fragrances = [
     size: "10ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://m.media-amazon.com/images/I/51Ta44W3x9L._SX679_.jpg",
@@ -257,7 +257,7 @@ const fragrances = [
     size: "5ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://m.media-amazon.com/images/I/61AhDcMgHFL._SX679_.jpg",
@@ -270,7 +270,7 @@ const fragrances = [
     size: "15ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://m.media-amazon.com/images/I/51ZWXRVgD3L._SY679_.jpg",
@@ -283,7 +283,7 @@ const fragrances = [
     size: "12ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://m.media-amazon.com/images/I/41Ud1axjsaL._SX300_SY300_QL70_FMwebp_.jpg",
@@ -296,7 +296,7 @@ const fragrances = [
     size: "11ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://m.media-amazon.com/images/I/510YstxcN-L._SX679_.jpg",
@@ -309,7 +309,7 @@ const fragrances = [
     size: "5ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://m.media-amazon.com/images/I/71FYgvmvNAL._SX679_.jpg",
@@ -322,7 +322,7 @@ const fragrances = [
     size: "6ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://m.media-amazon.com/images/I/61jTQkjA9fL._SX679_.jpg",
@@ -335,7 +335,7 @@ const fragrances = [
     size: "8ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://m.media-amazon.com/images/I/318zj-A0HLL._SX300_SY300_QL70_FMwebp_.jpg",
@@ -348,7 +348,7 @@ const fragrances = [
     size: "5ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://m.media-amazon.com/images/I/71NuaemkYqL._SX679_.jpg",
@@ -361,7 +361,7 @@ const fragrances = [
     size: "10ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://m.media-amazon.com/images/I/51gWMWA7n5L._SX679_.jpg",
@@ -374,7 +374,7 @@ const fragrances = [
     size: "5ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://m.media-amazon.com/images/I/61JG0OLYT-L._SX679_.jpg",
@@ -387,7 +387,7 @@ const fragrances = [
     size: "10ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   },
   {
     imageUrl: "https://m.media-amazon.com/images/I/41x5464AdOL._SX522_.jpg",
@@ -400,7 +400,7 @@ const fragrances = [
     size: "5ml",
     quantity: 85,
     level1Category: "perfume",
-    level2Category: "fragrance"
+    level2Category: "Fragrance"
   }
 ];
 export default fragrances;

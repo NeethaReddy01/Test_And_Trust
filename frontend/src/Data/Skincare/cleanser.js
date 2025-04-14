@@ -11,7 +11,7 @@ const cleanser=
     "size": "10ml",
     "quantity": 60,
     "level1Category": "skincare",
-    "level2Category": "cleanser"
+    "level2Category": "Cleanser"
   },
   {
     "imageUrl": "https://plumgoodness.com/cdn/shop/files/01_e20636c4-f7df-4fff-8377-a8852cd485eb.jpg?v=1735913651&width=900",
@@ -24,7 +24,7 @@ const cleanser=
     "size": "20ml",
     "quantity": 75,
     "level1Category": "skincare",
-    "level2Category": "cleanser"
+    "level2Category": "Cleanser"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/discover_product/1697209699_DCIL0022AB1_1.jpg",
@@ -37,7 +37,7 @@ const cleanser=
     "size": "10ml",
     "quantity": 100,
     "level1Category": "skincare",
-    "level2Category": "cleanser"
+    "level2Category": "Cleanser"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/PIM0012AB1JULY1.jpg",
@@ -50,7 +50,7 @@ const cleanser=
     "size": "15ml",
     "quantity": 85,
     "level1Category": "skincare",
-    "level2Category": "cleanser"
+    "level2Category": "Cleanser"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/SIP0006AB1N1.jpg",
@@ -63,7 +63,7 @@ const cleanser=
     "size": "15ml",
     "quantity": 90,
     "level1Category": "skincare",
-    "level2Category": "cleanser"
+    "level2Category": "Cleanser"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/AAM0147ANEW1.jpg",
@@ -76,7 +76,7 @@ const cleanser=
     "size": "20ml",
     "quantity": 70,
     "level1Category": "skincare",
-    "level2Category": "cleanser"
+    "level2Category": "Cleanser"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/TFS0142AB6N1.jpg",
@@ -89,7 +89,7 @@ const cleanser=
     "size": "15ml",
     "quantity": 80,
     "level1Category": "skincare",
-    "level2Category": "cleanser"
+    "level2Category": "Cleanser"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/CSX0022AB11.jpg",
@@ -102,7 +102,7 @@ const cleanser=
     "size": "15ml",
     "quantity": 95,
     "level1Category": "skincare",
-    "level2Category": "cleanser"
+    "level2Category": "Cleanser"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/CAT0029AB21.jpg",
@@ -115,7 +115,7 @@ const cleanser=
     "size": "15ml",
     "quantity": 70,
     "level1Category": "skincare",
-    "level2Category": "cleanser"
+    "level2Category": "Cleanser"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/SKQ0012AB2MAY231.jpg",
@@ -128,7 +128,7 @@ const cleanser=
     "size": "15ml",
     "quantity": 80,
     "level1Category": "skincare",
-    "level2Category": "cleanser"
+    "level2Category": "Cleanser"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/1721290466_cetaphil-oily.jpg",
@@ -141,7 +141,7 @@ const cleanser=
     "size": "10ml",
     "quantity": 90,
     "level1Category": "skincare",
-    "level2Category": "cleanser"
+    "level2Category": "Cleanser"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/MNU0047AB21.jpg",
@@ -154,7 +154,7 @@ const cleanser=
     "size": "20ml",
     "quantity": 75,
     "level1Category": "skincare",
-    "level2Category": "cleanser"
+    "level2Category": "Cleanser"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/YRK0001AB1JAN251.jpg",
@@ -167,7 +167,7 @@ const cleanser=
     "size": "15ml",
     "quantity": 65,
     "level1Category": "skincare",
-    "level2Category": "cleanser"
+    "level2Category": "Cleanser"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/SHA0015AB1N1.jpg",
@@ -180,7 +180,7 @@ const cleanser=
     "size": "20ml",
     "quantity": 80,
     "level1Category": "skincare",
-    "level2Category": "cleanser"
+    "level2Category": "Cleanser"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/NET0007AB1.jpg",
@@ -193,7 +193,7 @@ const cleanser=
     "size": "10ml",
     "quantity": 105,
     "level1Category": "skincare",
-    "level2Category": "cleanser"
+    "level2Category": "Cleanser"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/VCE0004AB11.jpg",
@@ -206,7 +206,7 @@ const cleanser=
     "size": "15ml",
     "quantity": 80,
     "level1Category": "skincare",
-    "level2Category": "cleanser"
+    "level2Category": "Cleanser"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/TDC0006AB1DC1.jpg",
@@ -219,7 +219,7 @@ const cleanser=
     "size": "15ml",
     "quantity": 95,
     "level1Category": "skincare",
-    "level2Category": "cleanser"
+    "level2Category": "Cleanser"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/AYA0096AB91.jpg",
@@ -232,7 +232,7 @@ const cleanser=
     "size": "20ml",
     "quantity": 65,
     "level1Category": "skincare",
-    "level2Category": "cleanser"
+    "level2Category": "Cleanser"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/NET0008CB1.jpg",
@@ -245,7 +245,7 @@ const cleanser=
     "size": "15ml",
     "quantity": 85,
     "level1Category": "skincare",
-    "level2Category": "cleanser"
+    "level2Category": "Cleanser"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/BIF0001AB1NEW1.jpg",
@@ -258,7 +258,7 @@ const cleanser=
     "size": "15ml",
     "quantity": 85,
     "level1Category": "skincare",
-    "level2Category": "cleanser"
+    "level2Category": "Cleanser"
   }
 ];
 export default cleanser;

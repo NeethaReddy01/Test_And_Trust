@@ -28,6 +28,15 @@ const Homepage = () => {
 
       <div className="space-y-10 py-20">
         <HomeProductSection data={items} category="Haircare" section={"Haircare"} />
+        <HomeProductSection data={items} category="Bath" section={"Bath"} />
+        <HomeProductSection data={items} category="Body" section={"Body"} />
+        <HomeProductSection data={items} category="Hygiene" section={"Hygiene"} />
+        <HomeProductSection data={items} category="Fragrance" section={"Fragrance"} />
+        <HomeProductSection data={items} category="Makeup" section={"Makeup"} />
+        <HomeProductSection data={items} category="Cleanser" section={"Cleanser"} />
+        <HomeProductSection data={items} category="Moisturizer" section={"Moisturizer"} />
+        <HomeProductSection data={items} category="Serum" section={"Serum"} />
+        <HomeProductSection data={items} category="Sunscreen" section={"Sunscreen"} />
       </div>
     </div>
   );

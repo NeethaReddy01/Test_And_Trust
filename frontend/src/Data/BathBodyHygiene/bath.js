@@ -11,7 +11,7 @@ const bath=
     "size": "10ml",
     "quantity": 60,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "bath"
+    "level2Category": "Bath"
   },
   {
     "imageUrl": "https://i.mscwlns.co/media/misc/pdp_rcl/2-aha-body-wash/7__7__ZLh05Dmr0.png?tr=w-500,c-at_max",
@@ -24,7 +24,7 @@ const bath=
     "size": "20ml",
     "quantity": 75,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "bath"
+    "level2Category": "Bath"
   },
   {
     "imageUrl": "https://foxtale.in/cdn/shop/files/1_16_22be3ab1-07e4-49ad-bed6-ea527b501b99.jpg?v=1743841022&width=900",
@@ -37,7 +37,7 @@ const bath=
     "size": "10ml",
     "quantity": 100,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "bath"
+    "level2Category": "Bath"
   },
   {
     "imageUrl": "https://www.mcaffeine.com/cdn/shop/files/1_8_8621ccbb-34de-4c74-8792-500b88eb477b.jpg?v=1686065538",
@@ -50,7 +50,7 @@ const bath=
     "size": "15ml",
     "quantity": 85,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "bath"
+    "level2Category": "Bath"
   },
   {
     "imageUrl": "https://www.mcaffeine.com/cdn/shop/files/blueberry_body_wash_2.jpg?v=1734603728",
@@ -63,7 +63,7 @@ const bath=
     "size": "15ml",
     "quantity": 90,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "bath"
+    "level2Category": "Bath"
     
   },
   {
@@ -77,7 +77,7 @@ const bath=
     "size": "20ml",
     "quantity": 70,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "bath"
+    "level2Category": "Bath"
   },
   {
     "imageUrl": "https://aqualogica.in/cdn/shop/products/348cb0b6-2f4c-45dd-9b9b-04efe905559b_1_201_a_1.jpg?v=1701692359&width=823",
@@ -90,7 +90,7 @@ const bath=
     "size": "15ml",
     "quantity": 80,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "bath"
+    "level2Category": "Bath"
   },
   {
     "imageUrl": "https://plumgoodness.com/cdn/shop/files/EP_SG240ml_1.jpg?v=1719211163&width=900",
@@ -103,7 +103,7 @@ const bath=
     "size": "15ml",
     "quantity": 95,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "bath"
+    "level2Category": "Bath"
   },
   {
     "imageUrl": "https://m.media-amazon.com/images/I/51BW+SunikL._SX679_.jpg",
@@ -116,7 +116,7 @@ const bath=
     "size": "15ml",
     "quantity": 70,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "bath"
+    "level2Category": "Bath"
     
   },
   {
@@ -130,7 +130,7 @@ const bath=
     "size": "15ml",
     "quantity": 80,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "bath"
+    "level2Category": "Bath"
   },
   {
     "imageUrl": "https://www.mcaffeine.com/cdn/shop/files/1_2e76ddf2-d3fc-42ce-90c5-3d6559b90420.jpg?v=1715605888",
@@ -143,7 +143,7 @@ const bath=
     "size": "10ml",
     "quantity": 90,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "bath"
+    "level2Category": "Bath"
   },
   {
     "imageUrl": "https://foxtale.in/cdn/shop/files/1_14_14d8d447-85b1-41bd-874f-951ec2bacd49.jpg?v=1743841300&width=900",
@@ -156,7 +156,7 @@ const bath=
     "size": "20ml",
     "quantity": 75,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "bath"
+    "level2Category": "Bath"
   },
   {
     "imageUrl": "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1086953/ON5BDppFLb-8901030846212_1.jpg",
@@ -169,7 +169,7 @@ const bath=
     "size": "15ml",
     "quantity": 65,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "bath"
+    "level2Category": "Bath"
   },
   {
     "imageUrl": "https://images.mamaearth.in/catalog/product/1/_/1_81.jpg?format=auto&height=600",
@@ -182,7 +182,7 @@ const bath=
     "size": "20ml",
     "quantity": 80,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "bath"
+    "level2Category": "Bath"
   },
   {
     "imageUrl": "https://bellavitaluxury.co.in/cdn/shop/files/Date_Senorita-01.jpg?v=1706525078&width=1000",
@@ -195,7 +195,7 @@ const bath=
     "size": "10ml",
     "quantity": 105,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "bath"
+    "level2Category": "Bath"
   },
   {
     "imageUrl": "https://bellavitaluxury.co.in/cdn/shop/files/Glamshowergel-01.jpg?v=1703067259&width=1000",
@@ -208,7 +208,7 @@ const bath=
     "size": "15ml",
     "quantity": 80,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "bath"
+    "level2Category": "Bath"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/GLN0063AB11.jpg",
@@ -221,7 +221,7 @@ const bath=
     "size": "15ml",
     "quantity": 95,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "bath"
+    "level2Category": "Bath"
     
   },
   {
@@ -235,7 +235,7 @@ const bath=
     "size": "20ml",
     "quantity": 65,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "bath"
+    "level2Category": "Bath"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/DST0039AB191.jpg",
@@ -248,7 +248,7 @@ const bath=
     "size": "15ml",
     "quantity": 85,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "bath"
+    "level2Category": "Bath"
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/CIL0024AB1N1.jpg",
@@ -261,7 +261,7 @@ const bath=
     "size": "15ml",
     "quantity": 85,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "bath"
+    "level2Category": "Bath"
   }
 ];
 export default bath;
