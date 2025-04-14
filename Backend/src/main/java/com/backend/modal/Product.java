@@ -57,9 +57,12 @@ public class Product {
     private String color;
 
 
-    @ElementCollection
+//    @ElementCollection
+//    @Column(name = "sizes")
+//    private Set<Size> sizes=new HashSet<>();
     @Column(name = "sizes")
-    private Set<Size> sizes=new HashSet<>();
+    private String sizes;
+    
 
     @Column(name = "image_url")
     private String imageUrl;

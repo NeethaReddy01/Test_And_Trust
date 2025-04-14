@@ -3,7 +3,7 @@ package com.backend.request;
 import java.util.HashSet;
 import java.util.Set;
 import com.backend.modal.Category;
-import com.backend.modal.Size;
+//import com.backend.modal.Size;
 //import com.backend.user.domain.ProductSize;
 
 
@@ -25,18 +25,33 @@ public class CreateProductRequest {
 
     private String color;
 
-    private Set<Size> size=new HashSet<>();
+    private String size;
 
     private String imageUrl;
 
-    private String topLavelCategory;
-    private String secondLavelCategory;
-    private String thirdLavelCategory;
+        // Your existing fields
+        private String level1Category; // e.g. "skincare"
+        private String level2Category; // e.g. "cleanser", "serum"
+        
+        // Getters and setters
+    
 
-	public Set<Size> getSize() {
+	public String getSizes() {
 		return size;
 	}
-	public void setSize(Set<Size> size) {
+	public String getLevel1Category() {
+		return level1Category;
+	}
+	public void setLevel1Category(String level1Category) {
+		this.level1Category = level1Category;
+	}
+	public String getLevel2Category() {
+		return level2Category;
+	}
+	public void setLevel2Category(String level2Category) {
+		this.level2Category = level2Category;
+	}
+	public void setSizes(String size) {
 		this.size = size;
 	}
 
@@ -110,29 +125,29 @@ public class CreateProductRequest {
 		this.imageUrl = imageUrl;
 	}
 
-	public String getTopLavelCategory() {
-		return topLavelCategory;
-	}
-
-	public void setTopLavelCategory(String topLavelCategory) {
-		this.topLavelCategory = topLavelCategory;
-	}
-
-	public String getSecondLavelCategory() {
-		return secondLavelCategory;
-	}
-
-	public void setSecondLavelCategory(String secondLavelCategory) {
-		this.secondLavelCategory = secondLavelCategory;
-	}
-
-	public String getThirdLavelCategory() {
-		return thirdLavelCategory;
-	}
-
-	public void setThirdLavelCategory(String thirdLavelCategory) {
-		this.thirdLavelCategory = thirdLavelCategory;
-	}
+//	public String getTopLavelCategory() {
+//		return topLavelCategory;
+//	}
+//
+//	public void setTopLavelCategory(String topLavelCategory) {
+//		this.topLavelCategory = topLavelCategory;
+//	}
+//
+//	public String getSecondLavelCategory() {
+//		return secondLavelCategory;
+//	}
+//
+//	public void setSecondLavelCategory(String secondLavelCategory) {
+//		this.secondLavelCategory = secondLavelCategory;
+//	}
+//
+//	public String getThirdLavelCategory() {
+//		return thirdLavelCategory;
+//	}
+//
+//	public void setThirdLavelCategory(String thirdLavelCategory) {
+//		this.thirdLavelCategory = thirdLavelCategory;
+//	}
 
 	
     

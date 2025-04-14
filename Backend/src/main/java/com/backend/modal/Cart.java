@@ -36,8 +36,8 @@ public class Cart {
     private User user;
 
     @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, orphanRemoval = true)
-    @Column(name = "cart_items")
     private Set<CartItem> cartItems = new HashSet<>();
+
 
     @Column(name = "total_price")
     private double totalPrice;
