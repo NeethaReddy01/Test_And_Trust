@@ -49,4 +49,3 @@ public class DataInitializationComponent implements CommandLineRunner {
     }
 
 }
-
