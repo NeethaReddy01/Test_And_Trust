@@ -9,7 +9,7 @@ export const sunscreen = [
     "disscount": 56,
     "size": "20g",
     "quantity": 70,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "sunscreen"
   },
   {
@@ -22,7 +22,7 @@ export const sunscreen = [
     "disscount": 37,
     "size": "25g",
     "quantity": 100,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "sunscreen"
   },
   {
@@ -35,7 +35,7 @@ export const sunscreen = [
     "disscount": 50,
     "size": "20g",
     "quantity": 50,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "sunscreen"
   },
   {
@@ -48,7 +48,7 @@ export const sunscreen = [
     "disscount": 37,
     "size": "20g",
     "quantity": 80,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "sunscreen"
   },
   {
@@ -61,7 +61,7 @@ export const sunscreen = [
     "disscount": 35,
     "size": "20g",
     "quantity": 50,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "sunscreen"
   },
   {
@@ -74,7 +74,7 @@ export const sunscreen = [
     "disscount": 50,
     "size": "20g",
     "quantity": 70,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "sunscreen"
   },
   {
@@ -87,7 +87,7 @@ export const sunscreen = [
     "disscount": 50,
     "size": "20g",
     "quantity": 100,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "sunscreen"
   },
   {
@@ -100,7 +100,7 @@ export const sunscreen = [
     "disscount": 63,
     "size": "20g",
     "quantity": 100,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "sunscreen"
   },
   {
@@ -113,7 +113,7 @@ export const sunscreen = [
     "disscount": 35,
     "size": "20g",
     "quantity": 50,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "sunscreen"
   },
   {
@@ -126,7 +126,7 @@ export const sunscreen = [
     "disscount": 50,
     "size": "20g",
     "quantity": 100,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "sunscreen"
   },
   {
@@ -139,7 +139,7 @@ export const sunscreen = [
     "disscount": 60,
     "size": "20ml",
     "quantity": 90,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "sunscreen"
   },
   {
@@ -152,7 +152,7 @@ export const sunscreen = [
     "disscount": 50,
     "size": "20ml",
     "quantity": 90,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "sunscreen"
   },
   {
@@ -165,7 +165,7 @@ export const sunscreen = [
     "disscount": 50,
     "size": "20g",
     "quantity": 100,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "sunscreen"
   },
   {
@@ -178,7 +178,7 @@ export const sunscreen = [
     "disscount": 55,
     "size": "20g",
     "quantity": 100,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "sunscreen"
   },
   {
@@ -191,7 +191,7 @@ export const sunscreen = [
     "disscount": 50,
     "size": "15ml",
     "quantity": 70,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "sunscreen"
   },
   {
@@ -204,7 +204,7 @@ export const sunscreen = [
     "disscount": 61,
     "size": "20g",
     "quantity": 60,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "sunscreen"
   },
   {
@@ -217,7 +217,7 @@ export const sunscreen = [
     "disscount": 45,
     "size": "20g",
     "quantity": 70,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "sunscreen"
   },
   {
@@ -230,7 +230,7 @@ export const sunscreen = [
     "disscount": 40,
     "size": "20ml",
     "quantity": 100,
-    "level1Category": "Skincare",
+    "level1Category": "skincare",
     "level2Category": "sunscreen"
   }
 ];

@@ -72,7 +72,7 @@ const Cart = () => {
             </p>
           </div>
           <Button onClick={()=>navigate("/")} variant="outlined" sx={{ py: "11px" }}>
-            Add Item From Wishlist
+            Add Item From Product List
           </Button>
         </div>}
       

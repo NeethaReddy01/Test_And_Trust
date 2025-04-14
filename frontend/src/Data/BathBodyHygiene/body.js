@@ -194,5 +194,5 @@ const body = [
     "level1Category": "bathbodyhygiene",
     "level2Category": "body"
   }
-]
+];
 export default body;

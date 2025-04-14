@@ -22,7 +22,7 @@ function Navbar() {
                 className="h-8 w-8 mr-2"
               />
               <span className="font-bold text-white text-lg">
-                Shop With Zosh
+                Test & Trust
               </span>
             </Link>
 
@@ -30,15 +30,15 @@ function Navbar() {
             <ul className="hidden md:flex items-center space-x-4">
               <li>
                 <Link
-                  to="/men"
+                  to="/skincare/cleanser"
                   className="font-medium text-white hover:text-black"
                 >
-                  Men
+                  Cleanser
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/women"
+                  to="/fragnance"
                   className="font-medium text-white hover:text-black"
                 >
                   Fragnance
@@ -46,34 +46,34 @@ function Navbar() {
               </li>
               <li>
                 <Link
-                  to="/kids"
+                  to="/haircare"
                   className="font-medium text-white hover:text-black"
                 >
-                  Kids
+                  Haircare
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/home-living"
+                  to="/makeup"
                   className="font-medium text-white hover:text-black"
                 >
-                  Home & Living
+                  Makeup
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/beauty"
+                  to="/skincare/moisturizer"
                   className="font-medium text-white hover:text-black"
                 >
-                  Beauty
+                  Moisturizer
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/offers"
+                  to="/skincare/serum"
                   className="font-medium text-white hover:text-black"
                 >
-                  Offers
+                  Serum
                 </Link>
               </li>
             </ul>
@@ -133,50 +133,50 @@ function Navbar() {
           <ul className="flex flex-col py-4 space-y-2 px-5">
             <li>
               <Link
-                to="/men"
+                to="/skincare/cleanser"
                 className="font-medium text-white hover:text-black"
               >
-                Men
+                Cleanser
               </Link>
             </li>
             <li>
               <Link
-                to="/women"
+                to="/fragnance"
                 className="font-medium text-white hover:text-black"
               >
-                Women
+                Fragnance
               </Link>
             </li>
             <li>
               <Link
-                to="/kids"
+                to="/haircare"
                 className="font-medium text-white hover:text-black"
               >
-                Kids
+                Haircare
               </Link>
             </li>
             <li>
               <Link
-                to="/home-living"
+                to="/makeup"
                 className="font-medium text-white hover:text-black"
               >
-                Home & Living
+                Makeup
               </Link>
             </li>
             <li>
               <Link
-                to="/beauty"
+                to="/skincare/moisturizer"
                 className="font-medium text-white hover:text-black"
               >
-                Beauty
+                Moisturizer
               </Link>
             </li>
             <li>
               <Link
-                to="/offers"
+                to="/skincare/serum"
                 className="font-medium text-white hover:text-black"
               >
-                Offers
+                Serum
               </Link>
             </li>
           </ul>
