@@ -54,13 +54,13 @@ public class AuthController {
 	        
 	        User isEmailExist=userRepository.findByEmail(email);
 
-	        // Check if user with the given email already exists
+	       
 	        if (isEmailExist!=null) {
 	        	
 	            throw new UserException("Email Is Already Used With Another Account");
 	        }
 
-	        // Create new user
+	     
 			User createdUser= new User();
 			createdUser.setEmail(email);
 			createdUser.setFirstName(firstName);

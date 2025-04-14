@@ -59,10 +59,9 @@ public class PaymentController {
 		
 		Order order=orderService.findOrderById(orderId);
 		 try {
-		      // Instantiate a Razorpay client with your key ID and secret
+		      
 		      RazorpayClient razorpay = new RazorpayClient(apiKey, apiSecret);
 
-		      // Create a JSON object with the payment link request parameters
 		      JSONObject paymentLinkRequest = new JSONObject();
 		      paymentLinkRequest.put("amount",order.getTotalPrice()* 100);
 		      paymentLinkRequest.put("currency","INR");    
