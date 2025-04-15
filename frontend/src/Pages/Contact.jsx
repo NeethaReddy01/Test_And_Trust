@@ -3,7 +3,7 @@ import { Mail, MapPin, Globe, Phone } from 'lucide-react';
 
 function Contact() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100">
+    <div className="bg-gradient-to-b from-[#f9f9fb] to-white min-h-screen">
       {/* Content */}
       <div className="min-h-screen flex flex-col items-center justify-center px-4 py-16 text-gray-800">
         <div className="text-center max-w-4xl mx-auto">
