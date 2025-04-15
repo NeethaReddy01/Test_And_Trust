@@ -34,7 +34,7 @@ const Achivement = () => {
        <Card sx={{ position: 'relative' }}>
       <CardContent>
       <Typography variant='h6' sx={{ letterSpacing: '0.25px' }}>
-          Shop With Zosh
+          Shop With Test & Trust
         </Typography>
         <Typography variant='body2' >Congratulations 🥳</Typography>
         
@@ -44,8 +44,7 @@ const Achivement = () => {
         <Button size='small' variant='contained'>
           View Sales
         </Button>
-        <TriangleImg alt='triangle background' src={`/images/misc/${imageSrc}`} />
-        <TrophyImg alt='trophy' src='/images/misc/trophy.png' />
+        
       </CardContent>
     </Card>
    
