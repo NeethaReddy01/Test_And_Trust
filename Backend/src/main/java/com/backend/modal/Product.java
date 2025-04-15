@@ -64,7 +64,7 @@ public class Product {
     private String sizes;
     
 
-    @Column(name = "image_url")
+    @Column(name = "image_url" , length = 1000)
     private String imageUrl;
 
     @OneToMany(mappedBy = "product",cascade = CascadeType.ALL,orphanRemoval = true)

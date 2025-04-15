@@ -60,15 +60,12 @@ export default function SearchProduct() {
     navigate({ search: `?${query}` });
   };
 
-  useEffect(() => {
+  // useEffect(() => {
     
-    dispatch(findProducts());
-  }, [
-   keyword
-  ]);
-
- 
-
+  //   dispatch(findProducts());
+  // }, [
+  //  keyword
+  // ]);
 
   useEffect(() => {
     if (customersProduct.loading) {

@@ -4,25 +4,10 @@ import "./HomeProductSection.css";
 import { Button } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { findProducts } from "../../../Redux/Customers/Product/Action"; 
 
-const HomeProductSection = ({ section,category }) => {
+const HomeProductSection = ({ section,category , data }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [maxIndex, setMaxIndex] = useState(0);
-  const dispatch = useDispatch();
-  const { products } = useSelector(
-    (state) => state.customersProduct
-  );
-  useEffect(() => {
-    dispatch(
-      findProducts({
-        colors: "Transparent",
-        category,
-        // add other filters as needed
-      })
-    );
-  }, []);
   const responsive = {
     0: { items: 2 },
     568: { items: 3 },
@@ -35,19 +20,18 @@ const HomeProductSection = ({ section,category }) => {
       let itemsPerPage = 5;
       if (width < 568) itemsPerPage = 2;
       else if (width < 1024) itemsPerPage = 3;
-      setMaxIndex(Math.max(0, products.length - itemsPerPage));
+      setMaxIndex(Math.max(0, data.length - itemsPerPage));
     };
 
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [products.length]);
+  }, [data.length]);
 
   const slidePrev = () => setActiveIndex(Math.max(0, activeIndex - 1));
   const slideNext = () => setActiveIndex(Math.min(maxIndex, activeIndex + 1));
   const syncActiveIndex = ({ item }) => setActiveIndex(item);
-
-  const items = products.map((item) => (
+  const items = data.map((item) => (
     <div key={item.id}>
       <HomeProductCard product={item} />
     </div>
