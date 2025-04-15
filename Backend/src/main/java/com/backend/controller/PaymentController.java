@@ -86,7 +86,7 @@ public class PaymentController {
 		      paymentLinkRequest.put("reminder_enable",true);
 
 		      // Set the callback URL and method
-		      paymentLinkRequest.put("callback_url","http://localhost:4200/payment-success?order_id="+orderId);
+		      paymentLinkRequest.put("callback_url","http://localhost:3000/payment-success?order_id="+orderId);
 		      paymentLinkRequest.put("callback_method","get");
 
 		      // Create the payment link using the paymentLink.create() method
@@ -99,7 +99,7 @@ public class PaymentController {
 		      
 		      PaymentLink fetchedPayment = razorpay.paymentLink.fetch(paymentLinkId);
 		      
-		      order.setOrderId(fetchedPayment.get("order_id"));
+		      order.setOrderId(orderId.toString());
 		      orderRepository.save(order);
 		      
 		   // Print the payment link ID and URL
