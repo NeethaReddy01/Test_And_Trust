@@ -1,14 +1,14 @@
 import { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
-import {images} from ".."
+import { images } from "..";
 
 function Navbar() {
-  const [isNavigation, setIsNavigation] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
   const handleShowMenu = () => {
     setShowMenu(!showMenu);
   };
+
   return (
     <Fragment>
       {/* Navigation bar */}
@@ -31,50 +31,26 @@ function Navbar() {
             <ul className="hidden md:flex items-center space-x-4">
               <li>
                 <Link
-                  to="/skincare/cleanser"
+                  to="/about"
                   className="font-medium text-white hover:text-black"
                 >
-                  Cleanser
+                  About
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/fragnance"
+                  to="/contact"
                   className="font-medium text-white hover:text-black"
                 >
-                  Fragnance
+                  Contact Us
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/haircare"
+                  to="/terms-condition"
                   className="font-medium text-white hover:text-black"
                 >
-                  Haircare
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/makeup"
-                  className="font-medium text-white hover:text-black"
-                >
-                  Makeup
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/skincare/moisturizer"
-                  className="font-medium text-white hover:text-black"
-                >
-                  Moisturizer
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/skincare/serum"
-                  className="font-medium text-white hover:text-black"
-                >
-                  Serum
+                  Terms & Conditions
                 </Link>
               </li>
             </ul>
@@ -134,50 +110,29 @@ function Navbar() {
           <ul className="flex flex-col py-4 space-y-2 px-5">
             <li>
               <Link
-                to="/skincare/cleanser"
-                className="font-medium text-white hover:text-black"
+                to="/about"
+                className="font-medium text-gray-700 hover:text-black"
+                onClick={() => setShowMenu(false)}
               >
-                Cleanser
+                About
               </Link>
             </li>
             <li>
               <Link
-                to="/fragnance"
-                className="font-medium text-white hover:text-black"
+                to="/contact"
+                className="font-medium text-gray-700 hover:text-black"
+                onClick={() => setShowMenu(false)}
               >
-                Fragnance
+                Contact Us
               </Link>
             </li>
             <li>
               <Link
-                to="/haircare"
-                className="font-medium text-white hover:text-black"
+                to="/terms-condition"
+                className="font-medium text-gray-700 hover:text-black"
+                onClick={() => setShowMenu(false)}
               >
-                Haircare
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/makeup"
-                className="font-medium text-white hover:text-black"
-              >
-                Makeup
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/skincare/moisturizer"
-                className="font-medium text-white hover:text-black"
-              >
-                Moisturizer
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/skincare/serum"
-                className="font-medium text-white hover:text-black"
-              >
-                Serum
+                Terms & Conditions
               </Link>
             </li>
           </ul>
@@ -186,4 +141,5 @@ function Navbar() {
     </Fragment>
   );
 }
+
 export default Navbar;

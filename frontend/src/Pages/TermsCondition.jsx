@@ -1,7 +1,7 @@
 import React from 'react';
 import { Scroll, Shield, UserCheck, BadgeCheck, Scale, Heart } from 'lucide-react';
 
-function App() {
+function TermsCondition() {
     return (
         <div className="min-h-screen bg-gradient-to-br from-pink-100 via-purple-200 to-purple-300">
             {/* Header */}
@@ -176,4 +176,4 @@ We do not sell full-size products. All items listed are for trial and personal u
 
 }
 
-export default App;
+export default TermsCondition;
