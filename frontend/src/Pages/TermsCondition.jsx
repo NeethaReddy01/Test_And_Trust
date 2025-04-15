@@ -3,7 +3,7 @@ import { Scroll, Shield, UserCheck, BadgeCheck, Scale, Heart } from 'lucide-reac
 
 function TermsCondition() {
     return (
-        <div className="bg-gradient-to-b from-[#f9f9fb] to-white min-h-screen">
+        <div className="bg-indigo-50 min-h-screen"> {/* Updated background here */}
             {/* Header */}
             <header className="bg-white/80 backdrop-blur-sm shadow-sm">
                 <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
@@ -90,7 +90,7 @@ function TermsCondition() {
                         </section>
 
                         {/* Acceptance */}
-                        <section className="bg-purple-100 p-6 rounded-lg">
+                        <section className="bg-indigo-100 p-6 rounded-lg">
                             <div className="flex items-center gap-2 mb-4">
                                 <Heart className="w-6 h-6 text-purple-700" />
                                 <h3 className="text-lg font-semibold text-gray-900">Acceptance of Terms</h3>
@@ -103,14 +103,9 @@ function TermsCondition() {
                     </div>
 
                     {/* Footer */}
-                    <div className="bg-purple-100 px-6 py-4 text-sm text-gray-500 mt-4">
+                    <div className="bg-white px-6 py-4 text-sm text-gray-500 mt-4">
                         <p>Last updated: {new Date().toLocaleDateString()}</p>
                         <p>For any questions regarding these terms, please contact our support team.</p>
-                        <p>
-                            📄 <a href="/privacy-policy" className="underline">Privacy Policy</a> <br />
-                            📧 Contact us at: support@testandtrust.com <br />
-                            © 2025 Test and Trust. All rights reserved.
-                        </p>
                     </div>
 
                 </div>
