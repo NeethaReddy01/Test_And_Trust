@@ -18,6 +18,9 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import Avatar from '@mui/material/Avatar';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { logout } from '../../Redux/Auth/Action'; // Adjust path as needed
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -59,10 +62,12 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function AdminNavbar({handleSideBarViewInMobile}) {
+export default function AdminNavbar({ handleSideBarViewInMobile }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const theme = useTheme();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const isLargeScreen = useMediaQuery(theme.breakpoints.up('lg'));
 
   const isMenuOpen = Boolean(anchorEl);
@@ -85,6 +90,24 @@ export default function AdminNavbar({handleSideBarViewInMobile}) {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
+  const handleProductsClick = () => {
+    handleMenuClose();
+    navigate('/admin/products');
+  };
+
+  // Handle navigation to orders
+  const handleOrdersClick = () => {
+    handleMenuClose();
+    navigate('/admin/orders');
+  };
+
+  // Handle logout functionality using Redux
+  const handleLogout = () => {
+    handleMenuClose();
+    dispatch(logout());
+    navigate('/');
+  };
+
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
     <Menu
@@ -102,8 +125,9 @@ export default function AdminNavbar({handleSideBarViewInMobile}) {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+   <MenuItem onClick={handleProductsClick}>Products</MenuItem>
+   <MenuItem onClick={handleOrdersClick}>Orders</MenuItem>
+      <MenuItem onClick={handleLogout}>Logout</MenuItem>
     </Menu>
   );
 
@@ -156,12 +180,22 @@ export default function AdminNavbar({handleSideBarViewInMobile}) {
         </IconButton>
         <p>Profile</p>
       </MenuItem>
+      <MenuItem onClick={handleLogout}>
+        <IconButton
+          size="large"
+          aria-label="logout"
+          color="inherit"
+        >
+          <AccountCircle />
+        </IconButton>
+        <p>Logout</p>
+      </MenuItem>
     </Menu>
   );
-// https://res.cloudinary.com/ddkso1wxi/image/upload/v1675919455/Logo/Copy_of_Zosh_Academy_nblljp.png
+  
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + isLargeScreen, backgroundColor: 'rgb(0, 0, 22)' }}>
+      <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + (isLargeScreen ? 1 : 0), backgroundColor: 'rgb(0, 0, 22)' }}>
         <Toolbar>
           {!isLargeScreen && <IconButton
             size="large"
@@ -173,7 +207,7 @@ export default function AdminNavbar({handleSideBarViewInMobile}) {
           >
             <MenuIcon />
           </IconButton>}
-          <Avatar alt="Zosh" src="https://res.cloudinary.com/ddkso1wxi/image/upload/v1675919455/Logo/Copy_of_Zosh_Academy_nblljp.png" />
+          <Avatar alt="T&T" src="frontend/public/logo192.png" />
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -225,7 +259,8 @@ export default function AdminNavbar({handleSideBarViewInMobile}) {
           </Box>
         </Toolbar>
       </AppBar>
-      
+      {renderMobileMenu}
+      {renderMenu}
     </Box>
   );
 }

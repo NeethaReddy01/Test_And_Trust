@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import ProductDetails from "../customer/Components/Product/ProductDetails/ProductDetails";
 import Product from "../customer/Components/Product/Product/Product";
-// import Contact from "../Pages/Contact";
+import Contact from "../Pages/Contact";
 import TermsCondition from "../Pages/TermsCondition";
 // import PrivacyPolicy from "../Pages/PrivacyPolicy";
 import About from "../Pages/About";
@@ -43,7 +43,7 @@ const CustomerRoutes = () => {
         <Route path="/about" element={<About />}></Route>
         {/* <Route path="/privaciy-policy" element={<PrivacyPolicy />}></Route> */}
         <Route path="/terms-condition" element={<TermsCondition />}></Route>
-        {/* <Route path="/contact" element={<Contact />}></Route> */}
+        <Route path="/contact" element={<Contact />}></Route>
         <Route path="/:lavelOne/:lavelTwo" element={<Product />}></Route>
         <Route path="/product/:productId" element={<ProductDetails />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
