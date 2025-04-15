@@ -15,13 +15,6 @@ import "./CreateProductForm.css";
 import { useDispatch } from "react-redux";
 import { createProduct } from "../../../Redux/Customers/Product/Action";
 
-
-const initialSizes = [
-  { name: "S", quantity: 0 },
-  { name: "M", quantity: 0 },
-  { name: "L", quantity: 0 },
-];
-
 const CreateProductForm = () => {
   
   const [productData, setProductData] = useState({
@@ -32,7 +25,7 @@ const CreateProductForm = () => {
     discountedPrice: "",
     price: "",
     discountPersent: "",
-    size: "",
+    sizes: "",
     quantity: "",
     level1Category: "",
     level2Category: "",
@@ -53,11 +46,11 @@ const jwt=localStorage.getItem("jwt")
     let { name, value } = e.target;
     name==="size_quantity"?name="quantity":name=e.target.name;
 
-    const sizes = [...productData.size];
+    const sizes = [...productData.sizes];
     sizes[index][name] = value;
     setProductData((prevState) => ({
       ...prevState,
-      size: sizes,
+      sizes: sizes,
     }));
   };
 
@@ -167,49 +160,49 @@ const jwt=localStorage.getItem("jwt")
             <TextField
               fullWidth
               label="Sizes"
-              name="size"
-              value={productData.size}
+              name="sizes"
+              value={productData.sizes}
               onChange={handleChange}
             />
           </Grid>
           <Grid item xs={6} sm={4}>
-            <FormControl fullWidth>
-              <InputLabel>Top Level Category</InputLabel>
-              <Select
-                name="topLavelCategory"
-                value={productData.level1Category}
-                onChange={handleChange}
-                label="Top Level Category"
-              >
-                <MenuItem value="skincare">Skincare</MenuItem>
-                <MenuItem value="bathbodyhygiene">bathbodyhygiene</MenuItem>
-                <MenuItem value="perfume">perfume</MenuItem>
-                <MenuItem value="PersonalCare">PersonalCare</MenuItem>
-                <MenuItem value="makeupproducts">makeupproducts</MenuItem>
-              </Select>
-            </FormControl>
+          <FormControl fullWidth>
+  <InputLabel>Top Level Category</InputLabel>
+  <Select
+    name="level1Category"
+    value={productData.level1Category}
+    onChange={handleChange}
+    label="Top Level Category"
+  >
+    <MenuItem value="skincare">Skincare</MenuItem>
+    <MenuItem value="bathbodyhygiene">bathbodyhygiene</MenuItem>
+    <MenuItem value="perfume">perfume</MenuItem>
+    <MenuItem value="PersonalCare">PersonalCare</MenuItem>
+    <MenuItem value="makeupproducts">makeupproducts</MenuItem>
+  </Select>
+</FormControl>
           </Grid>
           <Grid item xs={6} sm={4}>
-            <FormControl fullWidth>
-              <InputLabel>Second Level Category</InputLabel>
-              <Select
-                name="secondLavelCategory"
-                value={productData.level2Category}
-                onChange={handleChange}
-                label="Second Level Category"
-              >
-                <MenuItem value="Cleanser">Cleanser</MenuItem>
-                <MenuItem value="Moisturizer">Moisturizer</MenuItem>
-                <MenuItem value="Serum">Serum</MenuItem>
-                <MenuItem value="Sunscreen">Sunscreen</MenuItem>
-                <MenuItem value="Bath">Bath</MenuItem>
-                <MenuItem value="Body">Body</MenuItem>
-                <MenuItem value="Hygiene">Hygiene</MenuItem>
-                <MenuItem value="Fragnance">Fragnance</MenuItem>
-                <MenuItem value="HairCare">Haircare</MenuItem>
-                <MenuItem value="Makeup">Makeup</MenuItem>
-              </Select>
-            </FormControl>
+          <FormControl fullWidth>
+  <InputLabel>Second Level Category</InputLabel>
+  <Select
+    name="level2Category"
+    value={productData.level2Category}
+    onChange={handleChange}
+    label="Second Level Category"
+  >
+    <MenuItem value="Cleanser">Cleanser</MenuItem>
+    <MenuItem value="Moisturizer">Moisturizer</MenuItem>
+    <MenuItem value="Serum">Serum</MenuItem>
+    <MenuItem value="Sunscreen">Sunscreen</MenuItem>
+    <MenuItem value="Bath">Bath</MenuItem>
+    <MenuItem value="Body">Body</MenuItem>
+    <MenuItem value="Hygiene">Hygiene</MenuItem>
+    <MenuItem value="Fragnance">Fragnance</MenuItem>
+    <MenuItem value="HairCare">Haircare</MenuItem>
+    <MenuItem value="Makeup">Makeup</MenuItem>
+  </Select>
+</FormControl>
           </Grid>
           {/* <Grid item xs={6} sm={4}>
             <FormControl fullWidth>

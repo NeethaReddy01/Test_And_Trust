@@ -1,5 +1,4 @@
-const hygiene=
-[
+const hygiene= [
     {
       "imageUrl": "https://m.media-amazon.com/images/I/71LvA4HouGL._SX679_PIbundle-2,TopRight,0,0_AA679SH20_.jpg",
       "brand": "ustHuman",

@@ -1,5 +1,4 @@
-const bath=
-[
+const bath= [
   {
     "imageUrl": "https://foxtale.in/cdn/shop/files/1_4_f8dd6699-ef44-44de-a319-89b0244b82e7.jpg?v=1743840898&width=900",
     "brand": "Foxtale",
