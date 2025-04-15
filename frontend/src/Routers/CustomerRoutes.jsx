@@ -51,7 +51,7 @@ const CustomerRoutes = () => {
         <Route path="/account/order/:orderId" element={<OrderDetails />}></Route>
         <Route path="/account/rate/:productId" element={<RateProduct />}></Route>
         <Route path="/checkout" element={<Checkout />}></Route>
-        <Route path="/payment/:orderId" element={<PaymentSuccess />}></Route>
+        <Route path="/payment-success" element={<PaymentSuccess />}></Route>
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
       <Footer/>
