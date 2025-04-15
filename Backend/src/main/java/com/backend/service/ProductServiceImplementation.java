@@ -150,20 +150,13 @@ public class ProductServiceImplementation implements ProductService {
   
   
   @Override
-  public List<Product> getAllProduct(String category, List<String>colors) {
+  public List<Product> getAllProduct(String category) {
 
 
     
     List<Product> products = productRepository.filterProducts(category);
     
-    
-    if (!colors.isEmpty()) {
-      products = products.stream()
-              .filter(p -> colors.stream().anyMatch(c -> c.equalsIgnoreCase(p.getColor())))
-              .collect(Collectors.toList());
-    
-    
-    } 
+ 
 
 
     return products;

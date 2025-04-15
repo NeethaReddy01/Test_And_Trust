@@ -39,7 +39,7 @@ export const findProducts = (reqData) => async (dispatch) => {
     dispatch({ type: FIND_PRODUCTS_BY_CATEGORY_REQUEST });
 
     const { data } = await api.get(
-      `/api/products?color=${colors}&category=${category}`
+      `/api/products?category=${category}`
     );console.log("API response data:", data);
     console.log("Is data an array?", Array.isArray(data));
     console.log("Data length:", data?.length);
