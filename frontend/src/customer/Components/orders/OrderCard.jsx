@@ -24,7 +24,7 @@ const OrderCard = ({ item, order }) => {
             <div className="ml-5">
               <p className="mb-2">{item?.product.title}</p>
               <p className="opacity-50 text-xs font-semibold space-x-5">
-                <span>Size: {item?.size}</span>
+                <span>Size: {item?.product.sizes}</span>
               </p>
             </div>
           </div>
@@ -54,7 +54,7 @@ const OrderCard = ({ item, order }) => {
               </>}
             
           </p>
-          <p className="text-xs">Your Item Has Been Delivered</p>
+          {/* <p className="text-xs">Your Item Has Been Delivered</p> */}
           {item.orderStatus === "DELIVERED" && (
             <div
               onClick={() => navigate(`/account/rate/{id}`)}
