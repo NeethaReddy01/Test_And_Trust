@@ -108,6 +108,10 @@ export default function AdminNavbar({ handleSideBarViewInMobile }) {
     navigate('/');
   };
 
+  const handleAvatarClick = () => {
+    navigate('/');
+  };
+
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
     <Menu
@@ -207,7 +211,7 @@ export default function AdminNavbar({ handleSideBarViewInMobile }) {
           >
             <MenuIcon />
           </IconButton>}
-          <Avatar alt="T&T" src="frontend/public/logo192.png" />
+          <Avatar alt="T&T" src="frontend/public/logo192.png"  onClick={handleAvatarClick}/>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />

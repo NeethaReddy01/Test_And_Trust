@@ -17,7 +17,8 @@ const dispatch=useDispatch();
   const jwt=localStorage.getItem("jwt");
   const {order}=useSelector(state=>state)
 
-console.log("orderId ", order.order)
+console.log("order ", order.order)
+console.log("orderId ", orderId)
 
 useEffect(()=>{
   
@@ -57,7 +58,7 @@ const handleCreatePayment=()=>{
               </div>
               <div className="flex justify-between">
                 <span>Discount</span>
-                <span className="text-green-700">-₹{order.order?.discounte}</span>
+                <span className="text-green-700">-₹{order.order?.discount}</span>
               </div>
               <div className="flex justify-between">
                 <span>Delivery Charges</span>
