@@ -5,7 +5,7 @@ import Product from "../customer/Components/Product/Product/Product";
 // import Contact from "../Pages/Contact";
 import TermsCondition from "../Pages/TermsCondition";
 // import PrivacyPolicy from "../Pages/PrivacyPolicy";
-// import About from "../Pages/About";
+import About from "../Pages/About";
 import Homepage from "../Pages/Homepage";
 import Navigation from "../customer/Components/Navbar/Navigation";
 import Cart from "../customer/Components/Cart/Cart";
@@ -40,7 +40,7 @@ const CustomerRoutes = () => {
         <Route path="/" element={<Homepage />}></Route>
         <Route path="/products/search" element={<SearchProduct/>}></Route>
         <Route path="/home" element={<Homepage />}></Route>
-        {/* <Route path="/about" element={<About />}></Route> */}
+        <Route path="/about" element={<About />}></Route>
         {/* <Route path="/privaciy-policy" element={<PrivacyPolicy />}></Route> */}
         <Route path="/terms-condition" element={<TermsCondition />}></Route>
         {/* <Route path="/contact" element={<Contact />}></Route> */}

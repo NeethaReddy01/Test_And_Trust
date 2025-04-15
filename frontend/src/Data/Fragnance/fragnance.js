@@ -1,4 +1,4 @@
-const fragrances = [
+const fragnance = [
  
     {
       "imageUrl": "https://m.media-amazon.com/images/I/51o29AsEL2L._SX679_.jpg",
@@ -378,4 +378,4 @@ const fragrances = [
       "level2Category": "Fragrance"
     }
   ];
-export default fragrances;
+export default fragnance;
