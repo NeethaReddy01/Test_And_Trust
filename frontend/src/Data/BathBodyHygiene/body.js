@@ -7,7 +7,7 @@ const body = [
     "disscountedPrice": "126",
     "price": "199",
     "discountPersent": "21",
-    "size": "25g",
+    "sizes": "25g",
     "quantity": "14",
     "level1Category": "bathbodyhygiene",
     "level2Category": "Body"
@@ -20,7 +20,7 @@ const body = [
     "disscountedPrice": "90",
     "price": "100",
     "discountPersent": "10",
-    "size": "10ml",
+    "sizes": "10ml",
     "quantity": "19",
     "level1Category": "bathbodyhygiene",
     "level2Category": "Body"
@@ -33,7 +33,7 @@ const body = [
     "disscountedPrice": "63",
     "price": "71",
     "discountPersent": "10",
-    "size": "50gm",
+    "sizes": "50gm",
     "quantity": "7",
     "level1Category": "bathbodyhygiene",
     "level2Category": "Body"
@@ -46,7 +46,7 @@ const body = [
     "disscountedPrice": "38",
     "price": "50",
     "discountPersent": "25",
-    "size": "15ml",
+    "sizes": "15ml",
     "quantity": "37",
     "level1Category": "bathbodyhygiene",
     "level2Category": "Body"
@@ -59,7 +59,7 @@ const body = [
     "disscountedPrice": "40",
     "price": "50",
     "discountPersent": "20",
-    "size": "20ml",
+    "sizes": "20ml",
     "quantity": "15",
     "level1Category": "bathbodyhygiene",
     "level2Category": "Body"
@@ -72,7 +72,7 @@ const body = [
     "disscountedPrice": "170",
     "price": "200",
     "discountPersent": "15",
-    "size": "20ml",
+    "sizes": "20ml",
     "quantity": 25,
     "level1Category": "bathbodyhygiene",
     "level2Category": "Body"
@@ -85,7 +85,7 @@ const body = [
     "disscountedPrice": "149",
     "price": "299",
     "discountPersent": "50",
-    "size": "20gms",
+    "sizes": "20gms",
     "quantity": "22",
     "level1Category": "bathbodyhygiene",
     "level2Category": "Body"
@@ -98,7 +98,7 @@ const body = [
     "disscountedPrice": "199",
     "price": "250",
     "discountPersent": "20",
-    "size": "20ml",
+    "sizes": "20ml",
     "quantity": "14",
     "level1Category": "bathbodyhygiene",
     "level2Category": "Body"
@@ -111,7 +111,7 @@ const body = [
     "disscountedPrice": "197",
     "price": "395",
     "discountPersent": "35",
-    "size": "250ml",
+    "sizes": "250ml",
     "quantity": "39",
     "level1Category": "bathbodyhygiene",
     "level2Category": "Body"
@@ -124,7 +124,7 @@ const body = [
     "disscountedPrice": "65",
     "price": "99",
     "discountPersent": "35",
-    "size": "30ml",
+    "sizes": "30ml",
     "quantity": "9",
     "level1Category": "bathbodyhygiene",
     "level2Category": "Body"
@@ -137,7 +137,7 @@ const body = [
     "disscountedPrice": "209",
     "price": "349",
     "discountPersent": "40",
-    "size": "100ml",
+    "sizes": "100ml",
     "quantity": "31",
     "level1Category": "bathbodyhygiene",
     "level2Category": "Body"
@@ -150,7 +150,7 @@ const body = [
     "disscountedPrice": "125",
     "price": "250",
     "discountPersent": "50",
-    "size": "10gm",
+    "sizes": "10gm",
     "quantity": "7",
     "level1Category": "bathbodyhygiene",
     "level2Category": "Body"
@@ -163,7 +163,7 @@ const body = [
     "disscountedPrice": "185",
     "price": "299",
     "discountPersent": "38",
-    "size": "200ml",
+    "sizes": "200ml",
     "quantity": "17",
     "level1Category": "bathbodyhygiene",
     "level2Category": "Body"
@@ -176,7 +176,7 @@ const body = [
     "disscountedPrice": "186",
     "price": "299",
     "discountPersent": "38",
-    "size": "100gm",
+    "sizes": "100gm",
     "quantity": "29",
     "level1Category": "bathbodyhygiene",
     "level2Category": "Body"
@@ -189,7 +189,7 @@ const body = [
     "disscountedPrice": "183",
     "price": "281",
     "discountPersent": "35",
-    "size": "100gm",
+    "sizes": "100gm",
     "quantity": "11",
     "level1Category": "bathbodyhygiene",
     "level2Category": "Body"

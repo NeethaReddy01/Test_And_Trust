@@ -147,6 +147,9 @@ export default function ProductDetails() {
                 <p className="text-green-600 font-semibold">
                   {customersProduct.product?.discountPersent}% Off
                 </p>
+                <p className="text-green-600 font-semibold">
+                  {customersProduct.product?.sizes}
+                </p>
               </div>
 
               {/* Reviews */}

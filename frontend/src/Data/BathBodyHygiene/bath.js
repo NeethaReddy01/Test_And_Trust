@@ -8,7 +8,7 @@ const bath=
     "discountedPrice": 39,
     "price": 49,
     "discountPersent": 20,
-    "size": "10ml",
+    "sizes": "10ml",
     "quantity": 60,
     "level1Category": "bathbodyhygiene",
     "level2Category": "Bath"
@@ -21,7 +21,7 @@ const bath=
     "discountedPrice": 45,
     "price": 59,
     "discountPersent": 24,
-    "size": "20ml",
+    "sizes": "20ml",
     "quantity": 75,
     "level1Category": "bathbodyhygiene",
     "level2Category": "Bath"
@@ -34,7 +34,7 @@ const bath=
     "discountedPrice": 35,
     "price": 49,
     "discountPersent": 29,
-    "size": "10ml",
+    "sizes": "10ml",
     "quantity": 100,
     "level1Category": "bathbodyhygiene",
     "level2Category": "Bath"
@@ -47,7 +47,7 @@ const bath=
     "discountedPrice": 49,
     "price": 65,
     "discountPersent": 25,
-    "size": "15ml",
+    "sizes": "15ml",
     "quantity": 85,
     "level1Category": "bathbodyhygiene",
     "level2Category": "Bath"
@@ -60,7 +60,7 @@ const bath=
     "discountedPrice": 39,
     "price": 52,
     "discountPersent": 25,
-    "size": "15ml",
+    "sizes": "15ml",
     "quantity": 90,
     "level1Category": "bathbodyhygiene",
     "level2Category": "Bath"
@@ -74,7 +74,7 @@ const bath=
     "discountedPrice": 55,
     "price": 69,
     "discountPersent": 20,
-    "size": "20ml",
+    "sizes": "20ml",
     "quantity": 70,
     "level1Category": "bathbodyhygiene",
     "level2Category": "Bath"
@@ -87,7 +87,7 @@ const bath=
     "discountedPrice": 49,
     "price": 65,
     "discountPersent": 25,
-    "size": "15ml",
+    "sizes": "15ml",
     "quantity": 80,
     "level1Category": "bathbodyhygiene",
     "level2Category": "Bath"
@@ -100,7 +100,7 @@ const bath=
     "discountedPrice": 49,
     "price": 65,
     "discountPersent": 25,
-    "size": "15ml",
+    "sizes": "15ml",
     "quantity": 95,
     "level1Category": "bathbodyhygiene",
     "level2Category": "Bath"
@@ -113,7 +113,7 @@ const bath=
     "discountedPrice": 59,
     "price": 79,
     "discountPersent": 25,
-    "size": "15ml",
+    "sizes": "15ml",
     "quantity": 70,
     "level1Category": "bathbodyhygiene",
     "level2Category": "Bath"
@@ -127,7 +127,7 @@ const bath=
     "discountedPrice": 45,
     "price": 60,
     "discountPersent": 25,
-    "size": "15ml",
+    "sizes": "15ml",
     "quantity": 80,
     "level1Category": "bathbodyhygiene",
     "level2Category": "Bath"
@@ -140,7 +140,7 @@ const bath=
     "discountedPrice": 49,
     "price": 65,
     "discountPersent": 25,
-    "size": "10ml",
+    "sizes": "10ml",
     "quantity": 90,
     "level1Category": "bathbodyhygiene",
     "level2Category": "Bath"
@@ -153,7 +153,7 @@ const bath=
     "discountedPrice": 55,
     "price": 73,
     "discountPersent": 25,
-    "size": "20ml",
+    "sizes": "20ml",
     "quantity": 75,
     "level1Category": "bathbodyhygiene",
     "level2Category": "Bath"
@@ -166,7 +166,7 @@ const bath=
     "discountedPrice": 49,
     "price": 65,
     "discountPersent": 25,
-    "size": "15ml",
+    "sizes": "15ml",
     "quantity": 65,
     "level1Category": "bathbodyhygiene",
     "level2Category": "Bath"
@@ -179,7 +179,7 @@ const bath=
     "discountedPrice": 39,
     "price": 52,
     "discountPersent": 25,
-    "size": "20ml",
+    "sizes": "20ml",
     "quantity": 80,
     "level1Category": "bathbodyhygiene",
     "level2Category": "Bath"
@@ -192,7 +192,7 @@ const bath=
     "discountedPrice": 35,
     "price": 47,
     "discountPersent": 25,
-    "size": "10ml",
+    "sizes": "10ml",
     "quantity": 105,
     "level1Category": "bathbodyhygiene",
     "level2Category": "Bath"
@@ -205,7 +205,7 @@ const bath=
     "discountedPrice": 49,
     "price": 65,
     "discountPersent": 25,
-    "size": "15ml",
+    "sizes": "15ml",
     "quantity": 80,
     "level1Category": "bathbodyhygiene",
     "level2Category": "Bath"
@@ -218,7 +218,7 @@ const bath=
     "discountedPrice": 39,
     "price": 52,
     "discountPersent": 25,
-    "size": "15ml",
+    "sizes": "15ml",
     "quantity": 95,
     "level1Category": "bathbodyhygiene",
     "level2Category": "Bath"
@@ -232,7 +232,7 @@ const bath=
     "discountedPrice": 55,
     "price": 73,
     "discountPersent": 25,
-    "size": "20ml",
+    "sizes": "20ml",
     "quantity": 65,
     "level1Category": "bathbodyhygiene",
     "level2Category": "Bath"
@@ -245,7 +245,7 @@ const bath=
     "discountedPrice": 49,
     "price": 70,
     "discountPersent": 30,
-    "size": "15ml",
+    "sizes": "15ml",
     "quantity": 85,
     "level1Category": "bathbodyhygiene",
     "level2Category": "Bath"
@@ -258,7 +258,7 @@ const bath=
     "discountedPrice": 49,
     "price": 70,
     "discountPersent": 30,
-    "size": "15ml",
+    "sizes": "15ml",
     "quantity": 85,
     "level1Category": "bathbodyhygiene",
     "level2Category": "Bath"

@@ -8,7 +8,7 @@ const hygiene=
       "discountedPrice": 45,
       "price": 60,
       "discountPersent": 25,
-      "size": "50ml",
+      "sizes": "50ml",
       "quantity": 80,
       "level1Category": "bathbodyhygiene",
       "level2Category": "Hygiene"
@@ -21,7 +21,7 @@ const hygiene=
       "discountedPrice": 45,
       "price": 60,
       "discountPersent": 25,
-      "size": "50ml",
+      "sizes": "50ml",
       "quantity": 80,
       "level1Category": "bathbodyhygiene",
       "level2Category": "Hygiene"
@@ -34,7 +34,7 @@ const hygiene=
       "discountedPrice": 45,
       "price": 60,
       "discountPersent": 25,
-      "size": "50ml",
+      "sizes": "50ml",
       "quantity": 80,
       "level1Category": "bathbodyhygiene",
       "level2Category": "Hygiene"
@@ -47,7 +47,7 @@ const hygiene=
       "discountedPrice": 45,
       "price": 60,
       "discountPersent": 25,
-      "size": "50ml",
+      "sizes": "50ml",
       "quantity": 80,
       "level1Category": "bathbodyhygiene",
       "level2Category": "Hygiene"
@@ -60,7 +60,7 @@ const hygiene=
       "discountedPrice": 45,
       "price": 60,
       "discountPersent": 25,
-      "size": "50ml",
+      "sizes": "50ml",
       "quantity": 80,
       "level1Category": "bathbodyhygiene",
       "level2Category": "Hygiene"
@@ -73,7 +73,7 @@ const hygiene=
       "discountedPrice": 110,
       "price": 145,
       "discountPersent": 24,
-      "size": "500ml",
+      "sizes": "500ml",
       "quantity": 80,
       "level1Category": "bathbodyhygiene",
       "level2Category": "Hygiene"
@@ -86,7 +86,7 @@ const hygiene=
       "discountedPrice": 150,
       "price": 199,
       "discountPersent": 25,
-      "size": "200ml",
+      "sizes": "200ml",
       "quantity": 80,
       "level1Category": "bathbodyhygiene",
       "level2Category": "Hygiene"
@@ -99,7 +99,7 @@ const hygiene=
       "discountedPrice": 160,
       "price": 210,
       "discountPersent": 24,
-      "size": "200ml",
+      "sizes": "200ml",
       "quantity": 80,
       "level1Category": "bathbodyhygiene",
       "level2Category": "Hygiene"
@@ -112,7 +112,7 @@ const hygiene=
       "discountedPrice": 50,
       "price": 70,
       "discountPersent": 28,
-      "size": "50ml",
+      "sizes": "50ml",
       "quantity": 80,
       "level1Category": "bathbodyhygiene",
       "level2Category": "Hygiene"
@@ -125,7 +125,7 @@ const hygiene=
       "discountedPrice": 60,
       "price": 85,
       "discountPersent": 29,
-      "size": "50ml",
+      "sizes": "50ml",
       "quantity": 80,
       "level1Category": "bathbodyhygiene",
       "level2Category": "Hygiene"
@@ -138,7 +138,7 @@ const hygiene=
       "discountedPrice": 80,
       "price": 110,
       "discountPersent": 27,
-      "size": "Pack of 10",
+      "sizes": "Pack of 10",
       "quantity": 80,
       "level1Category": "bathbodyhygiene",
       "level2Category": "Hygiene"
@@ -151,7 +151,7 @@ const hygiene=
       "discountedPrice": 45,
       "price": 60,
       "discountPersent": 25,
-      "size": "50ml",
+      "sizes": "50ml",
       "quantity": 80,
       "level1Category": "bathbodyhygiene",
       "level2Category": "Hygiene"
@@ -164,7 +164,7 @@ const hygiene=
       "discountedPrice": 45,
       "price": 60,
       "discountPersent": 25,
-      "size": "50ml",
+      "sizes": "50ml",
       "quantity": 80,
       "level1Category": "bathbodyhygiene",
       "level2Category": "Hygiene"
@@ -177,7 +177,7 @@ const hygiene=
       "discountedPrice": 45,
       "price": 60,
       "discountPersent": 25,
-      "size": "50ml",
+      "sizes": "50ml",
       "quantity": 80,
       "level1Category": "bathbodyhygiene",
       "level2Category": "Hygiene"

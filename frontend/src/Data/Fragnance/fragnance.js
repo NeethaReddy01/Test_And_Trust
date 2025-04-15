@@ -8,7 +8,7 @@ const fragnance = [
       "discountedPrice": 161,
       "price": 199,
       "discount": 19,
-      "size": "10ml",
+      "sizes": "10ml",
       "quantity": 85,
       "level1Category": "perfume",
       "level2Category": "Fragrance"
@@ -21,7 +21,7 @@ const fragnance = [
       "discountedPrice": 113,
       "price": 149,
       "discount": 24,
-      "size": "15ml",
+      "sizes": "15ml",
       "quantity": 85,
       "level1Category": "perfume",
       "level2Category": "Fragrance"
@@ -34,7 +34,7 @@ const fragnance = [
       "discountedPrice": 117,
       "price": 149,
       "discount": 21,
-      "size": "10ml",
+      "sizes": "10ml",
       "quantity": 85,
       "level1Category": "perfume",
       "level2Category": "Fragrance"
@@ -47,7 +47,7 @@ const fragnance = [
       "discountedPrice": 83,
       "price": 99,
       "discount": 16,
-      "size": "5ml",
+      "sizes": "5ml",
       "quantity": 85,
       "level1Category": "perfume",
       "level2Category": "Fragrance"
@@ -60,7 +60,7 @@ const fragnance = [
       "discountedPrice": 127,
       "price": 149,
       "discount": 15,
-      "size": "10ml",
+      "sizes": "10ml",
       "quantity": 85,
       "level1Category": "perfume",
       "level2Category": "Fragrance"
@@ -73,7 +73,7 @@ const fragnance = [
       "discountedPrice": 81,
       "price": 99,
       "discount": 18,
-      "size": "12ml",
+      "sizes": "12ml",
       "quantity": 85,
       "level1Category": "perfume",
       "level2Category": "Fragrance"
@@ -86,7 +86,7 @@ const fragnance = [
       "discountedPrice": 110,
       "price": 149,
       "discount": 26,
-      "size": "5ml",
+      "sizes": "5ml",
       "quantity": 85,
       "level1Category": "perfume",
       "level2Category": "Fragrance"
@@ -99,7 +99,7 @@ const fragnance = [
       "discountedPrice": 173,
       "price": 199,
       "discount": 13,
-      "size": "15ml",
+      "sizes": "15ml",
       "quantity": 85,
       "level1Category": "perfume",
       "level2Category": "Fragrance"
@@ -112,7 +112,7 @@ const fragnance = [
       "discountedPrice": 74,
       "price": 99,
       "discount": 25,
-      "size": "10ml",
+      "sizes": "10ml",
       "quantity": 85,
       "level1Category": "perfume",
       "level2Category": "Fragrance"
@@ -125,7 +125,7 @@ const fragnance = [
       "discountedPrice": 141,
       "price": 199,
       "discount": 29,
-      "size": "5ml",
+      "sizes": "5ml",
       "quantity": 85,
       "level1Category": "perfume",
       "level2Category": "Fragrance"
@@ -138,7 +138,7 @@ const fragnance = [
       "discountedPrice": 119,
       "price": 149,
       "discount": 20,
-      "size": "8ml",
+      "sizes": "8ml",
       "quantity": 85,
       "level1Category": "perfume",
       "level2Category": "Fragrance"
@@ -151,7 +151,7 @@ const fragnance = [
       "discountedPrice": 171,
       "price": 199,
       "discount": 14,
-      "size": "10ml",
+      "sizes": "10ml",
       "quantity": 85,
       "level1Category": "perfume",
       "level2Category": "Fragrance"
@@ -164,7 +164,7 @@ const fragnance = [
       "discountedPrice": 131,
       "price": 149,
       "discount": 12,
-      "size": "15ml",
+      "sizes": "15ml",
       "quantity": 85,
       "level1Category": "perfume",
       "level2Category": "Fragrance"
@@ -177,7 +177,7 @@ const fragnance = [
       "discountedPrice": 153,
       "price": 199,
       "discount": 23,
-      "size": "10ml",
+      "sizes": "10ml",
       "quantity": 85,
       "level1Category": "perfume",
       "level2Category": "Fragrance"
@@ -190,7 +190,7 @@ const fragnance = [
       "discountedPrice": 89,
       "price": 99,
       "discount": 10,
-      "size": "10ml",
+      "sizes": "10ml",
       "quantity": 85,
       "level1Category": "perfume",
       "level2Category": "Fragrance"
@@ -203,7 +203,7 @@ const fragnance = [
       "discountedPrice": 107,
       "price": 149,
       "discount": 28,
-      "size": "5ml",
+      "sizes": "5ml",
       "quantity": 85,
       "level1Category": "perfume",
       "level2Category": "Fragrance"
@@ -216,7 +216,7 @@ const fragnance = [
       "discountedPrice": 139,
       "price": 199,
       "discount": 30,
-      "size": "8ml",
+      "sizes": "8ml",
       "quantity": 85,
       "level1Category": "perfume",
       "level2Category": "Fragrance"
@@ -229,7 +229,7 @@ const fragnance = [
       "discountedPrice": 84,
       "price": 99,
       "discount": 15,
-      "size": "5ml",
+      "sizes": "5ml",
       "quantity": 85,
       "level1Category": "perfume",
       "level2Category": "Fragrance"
@@ -242,7 +242,7 @@ const fragnance = [
       "discountedPrice": 121,
       "price": 149,
       "discount": 19,
-      "size": "10ml",
+      "sizes": "10ml",
       "quantity": 85,
       "level1Category": "perfume",
       "level2Category": "Fragrance"
@@ -255,7 +255,7 @@ const fragnance = [
       "discountedPrice": 177,
       "price": 199,
       "discount": 11,
-      "size": "5ml",
+      "sizes": "5ml",
       "quantity": 85,
       "level1Category": "perfume",
       "level2Category": "Fragrance"
@@ -268,7 +268,7 @@ const fragnance = [
       "discountedPrice": 116,
       "price": 149,
       "discount": 22,
-      "size": "15ml",
+      "sizes": "15ml",
       "quantity": 85,
       "level1Category": "perfume",
       "level2Category": "Fragrance"
@@ -281,7 +281,7 @@ const fragnance = [
       "discountedPrice": 86,
       "price": 99,
       "discount": 13,
-      "size": "12ml",
+      "sizes": "12ml",
       "quantity": 85,
       "level1Category": "perfume",
       "level2Category": "Fragrance"
@@ -294,7 +294,7 @@ const fragnance = [
       "discountedPrice": 109,
       "price": 149,
       "discount": 27,
-      "size": "11ml",
+      "sizes": "11ml",
       "quantity": 85,
       "level1Category": "perfume",
       "level2Category": "Fragrance"
@@ -307,7 +307,7 @@ const fragnance = [
       "discountedPrice": 159,
       "price": 199,
       "discount": 20,
-      "size": "5ml",
+      "sizes": "5ml",
       "quantity": 85,
       "level1Category": "perfume",
       "level2Category": "Fragrance"
@@ -320,7 +320,7 @@ const fragnance = [
       "discountedPrice": 128,
       "price": 149,
       "discount": 14,
-      "size": "6ml",
+      "sizes": "6ml",
       "quantity": 85,
       "level1Category": "perfume",
       "level2Category": "Fragrance"
@@ -333,7 +333,7 @@ const fragnance = [
       "discountedPrice": 69,
       "price": 99,
       "discount": 30,
-      "size": "8ml",
+      "sizes": "8ml",
       "quantity": 85,
       "level1Category": "perfume",
       "level2Category": "Fragrance"
@@ -346,7 +346,7 @@ const fragnance = [
       "discountedPrice": 130,
       "price": 149,
       "discount": 13,
-      "size": "5ml",
+      "sizes": "5ml",
       "quantity": 85,
       "level1Category": "perfume",
       "level2Category": "Fragrance"
@@ -359,7 +359,7 @@ const fragnance = [
       "discountedPrice": 78,
       "price": 99,
       "discount": 21,
-      "size": "10ml",
+      "sizes": "10ml",
       "quantity": 85,
       "level1Category": "perfume",
       "level2Category": "Fragrance"
@@ -372,7 +372,7 @@ const fragnance = [
       "discountedPrice": 165,
       "price": 199,
       "discount": 17,
-      "size": "5ml",
+      "sizes": "5ml",
       "quantity": 85,
       "level1Category": "perfume",
       "level2Category": "Fragrance"

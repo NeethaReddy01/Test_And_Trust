@@ -7,7 +7,7 @@ const haircare = [
       "discountedPrice": 10,
       "price": 10,
       "discountPersent": 0,
-      "size": "20ml",
+      "sizes": "20ml",
       "quantity": 20,
       "level1Category": "PersonalCare",
       "level2Category": "Haircare"
@@ -20,7 +20,7 @@ const haircare = [
       "discountedPrice": 187,
       "price": 233,
       "discountPersent": 20,
-      "size": "10ml",
+      "sizes": "10ml",
       "quantity": 20,
       "level1Category": "PersonalCare",
       "level2Category": "Haircare"
@@ -33,7 +33,7 @@ const haircare = [
       "discountedPrice": 30,
       "price": 40,
       "discountPersent": 25,
-      "size": "25ml",
+      "sizes": "25ml",
       "quantity": 20,
       "level1Category": "PersonalCare",
       "level2Category": "Haircare"
@@ -46,7 +46,7 @@ const haircare = [
       "discountedPrice": 90,
       "price": 99,
       "discountPersent": 10,
-      "size": "20ml",
+      "sizes": "20ml",
       "quantity": 20,
       "level1Category": "PersonalCare",
       "level2Category": "Haircare"
@@ -59,7 +59,7 @@ const haircare = [
       "discountedPrice": 94,
       "price": 99,
       "discountPersent": 5,
-      "size": "25ml",
+      "sizes": "25ml",
       "quantity": 20,
       "level1Category": "PersonalCare",
       "level2Category": "Haircare"
@@ -72,7 +72,7 @@ const haircare = [
       "discountedPrice": 50,
       "price": 99,
       "discountPersent": 50,
-      "size": "20ml",
+      "sizes": "20ml",
       "quantity": 20,
       "level1Category": "PersonalCare",
       "level2Category": "Haircare"
@@ -85,7 +85,7 @@ const haircare = [
       "discountedPrice": 34,
       "price": 40,
       "discountPersent": 15,
-      "size": "25ml",
+      "sizes": "25ml",
       "quantity": 20,
       "level1Category": "PersonalCare",
       "level2Category": "Haircare"
@@ -98,7 +98,7 @@ const haircare = [
       "discountedPrice": 187,
       "price": 233,
       "discountPersent": 20,
-      "size": "10ml",
+      "sizes": "10ml",
       "quantity": 20,
       "level1Category": "PersonalCare",
       "level2Category": "Haircare"
@@ -111,7 +111,7 @@ const haircare = [
       "discountedPrice": 90,
       "price": 99,
       "discountPersent": 10,
-      "size": "20ml",
+      "sizes": "20ml",
       "quantity": 20,
       "level1Category": "PersonalCare",
       "level2Category": "Haircare"
@@ -124,7 +124,7 @@ const haircare = [
       "discountedPrice": 34,
       "price": 40,
       "discountPersent": 15,
-      "size": "25ml",
+      "sizes": "25ml",
       "quantity": 20,
       "level1Category": "PersonalCare",
       "level2Category": "Haircare"
@@ -137,7 +137,7 @@ const haircare = [
       "discountedPrice": 187,
       "price": 233,
       "discountPersent": 20,
-      "size": "10ml",
+      "sizes": "10ml",
       "quantity": 20,
       "level1Category": "PersonalCare",
       "level2Category": "Haircare"
@@ -150,7 +150,7 @@ const haircare = [
       "discountedPrice": 90,
       "price": 99,
       "discountPersent": 10,
-      "size": "20ml",
+      "sizes": "20ml",
       "quantity": 20,
       "level1Category": "PersonalCare",
       "level2Category": "Haircare"
@@ -163,7 +163,7 @@ const haircare = [
       "discountedPrice": 34,
       "price": 40,
       "discountPersent": 15,
-      "size": "25ml",
+      "sizes": "25ml",
       "quantity": 20,
       "level1Category": "PersonalCare",
       "level2Category": "Haircare"

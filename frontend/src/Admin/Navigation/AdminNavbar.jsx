@@ -211,7 +211,7 @@ export default function AdminNavbar({ handleSideBarViewInMobile }) {
           >
             <MenuIcon />
           </IconButton>}
-          <Avatar alt="T&T" src="frontend/public/logo192.png"  onClick={handleAvatarClick}/>
+          <Avatar alt="T&T" src="/logo192.png"  onClick={handleAvatarClick}/>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
