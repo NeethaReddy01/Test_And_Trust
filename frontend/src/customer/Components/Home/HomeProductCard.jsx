@@ -6,7 +6,7 @@ const HomeProductCard = ({ product }) => {
   const navigate = useNavigate();
   const fallbackImage =
     "https://via.placeholder.com/150?text=No+Image";
-    console.log("home product " , product);
+    // console.log("home product " , product);
 
   return (
     <div
