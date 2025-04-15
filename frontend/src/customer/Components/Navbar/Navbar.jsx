@@ -1,6 +1,5 @@
 import { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
-import { images } from "..";
 
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -13,12 +12,12 @@ function Navbar() {
     <Fragment>
       {/* Navigation bar */}
       <nav className="bg-blue-700 text-white border-b border-gray-200 lg:px-20 px-2">
-        <div className="mx-auto px-4">
-          <div className="flex justify-between items-center">
+        <div className="mx-auto px-4 ">
+          <div className="flex justify-between items-center ">
             {/* Logo */}
             <Link to="/" className="flex items-center py-6">
               <img
-                src={images}
+                src="/logo192.png"
                 alt="T&T"
                 className="h-8 w-8 mr-2"
               />
