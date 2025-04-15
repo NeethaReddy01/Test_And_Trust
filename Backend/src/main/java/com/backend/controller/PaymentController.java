@@ -63,7 +63,7 @@ public class PaymentController {
 		      RazorpayClient razorpay = new RazorpayClient(apiKey, apiSecret);
 
 		      JSONObject paymentLinkRequest = new JSONObject();
-		      paymentLinkRequest.put("amount",order.getTotalPrice()* 100);
+		      paymentLinkRequest.put("amount",order.getTotalDiscountedPrice()* 100);
 		      paymentLinkRequest.put("currency","INR");    
 //		      paymentLinkRequest.put("expire_by",1691097057);
 //		      paymentLinkRequest.put("reference_id",order.getId().toString());
@@ -145,7 +145,6 @@ public class PaymentController {
 	      
 	} catch (Exception e) {
 		System.out.println("errrr payment -------- ");
-		new RedirectView("https://shopwithzosh.vercel.app/payment/failed");
 		throw new RazorpayException(e.getMessage());
 	}
 
