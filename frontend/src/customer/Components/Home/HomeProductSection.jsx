@@ -3,11 +3,13 @@ import HomeProductCard from "./HomeProductCard";
 import "./HomeProductSection.css";
 import { Button } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
-const HomeProductSection = ({ section,category , data }) => {
+const HomeProductSection = ({ section, category, data }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [maxIndex, setMaxIndex] = useState(0);
+  const carouselRef = useRef(null);
+  
   const responsive = {
     0: { items: 2 },
     568: { items: 3 },
@@ -26,23 +28,39 @@ const HomeProductSection = ({ section,category , data }) => {
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [data.length]);
+  }, [data?.length]);
 
-  const slidePrev = () => setActiveIndex(Math.max(0, activeIndex - 1));
-  const slideNext = () => setActiveIndex(Math.min(maxIndex, activeIndex + 1));
-  const syncActiveIndex = ({ item }) => setActiveIndex(item);
-  const items = data.map((item) => (
-    <div key={item.id}>
+  const slidePrev = () => {
+    if (carouselRef.current) {
+      carouselRef.current.slidePrev();
+      setActiveIndex(prev => Math.max(0, prev - 1));
+    }
+  };
+
+  const slideNext = () => {
+    if (carouselRef.current) {
+      carouselRef.current.slideNext();
+      setActiveIndex(prev => Math.min(maxIndex, prev + 1));
+    }
+  };
+
+  const syncActiveIndex = ({ item }) => {
+    setActiveIndex(item);
+    console.log("Carousel changed to index:", item);
+  };
+
+  const items = data?.map((item) => (
+    <div key={item.id || item._id} className="carousel-item">
       <HomeProductCard product={item} />
     </div>
   ));
 
   return (
-    
     <div className="relative px-4 sm:px-6 lg:px-8">
       <h2 className="text-2xl font-extrabold text-gray-900 py-5">{section}</h2>
       <div className="relative border p-5">
         <AliceCarousel
+          ref={carouselRef}
           disableButtonsControls
           disableDotsControls
           mouseTracking
@@ -60,27 +78,54 @@ const HomeProductSection = ({ section,category , data }) => {
             variant="contained"
             sx={{
               position: "absolute",
-              top: "8rem",
-              right: "0rem",
-              transform: "translateX(50%) rotate(90deg)",
+              top: "50%",
+              right: "0",
+              transform: "translateY(-50%)",
+              zIndex: 10,
+              minWidth: "40px",
+              width: "40px",
+              height: "40px",
+              borderRadius: "50%",
+              padding: 0,
+              backgroundColor: "white",
+              color: "#000",
+              boxShadow: "0px 0px 5px rgba(0,0,0,0.2)",
+              "&:hover": {
+                backgroundColor: "#f5f5f5",
+              }
             }}
           >
-            <ArrowForwardIosIcon sx={{ transform: "rotate(-90deg)" }} />
+            <ArrowForwardIosIcon fontSize="small" />
           </Button>
         )}
 
         {activeIndex > 0 && (
           <Button
             onClick={slidePrev}
-            variant="contained"
+            variant="contained" 
             sx={{
               position: "absolute",
-              top: "8rem",
-              left: "0rem",
-              transform: "translateX(-50%) rotate(90deg)",
+              top: "50%",
+              left: "0",
+              transform: "translateY(-50%)",
+              zIndex: 10,
+              minWidth: "40px",
+              width: "40px",
+              height: "40px",
+              borderRadius: "50%",
+              padding: 0,
+              backgroundColor: "white",
+              color: "#000",
+              boxShadow: "0px 0px 5px rgba(0,0,0,0.2)",
+              "&:hover": {
+                backgroundColor: "#f5f5f5",
+              }
             }}
           >
-            <ArrowForwardIosIcon sx={{ transform: "rotate(90deg)" }} />
+            <ArrowForwardIosIcon 
+              fontSize="small"
+              sx={{ transform: "rotate(180deg)" }}
+            />
           </Button>
         )}
       </div>
