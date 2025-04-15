@@ -7,7 +7,7 @@ const MakeupProducts = [
         "disscountedPrice":80,
         "price": "200",
         "discountPersent": "60",
-        "size": "10 gm",
+        "sizes": "10 gm",
         "quantity":20,
         "level1Category":"makeupproducts",
         "level2Category":"Makeup"
@@ -20,7 +20,7 @@ const MakeupProducts = [
         "disscountedPrice":136,
         "price": "170",
         "discountPersent": "20",
-        "size": "15 gm",
+        "sizes": "15 gm",
         "quantity":15,
         "level1Category":"makeupproducts",
         "level2Category":"Makeup"
@@ -34,7 +34,7 @@ const MakeupProducts = [
         "disscountedPrice": "192",
         "price": "320",
         "discountPersent": "40",
-        "size": "20gm",
+        "sizes": "20gm",
         "quantity":25,
         "level1Category":"makeupproducts",
         "level2Category":"Makeup"
@@ -47,7 +47,7 @@ const MakeupProducts = [
         "disscountedPrice": "70",
         "price": "250",
         "discountPersent": "70",
-        "size": "20gm",
+        "sizes": "20gm",
         "quantity":17,
         "level1Category":"makeupproducts",
         "level2Category":"Makeup"
@@ -60,7 +60,7 @@ const MakeupProducts = [
         "disscountedPrice": "169",
         "price": "325",
         "discountPersent": "48",
-        "size": "6gm",
+        "sizes": "6gm",
         "quantity":14,
         "level1Category":"makeupproducts",
         "level2Category":"Makeup"
@@ -73,7 +73,7 @@ const MakeupProducts = [
         "disscountedPrice": "126",
         "price": "252",
         "discountPersent": "50",
-        "size": "75ml",
+        "sizes": "75ml",
         "quantity":19,
         "level1Category":"makeupproducts",
         "level2Category":"Makeup"
@@ -86,7 +86,7 @@ const MakeupProducts = [
         "disscountedPrice": "192",
         "price": "240",
         "discountPersent": "20",
-        "size": "10g",
+        "sizes": "10g",
         "quantity":20,
         "level1Category":"makeupproducts",
         "level2Category":"Makeup"
@@ -99,7 +99,7 @@ const MakeupProducts = [
         "disscountedPrice": "360",
         "price": "450",
         "discountPersent": "20",
-        "size": "1 unit",
+        "sizes": "1 unit",
         "quantity":11,
         "level1Category":"makeupproducts",
         "level2Category":"Makeup"
@@ -112,7 +112,7 @@ const MakeupProducts = [
         "disscountedPrice": "110",
         "price": "200",
         "discountPersent": "45",
-        "size":"30 wipes",
+        "sizes":"30 wipes",
         "quantity":23,
         "level1Category":"makeupproducts",
         "level2Category":"Makeup"
@@ -125,7 +125,7 @@ const MakeupProducts = [
         "disscountedPrice": "90",
         "price": "180",
         "discountPersent": "50",
-        "size":"1ml",
+        "sizes":"1ml",
         "quantity":19,
         "level1Category":"makeupproducts",
         "level2Category":"Makeup"
@@ -138,7 +138,7 @@ const MakeupProducts = [
         "disscountedPrice": "117",
         "price": "195",
         "discountPersent": "40",
-        "size":"4gm",
+        "sizes":"4gm",
         "quantity":19,
         "level1Category":"makeupproducts",
         "level2Category":"Makeup"
@@ -151,7 +151,7 @@ const MakeupProducts = [
         "disscountedPrice": "109",
         "price": "149",
         "discountPersent": "27",
-        "size":"5gm",
+        "sizes":"5gm",
         "quantity":25,
         "level1Category":"makeupproducts",
         "level2Category":"Makeup"
@@ -164,7 +164,7 @@ const MakeupProducts = [
         "disscountedPrice": "172",
         "price": "249",
         "discountPersent": "31",
-        "size":"10gm",
+        "sizes":"10gm",
         "quantity":31,
         "level1Category":"makeupproducts",
         "level2Category":"Makeup"
@@ -177,7 +177,7 @@ const MakeupProducts = [
         "disscountedPrice": "146",
         "price": "275",
         "discountPersent": "47",
-        "size":"30ml",
+        "sizes":"30ml",
         "quantity":4,
         "level1Category":"makeupproducts",
         "level2Category":"Makeup"
@@ -190,7 +190,7 @@ const MakeupProducts = [
         "disscountedPrice": "315",
         "price": "450",
         "discountPersent": "30",
-        "size":"10gm",
+        "sizes":"10gm",
         "quantity":49,
         "level1Category":"makeupproducts",
         "level2Category":"Makeup"
@@ -203,7 +203,7 @@ const MakeupProducts = [
         "disscountedPrice": "215",
         "price": "499",
         "discountPersent": "57",
-        "size":"12ml",
+        "sizes":"12ml",
         "quantity":29,
         "level1Category":"makeupproducts",
         "level2Category":"Makeup"
@@ -216,7 +216,7 @@ const MakeupProducts = [
         "disscountedPrice": "232",
         "price": "799",
         "discountPersent": "71",
-        "size":"1ml",
+        "sizes":"1ml",
         "quantity":11,
         "level1Category":"makeupproducts",
         "level2Category":"Makeup"
@@ -229,7 +229,7 @@ const MakeupProducts = [
         "disscountedPrice": "221",
         "price": "299",
         "discountPersent": "26",
-        "size":"5ml",
+        "sizes":"5ml",
         "quantity":32,
         "level1Category":"makeupproducts",
         "level2Category":"Makeup"
@@ -242,7 +242,7 @@ const MakeupProducts = [
         "disscountedPrice": "172",
         "price": "399",
         "discountPersent": "57",
-        "size":"5g",
+        "sizes":"5g",
         "quantity":3,
         "level1Category":"makeupproducts",
         "level2Category":"Makeup"
@@ -255,7 +255,7 @@ const MakeupProducts = [
         "disscountedPrice": "79",
         "price": "100",
         "discountPersent": "21",
-        "size":"25 wipes",
+        "sizes":"25 wipes",
         "quantity":10,
         "level1Category":"makeupproducts",
         "level2Category":"Makeup"
@@ -268,7 +268,7 @@ const MakeupProducts = [
         "disscountedPrice": "99",
         "price": "199",
         "discountPersent": "50",
-        "size":"8gm",
+        "sizes":"8gm",
         "quantity":25,
         "level1Category":"makeupproducts",
         "level2Category":"Makeup"

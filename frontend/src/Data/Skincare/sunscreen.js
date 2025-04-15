@@ -7,7 +7,7 @@ export const sunscreen = [
     "discountedPrice": 41,
     "price": 94,
     "discountPersent": 56,
-    "size": "20g",
+    "sizes": "20g",
     "quantity": 70,
     "level1Category": "skincare",
     "level2Category": "Sunscreen"
@@ -20,7 +20,7 @@ export const sunscreen = [
     "discountedPrice": 54,
     "price": 85,
     "discountPersent": 37,
-    "size": "25g",
+    "sizes": "25g",
     "quantity": 100,
     "level1Category": "skincare",
     "level2Category": "Sunscreen"
@@ -33,7 +33,7 @@ export const sunscreen = [
     "discountedPrice": 45,
     "price": 90,
     "discountPersent": 50,
-    "size": "20g",
+    "sizes": "20g",
     "quantity": 50,
     "level1Category": "skincare",
     "level2Category": "Sunscreen"
@@ -46,7 +46,7 @@ export const sunscreen = [
     "discountedPrice": 54,
     "price": 85,
     "discountPersent": 37,
-    "size": "20g",
+    "sizes": "20g",
     "quantity": 80,
     "level1Category": "skincare",
     "level2Category": "Sunscreen"
@@ -59,7 +59,7 @@ export const sunscreen = [
     "discountedPrice": 46,
     "price": 70,
     "discountPersent": 35,
-    "size": "20g",
+    "sizes": "20g",
     "quantity": 50,
     "level1Category": "skincare",
     "level2Category": "Sunscreen"
@@ -72,7 +72,7 @@ export const sunscreen = [
     "discountedPrice": 50,
     "price": 100,
     "discountPersent": 50,
-    "size": "20g",
+    "sizes": "20g",
     "quantity": 70,
     "level1Category": "skincare",
     "level2Category": "Sunscreen"
@@ -85,7 +85,7 @@ export const sunscreen = [
     "discountedPrice": 94,
     "price": 47,
     "discountPersent": 50,
-    "size": "20g",
+    "sizes": "20g",
     "quantity": 100,
     "level1Category": "skincare",
     "level2Category": "Sunscreen"
@@ -98,7 +98,7 @@ export const sunscreen = [
     "discountedPrice": 37,
     "price": 100,
     "discountPersent": 63,
-    "size": "20g",
+    "sizes": "20g",
     "quantity": 100,
     "level1Category": "skincare",
     "level2Category": "Sunscreen"
@@ -111,7 +111,7 @@ export const sunscreen = [
     "discountedPrice": 59,
     "price": 90,
     "discountPersent": 35,
-    "size": "20g",
+    "sizes": "20g",
     "quantity": 50,
     "level1Category": "skincare",
     "level2Category": "Sunscreen"
@@ -124,7 +124,7 @@ export const sunscreen = [
     "discountedPrice": 43,
     "price": 86,
     "discountPersent": 50,
-    "size": "20g",
+    "sizes": "20g",
     "quantity": 100,
     "level1Category": "skincare",
     "level2Category": "Sunscreen"
@@ -137,7 +137,7 @@ export const sunscreen = [
     "discountedPrice": 40,
     "price": 100,
     "discountPersent": 60,
-    "size": "20ml",
+    "sizes": "20ml",
     "quantity": 90,
     "level1Category": "skincare",
     "level2Category": "Sunscreen"
@@ -150,7 +150,7 @@ export const sunscreen = [
     "discountedPrice": 35,
     "price": 70,
     "discountPersent": 50,
-    "size": "20ml",
+    "sizes": "20ml",
     "quantity": 90,
     "level1Category": "skincare",
     "level2Category": "Sunscreen"
@@ -163,7 +163,7 @@ export const sunscreen = [
     "discountedPrice": 45,
     "price": 90,
     "discountPersent": 50,
-    "size": "20g",
+    "sizes": "20g",
     "quantity": 100,
     "level1Category": "skincare",
     "level2Category": "Sunscreen"
@@ -176,7 +176,7 @@ export const sunscreen = [
     "discountedPrice": 45,
     "price": 100,
     "discountPersent": 55,
-    "size": "20g",
+    "sizes": "20g",
     "quantity": 100,
     "level1Category": "skincare",
     "level2Category": "Sunscreen"
@@ -189,7 +189,7 @@ export const sunscreen = [
     "discountedPrice": 40,
     "price": 80,
     "discountPersent": 50,
-    "size": "15ml",
+    "sizes": "15ml",
     "quantity": 70,
     "level1Category": "skincare",
     "level2Category": "Sunscreen"
@@ -202,7 +202,7 @@ export const sunscreen = [
     "discountedPrice": 39,
     "price": 100,
     "discountPersent": 61,
-    "size": "20g",
+    "sizes": "20g",
     "quantity": 60,
     "level1Category": "skincare",
     "level2Category": "Sunscreen"
@@ -215,7 +215,7 @@ export const sunscreen = [
     "discountedPrice": 54,
     "price": 99,
     "discountPersent": 45,
-    "size": "20g",
+    "sizes": "20g",
     "quantity": 70,
     "level1Category": "skincare",
     "level2Category": "Sunscreen"
@@ -228,7 +228,7 @@ export const sunscreen = [
     "discountedPrice": 60,
     "price": 100,
     "discountPersent": 40,
-    "size": "20ml",
+    "sizes": "20ml",
     "quantity": 100,
     "level1Category": "skincare",
     "level2Category": "Sunscreen"

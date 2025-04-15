@@ -7,7 +7,7 @@ const serum = [
     "discountedPrice": 49,
     "price": 65,
     "discountPersent": 25,
-    "size": "10ml",
+    "sizes": "10ml",
     "quantity": 50,
     "level1Category": "skincare",
     "level2Category": "Serum"
@@ -20,7 +20,7 @@ const serum = [
     "discountedPrice": 59,
     "price": 79,
     "discountPersent": 25,
-    "size": "10ml",
+    "sizes": "10ml",
     "quantity": 120,
     "level1Category": "skincare",
     "level2Category": "Serum"
@@ -33,7 +33,7 @@ const serum = [
     "discountedPrice": 55,
     "price": 69,
     "discountPersent": 20,
-    "size": "5ml",
+    "sizes": "5ml",
     "quantity": 100,
     "level1Category": "skincare",
     "level2Category": "Serum"
@@ -46,7 +46,7 @@ const serum = [
     "discountedPrice": 59,
     "price": 74,
     "discountPersent": 20,
-    "size": "7ml",
+    "sizes": "7ml",
     "quantity": 90,
     "level1Category": "skincare",
     "level2Category": "Serum"
@@ -59,7 +59,7 @@ const serum = [
     "discountedPrice": 39,
     "price": 52,
     "discountPersent": 25,
-    "size": "7ml",
+    "sizes": "7ml",
     "quantity": 110,
     "level1Category": "skincare",
     "level2Category": "Serum"
@@ -72,7 +72,7 @@ const serum = [
     "discountedPrice": 69,
     "price": 92,
     "discountPersent": 25,
-    "size": "10ml",
+    "sizes": "10ml",
     "quantity": 75,
     "level1Category": "skincare",
     "level2Category": "Serum"
@@ -85,7 +85,7 @@ const serum = [
     "discountedPrice": 39,
     "price": 49,
     "discountPersent": 20,
-    "size": "7ml",
+    "sizes": "7ml",
     "quantity": 50,
     "level1Category": "skincare",
     "level2Category": "Serum"
@@ -98,7 +98,7 @@ const serum = [
     "discountedPrice": 59,
     "price": 74,
     "discountPersent": 20,
-    "size": "10ml",
+    "sizes": "10ml",
     "quantity": 85,
     "level1Category": "skincare",
     "level2Category": "Serum"
@@ -111,7 +111,7 @@ const serum = [
     "discountedPrice": 69,
     "price": 92,
     "discountPersent": 25,
-    "size": "10ml",
+    "sizes": "10ml",
     "quantity": 160,
     "level1Category": "skincare",
     "level2Category": "Serum"
@@ -124,7 +124,7 @@ const serum = [
     "discountedPrice": 41,
     "price": 59,
     "discountPersent": 31,
-    "size": "10ml",
+    "sizes": "10ml",
     "quantity": 100,
     "level1Category": "skincare",
     "level2Category": "Serum"
@@ -137,7 +137,7 @@ const serum = [
     "discountedPrice": 44,
     "price": 59,
     "discountPersent": 25,
-    "size": "10ml",
+    "sizes": "10ml",
     "quantity": 95,
     "level1Category": "skincare",
     "level2Category": "Serum"
@@ -150,7 +150,7 @@ const serum = [
     "discountedPrice": 29,
     "price": 39,
     "discountPersent": 26,
-    "size": "10ml",
+    "sizes": "10ml",
     "quantity": 40,
     "level1Category": "skincare",
     "level2Category": "Serum"
@@ -163,7 +163,7 @@ const serum = [
     "discountedPrice": 35,
     "price": 49,
     "discountPersent": 29,
-    "size": "7ml",
+    "sizes": "7ml",
     "quantity": 55,
     "level1Category": "skincare",
     "level2Category": "Serum"
@@ -176,7 +176,7 @@ const serum = [
     "discountedPrice": 34,
     "price": 49,
     "discountPersent": 31,
-    "size": "7ml",
+    "sizes": "7ml",
     "quantity": 80,
     "level1Category": "skincare",
     "level2Category": "Serum"
@@ -189,7 +189,7 @@ const serum = [
     "discountedPrice": 37,
     "price": 49,
     "discountPersent": 24,
-    "size": "7ml",
+    "sizes": "7ml",
     "quantity": 100,
     "level1Category": "skincare",
     "level2Category": "Serum"
@@ -202,7 +202,7 @@ const serum = [
     "discountedPrice": 25,
     "price": 39,
     "discountPersent": 36,
-    "size": "7ml",
+    "sizes": "7ml",
     "quantity": 90,
     "level1Category": "skincare",
     "level2Category": "Serum"
@@ -215,7 +215,7 @@ const serum = [
     "discountedPrice": 34,
     "price": 49,
     "discountPersent": 30,
-    "size": "10ml",
+    "sizes": "10ml",
     "quantity": 150,
     "level1Category": "skincare",
     "level2Category": "Serum"
@@ -228,7 +228,7 @@ const serum = [
     "discountedPrice": 25,
     "price": 39,
     "discountPersent": 35,
-    "size": "10ml",
+    "sizes": "10ml",
     "quantity": 50,
     "level1Category": "skincare",
     "level2Category": "Serum"
@@ -241,7 +241,7 @@ const serum = [
     "discountedPrice": 41,
     "price": 69,
     "discountPersent": 40,
-    "size": "10ml",
+    "sizes": "10ml",
     "quantity": 70,
     "level1Category": "skincare",
     "level2Category": "Serum"
@@ -254,7 +254,7 @@ const serum = [
     "discountedPrice": 30,
     "price": 59,
     "discountPersent": 50,
-    "size": "7ml",
+    "sizes": "7ml",
     "quantity": 90,
     "level1Category": "skincare",
     "level2Category": "Serum"
@@ -267,7 +267,7 @@ const serum = [
     "discountedPrice": 39,
     "price": 49,
     "discountPersent": 20,
-    "size": "7ml",
+    "sizes": "7ml",
     "quantity": 110,
     "level1Category": "skincare",
     "level2Category": "Serum"
@@ -280,7 +280,7 @@ const serum = [
     "discountedPrice": 39,
     "price": 65,
     "discountPersent": 40,
-    "size": "10ml",
+    "sizes": "10ml",
     "quantity": 80,
     "level1Category": "skincare",
     "level2Category": "Serum"
@@ -293,7 +293,7 @@ const serum = [
     "discountedPrice": 39,
     "price": 59,
     "discountPersent": 34,
-    "size": "10ml",
+    "sizes": "10ml",
     "quantity": 75,
     "level1Category": "skincare",
     "level2Category": "Serum"
@@ -306,7 +306,7 @@ const serum = [
     "discountedPrice": 39,
     "price": 59,
     "discountPersent": 34,
-    "size": "10ml",
+    "sizes": "10ml",
     "quantity": 30,
     "level1Category": "skincare",
     "level2Category": "Serum"
