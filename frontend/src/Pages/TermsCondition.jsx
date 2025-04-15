@@ -3,7 +3,7 @@ import { Scroll, Shield, UserCheck, BadgeCheck, Scale, Heart } from 'lucide-reac
 
 function TermsCondition() {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-pink-100 via-purple-200 to-purple-300">
+        <div className="bg-gradient-to-b from-[#f9f9fb] to-white min-h-screen">
             {/* Header */}
             <header className="bg-white/80 backdrop-blur-sm shadow-sm">
                 <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
