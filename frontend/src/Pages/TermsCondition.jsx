@@ -2,7 +2,6 @@ import React from 'react';
 import { Scroll, Shield, UserCheck, BadgeCheck, Scale, Heart } from 'lucide-react';
 
 function TermsCondition() {
-function TermsCondition() {
     return (
         <div className="min-h-screen bg-gradient-to-br from-pink-100 via-purple-200 to-purple-300">
             {/* Header */}
