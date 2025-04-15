@@ -24,7 +24,7 @@ import static org.mockito.Mockito.*;
 class RatingControllerTest {
 
     @InjectMocks
-    private RatingController ratingController; // ✅ FIXED HERE
+    private RatingController ratingController; 
 
     @Mock
     private UserService userService;

@@ -28,7 +28,7 @@ public class RatingServiceImplementationTest {
     private ProductService productService;
 
     @InjectMocks
-    private RatingServiceImplementation ratingService; // ✅ FIXED HERE
+    private RatingServiceImplementation ratingService; 
 
     private RatingRequest ratingRequest;
     private User user;
