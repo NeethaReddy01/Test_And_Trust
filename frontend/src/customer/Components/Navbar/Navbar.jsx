@@ -17,7 +17,7 @@ function Navbar() {
             {/* Logo */}
             <Link to="/" className="flex items-center py-6">
               <img
-                src="/logo192.png"
+                src="frontend\public\logo192.png"
                 alt="T&T"
                 className="h-8 w-8 mr-2"
               />
