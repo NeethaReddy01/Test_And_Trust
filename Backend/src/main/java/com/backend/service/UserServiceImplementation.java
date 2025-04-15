@@ -49,10 +49,7 @@ public class UserServiceImplementation implements UserService {
 		return user;
 	}
 
-//	@Override
-//	public List<User> findAllCustomers() {
-//		return null;
-//	}
+
 
 	@Override
 	public List<User> findAllUsers() {

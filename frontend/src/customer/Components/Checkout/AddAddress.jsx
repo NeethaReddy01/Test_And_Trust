@@ -12,14 +12,11 @@ export default function AddDeliveryAddressForm({ handleNext }) {
   const dispatch = useDispatch();
   const jwt = localStorage.getItem("jwt");
   const { auth } = useSelector((store) => store);
-  const [selectedAddress, setSelectedAdress] = useState(null);
-
-  // console.log("auth", auth);
+  const [selectedAddress, setSelectedAddress] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
 
     const address = {
       firstName: data.get("firstName"),
@@ -32,25 +29,35 @@ export default function AddDeliveryAddressForm({ handleNext }) {
     };
 
     dispatch(createOrder({ address, jwt, navigate }));
-    // after perfoming all the opration
     handleNext();
   };
 
   const handleCreateOrder = (item) => {
-    dispatch(createOrder({ address:item, jwt, navigate }));
+    // Ensure the address structure matches what your action expects
+    const address = {
+      firstName: item.firstName,
+      lastName: item.lastName,
+      streetAddress: item.streetAddress,
+      city: item.city,
+      state: item.state,
+      zipCode: item.zipCode,
+      mobile: item.mobile,
+    };
+    
+    dispatch(createOrder({ address, jwt, navigate }));
     handleNext();
   };
 
   return (
     <Grid container spacing={4}>
       <Grid item xs={12} lg={5}>
-        <Box className="border rounded-md shadow-md h-[30.5rem] overflow-y-scroll ">
+        <Box className="border rounded-md shadow-md h-[30.5rem] overflow-y-scroll">
           {auth.user?.addresses.map((item) => (
             <div
-              onClick={() => setSelectedAdress(item)}
+              key={item.id} // Add key prop
+              onClick={() => setSelectedAddress(item)}
               className="p-5 py-7 border-b cursor-pointer"
             >
-              {" "}
               <AddressCard address={item} />
               {selectedAddress?.id === item.id && (
                 <Button
@@ -58,9 +65,12 @@ export default function AddDeliveryAddressForm({ handleNext }) {
                   size="large"
                   variant="contained"
                   color="primary"
-                  onClick={()=>handleCreateOrder(item)}
+                  onClick={(e) => {
+                    e.stopPropagation(); // Prevent event bubbling
+                    handleCreateOrder(item);
+                  }}
                 >
-                  Deliverd Here
+                  Deliver Here
                 </Button>
               )}
             </div>
@@ -69,7 +79,7 @@ export default function AddDeliveryAddressForm({ handleNext }) {
       </Grid>
       <Grid item xs={12} lg={7}>
         <Box className="border rounded-md shadow-md p-5">
-          <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <Grid container spacing={3}>
               <Grid item xs={12} sm={6}>
                 <TextField
@@ -150,7 +160,7 @@ export default function AddDeliveryAddressForm({ handleNext }) {
                   variant="contained"
                   color="primary"
                 >
-                  Deliverd Here
+                  Deliver Here
                 </Button>
               </Grid>
             </Grid>
