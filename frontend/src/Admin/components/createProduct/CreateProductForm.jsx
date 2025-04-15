@@ -32,11 +32,10 @@ const CreateProductForm = () => {
     discountedPrice: "",
     price: "",
     discountPersent: "",
-    size: initialSizes,
+    size: "",
     quantity: "",
-    topLavelCategory: "",
-    secondLavelCategory: "",
-    thirdLavelCategory: "",
+    level1Category: "",
+    level2Category: "",
     description: "",
   });
 const dispatch=useDispatch();
@@ -164,18 +163,29 @@ const jwt=localStorage.getItem("jwt")
               type="number"
             />
           </Grid>
+          <Grid item xs={12} sm={4}>
+            <TextField
+              fullWidth
+              label="Sizes"
+              name="size"
+              value={productData.size}
+              onChange={handleChange}
+            />
+          </Grid>
           <Grid item xs={6} sm={4}>
             <FormControl fullWidth>
               <InputLabel>Top Level Category</InputLabel>
               <Select
                 name="topLavelCategory"
-                value={productData.topLavelCategory}
+                value={productData.level1Category}
                 onChange={handleChange}
                 label="Top Level Category"
               >
-                <MenuItem value="men">Men</MenuItem>
-                <MenuItem value="women">Women</MenuItem>
-                <MenuItem value="kids">Kids</MenuItem>
+                <MenuItem value="skincare">Skincare</MenuItem>
+                <MenuItem value="bathbodyhygiene">bathbodyhygiene</MenuItem>
+                <MenuItem value="perfume">perfume</MenuItem>
+                <MenuItem value="PersonalCare">PersonalCare</MenuItem>
+                <MenuItem value="makeupproducts">makeupproducts</MenuItem>
               </Select>
             </FormControl>
           </Grid>
@@ -184,13 +194,20 @@ const jwt=localStorage.getItem("jwt")
               <InputLabel>Second Level Category</InputLabel>
               <Select
                 name="secondLavelCategory"
-                value={productData.secondLavelCategory}
+                value={productData.level2Category}
                 onChange={handleChange}
                 label="Second Level Category"
               >
-                <MenuItem value="clothing">Clothing</MenuItem>
-                <MenuItem value="accessories">Accessories</MenuItem>
-                <MenuItem value="brands">Brands</MenuItem>
+                <MenuItem value="Cleanser">Cleanser</MenuItem>
+                <MenuItem value="Moisturizer">Moisturizer</MenuItem>
+                <MenuItem value="Serum">Serum</MenuItem>
+                <MenuItem value="Sunscreen">Sunscreen</MenuItem>
+                <MenuItem value="Bath">Bath</MenuItem>
+                <MenuItem value="Body">Body</MenuItem>
+                <MenuItem value="Hygiene">Hygiene</MenuItem>
+                <MenuItem value="Fragnance">Fragnance</MenuItem>
+                <MenuItem value="HairCare">Haircare</MenuItem>
+                <MenuItem value="Makeup">Makeup</MenuItem>
               </Select>
             </FormControl>
           </Grid>

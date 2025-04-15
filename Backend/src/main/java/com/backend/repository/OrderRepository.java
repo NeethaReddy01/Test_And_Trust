@@ -10,7 +10,7 @@ import com.backend.modal.Order;
 
 public interface OrderRepository extends JpaRepository<Order, Long> {
 
-	@Query("SELECT o FROM Order o WHERE o.user.id = :userId AND (o.orderStatus = PLACED OR o.orderStatus = CONFIRMED OR o.orderStatus = SHIPPED OR o.orderStatus = DELIVERED)")
+    @Query("SELECT o FROM Order o WHERE o.user.id = :userId AND o.orderStatus IN (0,1, 2, 3, 4)")
 	public List<Order> getUsersOrders(@Param("userId") Long userId);
 	
 	List<Order> findAllByOrderByCreatedAtDesc();
