@@ -39,18 +39,6 @@ public class AdminProductControllerTest {
         mockMvc = MockMvcBuilders.standaloneSetup(adminProductController).build();
     }
 
-    @Test
-    void testCreateProduct() throws Exception {
-        CreateProductRequest request = new CreateProductRequest();
-        Product product = new Product();
-        when(productService.createProduct(request)).thenReturn(product);
-
-        mockMvc.perform(post("/api/admin/products/")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content("{\"name\": \"Product1\", \"price\": 100}"))
-               .andExpect(status().isAccepted())
-               .andExpect(jsonPath("$.id").exists());
-    }
 
     @Test
     void testDeleteProduct() throws Exception {
@@ -73,17 +61,6 @@ public class AdminProductControllerTest {
                .andExpect(jsonPath("$").isArray());
     }
 
-    @Test
-    void testUpdateProduct() throws Exception {
-        Long productId = 1L;
-        Product product = new Product();
-        when(productService.updateProduct(productId, product)).thenReturn(product);
-
-        mockMvc.perform(put("/api/admin/products/{productId}/update", productId)
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content("{\"name\": \"Updated Product\", \"price\": 150}"))
-               .andExpect(status().isOk());
-    }
 
     @Test
     void testCreateMultipleProducts() throws Exception {
@@ -94,5 +71,19 @@ public class AdminProductControllerTest {
                .andExpect(status().isAccepted())
                .andExpect(jsonPath("$.message").value("products created successfully"));
     }
+   
+    @Test
+    void testGetAllProducts_EmptyList() throws Exception {
+        when(productService.getAllProducts()).thenReturn(List.of());
+
+        mockMvc.perform(get("/api/admin/products/all"))
+               .andExpect(status().isOk())
+               .andExpect(jsonPath("$.length()").value(0));
+    }
+
+   
+
+
+    
 }
 

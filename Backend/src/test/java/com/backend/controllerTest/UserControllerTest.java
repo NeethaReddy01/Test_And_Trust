@@ -57,4 +57,78 @@ public class UserControllerTest {
 
         assertEquals("Invalid token", thrown.getMessage());
     }
+    
+    //............
+    @Test
+    public void testFindUserById_UserExists() throws UserException {
+        Long userId = 1L;
+        when(userService.findUserById(userId)).thenReturn(mockUser);
+
+        User result = userService.findUserById(userId);
+
+        assertNotNull(result);
+        assertEquals("test@example.com", result.getEmail());
+        verify(userService).findUserById(userId);
+    }
+    @Test
+    public void testFindUserById_UserNotFound() throws UserException {
+        Long userId = 2L;
+        when(userService.findUserById(userId)).thenThrow(new UserException("user not found with id 2"));
+
+        UserException ex = assertThrows(UserException.class, () -> userService.findUserById(userId));
+        assertEquals("user not found with id 2", ex.getMessage());
+    }
+    @Test
+    public void testGetUserProfileHandlerWithNullJwt() throws UserException {
+        String jwt = null;
+
+        when(userService.findUserProfileByJwt(jwt)).thenThrow(new UserException("JWT is null"));
+
+        UserException ex = assertThrows(UserException.class, () -> userController.getUserProfileHandler(jwt));
+        assertEquals("JWT is null", ex.getMessage());
+    }
+    @Test
+    public void testGetUserProfileHandlerWithEmptyJwt() throws UserException {
+        String jwt = "";
+
+        when(userService.findUserProfileByJwt(jwt)).thenThrow(new UserException("JWT is empty"));
+
+        UserException ex = assertThrows(UserException.class, () -> userController.getUserProfileHandler(jwt));
+        assertEquals("JWT is empty", ex.getMessage());
+    }
+    @Test
+    public void testUserProfileResponseFields() throws UserException {
+        String jwt = "mock-jwt";
+        mockUser.setFirstName("John");
+        mockUser.setLastName("Doe");
+
+        when(userService.findUserProfileByJwt(jwt)).thenReturn(mockUser);
+
+        ResponseEntity<User> response = userController.getUserProfileHandler(jwt);
+
+        assertEquals(202, response.getStatusCodeValue());
+        assertEquals("John", response.getBody().getFirstName());
+        assertEquals("Doe", response.getBody().getLastName());
+    }
+    @Test
+    public void testGetUserProfileHandlerCalledOnce() throws UserException {
+        String jwt = "mock-jwt";
+
+        when(userService.findUserProfileByJwt(jwt)).thenReturn(mockUser);
+
+        userController.getUserProfileHandler(jwt);
+        userController.getUserProfileHandler(jwt);
+
+        verify(userService, times(2)).findUserProfileByJwt(jwt);
+    }
+    @Test
+    public void testUserProfileResponseStatusCodeAccepted() throws UserException {
+        String jwt = "mock-jwt";
+        when(userService.findUserProfileByJwt(jwt)).thenReturn(mockUser);
+
+        ResponseEntity<User> response = userController.getUserProfileHandler(jwt);
+
+        assertEquals(202, response.getStatusCodeValue());
+    }
+
 }

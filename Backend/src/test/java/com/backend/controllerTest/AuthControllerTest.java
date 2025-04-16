@@ -1,6 +1,5 @@
 package com.backend.controllerTest;
 
-
 import com.backend.config.JwtTokenProvider;
 import com.backend.controller.AuthController;
 import com.backend.exception.UserException;
@@ -58,6 +57,7 @@ public class AuthControllerTest {
         token = "mocked-jwt-token";
     }
 
+    // Test case 1: User registration successful
     @Test
     public void testCreateUserHandler_Success() throws UserException {
         when(userRepository.findByEmail(user.getEmail())).thenReturn(null);
@@ -75,6 +75,7 @@ public class AuthControllerTest {
         verify(userRepository).save(any(User.class));
     }
 
+    // Test case 2: User registration fails due to email already existing
     @Test
     public void testCreateUserHandler_EmailExists() {
         when(userRepository.findByEmail(user.getEmail())).thenReturn(user);
@@ -86,6 +87,7 @@ public class AuthControllerTest {
         assertEquals("Email Is Already Used With Another Account", exception.getMessage());
     }
 
+    // Test case 3: Sign-in successful
     @Test
     public void testSignin_Success() {
         LoginRequest loginRequest = new LoginRequest();
@@ -109,6 +111,7 @@ public class AuthControllerTest {
         assertEquals(token, response.getBody().getJwt());
     }
 
+    // Test case 4: Invalid password during sign-in
     @Test
     public void testSignin_InvalidPassword() {
         LoginRequest loginRequest = new LoginRequest();
@@ -129,6 +132,7 @@ public class AuthControllerTest {
         });
     }
 
+    // Test case 5: User not found during sign-in
     @Test
     public void testSignin_UserNotFound() {
         LoginRequest loginRequest = new LoginRequest();
@@ -141,5 +145,50 @@ public class AuthControllerTest {
             authController.signin(loginRequest);
         });
     }
-}
 
+    // Test case 6: Password encoding failure during user registration
+    @Test
+    public void testCreateUserHandler_PasswordEncodingFailure() throws UserException {
+        when(userRepository.findByEmail(user.getEmail())).thenReturn(null);
+        when(passwordEncoder.encode(user.getPassword())).thenThrow(new RuntimeException("Encoding failed"));
+
+        assertThrows(RuntimeException.class, () -> {
+            authController.createUserHandler(user);
+        });
+    }
+
+    // Test case 7: Cart creation failure during user registration
+    @Test
+    public void testCreateUserHandler_CartCreationFailure() throws UserException {
+        when(userRepository.findByEmail(user.getEmail())).thenReturn(null);
+        when(passwordEncoder.encode(user.getPassword())).thenReturn("encodedPassword");
+        when(userRepository.save(any(User.class))).thenReturn(user);
+        doThrow(new RuntimeException("Cart creation failed")).when(cartService).createCart(any(User.class));
+
+        assertThrows(RuntimeException.class, () -> {
+            authController.createUserHandler(user);
+        });
+    }
+
+    // Test case 8: Token generation failure during sign-in
+    @Test
+    public void testSignin_TokenGenerationFailure() {
+        LoginRequest loginRequest = new LoginRequest();
+        loginRequest.setEmail("test@example.com");
+        loginRequest.setPassword("password123");
+
+        UserDetails userDetails = org.springframework.security.core.userdetails.User
+                .withUsername("test@example.com")
+                .password("encodedPassword")
+                .roles("CUSTOMER")
+                .build();
+
+        when(customUserDetails.loadUserByUsername(loginRequest.getEmail())).thenReturn(userDetails);
+        when(passwordEncoder.matches("password123", "encodedPassword")).thenReturn(true);
+        when(jwtTokenProvider.generateToken(any(Authentication.class))).thenThrow(new RuntimeException("Token generation failed"));
+
+        assertThrows(RuntimeException.class, () -> {
+            authController.signin(loginRequest);
+        });
+    }
+}

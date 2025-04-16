@@ -95,4 +95,48 @@ public class OrderControllerTest {
                 .andExpect(status().isAccepted())
                 .andExpect(jsonPath("$.id").value(1));
     }
+    
+    
+   
+    @Test
+    public void testGetUserOrderHistory_Empty() throws Exception {
+        when(userService.findUserProfileByJwt(anyString())).thenReturn(mockUser);
+        when(orderService.usersOrderHistory(mockUser.getId())).thenReturn(List.of());
+
+        mockMvc.perform(get("/api/orders/user")
+                .header("Authorization", "Bearer token"))
+                .andExpect(status().isAccepted())
+                .andExpect(content().string("[]")); // Expecting empty array
+    }
+    
+    //..........
+    @Test
+    public void testCreateOrder_NullAddress() throws Exception {
+        when(userService.findUserProfileByJwt(anyString())).thenReturn(mockUser);
+
+        mockMvc.perform(post("/api/orders/")
+                .header("Authorization", "Bearer token")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("null"))
+                .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    public void testGetOrderById_InvalidIdFormat() throws Exception {
+        mockMvc.perform(get("/api/orders/abc")
+                .header("Authorization", "Bearer token"))
+                .andExpect(status().isBadRequest());
+    }
+    @Test
+    public void testGetUserOrderHistory_MissingAuthHeader() throws Exception {
+        mockMvc.perform(get("/api/orders/user"))
+                .andExpect(status().isBadRequest());
+    }
+    @Test
+    public void testGetOrderById_MissingHeader() throws Exception {
+        mockMvc.perform(get("/api/orders/1"))
+                .andExpect(status().isBadRequest());
+    }
+
+   
 }
