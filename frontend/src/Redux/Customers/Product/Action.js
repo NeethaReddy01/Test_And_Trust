@@ -23,16 +23,16 @@ import api, { API_BASE_URL } from "../../../config/api";
 
 export const findProducts = (reqData) => async (dispatch) => {
   const {
-    colors,
-    sizes,
-    minPrice,
-    maxPrice,
-    minDiscount,
+    // colors,
+    // sizes,
+    // minPrice,
+    // maxPrice,
+    // minDiscount,
     category,
-    stock,
-    sort,
-    pageNumber,
-    pageSize,
+    // stock,
+    // sort,
+    // pageNumber,
+    // pageSize,
   } = reqData;
 
   try {

@@ -42,8 +42,7 @@ public class AdminProductControllerTest {
         mockMvc = MockMvcBuilders.standaloneSetup(adminProductController).build();
     }
 
-<<<<<<< HEAD
-=======
+
     @Test
     void testCreateProduct() throws Exception {
         // Create request with all required fields
@@ -68,7 +67,7 @@ public class AdminProductControllerTest {
                 .andExpect(status().isAccepted())
                 .andExpect(jsonPath("$.id").exists());
     }
->>>>>>> f2be47f8f6eaf3bf314e3b9e80e98fa8fff052e8
+
 
     @Test
     void testDeleteProduct() throws Exception {

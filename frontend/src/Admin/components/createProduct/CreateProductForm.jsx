@@ -204,23 +204,6 @@ const jwt=localStorage.getItem("jwt")
   </Select>
 </FormControl>
           </Grid>
-          {/* <Grid item xs={6} sm={4}>
-            <FormControl fullWidth>
-              <InputLabel>Third Level Category</InputLabel>
-              <Select
-                name="thirdLavelCategory"
-                value={productData.thirdLavelCategory}
-                onChange={handleChange}
-                label="Third Level Category"
-              >
-                <MenuItem value="haircare">Haircare</MenuItem>
-                <MenuItem value="women_dress">Dresses</MenuItem>
-                <MenuItem value="t-shirts">T-Shirts</MenuItem>
-                <MenuItem value="saree">Saree</MenuItem>
-                <MenuItem value="lengha_choli">Lengha Choli</MenuItem>
-              </Select>
-            </FormControl>
-          </Grid> */}
           <Grid item xs={12}>
             <TextField
               fullWidth
@@ -233,30 +216,6 @@ const jwt=localStorage.getItem("jwt")
               value={productData.description}
             />
           </Grid>
-          {/* {productData.size.map((size, index) => (
-            <Grid container item spacing={3} >
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  label="Size Name"
-                  name="name"
-                  value={size.name}
-                  onChange={(event) => handleSizeChange(event, index)}
-                  required
-                  fullWidth
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  label="Quantity"
-                  name="size_quantity"
-                  type="number"
-                  onChange={(event) => handleSizeChange(event, index)}
-                  required
-                  fullWidth
-                />
-              </Grid> </Grid>
-            
-          ))} */}
           <Grid item xs={12} >
             <Button
               variant="contained"

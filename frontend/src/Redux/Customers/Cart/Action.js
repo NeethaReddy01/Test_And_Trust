@@ -15,6 +15,9 @@ import {
   UPDATE_CART_ITEM_FAILURE,
   UPDATE_CART_ITEM_REQUEST,
   UPDATE_CART_ITEM_SUCCESS,
+  CLEAR_CART_REQUEST,
+    CLEAR_CART_SUCCESS,
+    CLEAR_CART_FAILURE
 } from "./ActionTypes";
 
 export const addItemToCart = (reqData) => async (dispatch) => {
@@ -130,4 +133,30 @@ export const removeCartItem = (reqData) => async (dispatch) => {
       });
     }
   };
+
+  export const clearCart = (jwt) => async (dispatch) => {
+    try {
+        dispatch({ type: CLEAR_CART_REQUEST });
+        const config = {
+            headers: {
+                Authorization: `Bearer ${jwt}`,
+                "Content-Type": "application/json"
+            },
+        };
+        const { data } = await axios.delete(`${API_BASE_URL}/api/cart/clear`, config);
+
+        dispatch({
+            type: CLEAR_CART_SUCCESS,
+            payload: data,
+        });
+    } catch (error) {
+        dispatch({
+            type: CLEAR_CART_FAILURE,
+            payload:
+                error.response && error.response.data.message
+                    ? error.response.data.message
+                    : error.message,
+        });
+    }
+};
   

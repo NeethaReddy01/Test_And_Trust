@@ -6,48 +6,14 @@ import { Box, Button, Grid, LinearProgress, Rating } from "@mui/material";
 import HomeProductCard from "../../Home/HomeProductCard";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { findProductById } from "../../../../Redux/Customers/Product/Action";
+import { findProductById, findProducts } from "../../../../Redux/Customers/Product/Action";
 import { addItemToCart } from "../../../../Redux/Customers/Cart/Action";
 import { getAllRatings, getAllReviews } from "../../../../Redux/Customers/Review/Action";
-import cleanser from "../../../../Data/Skincare/cleanser";
-import haircare from "../../../../Data/Haircare/haircare";
 
 const product = {
   name: "Basic Tee 6-Pack",
   price: "₹996",
   href: "#",
-  breadcrumbs: [
-    { id: 1, name: "Men", href: "#" },
-    { id: 2, name: "Clothing", href: "#" },
-  ],
-  images: [
-    {
-      src: "https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg",
-      alt: "Two each of gray, white, and black shirts laying flat.",
-    },
-    {
-      src: "https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg",
-      alt: "Model wearing plain black basic tee.",
-    },
-    {
-      src: "https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg",
-      alt: "Model wearing plain gray basic tee.",
-    },
-    {
-      src: "https://tailwindui.com/img/ecommerce-images/product-page-02-featured-product-shot.jpg",
-      alt: "Model wearing plain white basic tee.",
-    },
-  ],
-  colors: [
-    { name: "White", class: "bg-white", selectedClass: "ring-gray-400" },
-    { name: "Gray", class: "bg-gray-200", selectedClass: "ring-gray-400" },
-    { name: "Black", class: "bg-gray-900", selectedClass: "ring-gray-900" },
-  ],
-  sizes: [
-    { name: "S", inStock: true },
-    { name: "M", inStock: true },
-    { name: "L", inStock: true },
-  ],
   description:
     'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
   highlights: [
@@ -70,10 +36,18 @@ export default function ProductDetails() {
   const [activeImage, setActiveImage] = useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  
+  // Access your Redux store according to its actual structure
   const { customersProduct } = useSelector((store) => store);
+  
+  // Access the products state based on your actual Redux store structure
+  // This is what we're fixing - make sure this matches your store structure
+  const productsState = useSelector((store) => store.products || store.customersProduct || {});
+  const similarProducts = productsState.products || [];
+  const loadingSimilarProducts = productsState.loading || false;
+  
   const { productId } = useParams();
   const jwt = localStorage.getItem("jwt");
-  // console.log("param",productId,customersProduct.product)
 
   const handleSetActiveImage = (image) => {
     setActiveImage(image);
@@ -81,13 +55,11 @@ export default function ProductDetails() {
 
   const { ratings, reviews } = useSelector((state) => state.review);
 
-
   useEffect(() => {
     dispatch(getAllReviews(productId));
     dispatch(getAllRatings(productId));
   }, [dispatch, productId]);
   
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = { productId };
@@ -96,35 +68,47 @@ export default function ProductDetails() {
   };
 
   useEffect(() => {
-    window.scrollTo(0,0)
+    window.scrollTo(0,0);
     const data = { productId: Number(productId), jwt };
     dispatch(findProductById(data));
     dispatch(getAllReviews(productId));
     console.log("product:", productId);
-
   }, [productId]);
+
+  // Fetch similar products when the product category is available
+  useEffect(() => {
+    if (customersProduct.product?.category?.name) {
+      // Fetch products with the same category
+      dispatch(findProducts({ category: customersProduct.product.category.name.toLowerCase() }));
+      console.log("Fetching similar products for category:", customersProduct.product.category.name);
+    }
+  }, [dispatch, customersProduct.product?.category?.name]);
+
+  // For debugging
+  console.log("Redux state structure:", customersProduct);
+  console.log("Similar products state:", productsState);
 
   return (
     <div className="bg-white lg:px-20">
       <div className="pt-6">
         
-
-        {/* product details */}
+        {/* product details section - unchanged */}
         <section className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-2 px-4 pt-10">
           {/* Image gallery */}
           <div className="flex flex-col items-center ">
             <div className=" overflow-hidden rounded-lg max-w-[30rem] max-h-[35rem]">
               <img
                 src={activeImage?.src || customersProduct.product?.imageUrl}
-                alt={product.images[0].alt}
+                alt={"issue in getting images"}
                 className="h-full w-full object-cover object-center"
               />
             </div>
             
           </div>
 
-          {/* Product info */}
+          {/* Product info - unchanged */}
           <div className="lg:col-span-1 mx-auto max-w-2xl px-4 pb-16 sm:px-6  lg:max-w-7xl  lg:px-8 lg:pb-24">
+            {/* Content unchanged */}
             <div className="lg:col-span-2">
               <h1 className="text-lg lg:text-xl font-semibold tracking-tight text-gray-900  ">
                 {customersProduct.product?.brand}
@@ -173,7 +157,6 @@ export default function ProductDetails() {
 
               <form className="mt-10" onSubmit={handleSubmit}>
                
-
                 <Button
                   variant="contained"
                   type="submit"
@@ -223,19 +206,18 @@ export default function ProductDetails() {
           </div>
         </section>
 
-        {/* rating and review section */}
+        {/* rating and review section - unchanged */}
         <section className="">
           <h1 className="font-semibold text-lg pb-4">
             Recent Review & Ratings
           </h1>
-{                    console.log("ratings log in product details:",ratings)
-}                    
+                    
           <div className="border p-5">
             <Grid container spacing={7}>
               <Grid item xs={7}>
                 <div className="space-y-5">
                   {customersProduct.product?.reviews.map((item, i) => (
-                    <ProductReviewCard item={item} />
+                    <ProductReviewCard key={i} item={item} />
                   ))}
                 </div>
               </Grid>
@@ -384,16 +366,30 @@ export default function ProductDetails() {
           </div>
         </section>
 
-        {/* similer product */}
-        <section className=" pt-10">
+        {/* similar products section - UPDATED to use backend data safely */}
+        <section className="pt-10">
           <h1 className="py-5 text-xl font-bold">Similar Products</h1>
-          <div className="flex flex-wrap space-y-5">
-            {haircare.map((item) => (
-               <div key={item.id}>
-               <HomeProductCard product={item} />
-             </div>
-            ))}
-          </div>
+          
+          {loadingSimilarProducts ? (
+            <div className="flex justify-center">
+              <LinearProgress sx={{ width: '50%' }} />
+            </div>
+          ) : (
+            <div className="flex flex-wrap space-y-5">
+              {similarProducts && similarProducts.length > 0 ? (
+                similarProducts
+                  .filter(item => item.id !== Number(productId)) // Exclude current product
+                  .slice(0, 10) // Limit to 8 similar products
+                  .map((item) => (
+                    <div key={item.id}>
+                      <HomeProductCard product={item} />
+                    </div>
+                  ))
+              ) : (
+                <p>No similar products found</p>
+              )}
+            </div>
+          )}
         </section>
       </div>
     </div>

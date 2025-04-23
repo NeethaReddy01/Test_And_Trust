@@ -100,8 +100,6 @@ const OrdersTable = () => {
     handleUpdateStatusMenuClose(index);
     dispatch(deleteOrder(orderId));
   };
-  
-  console.log("admins order log", adminsOrder);
 
   return (
     <Box>

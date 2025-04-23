@@ -6,6 +6,8 @@ import { getOrderById } from "../../../Redux/Customers/Order/Action";
 import OrderTraker from "../orders/OrderTraker";
 import AddressCard from "../adreess/AdreessCard";
 import { useLocation } from "react-router-dom";
+import { clearCart } from "../../../Redux/Customers/Cart/Action";
+import { getCart } from "../../../Redux/Customers/Cart/Action";
 
 const PaymentSuccess = () => {
   const location = useLocation();
@@ -23,6 +25,7 @@ const PaymentSuccess = () => {
   const [paymentId, setPaymentId] = useState("");
   const [referenceId, setReferenceId] = useState("");
   const [paymentStatus, setPaymentStatus] = useState("");
+  const [cartCleared, setCartCleared] = useState(false);
 
   useEffect(() => {
     console.log("orderId:", orderId);
@@ -39,8 +42,20 @@ const PaymentSuccess = () => {
       const data = { orderId: Number(orderId), paymentId, jwt };
       dispatch(updatePayment(data));
       dispatch(getOrderById(orderId));
+
+      if (!cartCleared) {
+        try {
+          dispatch(clearCart(jwt)).then(() => {
+            // Force refresh cart data from server after clearing
+            dispatch(getCart(jwt));
+            setCartCleared(true); 
+          });
+        } catch (error) {
+          console.error("Error clearing cart:", error);
+        }
+      }
     }
-  }, [orderId, paymentId, paymentStatus]);
+  }, [orderId, paymentId, paymentStatus , cartCleared]);
 
   return (
     <div className="px-2 lg:px-36">
