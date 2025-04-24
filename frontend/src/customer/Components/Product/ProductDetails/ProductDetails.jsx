@@ -216,9 +216,16 @@ export default function ProductDetails() {
             <Grid container spacing={7}>
               <Grid item xs={7}>
                 <div className="space-y-5">
+                  {console.log("customer product :" , customersProduct)}
+                  {console.log("customer product . product :" , customersProduct.product)}
+                  {/* {console.log("customer product.product . reviews :" , customersProduct.product.reviews)} */}
                   {customersProduct.product?.reviews.map((item, i) => (
-                    <ProductReviewCard key={i} item={item} />
-                  ))}
+    <ProductReviewCard 
+      key={i} 
+      item={item} 
+      ratings={customersProduct.product?.ratings} 
+    />
+  ))}
                 </div>
               </Grid>
 
