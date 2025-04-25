@@ -28,14 +28,14 @@ public class UserProductController {
 	
 	
 	@GetMapping("/products")
-	public ResponseEntity<List<Product>> findProductByCategoryHandler(@RequestParam String category){
-
+	public ResponseEntity<List<Product>> findProductByCategoryHandler(
+	        @RequestParam String category ){
 		
-		List<Product> res= productService.getAllProduct(category);
-		
-		System.out.println("complete products");
-		return new ResponseEntity<>(res,HttpStatus.ACCEPTED);
-		
+	    
+	    List<Product> res = productService.findProductByCategory(category);
+	    
+	   
+	    return new ResponseEntity<>(res, HttpStatus.ACCEPTED);
 	}
 	
 
@@ -49,9 +49,11 @@ public class UserProductController {
 	}
 
 	@GetMapping("/products/search")
-	public ResponseEntity<List<Product>> searchProductHandler(@RequestParam String q){
+	public ResponseEntity<List<Product>> searchProductHandler(
+	        @RequestParam String q,
+	        @RequestParam(required = false, defaultValue = "newest") String sort){
 		
-		List<Product> products=productService.searchProduct(q);
+		List<Product> products=productService.searchProduct(q, sort);
 		
 		return new ResponseEntity<List<Product>>(products,HttpStatus.OK);
 		

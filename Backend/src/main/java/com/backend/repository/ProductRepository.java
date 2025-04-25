@@ -20,6 +20,15 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 	@Query("SELECT p From Product p where LOWER(p.title) Like %:query% OR LOWER(p.description) Like %:query% OR LOWER(p.brand) LIKE %:query% OR LOWER(p.category.name) LIKE %:query%")
 	public List<Product> searchProduct(@Param("query")String query);
 	
+	@Query("SELECT p From Product p where (LOWER(p.title) Like %:query% OR LOWER(p.description) Like %:query% OR LOWER(p.brand) LIKE %:query% OR LOWER(p.category.name) LIKE %:query%) ORDER BY p.discountedPrice ASC")
+	public List<Product> searchProductOrderByPriceAsc(@Param("query") String query);
+
+	@Query("SELECT p From Product p where (LOWER(p.title) Like %:query% OR LOWER(p.description) Like %:query% OR LOWER(p.brand) LIKE %:query% OR LOWER(p.category.name) LIKE %:query%) ORDER BY p.discountedPrice DESC")
+	public List<Product> searchProductOrderByPriceDesc(@Param("query") String query);
+
+	@Query("SELECT p From Product p where (LOWER(p.title) Like %:query% OR LOWER(p.description) Like %:query% OR LOWER(p.brand) LIKE %:query% OR LOWER(p.category.name) LIKE %:query%) ORDER BY p.createdAt DESC")
+	public List<Product> searchProductOrderByNewest(@Param("query") String query);
+	
 
 
 	
@@ -31,6 +40,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 //		    
 //		    "CASE WHEN :sort = 'price_low' THEN p.discountedPrice END ASC, " +
 //		    "CASE WHEN :sort = 'price_high' THEN p.discountedPrice END DESC, "+
+	
 		    
 	List<Product> filterProducts(
 	        @Param("category") String category
@@ -41,4 +51,24 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 			);
 	
 	public List<Product> findTop10ByOrderByCreatedAtDesc();
+	
+	List<Product> findByCategoryNameOrderByPriceAsc(String category);
+	List<Product> findByCategoryNameOrderByPriceDesc(String category);
+	List<Product> findByCategoryNameOrderByCreatedAtDesc(String category);
+
+	// Or a more dynamic method
+	@Query("SELECT p FROM Product p " +
+	        "WHERE (p.category.name = :category OR :category = '') " +
+	        "ORDER BY CASE " +
+	        "WHEN :sort = 'price_low' THEN p.price " +
+	        "END ASC, " +
+	        "CASE " +
+	        "WHEN :sort = 'price_high' THEN p.price " +
+	        "END DESC, " +
+	        "CASE " +
+	        "WHEN :sort = 'newest' THEN p.createdAt " +
+	        "END DESC")
+	List<Product> filterProductsWithSort(
+	        @Param("category") String category,
+	        @Param("sort") String sort);
 }

@@ -165,7 +165,7 @@ export const deleteProduct = (productId) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_PRODUCT_REQUEST });
 
-    let {data}=await api.delete(`/api/admin/products/${productId}/delete`);
+    let {data}=await api.delete(`${API_BASE_URL}/api/admin/products/${productId}/delete`);
 
     dispatch({
       type: DELETE_PRODUCT_SUCCESS,

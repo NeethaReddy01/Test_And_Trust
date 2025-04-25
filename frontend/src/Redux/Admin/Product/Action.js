@@ -19,8 +19,9 @@ export const getProducts = () => async (dispatch) => {
   try {
     dispatch({ type: GET_PRODUCTS_REQUEST });
 
-    const { data } = await api.get(`${API_BASE_URL}/api/admin/products/`);
-
+    const { data } = await api.get(`${API_BASE_URL}/api/admin/products/all`);
+    {console.log("admin get products:" , data)}
+   
     dispatch({
       type: GET_PRODUCTS_SUCCESS,
       payload: data,
@@ -90,12 +91,15 @@ export const deleteProduct = (data) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_PRODUCT_REQUEST });
 
-    await api.delete(`/api/admin/products/${data.productId}`);
+    // Make sure the URL pattern matches your other API calls
+    await api.delete(`${API_BASE_URL}/api/admin/products/${data.productId}`);
 
     dispatch({
       type: DELETE_PRODUCT_SUCCESS,
       payload: data.productId,
     });
+    
+    return Promise.resolve();
   } catch (error) {
     dispatch({
       type: DELETE_PRODUCT_FAILURE,
@@ -104,5 +108,7 @@ export const deleteProduct = (data) => async (dispatch) => {
           ? error.response.data.message
           : error.message,
     });
+    
+    return Promise.reject(error);
   }
 };
