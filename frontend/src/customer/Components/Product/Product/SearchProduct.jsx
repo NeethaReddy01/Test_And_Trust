@@ -31,11 +31,12 @@ function classNames(...classes) {
 }
 
 export default function SearchProduct() {
+  const [keyword , setKeyword]= useState("");
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const jwt = localStorage.getItem("jwt");
-  const {keyword} = useParams();
+  // const {keyword} = useParams();
   const { customersProduct } = useSelector((store) => store);
   const location = useLocation();
   const [isLoaderOpen, setIsLoaderOpen] = useState(false);
@@ -48,10 +49,13 @@ export default function SearchProduct() {
   // console.log("location - ", colorValue, sizeValue,price,disccount);
 
   const handleSortChange = (value) => {
+    
     const searchParams = new URLSearchParams(location.search);
     searchParams.set("sort", value);
     const query = searchParams.toString();
     navigate({ search: `?${query}` });
+    dispatch(searchProduct(keyword, value));
+    console.log("keyword" , keyword)
   };
   const handlePaginationChange = (event, value) => {
     const searchParams = new URLSearchParams(location.search);
@@ -76,7 +80,8 @@ export default function SearchProduct() {
   }, [customersProduct.loading]);
 
   const handleSearch=(e)=>{
-    const keyword=e.target.value;
+    setKeyword(e.target.value);
+    // const keyword=e.target.value;
     dispatch(searchProduct(keyword))
 
   }
@@ -204,7 +209,7 @@ export default function SearchProduct() {
             </h1>
 
             <div className="flex items-center">
-              {/* <Menu as="div" className="relative inline-block text-left">
+              <Menu as="div" className="relative inline-block text-left">
                 <div>
                   <Menu.Button className="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
                     Sort
@@ -247,7 +252,7 @@ export default function SearchProduct() {
                     </div>
                   </Menu.Items>
                 </Transition>
-              </Menu> */}
+              </Menu>
 
               <button
                 type="button"
@@ -286,6 +291,8 @@ export default function SearchProduct() {
                       onChange={handleSearch}
                     />
                   <div className="flex flex-wrap justify-center bg-white py-5 rounded-md ">
+                    {console.log("search products -> customer product: " ,customersProduct )}
+                    {console.log("search products -> customer product.searchProducts: " ,customersProduct.searchProducts)}
                     {customersProduct?.searchProducts?.map((item) => (
                       <ProductCard product={item} />
                     ))}

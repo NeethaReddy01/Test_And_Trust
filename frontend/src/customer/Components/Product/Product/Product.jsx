@@ -21,6 +21,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import {
   findProducts,
+  searchProduct,
 } from "../../../../Redux/Customers/Product/Action";
 import { Backdrop, CircularProgress } from "@mui/material";
 
@@ -36,6 +37,7 @@ export default function Product() {
   const param = useParams();
   const { customersProduct } = useSelector((store) => store);
   const location = useLocation();
+    const {keyword} = useParams();
   const [isLoaderOpen, setIsLoaderOpen] = useState(false);
 
   const handleLoderClose = () => {
@@ -60,6 +62,7 @@ export default function Product() {
     searchParams.set("sort", value);
     const query = searchParams.toString();
     navigate({ search: `?${query}` });
+    dispatch(searchProduct(keyword,sortValue))
   };
   const handlePaginationChange = (event, value) => {
     const searchParams = new URLSearchParams(location.search);
