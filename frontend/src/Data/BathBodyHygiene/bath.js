@@ -1,8 +1,8 @@
-const bath= [
+const bath = [
   {
     "imageUrl": "https://foxtale.in/cdn/shop/files/1_4_f8dd6699-ef44-44de-a319-89b0244b82e7.jpg?v=1743840898&width=900",
     "brand": "Foxtale",
-    "title": "Brightening Body Wash  for even-toned, glowing skin in 30 days",
+    "title": "Brightening Body Wash for even-toned, glowing skin in 30 days",
     "color": "Clear Gel",
     "discountedPrice": 39,
     "price": 49,
@@ -10,7 +10,8 @@ const bath= [
     "sizes": "10ml",
     "quantity": 60,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "Bath"
+    "level2Category": "Bath",
+    "description": "A brightening body wash that promises to give you even-toned and glowing skin in just 30 days. Enriched with nourishing ingredients, it leaves your skin feeling fresh and radiant."
   },
   {
     "imageUrl": "https://i.mscwlns.co/media/misc/pdp_rcl/2-aha-body-wash/7__7__ZLh05Dmr0.png?tr=w-500,c-at_max",
@@ -23,7 +24,8 @@ const bath= [
     "sizes": "20ml",
     "quantity": 75,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "Bath"
+    "level2Category": "Bath",
+    "description": "This AHA-infused body wash gently exfoliates and brightens your skin, making it smoother and more radiant with every use. Ideal for dull and rough skin."
   },
   {
     "imageUrl": "https://foxtale.in/cdn/shop/files/1_16_22be3ab1-07e4-49ad-bed6-ea527b501b99.jpg?v=1743841022&width=900",
@@ -36,7 +38,8 @@ const bath= [
     "sizes": "10ml",
     "quantity": 100,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "Bath"
+    "level2Category": "Bath",
+    "description": "A luxurious exfoliating body wash that gently removes dead skin cells to reveal smooth and soft skin. Ideal for daily use to maintain a polished appearance."
   },
   {
     "imageUrl": "https://www.mcaffeine.com/cdn/shop/files/1_8_8621ccbb-34de-4c74-8792-500b88eb477b.jpg?v=1686065538",
@@ -49,7 +52,8 @@ const bath= [
     "sizes": "15ml",
     "quantity": 85,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "Bath"
+    "level2Category": "Bath",
+    "description": "Packed with the goodness of coffee and cocoa, this body wash helps to tan removal, rejuvenates the skin, and leaves a rich, refreshing scent. A perfect blend for your skin's detox."
   },
   {
     "imageUrl": "https://www.mcaffeine.com/cdn/shop/files/blueberry_body_wash_2.jpg?v=1734603728",
@@ -62,8 +66,8 @@ const bath= [
     "sizes": "15ml",
     "quantity": 90,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "Bath"
-    
+    "level2Category": "Bath",
+    "description": "This blueberry-infused body wash is packed with antioxidants to help keep your skin soft, smooth, and nourished, leaving behind a fresh, fruity fragrance."
   },
   {
     "imageUrl": "https://www.drsheths.com/cdn/shop/files/CVC-Body-wash-1200x1200.jpg?v=1686893971&width=1100",
@@ -76,7 +80,8 @@ const bath= [
     "sizes": "20ml",
     "quantity": 70,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "Bath"
+    "level2Category": "Bath",
+    "description": "A body wash formulated with ceramides and Vitamin C, providing hydration and brightening your skin while gently cleansing. Ideal for dry and sensitive skin."
   },
   {
     "imageUrl": "https://aqualogica.in/cdn/shop/products/348cb0b6-2f4c-45dd-9b9b-04efe905559b_1_201_a_1.jpg?v=1701692359&width=823",
@@ -89,7 +94,8 @@ const bath= [
     "sizes": "15ml",
     "quantity": 80,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "Bath"
+    "level2Category": "Bath",
+    "description": "This refreshing shower gel combines watermelon and niacinamide to brighten and hydrate your skin, leaving it soft, smooth, and glowing."
   },
   {
     "imageUrl": "https://plumgoodness.com/cdn/shop/files/EP_SG240ml_1.jpg?v=1719211163&width=900",
@@ -102,12 +108,13 @@ const bath= [
     "sizes": "15ml",
     "quantity": 95,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "Bath"
+    "level2Category": "Bath",
+    "description": "A luscious shower gel that pampers your skin with the soft and sweet fragrance of plums, while effectively cleansing and hydrating your skin."
   },
   {
     "imageUrl": "https://m.media-amazon.com/images/I/51BW+SunikL._SX679_.jpg",
     "brand": "Dove",
-    "title": "Dove Revitalizing Bodywash scented with peach and infused with Vtamin C ",
+    "title": "Dove Revitalizing Bodywash scented with peach and infused with Vitamin C",
     "color": "Clear Gel",
     "discountedPrice": 59,
     "price": 79,
@@ -115,8 +122,8 @@ const bath= [
     "sizes": "15ml",
     "quantity": 70,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "Bath"
-    
+    "level2Category": "Bath",
+    "description": "This revitalizing body wash combines the freshness of peach with the power of Vitamin C to nourish and rejuvenate your skin, leaving it feeling refreshed and glowing."
   },
   {
     "imageUrl": "https://lovebeautyandplanet.in/cdn/shop/files/1_fad6d6b1-1dd6-45ff-81fc-ffecde41708f.jpg?v=1720087849&width=1100",
@@ -129,7 +136,8 @@ const bath= [
     "sizes": "15ml",
     "quantity": 80,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "Bath"
+    "level2Category": "Bath",
+    "description": "A revitalizing body wash that brings together turmeric and morning scent for a refreshing shower experience. Perfect for energizing your day while nourishing your skin."
   },
   {
     "imageUrl": "https://www.mcaffeine.com/cdn/shop/files/1_2e76ddf2-d3fc-42ce-90c5-3d6559b90420.jpg?v=1715605888",
@@ -142,7 +150,8 @@ const bath= [
     "sizes": "10ml",
     "quantity": 90,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "Bath"
+    "level2Category": "Bath",
+    "description": "This body wash combines green tea and BHA to deeply cleanse your skin, removing dirt and impurities while offering hydration and smoothness."
   },
   {
     "imageUrl": "https://foxtale.in/cdn/shop/files/1_14_14d8d447-85b1-41bd-874f-951ec2bacd49.jpg?v=1743841300&width=900",
@@ -155,7 +164,8 @@ const bath= [
     "sizes": "20ml",
     "quantity": 75,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "Bath"
+    "level2Category": "Bath",
+    "description": "An ultra-hydrating body wash that cleanses your skin without stripping away moisture, leaving it soft and supple after every use."
   },
   {
     "imageUrl": "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:1080/1086953/ON5BDppFLb-8901030846212_1.jpg",
@@ -168,7 +178,8 @@ const bath= [
     "sizes": "15ml",
     "quantity": 65,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "Bath"
+    "level2Category": "Bath",
+    "description": "Indulge in the luxurious and relaxing scent of shea butter with this Dove body wash, leaving your skin feeling nourished and deeply moisturized."
   },
   {
     "imageUrl": "https://images.mamaearth.in/catalog/product/1/_/1_81.jpg?format=auto&height=600",
@@ -181,7 +192,8 @@ const bath= [
     "sizes": "20ml",
     "quantity": 80,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "Bath"
+    "level2Category": "Bath",
+    "description": "This moisturizing body wash, enriched with rice water and hydrating lily, helps to nourish and hydrate your skin, giving it a smooth, glass-like finish."
   },
   {
     "imageUrl": "https://bellavitaluxury.co.in/cdn/shop/files/Date_Senorita-01.jpg?v=1706525078&width=1000",
@@ -194,7 +206,8 @@ const bath= [
     "sizes": "10ml",
     "quantity": 105,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "Bath"
+    "level2Category": "Bath",
+    "description": "A charming body wash combo that includes delicate floral fragrances, perfect for setting a romantic mood while keeping your skin soft and refreshed."
   },
   {
     "imageUrl": "https://bellavitaluxury.co.in/cdn/shop/files/Glamshowergel-01.jpg?v=1703067259&width=1000",
@@ -207,7 +220,8 @@ const bath= [
     "sizes": "15ml",
     "quantity": 80,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "Bath"
+    "level2Category": "Bath",
+    "description": "This glamorous shower gel is infused with vibrant citrus scents to keep you feeling fresh and energized all day long."
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/GLN0063AB11.jpg",
@@ -220,8 +234,8 @@ const bath= [
     "sizes": "15ml",
     "quantity": 95,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "Bath"
-    
+    "level2Category": "Bath",
+    "description": "A soothing body wash with sandalwood extract that helps calm and nourish your skin, leaving a delicate fragrance."
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/TSC0027AAUG221.jpg",
@@ -234,7 +248,8 @@ const bath= [
     "sizes": "20ml",
     "quantity": 65,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "Bath"
+    "level2Category": "Bath",
+    "description": "A luxurious body wash that brings a sensual fragrance while keeping your skin soft, hydrated, and clean."
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/DST0039AB191.jpg",
@@ -247,7 +262,8 @@ const bath= [
     "sizes": "15ml",
     "quantity": 85,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "Bath"
+    "level2Category": "Bath",
+    "description": "A gentle body wash with salicylic acid to fight acne and keep your skin clear, smooth, and refreshed."
   },
   {
     "imageUrl": "https://smytten-image.gumlet.io/shop_item/CIL0024AB1N1.jpg",
@@ -260,7 +276,8 @@ const bath= [
     "sizes": "15ml",
     "quantity": 85,
     "level1Category": "bathbodyhygiene",
-    "level2Category": "Bath"
+    "level2Category": "Bath",
+    "description": "This gentle body wash is perfect for dry and sensitive skin. It helps restore the skin’s natural barrier, leaving it soft, hydrated, and smooth."
   }
 ];
 export default bath;
