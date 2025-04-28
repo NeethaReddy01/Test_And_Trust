@@ -11,6 +11,9 @@ import {
   UPDATE_CART_ITEM_FAILURE,
   UPDATE_CART_ITEM_REQUEST,
   UPDATE_CART_ITEM_SUCCESS,
+  CLEAR_CART_FAILURE,
+    CLEAR_CART_REQUEST,
+    CLEAR_CART_SUCCESS,
 } from "./ActionTypes";
 
 const initialState = {
@@ -79,6 +82,25 @@ const cartReducer = (state = initialState, action) => {
         error: action.payload,
         loading: false,
       };
+
+      case CLEAR_CART_REQUEST:
+        return { ...state, loading: true, error: null };
+    case CLEAR_CART_SUCCESS:
+        return {
+            ...state,
+            loading: false,
+            cart: {
+                ...state.cart,
+                cartItems: [],
+                totalItem: 0,
+                totalPrice: 0,
+                totalDiscountedPrice: 0,
+                discounte: 0
+            },
+            cartItems: []
+        };
+    case CLEAR_CART_FAILURE:
+        return { ...state, loading: false, error: action.payload };
     default:
       return state;
   }

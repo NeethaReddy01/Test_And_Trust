@@ -23,23 +23,23 @@ import api, { API_BASE_URL } from "../../../config/api";
 
 export const findProducts = (reqData) => async (dispatch) => {
   const {
-    colors,
-    sizes,
-    minPrice,
-    maxPrice,
-    minDiscount,
+    // colors,
+    // sizes,
+    // minPrice,
+    // maxPrice,
+    // minDiscount,
     category,
-    stock,
-    sort,
-    pageNumber,
-    pageSize,
+    // stock,
+    // sort,
+    // pageNumber,
+    // pageSize,
   } = reqData;
 
   try {
     dispatch({ type: FIND_PRODUCTS_BY_CATEGORY_REQUEST });
 
     const { data } = await api.get(
-      `/api/products?category=${category}`
+       `/api/products?category=${category}`
     );console.log("API response data:", data);
     console.log("Is data an array?", Array.isArray(data));
     console.log("Data length:", data?.length);
@@ -83,17 +83,18 @@ export const findProductById = (reqData) => async (dispatch) => {
   }
 };
 
-export const searchProduct = (keyword) => async (dispatch) => {
+export const searchProduct = (keyword , sort) => async (dispatch) => {
   try {
     dispatch({ type: SEARCH_PRODUCT_REQUEST });
 
     const { data } = await api.get(`/api/products/search`,{
       params:{
-        q:keyword
+        q:keyword,
+        sort: sort || "newest"
       }
     });
 
-    console.log("products by  id : ", data);
+    console.log("products by  search : ", data);
     dispatch({
       type: SEARCH_PRODUCT_SUCCESS,
       payload: data,
@@ -164,7 +165,7 @@ export const deleteProduct = (productId) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_PRODUCT_REQUEST });
 
-    let {data}=await api.delete(`/api/admin/products/${productId}/delete`);
+    let {data}=await api.delete(`${API_BASE_URL}/api/admin/products/${productId}/delete`);
 
     dispatch({
       type: DELETE_PRODUCT_SUCCESS,

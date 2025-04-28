@@ -1,6 +1,8 @@
 package com.backend.service;
 
+import com.backend.exception.CartItemException;
 import com.backend.exception.ProductException;
+import com.backend.exception.UserException;
 import com.backend.modal.Cart;
 import com.backend.modal.CartItem;
 import com.backend.modal.User;
@@ -13,5 +15,7 @@ public interface CartService {
 	public CartItem addCartItem(Long userId,AddItemRequest req) throws ProductException;
 	
 	public Cart findUserCart(Long userId);
+	
+	public void clearCart(Long userId) throws UserException , CartItemException;
 
 }

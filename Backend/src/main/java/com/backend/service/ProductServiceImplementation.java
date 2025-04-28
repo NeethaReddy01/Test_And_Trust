@@ -140,9 +140,16 @@ public class ProductServiceImplementation implements ProductService {
   }
 
   @Override
-  public List<Product> searchProduct(String query) {
-    List<Product> products=productRepository.searchProduct(query);
-    return products;
+  public List<Product> searchProduct(String query, String sort) {
+      switch (sort) {
+          case "price_low":
+              return productRepository.searchProductOrderByPriceAsc(query);
+          case "price_high":
+              return productRepository.searchProductOrderByPriceDesc(query);
+          case "newest":
+          default:
+              return productRepository.searchProductOrderByNewest(query);
+      }
   }
 
 
@@ -150,17 +157,24 @@ public class ProductServiceImplementation implements ProductService {
   
   
   @Override
-  public List<Product> getAllProduct(String category) {
-
-
-    
-    List<Product> products = productRepository.filterProducts(category);
-    
- 
-
-
-    return products;
-    
+  public List<Product> getAllProduct(String category, String sort) {
+      if (sort == null || sort.isEmpty()) {
+          return productRepository.filterProducts(category);
+      }
+      
+      switch (sort) {
+          case "price_low":
+              return productRepository.findByCategoryNameOrderByPriceAsc(category);
+          case "price_high":
+              return productRepository.findByCategoryNameOrderByPriceDesc(category);
+          case "newest":
+              return productRepository.findByCategoryNameOrderByCreatedAtDesc(category);
+          default:
+              return productRepository.filterProducts(category);
+      }
+      
+      // Alternatively, use the combined method:
+      // return productRepository.filterProductsWithSort(category, sort);
   }
 
 

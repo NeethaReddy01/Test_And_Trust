@@ -2,6 +2,7 @@ package com.backend.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.backend.exception.CartItemException;
 import com.backend.exception.ProductException;
 import com.backend.exception.UserException;
 import com.backend.modal.Cart;
@@ -55,6 +57,18 @@ public class CartController {
 		
 		return new ResponseEntity<>(item,HttpStatus.ACCEPTED);
 		
+	}
+	
+	@DeleteMapping("/clear")
+	public ResponseEntity<ApiResponse> clearCart(@RequestHeader("Authorization") String jwt) throws UserException , CartItemException{
+		User user = userService.findUserProfileByJwt(jwt);
+		cartService.clearCart(user.getId());
+		
+		ApiResponse res = new ApiResponse();
+		res.setMessage("Cart cleared successfully");
+		res.setStatus(true);
+		
+		return new ResponseEntity<>(res, HttpStatus.OK);
 	}
 	
 
