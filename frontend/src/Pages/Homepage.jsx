@@ -24,23 +24,21 @@ const Homepage = () => {
     async function fetchCategoryData(category) {
       try {
         const result = await api.get(`/api/products?category=${category.toLowerCase()}`);
-        return { category, data: result.data };
+        // Make sure data is always an array
+        const data = Array.isArray(result.data) ? result.data : [];
+        return { category, data };
       } catch (error) {
         console.error(`Error fetching ${category} products:`, error);
         return { category, data: [] };
       }
     }
+    
     async function fetchAllCategories() {
       setLoading(true);
       try {
         const categoryPromises = categories.map(category => fetchCategoryData(category));
         const results = await Promise.all(categoryPromises);
-        console.log("results:",results);
-        const newProductsByCategory = {};
-        results.forEach(result => {
-          newProductsByCategory[result.category] = result.data;
-        });
-        
+        console.log("results:", results);
         setProductsByCategory(results);
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -51,7 +49,9 @@ const Homepage = () => {
 
     fetchAllCategories();
   }, []);
- console.log("products by category:", productsByCategory);
+  
+  console.log("products by category:", productsByCategory);
+  
   return (
     <div>
       <HomeCarousel images={homeCarouselData} />
@@ -60,16 +60,20 @@ const Homepage = () => {
         {loading ? (
           <div className="text-center py-8">Loading products...</div>
         ) : (
-          productsByCategory ?  productsByCategory.map((category) => (
-            <HomeProductSection 
-              key={category.category}
-              data={category.data || []} 
-              category={category.category} 
-              section={category.category} 
-            />
-          )): ""
-        )
-    } 
+          productsByCategory.length > 0 ? productsByCategory.map((category) => {
+            // Ensure data is always an array before passing to HomeProductSection
+            const productData = Array.isArray(category.data) ? category.data : [];
+            
+            return (
+              <HomeProductSection 
+                key={category.category}
+                data={productData} 
+                category={category.category} 
+                section={category.category} 
+              />
+            );
+          }) : <div className="text-center py-8">No products found</div>
+        )}
       </div>
     </div>
   );

@@ -18,6 +18,7 @@ import { BriefcaseVariantOutline, CurrencyUsd, HelpCircleOutline, Poll } from "m
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import WeeklyStats from "./WeeklyStats";
 
 const darkTheme1 = createTheme({
   palette: {
@@ -58,50 +59,8 @@ const Dashboard = () => {
               <TotalEarning />
             </Grid>
             <Grid item xs={12} md={6} lg={4}>
-              <Grid container spacing={2}>
-                <Grid item xs={6}>
-                  <CardStatsVertical
-                    stats="$25.6k"
-                    icon={<Poll />}
-                    color="success"
-                    trendNumber="+42%"
-                    title="Total Profit"
-                    subtitle="Weekly Profit"
-                  />
-                </Grid>
-                <Grid item xs={6}>
-                  <CardStatsVertical
-                    stats="$78"
-                    title="Refunds"
-                    trend="negative"
-                    color="secondary"
-                    trendNumber="-15%"
-                    subtitle="Past Month"
-                    icon={<CurrencyUsd />}
-                  />
-                </Grid>
-                <Grid item xs={6}>
-                  <CardStatsVertical
-                    stats="862"
-                    trend="negative"
-                    trendNumber="-18%"
-                    title="New Orders"
-                    subtitle="Weekly Orders"
-                    icon={<BriefcaseVariantOutline />}
-                  />
-                </Grid>
-                <Grid item xs={6}>
-                  <CardStatsVertical
-                    stats="15"
-                    color="warning"
-                    trend="negative"
-                    trendNumber="-18%"
-                    subtitle="Last Week"
-                    title="Sales Queries"
-                    icon={<HelpCircleOutline />}
-                  />
-                </Grid>
-              </Grid>
+              {/* Replace static CardStatsVertical grid with WeeklyStats component */}
+              <WeeklyStats />
             </Grid>
             <Grid item xs={12} md={6} lg={4}>
             <CustomersTable />

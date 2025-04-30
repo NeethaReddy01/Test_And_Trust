@@ -1,5 +1,6 @@
 package com.backend.repository;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -14,4 +15,7 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
 	public List<Order> getUsersOrders(@Param("userId") Long userId);
 	
 	List<Order> findAllByOrderByCreatedAtDesc();
+	
+	 List<Order> findByUserId(Long userId);
+	    List<Order> findByOrderDateBetween(LocalDate startDate, LocalDate endDate);
 }

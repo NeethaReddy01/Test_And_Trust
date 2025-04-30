@@ -10,6 +10,9 @@ const HomeProductSection = ({ section, category, data }) => {
   const [maxIndex, setMaxIndex] = useState(0);
   const carouselRef = useRef(null);
   
+  // Ensure data is always an array
+  const safeData = Array.isArray(data) ? data : [];
+  
   const responsive = {
     0: { items: 2 },
     568: { items: 3 },
@@ -22,13 +25,13 @@ const HomeProductSection = ({ section, category, data }) => {
       let itemsPerPage = 5;
       if (width < 568) itemsPerPage = 2;
       else if (width < 1024) itemsPerPage = 3;
-      setMaxIndex(Math.max(0, data.length - itemsPerPage));
+      setMaxIndex(Math.max(0, safeData.length - itemsPerPage));
     };
 
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [data?.length]);
+  }, [safeData.length]);
 
   const slidePrev = () => {
     if (carouselRef.current) {
@@ -49,11 +52,17 @@ const HomeProductSection = ({ section, category, data }) => {
     console.log("Carousel changed to index:", item);
   };
 
-  const items = data?.map((item) => (
+  // Create carousel items only if data is an array and has items
+  const items = safeData.map((item) => (
     <div key={item.id || item._id} className="carousel-item">
       <HomeProductCard product={item} />
     </div>
   ));
+
+  // Don't render the section if there are no items
+  if (safeData.length === 0) {
+    return null;
+  }
 
   return (
     <div className="relative px-4 sm:px-6 lg:px-8">
