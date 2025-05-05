@@ -11,7 +11,9 @@ const fragnance = [
       "sizes": "10ml",
       "quantity": 85,
       "level1Category": "perfume",
-      "level2Category": "Fragrance"
+      "level2Category": "Fragrance",
+      "description": "A sophisticated fragrance that offers a perfect balance of elegance and intensity, making it an ideal choice for evening events and formal occasions."
+
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/51zejuDkKZL._SX522_.jpg",
@@ -24,7 +26,9 @@ const fragnance = [
       "sizes": "15ml",
       "quantity": 85,
       "level1Category": "perfume",
-      "level2Category": "Fragrance"
+      "level2Category": "Fragrance",
+      "description": "A fresh and energizing scent with woody undertones, Encre Noir Sport EDT is perfect for an active day or casual outings, leaving a lasting impression."
+
     },
     {
       "imageUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRiYhyXa3oeWoxm4tDKokU75n2TdudZoSEc4vedQbI3ZxeFRFWyA3S2NRECWspL5-zD8gHaYuZ1ubWdlmKcwIwzUHqPVXmZkPghGhlJJD6e1_2ubFjYfzph&usqp=CAE",
@@ -37,7 +41,10 @@ const fragnance = [
       "sizes": "10ml",
       "quantity": 85,
       "level1Category": "perfume",
-      "level2Category": "Fragrance"
+      "level2Category": "Fragrance",
+      "description": "A fragrance that evokes mystery and allure with its woody and floral notes, Homme Eau De Toilette Spray is perfect for the modern man who enjoys a bold scent."
+
+
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/51uf-7uoORL._SX522_.jpg",
@@ -50,7 +57,9 @@ const fragnance = [
       "sizes": "5ml",
       "quantity": 85,
       "level1Category": "perfume",
-      "level2Category": "Fragrance"
+      "level2Category": "Fragrance",
+      "description": "A fresh aquatic fragrance with hints of apple, green leaves, and a touch of musk, making it ideal for daily wear and casual occasions."
+
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/61xfuYt+5tL._SX679_.jpg",
@@ -63,7 +72,9 @@ const fragnance = [
       "sizes": "10ml",
       "quantity": 85,
       "level1Category": "perfume",
-      "level2Category": "Fragrance"
+      "level2Category": "Fragrance",
+      "description": "An intoxicating fragrance that offers a luxurious blend of aquatic, spicy, and woody notes, perfect for an elegant and captivating aura."
+
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/51M73SOIdhL._SX679_.jpg",
@@ -76,7 +87,9 @@ const fragnance = [
       "sizes": "12ml",
       "quantity": 85,
       "level1Category": "perfume",
-      "level2Category": "Fragrance"
+      "level2Category": "Fragrance",
+      "description": "A powerful, masculine fragrance with a blend of spices and woody notes, designed to enhance your presence and confidence throughout the day."
+
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/71ZyEJdF2wL._SX679_.jpg",
@@ -89,7 +102,9 @@ const fragnance = [
       "sizes": "5ml",
       "quantity": 85,
       "level1Category": "perfume",
-      "level2Category": "Fragrance"
+      "level2Category": "Fragrance",
+      "description": "A long-lasting fragrance with a touch of freshness and elegance, perfect for daily wear and special occasions."
+
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/718nUyjgVeL._SX679_.jpg",
@@ -102,7 +117,9 @@ const fragnance = [
       "sizes": "15ml",
       "quantity": 85,
       "level1Category": "perfume",
-      "level2Category": "Fragrance"
+      "level2Category": "Fragrance",
+      "description": "A bold, powerful fragrance with fresh citrus and floral notes, perfect for active men who need a long-lasting, invigorating scent."
+
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/51t4t86NrNL._SX679_.jpg",
@@ -115,7 +132,9 @@ const fragnance = [
       "sizes": "10ml",
       "quantity": 85,
       "level1Category": "perfume",
-      "level2Category": "Fragrance"
+      "level2Category": "Fragrance",
+      "description": "A crisp and refreshing fragrance that combines citrus and floral notes, making it a great choice for everyday wear."
+
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/61B9zH2NAdL._SX522_.jpg",
@@ -128,7 +147,9 @@ const fragnance = [
       "sizes": "5ml",
       "quantity": 85,
       "level1Category": "perfume",
-      "level2Category": "Fragrance"
+      "level2Category": "Fragrance",
+      "description": "A rich and complex fragrance with oriental and woody notes, perfect for sophisticated occasions and evening wear."
+
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/61hrvNougIL._SX522_.jpg",
@@ -141,7 +162,9 @@ const fragnance = [
       "sizes": "8ml",
       "quantity": 85,
       "level1Category": "perfume",
-      "level2Category": "Fragrance"
+      "level2Category": "Fragrance",
+      "description": "A refreshing and aquatic fragrance with subtle hints of green apple, making it ideal for casual and outdoor activities."
+
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/61FBJgFNscL._SX679_.jpg",
@@ -154,7 +177,9 @@ const fragnance = [
       "sizes": "10ml",
       "quantity": 85,
       "level1Category": "perfume",
-      "level2Category": "Fragrance"
+      "level2Category": "Fragrance",
+      "description": "A warm and spicy fragrance with a blend of cinnamon and patchouli, perfect for colder months and evening outings."
+
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/615ovi+7udL._SX679_.jpg",
@@ -167,7 +192,8 @@ const fragnance = [
       "sizes": "15ml",
       "quantity": 85,
       "level1Category": "perfume",
-      "level2Category": "Fragrance"
+      "level2Category": "Fragrance",
+      "description": "A rich blend of amber and vanilla, offering a sensual warmth that makes it the perfect scent for cozy nights and intimate gatherings."
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/31PSozebQgL._SX300_SY300_QL70_FMwebp_.jpg",
@@ -180,7 +206,8 @@ const fragnance = [
       "sizes": "10ml",
       "quantity": 85,
       "level1Category": "perfume",
-      "level2Category": "Fragrance"
+      "level2Category": "Fragrance",
+      "description": "A vibrant combination of citrus and herbal notes, creating a refreshing and energetic fragrance that’s perfect for daytime wear."
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/41Mc0xxLgJL._SX300_SY300_QL70_FMwebp_.jpg",
@@ -193,7 +220,8 @@ const fragnance = [
       "sizes": "10ml",
       "quantity": 85,
       "level1Category": "perfume",
-      "level2Category": "Fragrance"
+      "level2Category": "Fragrance",
+      "description": "A seductive and earthy scent featuring leather and musk, ideal for adding a touch of masculinity to evening events."
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/51ELqVhIDvL._SX522_.jpg",
@@ -206,7 +234,8 @@ const fragnance = [
       "sizes": "5ml",
       "quantity": 85,
       "level1Category": "perfume",
-      "level2Category": "Fragrance"
+      "level2Category": "Fragrance",
+      "description": "A fresh, aquatic fragrance with hints of sea breeze and florals, perfect for a cool, crisp morning or a beachside outing."
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/61hrvNougIL._SX522_.jpg",
@@ -219,7 +248,8 @@ const fragnance = [
       "sizes": "8ml",
       "quantity": 85,
       "level1Category": "perfume",
-      "level2Category": "Fragrance"
+      "level2Category": "Fragrance",
+      "description": "A sweet and spicy blend of cinnamon, nutmeg, and clove, designed to evoke a sense of warmth and sophistication during the colder months."
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/71YUCR2uZAL._SY879_.jpg",
@@ -232,7 +262,8 @@ const fragnance = [
       "sizes": "5ml",
       "quantity": 85,
       "level1Category": "perfume",
-      "level2Category": "Fragrance"
+      "level2Category": "Fragrance",
+      "description": "A floral fragrance with hints of rose and jasmine, balanced by a touch of vanilla, creating a timeless, feminine aroma for any occasion."
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/51foMTO3O5L._SX679_.jpg",
@@ -245,7 +276,8 @@ const fragnance = [
       "sizes": "10ml",
       "quantity": 85,
       "level1Category": "perfume",
-      "level2Category": "Fragrance"
+      "level2Category": "Fragrance",
+      "description": "A woody and aromatic scent, with deep notes of sandalwood and cedar, making it perfect for those seeking a bold, confident fragrance."
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/51Ta44W3x9L._SX679_.jpg",
@@ -258,7 +290,8 @@ const fragnance = [
       "sizes": "5ml",
       "quantity": 85,
       "level1Category": "perfume",
-      "level2Category": "Fragrance"
+      "level2Category": "Fragrance",
+      "description": "A light and fruity fragrance with a touch of green apple and pear, offering a youthful, energetic scent that’s great for everyday wear."
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/61AhDcMgHFL._SX679_.jpg",
@@ -271,7 +304,9 @@ const fragnance = [
       "sizes": "15ml",
       "quantity": 85,
       "level1Category": "perfume",
-      "level2Category": "Fragrance"
+      "level2Category": "Fragrance",
+      "description": "A luxurious blend of oud, rose, and amber, offering an exotic and alluring fragrance that’s perfect for evening wear or special occasions."
+
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/51ZWXRVgD3L._SY679_.jpg",
@@ -284,7 +319,8 @@ const fragnance = [
       "sizes": "12ml",
       "quantity": 85,
       "level1Category": "perfume",
-      "level2Category": "Fragrance"
+      "level2Category": "Fragrance",
+      "description": "A warm and inviting scent of vanilla, caramel, and chocolate, creating a deliciously sweet and comforting fragrance for colder nights."
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/41Ud1axjsaL._SX300_SY300_QL70_FMwebp_.jpg",
@@ -297,7 +333,8 @@ const fragnance = [
       "sizes": "11ml",
       "quantity": 85,
       "level1Category": "perfume",
-      "level2Category": "Fragrance"
+      "level2Category": "Fragrance",
+      "description": "A crisp blend of green tea and mint, offering a refreshing and invigorating scent perfect for daytime activities or warm weather."
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/510YstxcN-L._SX679_.jpg",
@@ -310,7 +347,10 @@ const fragnance = [
       "sizes": "5ml",
       "quantity": 85,
       "level1Category": "perfume",
-      "level2Category": "Fragrance"
+      "level2Category": "Fragrance",
+      "description": "A sophisticated combination of bergamot and musk, creating a refined and elegant fragrance ideal for both day and night."
+
+
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/71FYgvmvNAL._SX679_.jpg",
@@ -323,7 +363,8 @@ const fragnance = [
       "sizes": "6ml",
       "quantity": 85,
       "level1Category": "perfume",
-      "level2Category": "Fragrance"
+      "level2Category": "Fragrance",
+      "description": "A tropical fusion of coconut and pineapple, offering a sunny and vibrant scent that brings the feel of a beach vacation to any day."
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/61jTQkjA9fL._SX679_.jpg",
@@ -336,7 +377,9 @@ const fragnance = [
       "sizes": "8ml",
       "quantity": 85,
       "level1Category": "perfume",
-      "level2Category": "Fragrance"
+      "level2Category": "Fragrance",
+      "description": "A smoky and woody fragrance with hints of tobacco and birch, exuding a rugged, masculine scent that’s perfect for the fall season."
+      
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/318zj-A0HLL._SX300_SY300_QL70_FMwebp_.jpg",
@@ -349,7 +392,10 @@ const fragnance = [
       "sizes": "5ml",
       "quantity": 85,
       "level1Category": "perfume",
-      "level2Category": "Fragrance"
+      "level2Category": "Fragrance",
+      "description": "A floral and citrus blend with notes of lavender and lemon, creating a calming and uplifting fragrance that’s perfect for any occasion."
+
+
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/71NuaemkYqL._SX679_.jpg",
@@ -362,7 +408,8 @@ const fragnance = [
       "sizes": "10ml",
       "quantity": 85,
       "level1Category": "perfume",
-      "level2Category": "Fragrance"
+      "level2Category": "Fragrance",
+      "description": "A crisp blend of green tea and mint, offering a refreshing and invigorating scent perfect for daytime activities or warm weather."
     },
     {
       "imageUrl": "https://m.media-amazon.com/images/I/51gWMWA7n5L._SX679_.jpg",
@@ -375,7 +422,8 @@ const fragnance = [
       "sizes": "5ml",
       "quantity": 85,
       "level1Category": "perfume",
-      "level2Category": "Fragrance"
+      "level2Category": "Fragrance",
+      "description": "A sweet and spicy blend of cinnamon, nutmeg, and clove, designed to evoke a sense of warmth and sophistication during the colder months."
     }
   ];
 export default fragnance;
