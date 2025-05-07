@@ -16,9 +16,6 @@ import {
   getOrdersFailure,
   getOrdersRequest,
   getOrdersSuccess,
-  placedOrderFailure,
-  placedOrderRequest,
-  placedOrderSuccess,
   shipOrderFailure,
   shipOrderRequest,
   shipOrderSuccess,
@@ -97,7 +94,7 @@ export const cancelOrder = (orderId) => async (dispatch) => {
   }
 };
 
-// Async action creator for deleting an order
+
 export const deleteOrder = (orderId) => {
   return async(dispatch) => {
     dispatch(deleteOrderRequest());     
@@ -112,15 +109,3 @@ export const deleteOrder = (orderId) => {
       
   };
 };
-
-// export const placeOrder = (order) => async (dispatch) => {
-//   dispatch(placedOrderRequest());
-
-//   try {
-//     const response = await api.post(`/api/admin/orders/`, order);
-//     const data = response.data;
-//     dispatch(placedOrderSuccess(data));
-//   } catch (error) {
-//     dispatch(placedOrderFailure(error.message));
-//   }
-// };

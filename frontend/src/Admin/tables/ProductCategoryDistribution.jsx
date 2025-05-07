@@ -4,8 +4,6 @@ import Box from '@mui/material/Box'
 import CircularProgress from '@mui/material/CircularProgress'
 import Typography from '@mui/material/Typography'
 import React from 'react'
-
-// ** Chart Imports
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recharts'
 import api, { getYearlyStats } from '../../config/api'
 import { Divider, LinearProgress } from '@mui/material'
@@ -32,7 +30,6 @@ const ProductCategoryDistribution = () => {
   
         useEffect(() => {
           fetchYearlyStats()
-          
           // Set up an interval to refresh data every 5 minutes
           const interval = setInterval(() => {
             fetchYearlyStats()
@@ -42,8 +39,6 @@ const ProductCategoryDistribution = () => {
           return () => clearInterval(interval)
         }, [])
       // Fetch yearly stats from backend API
-      
-  
     // Calculate total quarterly revenue for progress calculations
     const calculateTotalQuarterlyRevenue = () => {
       if (!quarterlyData || Object.keys(quarterlyData).length === 0) return 0
@@ -77,7 +72,6 @@ const ProductCategoryDistribution = () => {
     async function fetchCategoryData(category) {
       try {
         const result = await api.get(`/api/products?category=${category.toLowerCase()}`);
-        // Make sure data is always an array
         const data = Array.isArray(result.data) ? result.data : [];
         return { category, data };
       } catch (error) {
@@ -91,7 +85,6 @@ const ProductCategoryDistribution = () => {
       try {
         const categoryPromises = categories.map(category => fetchCategoryData(category));
         const results = await Promise.all(categoryPromises);
-        console.log("results:", results);
         setProductsByCategory(results);
       } catch (error) {
         console.error("Error fetching products:", error);

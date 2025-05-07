@@ -1,27 +1,20 @@
-// ** MUI Imports
+
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import Avatar from '@mui/material/Avatar'
 import Typography from '@mui/material/Typography'
-import IconButton from '@mui/material/IconButton'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
 import LinearProgress from '@mui/material/LinearProgress'
 import CircularProgress from '@mui/material/CircularProgress'
 import { useEffect, useState } from 'react'
-import axios from 'axios'
 import Grid from '@mui/material/Grid'
 import Divider from '@mui/material/Divider'
 import Chip from '@mui/material/Chip'
-
-// ** Icons Imports
 import MenuUp from 'mdi-material-ui/MenuUp'
 import MenuDown from 'mdi-material-ui/MenuDown'
-import DotsVertical from 'mdi-material-ui/DotsVertical'
-import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
 import CartOutline from 'mdi-material-ui/CartOutline'
 import AccountOutline from 'mdi-material-ui/AccountOutline'
-import TrendingUp from 'mdi-material-ui/TrendingUp'
 import { getYearlyStats } from '../../config/api'
 
 const YearlyStats = () => {
@@ -187,7 +180,6 @@ const YearlyStats = () => {
                   backgroundColor: 'success.main'
                 }}
               >
-                {/* <CurrencyUsd /> */}
               </Avatar>
               <Typography variant='h6'>₹{Math.round(yearlyStats?.averageOrderValue || 0) }</Typography>
               <Typography variant='body2'>Avg. Order Value</Typography>
@@ -264,16 +256,6 @@ const YearlyStats = () => {
             </Box>
           )
         })}
-
-        
-          
-
-        {/* <Box sx={{ mt: 6, display: 'flex', alignItems: 'center' }}>
-          <TrendingUp sx={{ mr: 1.5, fontSize: '1.75rem', color: 'primary.main' }} />
-          <Typography variant='body2'>
-            Projected growth for next year: <strong>{yearlyStats?.growthProjection.toFixed(1)}%</strong>
-          </Typography>
-        </Box> */}
       </CardContent>
     </Card>
   )

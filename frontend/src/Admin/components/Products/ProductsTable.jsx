@@ -37,42 +37,16 @@ const ProductsTable = () => {
 
   // query
   const searchParams = new URLSearchParams(location.search);
-  const availability = searchParams.get("availability");
-  const category = searchParams.get("category");
-  const sort = searchParams.get("sort");
-  const page = searchParams.get("page");
-
-  const handlePaginationChange = (event, value) => {
-    searchParams.set("page", value - 1);
-    const query = searchParams.toString();
-    navigate({ search: `?${query}` });
-  };
 
   useEffect(() => {
-    // setFilterValue({ availability, category, sort });
     dispatch(getProducts());
   }, []);
 
-  const handleFilterChange = (e, sectionId) => {
-    console.log(e.target.value, sectionId);
-    setFilterValue((values) => ({ ...values, [sectionId]: e.target.value }));
-    searchParams.set(sectionId, e.target.value);
-    const query = searchParams.toString();
-    navigate({ search: `?${query}` });
-  };
-
   const handleDeleteProduct = (productId) => {
-    console.log("Deleting product with ID:", productId);
-    
-    // Create the object structure the action expects
     dispatch(deleteProduct({ productId }))
       .then(() => {
-        console.log("Product deleted successfully, now fetching products");
-        // Only fetch products after deletion completes
-        // dispatch(getProducts());
       })
       .catch(error => {
-        console.error("Error deleting product:", error);
       });
   };
 
@@ -153,17 +127,6 @@ const ProductsTable = () => {
           </Table>
         </TableContainer>
       </Card>
-      {/* <Card className="mt-2 border">
-        <div className="mx-auto px-4 py-5 flex justify-center shadow-lg rounded-md">
-          <Pagination
-            count={customersProduct.products?.totalPages}
-            color="primary"
-            className=""
-            onChange={handlePaginationChange}
-            // value={page}
-          />
-        </div>
-      </Card> */}
     </Box>
   );
 };

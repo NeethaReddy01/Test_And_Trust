@@ -2,7 +2,6 @@ import { CREATE_PAYMENT_FAILURE, CREATE_PAYMENT_REQUEST, CREATE_PAYMENT_SUCCESS,
 
  const initialState = {};
   
- // Payment reducer to handle creating a payment
  export const paymentReducer = (state = initialState, action) => {
    switch (action.type) {
      case CREATE_PAYMENT_REQUEST:

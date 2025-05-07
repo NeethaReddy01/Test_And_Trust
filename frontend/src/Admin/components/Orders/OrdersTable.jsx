@@ -6,11 +6,8 @@ import {
   Card,
   CardHeader,
   Chip,
-  FormControl,
-  InputLabel,
   Menu,
   MenuItem,
-  Pagination,
   Table,
   TableBody,
   TableCell,
@@ -22,9 +19,6 @@ import {
 
 import React, { useEffect, useState } from "react";
 
-import { useNavigate } from "react-router-dom";
-import { Grid, Select } from "@mui/material";
-import { haircare } from "../../../Data/Haircare/haircare";
 import { useDispatch, useSelector } from "react-redux";
 import {
   confirmOrder,
@@ -33,18 +27,14 @@ import {
   getOrders,
   shipOrder,
 } from "../../../Redux/Admin/Orders/Action";
-import { configure } from "@testing-library/react";
 
 const OrdersTable = () => {
-  const navigate = useNavigate();
   const [formData, setFormData] = useState({ status: "", sort: "" });
   const [orderStatus, setOrderStatus] = useState("");
   const dispatch = useDispatch();
   const jwt = localStorage.getItem("jwt");
   const { adminsOrder } = useSelector((store) => store);
   const [anchorElArray, setAnchorElArray] = useState([]);
-
-  // Fix: Check if adminsOrder exists and has these properties
   const orderStatusChanged = adminsOrder ? {
     delivered: adminsOrder.delivered,
     shipped: adminsOrder.shipped,
@@ -53,7 +43,7 @@ const OrdersTable = () => {
 
   useEffect(() => {
     dispatch(getOrders({ jwt }));
-  }, [jwt, dispatch, orderStatus]); // Changed dependency array to avoid undefined properties
+  }, [jwt, dispatch, orderStatus]); 
 
   const handleUpdateStatusMenuClick = (event, index) => {
     const newAnchorElArray = [...anchorElArray];
@@ -70,14 +60,8 @@ const OrdersTable = () => {
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-
     setFormData({ ...formData, [name]: value });
   };
-  
-  function handlePaginationChange(event, value) {
-    console.log("Current page:", value);
-  }
-
   const handleConfirmedOrder = (orderId, index) => {
     handleUpdateStatusMenuClose(index);
     dispatch(confirmOrder(orderId));

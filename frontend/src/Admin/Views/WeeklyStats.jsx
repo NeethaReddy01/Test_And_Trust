@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Grid from '@mui/material/Grid'
 import CardStatsVertical from '../../Styles/CardStatsVertical'
-import { Poll, CurrencyUsd, BriefcaseVariantOutline, HelpCircleOutline } from 'mdi-material-ui'
+import { Poll, BriefcaseVariantOutline } from 'mdi-material-ui'
 import { getWeeklyStats } from '../../config/api'
 import CircularProgress from '@mui/material/CircularProgress'
 import Box from '@mui/material/Box'
@@ -86,17 +86,6 @@ const WeeklyStats = () => {
           subtitle="Weekly Profit"
         />
       </Grid>
-      {/* <Grid item xs={6}>
-        <CardStatsVertical
-          stats={statsData ? formatCurrency(statsData.refundAmount) : '₹0'}
-          title="Refunds"
-          trend={statsData && statsData.refundTrend < 0 ? 'negative' : 'positive'}
-          color="secondary"
-          trendNumber={statsData ? formatTrend(statsData.refundTrend) : '0%'}
-          subtitle="Past Month"
-          icon={<CurrencyUsd />}
-        />
-      </Grid> */}
       <Grid item xs={6}>
         <CardStatsVertical
           stats={statsData ? statsData.newOrdersCount : '0'}
@@ -107,17 +96,6 @@ const WeeklyStats = () => {
           icon={<BriefcaseVariantOutline />}
         />
       </Grid>
-      {/* <Grid item xs={6}>
-        <CardStatsVertical
-          stats={statsData ? statsData.salesQueries : '0'}
-          color="warning"
-          trend={statsData && statsData.queriesTrend < 0 ? 'negative' : 'positive'}
-          trendNumber={statsData ? formatTrend(statsData.queriesTrend) : '0%'}
-          subtitle="Last Week"
-          title="Sales Queries"
-          icon={<HelpCircleOutline />}
-        />
-      </Grid> */}
     </Grid>
   )
 }
