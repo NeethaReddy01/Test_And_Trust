@@ -40,7 +40,7 @@ const RecentlyAddeddProducts = () => {
                   <Typography variant='caption'>{item.brand}</Typography>
                 </Box>
               </TableCell>
-              <TableCell>{"dress"}</TableCell>
+              <TableCell>{item.level2Category}</TableCell>
               <TableCell>{item.discountedPrice}</TableCell>
               <TableCell>{item.quantity}</TableCell>
               
