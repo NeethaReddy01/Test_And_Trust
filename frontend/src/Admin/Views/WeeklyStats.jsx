@@ -86,7 +86,7 @@ const WeeklyStats = () => {
           subtitle="Weekly Profit"
         />
       </Grid>
-      <Grid item xs={6}>
+      {/* <Grid item xs={6}>
         <CardStatsVertical
           stats={statsData ? formatCurrency(statsData.refundAmount) : '₹0'}
           title="Refunds"
@@ -96,7 +96,7 @@ const WeeklyStats = () => {
           subtitle="Past Month"
           icon={<CurrencyUsd />}
         />
-      </Grid>
+      </Grid> */}
       <Grid item xs={6}>
         <CardStatsVertical
           stats={statsData ? statsData.newOrdersCount : '0'}
@@ -107,7 +107,7 @@ const WeeklyStats = () => {
           icon={<BriefcaseVariantOutline />}
         />
       </Grid>
-      <Grid item xs={6}>
+      {/* <Grid item xs={6}>
         <CardStatsVertical
           stats={statsData ? statsData.salesQueries : '0'}
           color="warning"
@@ -117,7 +117,7 @@ const WeeklyStats = () => {
           title="Sales Queries"
           icon={<HelpCircleOutline />}
         />
-      </Grid>
+      </Grid> */}
     </Grid>
   )
 }

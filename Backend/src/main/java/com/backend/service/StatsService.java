@@ -7,4 +7,6 @@ import com.backend.modal.DashboardStats;
 public interface StatsService {
     DashboardStats getDashboardStats();
     Map<String, Object> getWeeklyStats();
+    Map<String, Object> getYearlyStats();
+
 }

@@ -65,5 +65,24 @@ export const getWeeklyStats = async () => {
     throw error;
   }
 };
+export const getYearlyStats = async () => {
+  try {
+    // Use the configured api instance that includes auth headers
+    const response = await api.get('http://localhost:8080/api/stats/yearly');
+    console.log("Yearly stats data received:", response.data);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching weekly stats:', error);
+    
+    // Check if it's a redirect to login (status 200 but HTML content)
+    if (error.response && error.response.status === 200 && 
+        typeof error.response.data === 'string' && 
+        error.response.data.includes('Please sign in')) {
+      throw new Error('Authentication required. Please log in again.');
+    }
+    
+    throw error;
+  }
+};
 
 export default api;

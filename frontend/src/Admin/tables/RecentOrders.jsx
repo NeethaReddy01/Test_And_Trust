@@ -45,7 +45,7 @@ const RecentOrders = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {adminsOrder?.orders?.slice(0, 5).map((item, index) => (
+            {adminsOrder?.orders?.slice(0, 7).map((item, index) => (
               <TableRow 
                 hover 
                 key={item.id || index} 

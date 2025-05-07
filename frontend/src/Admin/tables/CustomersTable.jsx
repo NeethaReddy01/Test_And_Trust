@@ -128,7 +128,7 @@ const CustomersTable = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {auth.customers.map(item => (
+            {auth.customers.slice(0,5).map(item => (
               <TableRow hover key={item.name} sx={{ '&:last-of-type td, &:last-of-type th': { border: 0 } }}>
                 <TableCell> <Avatar alt={item.name} src={item.image} /> </TableCell>
                 <TableCell>{item.firstName}</TableCell>

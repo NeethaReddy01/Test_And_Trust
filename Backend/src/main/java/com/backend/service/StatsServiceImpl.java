@@ -1,21 +1,24 @@
 package com.backend.service;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.time.Year;
 import java.time.YearMonth;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
 import com.backend.modal.DashboardStats;
 import com.backend.modal.Order;
+import com.backend.modal.OrderItem;
 import com.backend.modal.Product;
-import com.backend.modal.User;
 import com.backend.repository.OrderRepository;
 import com.backend.repository.ProductRepository;
 import com.backend.repository.UserRepository;
+import com.backend.user.domain.OrderStatus;
 
 @Service
 public class StatsServiceImpl implements StatsService {
@@ -114,6 +117,228 @@ public class StatsServiceImpl implements StatsService {
         weeklyStats.put("queriesTrend", queriesTrendPercentage);
         
         return weeklyStats;
+    }
+    
+    @Override
+    public Map<String, Object> getYearlyStats() {
+        Map<String, Object> yearlyStats = new HashMap<>();
+        
+        // Get current year and previous year
+        int currentYear = Year.now().getValue();
+        int previousYear = currentYear - 1;
+        
+        // Define date ranges for current and previous year
+        LocalDate currentYearStart = LocalDate.of(currentYear, 1, 1);
+        LocalDate currentYearEnd = LocalDate.of(currentYear, 12, 31);
+        LocalDate previousYearStart = LocalDate.of(previousYear, 1, 1);
+        LocalDate previousYearEnd = LocalDate.of(previousYear, 12, 31);
+        
+        // Get orders for current and previous year
+        List<Order> currentYearOrders = orderRepository.findByOrderDateBetween(currentYearStart, currentYearEnd);
+        List<Order> previousYearOrders = orderRepository.findByOrderDateBetween(previousYearStart, previousYearEnd);
+        
+        // Calculate yearly revenue
+        double yearlyRevenue = currentYearOrders.stream()
+                .mapToDouble(Order::getTotalPrice)
+                .sum();
+                
+        // Calculate previous year revenue
+        double previousYearRevenue = previousYearOrders.stream()
+                .mapToDouble(Order::getTotalPrice)
+                .sum();
+                
+        // Calculate revenue trend percentage
+        double revenueTrendPercentage = calculatePercentageChange(previousYearRevenue, yearlyRevenue);
+        
+        // Calculate total orders for current year
+        long yearlyOrdersCount = currentYearOrders.size();
+        
+        // Calculate total orders for previous year
+        long previousYearOrdersCount = previousYearOrders.size();
+        
+        // Calculate orders trend percentage
+        double ordersTrendPercentage = calculatePercentageChange(previousYearOrdersCount, yearlyOrdersCount);
+        
+        // Calculate average order value for current year
+        double avgOrderValue = yearlyOrdersCount > 0 ? yearlyRevenue / yearlyOrdersCount : 0;
+        
+        // Calculate average order value for previous year
+        double previousAvgOrderValue = previousYearOrdersCount > 0 ? previousYearRevenue / previousYearOrdersCount : 0;
+        
+        // Calculate average order value trend
+        double avgOrderValueTrend = calculatePercentageChange(previousAvgOrderValue, avgOrderValue);
+        
+        // Calculate refunds for current year (based on order status or a hypothetical field)
+        // In a real implementation, you would query a refunds table or use a specific status
+        double yearlyRefunds = calculateYearlyRefunds(currentYearOrders);
+        double previousYearRefunds = calculateYearlyRefunds(previousYearOrders);
+        double refundsTrendPercentage = calculatePercentageChange(previousYearRefunds, yearlyRefunds);
+        
+        // Calculate new customers (users who placed their first order this year)
+        long newCustomersCount = calculateNewCustomers(currentYear);
+        long previousYearNewCustomers = calculateNewCustomers(previousYear);
+        double newCustomersTrend = calculatePercentageChange(previousYearNewCustomers, newCustomersCount);
+        
+        // Calculate top selling products
+        List<Map<String, Object>> topSellingProducts = getTopSellingProductsOfYear(currentYearOrders);
+        
+        // Calculate quarterly revenue breakdown
+        Map<String, Double> quarterlyRevenue = calculateQuarterlyRevenue(currentYearOrders);
+        
+        // Calculate yearly growth projections (this would be more complex in a real system,
+        // potentially involving time series analysis or regression)
+        double growthProjection = revenueTrendPercentage > 0 ? revenueTrendPercentage * 1.1 : revenueTrendPercentage * 0.5;
+        
+        // Populate yearly stats map
+        yearlyStats.put("year", currentYear);
+        yearlyStats.put("yearlyRevenue", yearlyRevenue);
+        yearlyStats.put("revenueTrend", revenueTrendPercentage);
+        yearlyStats.put("yearlyOrdersCount", yearlyOrdersCount);
+        yearlyStats.put("ordersTrend", ordersTrendPercentage);
+        yearlyStats.put("averageOrderValue", avgOrderValue);
+        yearlyStats.put("avgOrderValueTrend", avgOrderValueTrend);
+        yearlyStats.put("yearlyRefunds", yearlyRefunds);
+        yearlyStats.put("refundsTrend", refundsTrendPercentage);
+        yearlyStats.put("newCustomersCount", newCustomersCount);
+        yearlyStats.put("newCustomersTrend", newCustomersTrend);
+        yearlyStats.put("topSellingProducts", topSellingProducts);
+        yearlyStats.put("quarterlyRevenue", quarterlyRevenue);
+        yearlyStats.put("growthProjection", growthProjection);
+        
+        return yearlyStats;
+    }
+    
+    /**
+     * Calculate the amount of refunds for a given list of orders
+     * In a real implementation, this would use actual refund data
+     */
+    private double calculateYearlyRefunds(List<Order> orders) {
+        // Mock implementation - in a real system, this would query refund records
+        // or calculate based on orders with a refunded status
+        return orders.stream()
+                .filter(order -> order.getOrderStatus() == OrderStatus.CANCELLED) // Assuming CANCELLED status is 0
+                .mapToDouble(Order::getTotalPrice)
+                .sum() * 0.8; // Assuming 80% of cancelled orders result in refunds
+    }
+    
+    /**
+     * Calculate the number of new customers who made their first purchase in the given year
+     */
+    private long calculateNewCustomers(int year) {
+        LocalDate yearStart = LocalDate.of(year, 1, 1);
+        LocalDate yearEnd = LocalDate.of(year, 12, 31);
+        
+        // Get all orders for the year
+        List<Order> yearOrders = orderRepository.findByOrderDateBetween(yearStart, yearEnd);
+        
+        // Extract unique user IDs from these orders
+        List<Long> userIds = yearOrders.stream()
+                .map(order -> order.getUser().getId())
+                .distinct()
+                .collect(Collectors.toList());
+        
+        // For each user, check if their first order was in this year
+        long newCustomersCount = 0;
+        for (Long userId : userIds) {
+            List<Order> userOrders = orderRepository.findByUserId(userId);
+            if (!userOrders.isEmpty()) {
+                // Sort orders by date
+                Order earliestOrder = userOrders.stream()
+                        .min((o1, o2) -> o1.getOrderDate().compareTo(o2.getOrderDate()))
+                        .orElse(null);
+                
+                if (earliestOrder != null && 
+                    earliestOrder.getOrderDate().getYear() == year) {
+                    newCustomersCount++;
+                }
+            }
+        }
+        
+        return newCustomersCount;
+    }
+    
+    /**
+     * Get the top selling products for a given year based on order items
+     */
+    private List<Map<String, Object>> getTopSellingProductsOfYear(List<Order> yearOrders) {
+        // In a real implementation, this would be more sophisticated,
+        // potentially using a database query with grouping and counting
+        
+        // Create a map to count product occurrences
+        Map<Long, Integer> productSalesCount = new HashMap<>();
+        Map<Long, Double> productSalesRevenue = new HashMap<>();
+        
+        // Count occurrences of each product in order items
+        for (Order order : yearOrders) {
+            for (OrderItem item : order.getOrderItems()) {
+                Long productId = item.getProduct().getId();
+                int quantity = item.getQuantity();
+                double price = item.getPrice() * quantity;
+                
+                productSalesCount.put(productId, productSalesCount.getOrDefault(productId, 0) + quantity);
+                productSalesRevenue.put(productId, productSalesRevenue.getOrDefault(productId, 0.0) + price);
+            }
+        }
+        
+        // Convert to a list of products with their sales counts
+        List<Map<String, Object>> topProducts = new ArrayList<>();
+        for (Map.Entry<Long, Integer> entry : productSalesCount.entrySet()) {
+            Long productId = entry.getKey();
+            Integer quantity = entry.getValue();
+            Double revenue = productSalesRevenue.get(productId);
+            
+            // Get product details
+            Product product = productRepository.findById(productId).orElse(null);
+            if (product != null) {
+                Map<String, Object> productMap = new HashMap<>();
+                productMap.put("image", product.getImageUrl());
+                productMap.put("id", productId);
+                productMap.put("title", product.getTitle());
+                productMap.put("brand", product.getBrand());
+                productMap.put("category", product.getCategory().getName());
+                productMap.put("quantitySold", quantity);
+                productMap.put("revenue", revenue);
+                
+                topProducts.add(productMap);
+            }
+        }
+        
+        // Sort by quantity sold (descending)
+        topProducts.sort((p1, p2) -> ((Integer) p2.get("quantitySold")).compareTo((Integer) p1.get("quantitySold")));
+        
+        // Return top 10 or fewer if less than 10 products exist
+        return topProducts.stream().limit(10).collect(Collectors.toList());
+    }
+    
+    /**
+     * Calculate revenue breakdown by quarters for a given year
+     */
+    private Map<String, Double> calculateQuarterlyRevenue(List<Order> yearOrders) {
+        Map<String, Double> quarterlyRevenue = new HashMap<>();
+        quarterlyRevenue.put("Q1", 0.0);
+        quarterlyRevenue.put("Q2", 0.0);
+        quarterlyRevenue.put("Q3", 0.0);
+        quarterlyRevenue.put("Q4", 0.0);
+        
+        for (Order order : yearOrders) {
+            int month = order.getOrderDate().getMonthValue();
+            String quarter;
+            
+            if (month >= 1 && month <= 3) {
+                quarter = "Q1";
+            } else if (month >= 4 && month <= 6) {
+                quarter = "Q2";
+            } else if (month >= 7 && month <= 9) {
+                quarter = "Q3";
+            } else {
+                quarter = "Q4";
+            }
+            
+            double currentValue = quarterlyRevenue.get(quarter);
+            quarterlyRevenue.put(quarter, currentValue + order.getTotalPrice());
+        }
+        
+        return quarterlyRevenue;
     }
     
     private double calculatePercentageChange(double oldValue, double newValue) {
