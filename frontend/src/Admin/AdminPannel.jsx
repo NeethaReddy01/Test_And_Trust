@@ -66,7 +66,7 @@ export default function AdminPannel() {
         ))}
       </List>
 
-      <List sx={{ position: "absolute", bottom: 0, width: "100%" }}>
+      {/* <List sx={{ position: "absolute", bottom: 0, width: "100%" }}>
         <Divider />
         {["Account", "Request"].map((text, index) => (
           <ListItem key={text} disablePadding>
@@ -78,7 +78,7 @@ export default function AdminPannel() {
             </ListItemButton>
           </ListItem>
         ))}
-      </List>
+      </List> */}
     </Box>
   );
 

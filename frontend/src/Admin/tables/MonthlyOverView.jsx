@@ -79,9 +79,9 @@ const MonthlyOverview = () => {
         <Grid item xs={12} sx={{ textAlign: 'center', py: 5 }}>
           <Typography color="error">{error}</Typography>
           <Box sx={{ mt: 2 }}>
-            <IconButton color="primary" onClick={fetchDashboardStats}>
+            {/* <IconButton color="primary" onClick={fetchDashboardStats}>
               <RefreshIcon />
-            </IconButton>
+            </IconButton> */}
           </Box>
         </Grid>
       )
@@ -143,26 +143,26 @@ const MonthlyOverview = () => {
     <Card>
       <CardHeader
         title='Monthly Overview'
-        action={
-          <Box>
-            <IconButton 
-              size='small' 
-              aria-label='refresh'
-              onClick={fetchDashboardStats}
-              sx={{ mr: 1, color: 'primary.main' }}
-            >
-              <RefreshIcon />
-            </IconButton>
-            <IconButton 
-              size='small' 
-              aria-label='settings' 
-              className='card-more-options' 
-              sx={{ color: 'text.secondary' }}
-            >
-              <DotsVertical />
-            </IconButton>
-          </Box>
-        }
+        // action={
+        //   // <Box>
+        //   //   {/* <IconButton 
+        //   //     size='small' 
+        //   //     aria-label='refresh'
+        //   //     onClick={fetchDashboardStats}
+        //   //     sx={{ mr: 1, color: 'primary.main' }}
+        //   //   >
+        //   //     <RefreshIcon />
+        //   //   </IconButton> */}
+        //   //   {/* <IconButton 
+        //   //     size='small' 
+        //   //     aria-label='settings' 
+        //   //     className='card-more-options' 
+        //   //     sx={{ color: 'text.secondary' }}
+        //   //   >
+        //   //     {/* <DotsVertical /> */}
+        //   //   </IconButton> */}
+        //   // </Box>
+        // }
         subheader={
           <Typography variant='body2'>
             <Box component='span' sx={{ fontWeight: 600, color: 'text.primary' }}>

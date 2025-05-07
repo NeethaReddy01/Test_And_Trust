@@ -34,22 +34,30 @@ const Dashboard = () => {
       <ThemeProvider theme={customTheme}>
         <AdminPannel>
           <Grid container spacing={3}>
-            {/* Top Row: Key Metrics */}
-            <Grid item xs={12} md={4}>
-              <Achivement />
-            </Grid>
+            {/* First Row: Overview and Weekly Stats */}
             <Grid item xs={12} md={8}>
-              <MonthlyOverview />
+              <Card sx={{ height: '100%' }}>
+                <CardContent>
+                  <Typography variant="h6" gutterBottom>
+                    Monthly Overview
+                  </Typography>
+                  <MonthlyOverview />
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Card sx={{ height: '100%' }}>
+                <CardContent>
+                  <Typography variant="h6" gutterBottom>
+                    Weekly Performance
+                  </Typography>
+                  <WeeklyStats />
+                </CardContent>
+              </Card>
             </Grid>
 
-            {/* Second Row: Weekly and Yearly Stats */}
-            <Grid item xs={12} md={4}>
-              <WeeklyOverview />
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <WeeklyStats />
-            </Grid>
-            <Grid item xs={12} md={4}>
+            {/* Second Row: Yearly Stats and Category Distribution */}
+            <Grid item xs={12} md={6}>
               <Card sx={{ height: '100%' }}>
                 <CardContent>
                   <Typography variant="h6" gutterBottom>
@@ -59,9 +67,7 @@ const Dashboard = () => {
                 </CardContent>
               </Card>
             </Grid>
-
-            {/* Third Row: Category Distribution and Sales Over Time */}
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={6}>
               <Card sx={{ height: '100%' }}>
                 <CardContent>
                   <Typography variant="h6" gutterBottom>
@@ -71,6 +77,65 @@ const Dashboard = () => {
                 </CardContent>
               </Card>
             </Grid>
+
+            {/* Third Row: Recent Orders and Customers */}
+            <Grid item xs={12}>
+              <Card>
+                <CardContent>
+                  <Typography variant="h6" gutterBottom>
+                    Recent Orders
+                  </Typography>
+                  <RecentOrders />
+                </CardContent>
+              </Card>
+            </Grid>
+
+            {/* Fourth Row: Recently Added Products and Customers */}
+            <Grid item xs={12} md={8}>
+              <Card sx={{ height: '100%' }}>
+                <CardContent>
+                  {/* <Typography variant="h6" gutterBottom>
+                    Products
+                  </Typography> */}
+                  <RecentlyAddeddProducts />
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Card sx={{ height: '100%' }}>
+                <CardContent>
+                  {/* <Typography variant="h6" gutterBottom>
+                    New Customers
+                  </Typography> */}
+                  <CustomersTable />
+                </CardContent>
+              </Card>
+            </Grid>
+
+            {/* Additional components that are currently commented out but can be added back */}
+            {/* 
+            <Grid item xs={12} md={4}>
+              <Card sx={{ height: '100%' }}>
+                <CardContent>
+                  <Typography variant="h6" gutterBottom>
+                    Achievements
+                  </Typography>
+                  <Achivement />
+                </CardContent>
+              </Card>
+            </Grid>
+
+            <Grid item xs={12} md={4}>
+              <Card sx={{ height: '100%' }}>
+                <CardContent>
+                  <Typography variant="h6" gutterBottom>
+                    Weekly Overview
+                  </Typography>
+                  <WeeklyOverview />
+                </CardContent>
+              </Card>
+            </Grid>
+
             <Grid item xs={12} md={8}>
               <Card sx={{ height: '100%' }}>
                 <CardContent>
@@ -82,8 +147,7 @@ const Dashboard = () => {
               </Card>
             </Grid>
 
-            {/* Fourth Row: Quarterly Performance Chart */}
-            {/* <Grid item xs={12}>
+            <Grid item xs={12}>
               <Card>
                 <CardContent>
                   <Typography variant="h6" gutterBottom>
@@ -92,21 +156,9 @@ const Dashboard = () => {
                   <QuarterlyRevenueChart />
                 </CardContent>
               </Card>
-            </Grid> */}
-
-            {/* Fifth Row: Recent Orders and Products */}
-            <Grid item xs={12} md={8}>
-              <RecentOrders />
             </Grid>
+
             <Grid item xs={12} md={4}>
-              <CustomersTable />
-            </Grid>
-
-            {/* Sixth Row: Products and Country Sales */}
-            <Grid item xs={12} md={8}>
-              <RecentlyAddeddProducts />
-            </Grid>
-            {/* <Grid item xs={12} md={4}>
               <Card sx={{ height: '100%' }}>
                 <CardContent>
                   <Typography variant="h6" gutterBottom>
@@ -115,9 +167,8 @@ const Dashboard = () => {
                   <SalesByCountries />
                 </CardContent>
               </Card>
-            </Grid> */}
+            </Grid>
 
-            {/* Bottom Row: Deposits/Withdrawals
             <Grid item xs={12}>
               <Card>
                 <CardContent>
@@ -127,7 +178,8 @@ const Dashboard = () => {
                   <DepositWithdraw />
                 </CardContent>
               </Card>
-            </Grid> */}
+            </Grid>
+            */}
           </Grid>
         </AdminPannel>
       </ThemeProvider>

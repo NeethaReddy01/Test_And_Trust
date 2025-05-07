@@ -10,7 +10,7 @@ const RecentlyAddeddProducts = () => {
   return (
     <Card>
        <CardHeader
-          title='Recently Added Products'
+          title='Products'
           sx={{ pt: 2, alignItems: 'center', '& .MuiCardHeader-action': { mt: 0.6 } }}
           action={<Typography onClick={()=>navigate("/admin/products")} variant='caption' sx={{color:"blue",cursor:"pointer",paddingRight:".8rem"}}>View All</Typography>}
           titleTypographyProps={{

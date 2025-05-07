@@ -72,7 +72,7 @@ const YearlyStats = () => {
   const formatCurrency = (value) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
-      currency: 'USD',
+      currency: 'INR',
       minimumFractionDigits: 0,
       maximumFractionDigits: 0
     }).format(value)
@@ -94,11 +94,7 @@ const YearlyStats = () => {
       <CardHeader
         title={`Yearly Performance ${yearlyStats?.year || new Date().getFullYear()}`}
         titleTypographyProps={{ sx: { lineHeight: '1.6 !important', letterSpacing: '0.15px !important' } }}
-        action={
-          <IconButton size='small' aria-label='settings' className='card-more-options' sx={{ color: 'text.secondary' }}>
-            <DotsVertical />
-          </IconButton>
-        }
+        
       />
       <CardContent sx={{ pt: theme => `${theme.spacing(1)} !important` }}>
         <Box sx={{ mb: 1, display: 'flex', alignItems: 'center' }}>
@@ -269,57 +265,8 @@ const YearlyStats = () => {
           )
         })}
 
-        <Divider sx={{ my: 4 }} />
-
-        <Typography variant='h6' sx={{ mb: 3 }}>
-          Quarterly Revenue Breakdown
-        </Typography>
-
-        {Object.entries(quarterlyData).map(([quarter, revenue], index) => {
-          const progress = totalQuarterlyRevenue > 0 ? (revenue / totalQuarterlyRevenue) * 100 : 0
+        
           
-          const quarterColors = {
-            'Q1': 'primary',
-            'Q2': 'info',
-            'Q3': 'warning',
-            'Q4': 'success'
-          }
-          
-          return (
-            <Box
-              key={quarter}
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                ...(index !== Object.keys(quarterlyData).length - 1 ? { mb: 3 } : {})
-              }}
-            >
-              <Box sx={{ width: '100%' }}>
-                <Box
-                  sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    mb: 1
-                  }}
-                >
-                  <Typography variant='body2' sx={{ fontWeight: 600 }}>
-                    {quarter}
-                  </Typography>
-                  <Typography variant='body2' sx={{ fontWeight: 600 }}>
-                    {formatCurrency(revenue)}
-                  </Typography>
-                </Box>
-                <LinearProgress 
-                  value={progress} 
-                  variant='determinate' 
-                  sx={{ height: 8 }} 
-                  color={quarterColors[quarter]} 
-                />
-              </Box>
-            </Box>
-          )
-        })}
 
         {/* <Box sx={{ mt: 6, display: 'flex', alignItems: 'center' }}>
           <TrendingUp sx={{ mr: 1.5, fontSize: '1.75rem', color: 'primary.main' }} />
