@@ -6,7 +6,6 @@ import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
 import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
-import LinearProgress from '@mui/material/LinearProgress'
 
 // ** Icons Imports
 import MenuUp from 'mdi-material-ui/MenuUp'
