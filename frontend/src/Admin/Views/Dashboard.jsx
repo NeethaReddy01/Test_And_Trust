@@ -1,83 +1,133 @@
+import React from 'react';
 import Grid from "@mui/material/Grid";
 import AdminPannel from "../../Styles/AdminPannelWrapper";
 import Achivement from "../tables/Achivement";
 import MonthlyOverview from "../tables/MonthlyOverView";
 import WeeklyOverview from "../tables/WeeklyOverview";
-import TotalEarning from "../tables/TotalEarning";
-import CardStatsVertical from "../../Styles/CardStatsVertical";
+import YearlyStats from "../tables/TotalEarning";
+import QuarterlyRevenueChart from "../tables/QuarterlyRevenueChart";
+import ProductCategoryDistribution from "../tables/ProductCategoryDistribution";
 import SalesByCountries from "../tables/SalesByContry";
 import DepositWithdraw from "../tables/DepositeAndWithdraw";
 import CustomersTable from "../tables/CustomersTable";
-import { ThemeProvider, createTheme } from "@mui/material";
+import { ThemeProvider } from "@mui/material";
 import { customTheme } from "../them/customeThem";
 import "./Admin.css";
 import RecentlyAddeddProducts from "../tables/RecentlyAddeddProducts";
 import SalesOverTime from "../tables/SalesOverTime";
 import RecentOrders from "../tables/RecentOrders";
-import { BriefcaseVariantOutline, CurrencyUsd, HelpCircleOutline, Poll } from "mdi-material-ui";
-import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import WeeklyStats from "./WeeklyStats";
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
 
-const darkTheme1 = createTheme({
-  palette: {
-    mode: 'dark',
-    primary: {
-      main: '#312d4b',
-    },
-    secondary: {
-      main: '#f48fb1',
-    },
-  },
-});
-
-
-
-// bg-[#28243d]
 const Dashboard = () => {
-  const {auth}=useSelector(store=>store);
-  const navigate=useNavigate()
+  const { auth } = useSelector(store => store);
+  const navigate = useNavigate();
 
-
- 
   return (
-    <div className="adminContainer ">
+    <div className="adminContainer">
       <ThemeProvider theme={customTheme}>
         <AdminPannel>
-          <Grid container spacing={2}>
+          <Grid container spacing={3}>
+            {/* Top Row: Key Metrics */}
             <Grid item xs={12} md={4}>
               <Achivement />
             </Grid>
             <Grid item xs={12} md={8}>
               <MonthlyOverview />
             </Grid>
-            <Grid item xs={12} md={6} lg={4}>
+
+            {/* Second Row: Weekly and Yearly Stats */}
+            <Grid item xs={12} md={4}>
               <WeeklyOverview />
             </Grid>
-            <Grid item xs={12} md={6} lg={4}>
-              <TotalEarning />
-            </Grid>
-            <Grid item xs={12} md={6} lg={4}>
-              {/* Replace static CardStatsVertical grid with WeeklyStats component */}
+            <Grid item xs={12} md={4}>
               <WeeklyStats />
             </Grid>
-            <Grid item xs={12} md={6} lg={4}>
-            <CustomersTable />
+            <Grid item xs={12} md={4}>
+              <Card sx={{ height: '100%' }}>
+                <CardContent>
+                  <Typography variant="h6" gutterBottom>
+                    Yearly Statistics
+                  </Typography>
+                  <YearlyStats />
+                </CardContent>
+              </Card>
             </Grid>
-            <Grid item xs={12} md={12} lg={8}>
+
+            {/* Third Row: Category Distribution and Sales Over Time */}
+            <Grid item xs={12} md={4}>
+              <Card sx={{ height: '100%' }}>
+                <CardContent>
+                  <Typography variant="h6" gutterBottom>
+                    Category Distribution
+                  </Typography>
+                  <ProductCategoryDistribution />
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={12} md={8}>
+              <Card sx={{ height: '100%' }}>
+                <CardContent>
+                  <Typography variant="h6" gutterBottom>
+                    Sales Trends
+                  </Typography>
+                  <SalesOverTime />
+                </CardContent>
+              </Card>
+            </Grid>
+
+            {/* Fourth Row: Quarterly Performance Chart */}
+            {/* <Grid item xs={12}>
+              <Card>
+                <CardContent>
+                  <Typography variant="h6" gutterBottom>
+                    Quarterly Performance Trends
+                  </Typography>
+                  <QuarterlyRevenueChart />
+                </CardContent>
+              </Card>
+            </Grid> */}
+
+            {/* Fifth Row: Recent Orders and Products */}
+            <Grid item xs={12} md={8}>
               <RecentOrders />
             </Grid>
-             <Grid item xs={12} md={12} lg={8}>
-              <RecentlyAddeddProducts />
-            </Grid>
-            <Grid item xs={12} md={6} lg={4}>
-              <SalesOverTime/>
-            </Grid>
-           
-            <Grid item xs={12}>
+            <Grid item xs={12} md={4}>
               <CustomersTable />
             </Grid>
+
+            {/* Sixth Row: Products and Country Sales */}
+            <Grid item xs={12} md={8}>
+              <RecentlyAddeddProducts />
+            </Grid>
+            {/* <Grid item xs={12} md={4}>
+              <Card sx={{ height: '100%' }}>
+                <CardContent>
+                  <Typography variant="h6" gutterBottom>
+                    Sales by Country
+                  </Typography>
+                  <SalesByCountries />
+                </CardContent>
+              </Card>
+            </Grid> */}
+
+            {/* Bottom Row: Deposits/Withdrawals
+            <Grid item xs={12}>
+              <Card>
+                <CardContent>
+                  <Typography variant="h6" gutterBottom>
+                    Financial Activity
+                  </Typography>
+                  <DepositWithdraw />
+                </CardContent>
+              </Card>
+            </Grid> */}
           </Grid>
         </AdminPannel>
       </ThemeProvider>
