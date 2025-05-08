@@ -30,20 +30,31 @@ import {
 
 const OrdersTable = () => {
   const [formData, setFormData] = useState({ status: "", sort: "" });
-  const [orderStatus, setOrderStatus] = useState("");
   const dispatch = useDispatch();
   const jwt = localStorage.getItem("jwt");
   const { adminsOrder } = useSelector((store) => store);
   const [anchorElArray, setAnchorElArray] = useState([]);
-  const orderStatusChanged = adminsOrder ? {
-    delivered: adminsOrder.delivered,
-    shipped: adminsOrder.shipped,
-    confirmed: adminsOrder.confirmed
-  } : {};
+  const [isLoading, setIsLoading] = useState(false);
 
+  // Track status changes in Redux state to trigger UI updates
+  const orderStatusChanged = useSelector((store) => ({
+    delivered: store.adminsOrder?.delivered,
+    shipped: store.adminsOrder?.shipped,
+    confirmed: store.adminsOrder?.confirmed,
+    deleted: store.adminsOrder?.deleted
+  }));
+
+  // Fetch orders when component mounts or when any status changes
   useEffect(() => {
     dispatch(getOrders({ jwt }));
-  }, [jwt, dispatch, orderStatus]); 
+  }, [
+    jwt, 
+    dispatch, 
+    orderStatusChanged.delivered, 
+    orderStatusChanged.shipped, 
+    orderStatusChanged.confirmed,
+    orderStatusChanged.deleted
+  ]);
 
   const handleUpdateStatusMenuClick = (event, index) => {
     const newAnchorElArray = [...anchorElArray];
@@ -62,27 +73,33 @@ const OrdersTable = () => {
     const value = event.target.value;
     setFormData({ ...formData, [name]: value });
   };
-  const handleConfirmedOrder = (orderId, index) => {
+
+  const handleConfirmedOrder = async (orderId, index) => {
+    setIsLoading(true);
     handleUpdateStatusMenuClose(index);
-    dispatch(confirmOrder(orderId));
-    setOrderStatus("CONFIRMED");
+    await dispatch(confirmOrder(orderId));
+    setIsLoading(false);
   };
 
-  const handleShippedOrder = (orderId, index) => {
+  const handleShippedOrder = async (orderId, index) => {
+    setIsLoading(true);
     handleUpdateStatusMenuClose(index);
-    dispatch(shipOrder(orderId));
-    setOrderStatus("SHIPPED");
+    await dispatch(shipOrder(orderId));
+    setIsLoading(false);
   };
 
-  const handleDeliveredOrder = (orderId, index) => {
+  const handleDeliveredOrder = async (orderId, index) => {
+    setIsLoading(true);
     handleUpdateStatusMenuClose(index);
-    dispatch(deliveredOrder(orderId));
-    setOrderStatus("DELIVERED");
+    await dispatch(deliveredOrder(orderId));
+    setIsLoading(false);
   };
 
-  const handleDeleteOrder = (orderId, index) => {
+  const handleDeleteOrder = async (orderId, index) => {
+    setIsLoading(true);
     handleUpdateStatusMenuClose(index);
-    dispatch(deleteOrder(orderId));
+    await dispatch(deleteOrder(orderId));
+    setIsLoading(false);
   };
 
   return (
@@ -113,10 +130,10 @@ const OrdersTable = () => {
               {adminsOrder?.orders?.map((item, index) => (
                 <TableRow
                   hover
-                  key={item.id || index} // Added index as fallback key
+                  key={item.id || index}
                   sx={{ "&:last-of-type td, &:last-of-type th": { border: 0 } }}
                 >
-                  <TableCell sx={{}}>
+                  <TableCell>
                     <AvatarGroup max={4} sx={{ justifyContent: 'start' }}>
                       {item.orderItems.map((orderItem, idx) => (
                         <Avatar key={idx} alt={orderItem.product.title} src={orderItem.product.imageUrl} />
@@ -135,7 +152,7 @@ const OrdersTable = () => {
                         }}
                       >
                         {item?.orderItems.map((order, idx) => (
-                          <span key={idx} className=""> {order.product.title}{idx < item.orderItems.length - 1 ? "," : ""}</span>
+                          <span key={idx}> {order.product.title}{idx < item.orderItems.length - 1 ? "," : ""}</span>
                         ))}
                       </Typography>
                       <Typography variant="caption">
@@ -179,6 +196,7 @@ const OrdersTable = () => {
                         onClick={(event) =>
                           handleUpdateStatusMenuClick(event, index)
                         }
+                        disabled={isLoading}
                       >
                         Status
                       </Button>
@@ -193,17 +211,20 @@ const OrdersTable = () => {
                       >
                         <MenuItem
                           onClick={() => handleConfirmedOrder(item.id, index)}
-                          disabled={item.orderStatus === "DELIVERED" || item.orderStatus === "SHIPPED" || item.orderStatus === "CONFIRMED"}
+                          disabled={isLoading || item.orderStatus === "DELIVERED" || item.orderStatus === "SHIPPED" || item.orderStatus === "CONFIRMED"}
                         >
                           CONFIRMED ORDER
                         </MenuItem>
                         <MenuItem
-                          disabled={item.orderStatus === "DELIVERED" || item.orderStatus === "SHIPPED"}
+                          disabled={isLoading || item.orderStatus === "DELIVERED" || item.orderStatus === "SHIPPED"}
                           onClick={() => handleShippedOrder(item.id, index)}
                         >
                           SHIPPED ORDER
                         </MenuItem>
-                        <MenuItem onClick={() => handleDeliveredOrder(item.id, index)}>
+                        <MenuItem 
+                          onClick={() => handleDeliveredOrder(item.id, index)}
+                          disabled={isLoading || item.orderStatus === "DELIVERED"}
+                        >
                           DELIVERED ORDER
                         </MenuItem>
                       </Menu>
@@ -216,6 +237,7 @@ const OrdersTable = () => {
                     <Button
                       onClick={() => handleDeleteOrder(item.id, index)}
                       variant="text"
+                      disabled={isLoading}
                     >
                       delete
                     </Button>
