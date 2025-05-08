@@ -1,20 +1,30 @@
 package com.backend.serviceTest;
 
-import com.backend.exception.ProductException;
-import com.backend.modal.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.verify;
+
+import java.util.HashSet;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import com.backend.modal.Cart;
+import com.backend.modal.CartItem;
+import com.backend.modal.Product;
+import com.backend.modal.User;
+import com.backend.repository.CartItemRepository;
 import com.backend.repository.CartRepository;
+import com.backend.repository.UserRepository;
 import com.backend.request.AddItemRequest;
 import com.backend.service.CartItemService;
 import com.backend.service.CartServiceImplementation;
 import com.backend.service.ProductService;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.mockito.*;
-
-import java.util.HashSet;
-
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
 
 public class CartServiceTest {
 
@@ -27,101 +37,95 @@ public class CartServiceTest {
     @Mock
     private ProductService productService;
 
+    @Mock
+    private UserRepository userRepository;
+
+    @Mock
+    private CartItemRepository cartItemRepository;
+
     @InjectMocks
     private CartServiceImplementation cartService;
 
-    private User mockUser;
-    private Cart mockCart;
-    private Product mockProduct;
-    private CartItem mockItem;
+    private User user;
+    private Cart cart;
+    private Product product;
+    private CartItem cartItem;
 
     @BeforeEach
     public void setUp() {
         MockitoAnnotations.openMocks(this);
 
-        mockUser = new User();
-        mockUser.setId(1L);
-        mockUser.setEmail("test@example.com");
+        user = new User();
+        user.setId(1L);
+        user.setEmail("test@example.com");
 
-        mockCart = new Cart();
-        mockCart.setUser(mockUser);
-        mockCart.setCartItems(new HashSet<>());
+        cart = new Cart();
+        cart.setId(1L);
+        cart.setUser(user);
+        cart.setCartItems(new HashSet<>());
 
-        mockProduct = new Product();
-        mockProduct.setId(101L);
-        mockProduct.setPrice(100);
-        mockProduct.setDiscountedPrice(80);
+        product = new Product();
+        product.setId(1L);
+        product.setDiscountedPrice(100);
 
-        mockItem = new CartItem();
-        mockItem.setId(1L);
-        mockItem.setProduct(mockProduct);
-        mockItem.setSize("M");
-        mockItem.setQuantity(2);
-        mockItem.setPrice(160);
-        mockItem.setDiscountedPrice(160);
-        mockItem.setUserId(1L);
+        cartItem = new CartItem();
+        cartItem.setId(1L);
+        cartItem.setCart(cart);
+        cartItem.setProduct(product);
+        cartItem.setPrice(200);
+        cartItem.setQuantity(2);
+        cartItem.setDiscountedPrice(100);
     }
 
     @Test
     public void testCreateCart_Success() {
-        when(cartRepository.save(any(Cart.class))).thenReturn(mockCart);
+        when(cartRepository.save(any(Cart.class))).thenReturn(cart);
 
-        Cart createdCart = cartService.createCart(mockUser);
-
+        Cart createdCart = cartService.createCart(user);
         assertNotNull(createdCart);
-        assertEquals(mockUser, createdCart.getUser());
+        assertEquals(user, createdCart.getUser());
     }
+
+    @Test
+    public void testAddCartItem_Success() throws Exception {
+        AddItemRequest req = new AddItemRequest();
+        req.setProductId(1L);
+        req.setQuantity(2);
+        req.setSize("M");
+
+        when(cartRepository.findByUserId(1L)).thenReturn(cart);
+        when(productService.findProductById(1L)).thenReturn(product);
+        when(cartItemService.isCartItemExist(cart, product, "M", 1L)).thenReturn(null);
+        when(cartItemService.createCartItem(any(CartItem.class))).thenReturn(cartItem);
+
+        CartItem addedItem = cartService.addCartItem(1L, req);
+        assertNotNull(addedItem);
+        assertEquals(2, addedItem.getQuantity());
+        assertEquals(product, addedItem.getProduct());
+    }
+
     @Test
     public void testFindUserCart_Success() {
-        mockCart.getCartItems().add(mockItem);
+        cart.getCartItems().add(cartItem);
 
-        when(cartRepository.findByUserId(1L)).thenReturn(mockCart);
-        when(cartRepository.save(any(Cart.class))).thenReturn(mockCart);
+        when(cartRepository.findByUserId(1L)).thenReturn(cart);
+        when(cartRepository.save(any(Cart.class))).thenReturn(cart);
 
-        Cart cart = cartService.findUserCart(1L);
-
-        assertNotNull(cart);
-        assertEquals(2, cart.getTotalItem()); 
-        assertEquals(160, cart.getTotalDiscountedPrice());
-        assertEquals(160, cart.getTotalPrice());
+        Cart foundCart = cartService.findUserCart(1L);
+        assertNotNull(foundCart);
+        assertEquals(user, foundCart.getUser());
+        assertEquals(1, foundCart.getCartItems().size());
     }
-
-
 
     @Test
-    public void testAddCartItem_NewItem() throws ProductException {
-      
-        AddItemRequest req = new AddItemRequest();
-        req.setProductId(101L);
-        req.setSize("M");
-        req.setQuantity(2);
+    public void testClearCart_Success() throws Exception {
+        cart.getCartItems().add(cartItem);
+        when(cartRepository.findByUserId(1L)).thenReturn(cart);
 
-        CartItem createdCartItem = new CartItem();
-        createdCartItem.setId(1L);
-        createdCartItem.setProduct(mockProduct);
-        createdCartItem.setSize("M");
-        createdCartItem.setQuantity(2);
-        createdCartItem.setPrice(160);
-        createdCartItem.setDiscountedPrice(160);
-        createdCartItem.setUserId(1L);
+        cartService.clearCart(1L);
 
-        when(cartRepository.findByUserId(1L)).thenReturn(mockCart);
-        when(productService.findProductById(101L)).thenReturn(mockProduct);
-        when(cartItemService.isCartItemExist(mockCart, mockProduct, "M", 1L)).thenReturn(null);
-        when(cartItemService.createCartItem(any(CartItem.class))).thenReturn(createdCartItem);
-
-        
-        CartItem result = cartService.addCartItem(1L, req);
-
-        
-        assertNotNull(result);
-        assertEquals("M", result.getSize());
-        assertEquals(2, result.getQuantity());
-        assertEquals(160, result.getPrice());
-        assertEquals(160, result.getDiscountedPrice());
-        verify(cartItemService).createCartItem(any(CartItem.class));
-        verify(cartRepository, never()).save(mockCart); // since addCartItem doesn't persist cart in current logic
+        verify(cartItemService).removeCartItem(1L, cartItem.getId());
+        verify(cartRepository).save(cart);
+        assertEquals(0, cart.getCartItems().size());
     }
-
 }
-

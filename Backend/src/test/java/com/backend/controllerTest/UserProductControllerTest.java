@@ -43,7 +43,7 @@ public class UserProductControllerTest {
     public void testFindProductByCategoryHandler_Success() {
         // Mock behavior for getting products by category
         String category = "electronics";
-        when(productService.getAllProduct(category)).thenReturn(Arrays.asList(sampleProduct));
+        when(productService.getAllProduct(category,"")).thenReturn(Arrays.asList(sampleProduct));
 
         // Call the controller method
         ResponseEntity<List<Product>> response = userProductController.findProductByCategoryHandler(category);
@@ -89,10 +89,10 @@ public class UserProductControllerTest {
     public void testSearchProductHandler_Success() {
         // Mock behavior for searching products
         String query = "sample";
-        when(productService.searchProduct(query)).thenReturn(Arrays.asList(sampleProduct));
+        when(productService.searchProduct(query,"")).thenReturn(Arrays.asList(sampleProduct));
 
         // Call the controller method
-        ResponseEntity<List<Product>> response = userProductController.searchProductHandler(query);
+        ResponseEntity<List<Product>> response = userProductController.searchProductHandler(query,"");
 
         // Verify that the response is correct
         assertEquals(200, response.getStatusCodeValue());
@@ -105,10 +105,10 @@ public class UserProductControllerTest {
     public void testSearchProductHandler_EmptyResult() {
         // Mock behavior for searching products with no result
         String query = "notfound";
-        when(productService.searchProduct(query)).thenReturn(Arrays.asList());
+        when(productService.searchProduct(query,"")).thenReturn(Arrays.asList());
 
         // Call the controller method
-        ResponseEntity<List<Product>> response = userProductController.searchProductHandler(query);
+        ResponseEntity<List<Product>> response = userProductController.searchProductHandler(query,"");
 
         // Verify that the response is correct
         assertEquals(200, response.getStatusCodeValue());
