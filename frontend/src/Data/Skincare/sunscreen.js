@@ -28,7 +28,7 @@ export const sunscreen = [
   "description": "A white cream sunscreen with SPF 50 and PA+++, enriched with Vitamin C and E for antioxidant benefits and sun protection."
   },
   {
-  "imageUrl": "https://thedermaco.com/product/1-hyaluronic-sunscreen-aqua-gel-with-spf-50-pa-80g?utm_source=google&utm_medium=cpc&utm_term=20241285097&gad_source=1&gbraid=0AAAAACgKvnLNS4cjq2z5R5fWZQOJgEpoS&gclid=Cj0KCQjwqcO_BhDaARIsACz62vNBQALefO3KwHcEKHbsM8A2W5C99znfyPo6DGXn1RbDilRX_MYuYK4aAoYkEALw_wcB",
+  "imageUrl": "https://images.thedermaco.com/catalog/product/1/-/1-wid-orange-bg..jpg?auto=format&fit=contain&width=720&auto=compress?format=auto",
   "brand": "The Derma Co",
   "title": "1% Hyaluronic Sunscreen Aqua Gel SPF 50 PA++++",
   "color": "Transparent",
