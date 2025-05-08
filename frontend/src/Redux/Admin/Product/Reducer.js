@@ -84,9 +84,6 @@ import {
           error: null,
         };
         case DELETE_PRODUCT_SUCCESS:
-  console.log("DELETE_PRODUCT_SUCCESS with payload:", action.payload);
-  console.log("Current products:", state.products);
-  console.log("Products after filter:", state.products.filter(product => product.id !== action.payload));
   return {
     ...state,
     loading: false,

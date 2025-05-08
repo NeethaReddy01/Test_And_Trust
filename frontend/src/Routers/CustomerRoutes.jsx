@@ -4,14 +4,12 @@ import ProductDetails from "../customer/Components/Product/ProductDetails/Produc
 import Product from "../customer/Components/Product/Product/Product";
 import Contact from "../Pages/Contact";
 import TermsCondition from "../Pages/TermsCondition";
-// import PrivacyPolicy from "../Pages/PrivacyPolicy";
 import About from "../Pages/About";
 import Homepage from "../Pages/Homepage";
 import Navigation from "../customer/Components/Navbar/Navigation";
 import Cart from "../customer/Components/Cart/Cart";
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import {Button} from "@mui/material";
-import { customTheme, darkTheme, customerTheme }  from "../Admin/them/customeThem";
+import {  ThemeProvider } from '@mui/material/styles';
+import { customerTheme }  from "../Admin/them/customeThem";
 import Order from "../customer/Components/orders/Order";
 import OrderDetails from "../customer/Components/orders/OrderDetails";
 import Checkout from "../customer/Components/Checkout/Checkout";
@@ -26,8 +24,6 @@ const CustomerRoutes = () => {
   
     // Only show Navigation component when not on the NotFound page
     const showNavigation = location.pathname !== "*";
-
-    // const path=["/","/home","/about","/privacy-policy","/terms-condition","/contact","/men",`/product/${productId}`]
   return (
     <div>
     
@@ -41,7 +37,6 @@ const CustomerRoutes = () => {
         <Route path="/products/search" element={<SearchProduct/>}></Route>
         <Route path="/home" element={<Homepage />}></Route>
         <Route path="/about" element={<About />}></Route>
-        {/* <Route path="/privaciy-policy" element={<PrivacyPolicy />}></Route> */}
         <Route path="/terms-condition" element={<TermsCondition />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/:lavelOne/:lavelTwo" element={<Product />}></Route>
@@ -52,7 +47,6 @@ const CustomerRoutes = () => {
         <Route path="/account/rate/:productId" element={<RateProduct />}></Route>
         <Route path="/checkout" element={<Checkout />}></Route>
         <Route path="/payment-success" element={<PaymentSuccess />}></Route>
-        {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
       <Footer/>
     </ThemeProvider>

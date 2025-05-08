@@ -6,33 +6,15 @@ import {
   FIND_PRODUCT_BY_ID_REQUEST,
   FIND_PRODUCT_BY_ID_SUCCESS,
   FIND_PRODUCT_BY_ID_FAILURE,
-  CREATE_PRODUCT_REQUEST,
-  CREATE_PRODUCT_SUCCESS,
-  CREATE_PRODUCT_FAILURE,
-  UPDATE_PRODUCT_REQUEST,
-  UPDATE_PRODUCT_SUCCESS,
-  UPDATE_PRODUCT_FAILURE,
-  DELETE_PRODUCT_REQUEST,
-  DELETE_PRODUCT_SUCCESS,
-  DELETE_PRODUCT_FAILURE,
   SEARCH_PRODUCT_REQUEST,
   SEARCH_PRODUCT_SUCCESS,
   SEARCH_PRODUCT_FAILURE,
 } from "./ActionTypes";
-import api, { API_BASE_URL } from "../../../config/api";
+import api from "../../../config/api";
 
 export const findProducts = (reqData) => async (dispatch) => {
   const {
-    // colors,
-    // sizes,
-    // minPrice,
-    // maxPrice,
-    // minDiscount,
     category,
-    // stock,
-    // sort,
-    // pageNumber,
-    // pageSize,
   } = reqData;
 
   try {
@@ -110,78 +92,6 @@ export const searchProduct = (keyword , sort) => async (dispatch) => {
   }
 };
 
-export const createProduct = (product) => async (dispatch) => {
-  try {
-    dispatch({ type: CREATE_PRODUCT_REQUEST });
 
-    const { data } = await api.post(
-      `${API_BASE_URL}/api/admin/products/`,
-      product.data
-    );
 
-    dispatch({
-      type: CREATE_PRODUCT_SUCCESS,
-      payload: data,
-    });
-
-    console.log("created product ", data);
-  } catch (error) {
-    dispatch({
-      type: CREATE_PRODUCT_FAILURE,
-      payload:
-        error.response && error.response.data.message
-          ? error.response.data.message
-          : error.message,
-    });
-  }
-};
-
-export const updateProduct = (product) => async (dispatch) => {
-  try {
-    dispatch({ type: UPDATE_PRODUCT_REQUEST });
-
-    const { data } = await api.put(
-      `${API_BASE_URL}/api/admin/products/${product.productId}`,
-      product
-    );
-
-    dispatch({
-      type: UPDATE_PRODUCT_SUCCESS,
-      payload: data,
-    });
-  } catch (error) {
-    dispatch({
-      type: UPDATE_PRODUCT_FAILURE,
-      payload:
-        error.response && error.response.data.message
-          ? error.response.data.message
-          : error.message,
-    });
-  }
-};
-
-export const deleteProduct = (productId) => async (dispatch) => {
-  console.log("delete product action",productId)
-  try {
-    dispatch({ type: DELETE_PRODUCT_REQUEST });
-
-    let {data}=await api.delete(`${API_BASE_URL}/api/admin/products/${productId}/delete`);
-
-    dispatch({
-      type: DELETE_PRODUCT_SUCCESS,
-      payload: data,
-    });
-
-    console.log("product delte ",data)
-  } catch (error) {
-    console.log("catch error ",error)
-    dispatch({
-      type: DELETE_PRODUCT_FAILURE,
-      payload:
-        error.response && error.response.data.message
-          ? error.response.data.message
-          : error.message,
-    });
-  }
-};
 

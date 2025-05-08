@@ -13,11 +13,10 @@ import {
 import { Fragment } from "react";
 import "./CreateProductForm.css";
 import { useDispatch } from "react-redux";
-import { createProduct } from "../../../Redux/Customers/Product/Action";
+import { createProduct } from "../../../Redux/Admin/Product/Action";
 
 const CreateProductForm = () => {
-  
-  const [productData, setProductData] = useState({
+  const initialProductData = {
     imageUrl: "",
     brand: "",
     title: "",
@@ -30,9 +29,11 @@ const CreateProductForm = () => {
     level1Category: "",
     level2Category: "",
     description: "",
-  });
-const dispatch=useDispatch();
-const jwt=localStorage.getItem("jwt")
+  };
+  
+  const [productData, setProductData] = useState(initialProductData);
+  const dispatch = useDispatch();
+  const jwt = localStorage.getItem("jwt");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -44,7 +45,7 @@ const jwt=localStorage.getItem("jwt")
 
   const handleSizeChange = (e, index) => {
     let { name, value } = e.target;
-    name==="size_quantity"?name="quantity":name=e.target.name;
+    name === "size_quantity" ? name = "quantity" : name = e.target.name;
 
     const sizes = [...productData.sizes];
     sizes[index][name] = value;
@@ -54,15 +55,11 @@ const jwt=localStorage.getItem("jwt")
     }));
   };
 
-
-
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(createProduct({data:productData,jwt}))
-    console.log(productData);
+    dispatch(createProduct({ data: productData, jwt }));
+    setProductData(initialProductData);
   };
-
 
   return (
     <Fragment className="createProductContainer ">

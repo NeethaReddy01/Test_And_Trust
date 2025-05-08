@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react'
 import Card from '@mui/material/Card'
-import CardContent from '@mui/material/CardContent'
 import { useTheme } from '@mui/material/styles'
 import Box from '@mui/material/Box'
 import CircularProgress from '@mui/material/CircularProgress'
 import Typography from '@mui/material/Typography'
 import axios from 'axios';
-import React, { useRef } from 'react';
+import React from 'react';
 
 
 // ** Chart Imports
@@ -16,7 +15,6 @@ const QuarterlyRevenueChart = () => {
   const theme = useTheme()
   const [loading, setLoading] = useState(true)
   const [chartData, setChartData] = useState([])
-  const [previousYearData, setPreviousYearData] = useState([])
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear())
 
   useEffect(() => {

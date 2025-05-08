@@ -1,7 +1,5 @@
-// ** MUI Imports
-import Box from '@mui/material/Box'
+
 import Card from '@mui/material/Card'
-import Chip from '@mui/material/Chip'
 import Table from '@mui/material/Table'
 import TableRow from '@mui/material/TableRow'
 import TableHead from '@mui/material/TableHead'
@@ -133,10 +131,6 @@ const CustomersTable = () => {
                 <TableCell> <Avatar alt={item.name} src={item.image} /> </TableCell>
                 <TableCell>{item.firstName}</TableCell>
                 <TableCell>{item.email}</TableCell>
-                
-                
-               
-               
               </TableRow>
             ))}
           </TableBody>

@@ -1,24 +1,18 @@
-// ** MUI Imports
+
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
 import Avatar from '@mui/material/Avatar'
 import CardHeader from '@mui/material/CardHeader'
-import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 import { useEffect, useState } from 'react'
 import CircularProgress from '@mui/material/CircularProgress'
-
-// ** Icons Imports
 import TrendingUp from 'mdi-material-ui/TrendingUp'
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
-import DotsVertical from 'mdi-material-ui/DotsVertical'
 import CellphoneLink from 'mdi-material-ui/CellphoneLink'
 import AccountOutline from 'mdi-material-ui/AccountOutline'
-import RefreshIcon from 'mdi-material-ui/Refresh'
 
-// API service
 import { getDashboardStats } from '../../config/api'
 
 const MonthlyOverview = () => {
@@ -30,7 +24,6 @@ const MonthlyOverview = () => {
     setLoading(true)
     try {
       const data = await getDashboardStats()
-      // Validate that the response is what we expect
       if (data && typeof data === 'object' && !Array.isArray(data)) {
         setStatsData(data)
         setError(null)
@@ -39,12 +32,8 @@ const MonthlyOverview = () => {
       }
     } catch (err) {
       console.error('Error fetching dashboard stats:', err)
-      
-      // Check for authentication error
       if (err.message && err.message.includes('Authentication required')) {
         setError('Authentication required. Please log in again.')
-        // Optionally redirect to login page
-        // window.location.href = '/login'
       } else {
         setError('Failed to load dashboard statistics: ' + (err.message || 'Unknown error'))
       }
@@ -55,13 +44,9 @@ const MonthlyOverview = () => {
 
   useEffect(() => {
     fetchDashboardStats()
-    
-    // Set up an interval to refresh data every 60 seconds
     const interval = setInterval(() => {
       fetchDashboardStats()
     }, 60000)
-    
-    // Clean up the interval when component unmounts
     return () => clearInterval(interval)
   }, [])
 
@@ -79,9 +64,6 @@ const MonthlyOverview = () => {
         <Grid item xs={12} sx={{ textAlign: 'center', py: 5 }}>
           <Typography color="error">{error}</Typography>
           <Box sx={{ mt: 2 }}>
-            {/* <IconButton color="primary" onClick={fetchDashboardStats}>
-              <RefreshIcon />
-            </IconButton> */}
           </Box>
         </Grid>
       )
@@ -143,26 +125,6 @@ const MonthlyOverview = () => {
     <Card>
       <CardHeader
         title='Monthly Overview'
-        // action={
-        //   // <Box>
-        //   //   {/* <IconButton 
-        //   //     size='small' 
-        //   //     aria-label='refresh'
-        //   //     onClick={fetchDashboardStats}
-        //   //     sx={{ mr: 1, color: 'primary.main' }}
-        //   //   >
-        //   //     <RefreshIcon />
-        //   //   </IconButton> */}
-        //   //   {/* <IconButton 
-        //   //     size='small' 
-        //   //     aria-label='settings' 
-        //   //     className='card-more-options' 
-        //   //     sx={{ color: 'text.secondary' }}
-        //   //   >
-        //   //     {/* <DotsVertical /> */}
-        //   //   </IconButton> */}
-        //   // </Box>
-        // }
         subheader={
           <Typography variant='body2'>
             <Box component='span' sx={{ fontWeight: 600, color: 'text.primary' }}>

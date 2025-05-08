@@ -4,10 +4,6 @@ export const homeCarouselData=[
         path:""
     },
     {
-        image:"https://plumgoodness.com/cdn/shop/files/Desktop_Banners_copy_1.jpg?v=1744721260&width=1920",
-        path:""
-    },
-    {
         image:"https://vanitywagon.in/cdn/shop/collections/Dot-_-Key-Top-Banner_1797x499.jpg?v=1665826237",
         path:""
     },

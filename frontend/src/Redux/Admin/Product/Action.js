@@ -1,4 +1,4 @@
-import axios from "axios";
+
 import {
   GET_PRODUCTS_REQUEST,
   GET_PRODUCTS_SUCCESS,
@@ -20,8 +20,6 @@ export const getProducts = () => async (dispatch) => {
     dispatch({ type: GET_PRODUCTS_REQUEST });
 
     const { data } = await api.get(`${API_BASE_URL}/api/admin/products/all`);
-    {console.log("admin get products:" , data)}
-   
     dispatch({
       type: GET_PRODUCTS_SUCCESS,
       payload: data,
@@ -50,8 +48,6 @@ export const createProduct = (product) => async (dispatch) => {
       type: CREATE_PRODUCT_SUCCESS,
       payload: data,
     });
-
-    console.log("created product ", data);
   } catch (error) {
     dispatch({
       type: CREATE_PRODUCT_FAILURE,
@@ -90,9 +86,7 @@ export const updateProduct = (product) => async (dispatch) => {
 export const deleteProduct = (data) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_PRODUCT_REQUEST });
-
-    // Make sure the URL pattern matches your other API calls
-    await api.delete(`${API_BASE_URL}/api/admin/products/${data.productId}`);
+    await api.delete(`${API_BASE_URL}/api/admin/products/${data.productId}/delete`);
 
     dispatch({
       type: DELETE_PRODUCT_SUCCESS,
