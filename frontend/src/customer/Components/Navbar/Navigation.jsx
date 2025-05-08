@@ -77,7 +77,6 @@ export default function Navigation() {
 
   return (
     <div className="bg-white pb-10">
-      {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
           <Transition.Child
@@ -114,7 +113,6 @@ export default function Navigation() {
                   </button>
                 </div>
 
-                {/* Mobile navigation links */}
                 <div className="space-y-6 px-4 py-6">
                   {navigation.pages.map((page) => (
                     <div key={page.name} className="flow-root">
@@ -179,7 +177,6 @@ export default function Navigation() {
                 </Link>
               </div>
 
-              {/* Navigation links */}
               <div className="hidden lg:ml-8 lg:block lg:self-stretch">
                 <div className="flex h-full space-x-8">
                   {navigation.pages.map((page) => (
@@ -239,7 +236,6 @@ export default function Navigation() {
                   )}
                 </div>
 
-                {/* Search */}
                 <div className="flex items-center lg:ml-6">
                   <p onClick={() => navigate("/products/search")} className="p-2 text-gray-400 hover:text-gray-500 cursor-pointer">
                     <span className="sr-only">Search</span>
@@ -250,7 +246,6 @@ export default function Navigation() {
                   </p>
                 </div>
 
-                {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-6">
                   <Button
                     onClick={() => navigate("/cart")}

@@ -45,9 +45,6 @@ console.log("step",step)
     setActiveStep(0);
   };
 
-  const handlePayment=()=>{
-    console.log("handle payment")
-  }
 
   return (
     <Box className="px-5 lg:px-32 " sx={{ width: "100%" }}>

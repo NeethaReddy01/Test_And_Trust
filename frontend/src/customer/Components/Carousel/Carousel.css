@@ -49,7 +49,7 @@
     .carousel-image {
       width: 1797px;
       height: 499px;
-      object-fit: cover; /* Maintains aspect ratio while filling the container */
+      object-fit: cover; 
     }
   }
   

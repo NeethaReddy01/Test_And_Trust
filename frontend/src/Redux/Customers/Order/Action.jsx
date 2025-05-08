@@ -13,7 +13,6 @@ import {
 import api, { API_BASE_URL } from "../../../config/api";
 
 export const createOrder = (reqData) => async (dispatch) => {
-  console.log("req data ", reqData);
   try {
     dispatch({ type: CREATE_ORDER_REQUEST });
 
@@ -32,13 +31,11 @@ export const createOrder = (reqData) => async (dispatch) => {
     if (data.id) {
       reqData.navigate({ search: `step=3&order_id=${data.id}` });
     }
-    console.log("created order - ", data);
     dispatch({
       type: CREATE_ORDER_SUCCESS,
       payload: data,
     });
   } catch (error) {
-    console.log("catch error : ", error);
     dispatch({
       type: CREATE_ORDER_FAILURE,
       payload:
@@ -50,7 +47,6 @@ export const createOrder = (reqData) => async (dispatch) => {
 };
 
 export const getOrderById = (orderId) => async (dispatch) => {
-  console.log("get order req ", orderId);
   try {
     dispatch({ type: GET_ORDER_BY_ID_REQUEST });
 
@@ -58,13 +54,11 @@ export const getOrderById = (orderId) => async (dispatch) => {
       `/api/orders/${orderId}`,
       
     );
-    console.log("order by id ", data);
     dispatch({
       type: GET_ORDER_BY_ID_SUCCESS,
       payload: data,
     });
   } catch (error) {
-    console.log("catch ",error)
     dispatch({
       type: GET_ORDER_BY_ID_FAILURE,
       payload:
@@ -86,7 +80,6 @@ export const getOrderHistory = (reqData) => async (dispatch, getState) => {
     };
 
     const { data } = await api.get(`/api/orders/user`);
-    console.log("order history -------- ", data);
     dispatch({
       type: GET_ORDER_HISTORY_SUCCESS,
       payload: data,

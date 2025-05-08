@@ -9,7 +9,6 @@ const HomeProductSection = ({ section, data }) => {
   const [maxIndex, setMaxIndex] = useState(0);
   const carouselRef = useRef(null);
   
-  // Ensure data is always an array
   const safeData = Array.isArray(data) ? data : [];
   
   const responsive = {
@@ -50,14 +49,14 @@ const HomeProductSection = ({ section, data }) => {
     setActiveIndex(item);
   };
 
-  // Create carousel items only if data is an array and has items
+
   const items = safeData.map((item) => (
     <div key={item.id || item._id} className="carousel-item">
       <HomeProductCard product={item} />
     </div>
   ));
 
-  // Don't render the section if there are no items
+
   if (safeData.length === 0) {
     return null;
   }

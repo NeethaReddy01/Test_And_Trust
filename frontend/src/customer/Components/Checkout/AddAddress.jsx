@@ -3,7 +3,6 @@ import { Grid, TextField, Button, Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { createOrder } from "../../../Redux/Customers/Order/Action";
-import userEvent from "@testing-library/user-event";
 import AddressCard from "../adreess/AdreessCard";
 import { useState } from "react";
 
@@ -33,7 +32,6 @@ export default function AddDeliveryAddressForm({ handleNext }) {
   };
 
   const handleCreateOrder = (item) => {
-    // Ensure the address structure matches what your action expects
     const address = {
       firstName: item.firstName,
       lastName: item.lastName,
@@ -54,7 +52,7 @@ export default function AddDeliveryAddressForm({ handleNext }) {
         <Box className="border rounded-md shadow-md h-[30.5rem] overflow-y-scroll">
           {auth.user?.addresses.map((item) => (
             <div
-              key={item.id} // Add key prop
+              key={item.id} 
               onClick={() => setSelectedAddress(item)}
               className="p-5 py-7 border-b cursor-pointer"
             >
@@ -66,7 +64,7 @@ export default function AddDeliveryAddressForm({ handleNext }) {
                   variant="contained"
                   color="primary"
                   onClick={(e) => {
-                    e.stopPropagation(); // Prevent event bubbling
+                    e.stopPropagation(); 
                     handleCreateOrder(item);
                   }}
                 >

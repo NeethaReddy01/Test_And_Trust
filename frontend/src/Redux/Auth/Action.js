@@ -52,7 +52,6 @@ export const login = userData => async dispatch => {
 //  get user from token
 export const getAllCustomers = (token) => {
   return async (dispatch) => {
-    console.log("jwt - ",token)
     dispatch({ type: GET_ALL_CUSTOMERS_REQUEST });
     try {
       const response = await axios.get(`${API_BASE_URL}/api/admin/users`,{

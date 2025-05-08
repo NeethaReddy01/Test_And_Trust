@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid } from "@mui/material";
 import React from "react";
 import OrderTraker from "./OrderTraker";
 import StarIcon from "@mui/icons-material/Star";
@@ -111,5 +111,4 @@ const OrderDetails = () => {
     </div>
   );
 };
-// sx={{width:"10px",height:"10px"}}
 export default OrderDetails;

@@ -11,7 +11,7 @@ import {
 import api from '../../../config/api';
 
 export const createReview = (resData) => {
-  console.log("create review req ", resData);
+
   return async (dispatch) => {
     try {
       const response = await api.post('/api/reviews/create', resData);
@@ -20,7 +20,7 @@ export const createReview = (resData) => {
         type: CREATE_REVIEW_SUCCESS,
         payload: response.data
       });
-      console.log("create review ", response.data);
+
     } catch (error) {
       dispatch({
         type: CREATE_REVIEW_FAILURE,
@@ -39,7 +39,7 @@ export const getAllReviews = (productId) => {
         type: GET_ALL_REVIEWS_SUCCESS,
         payload: response.data
       });
-      console.log("all review ", response.data);
+
     } catch (error) {
       dispatch({
         type: GET_ALL_REVIEWS_FAILURE,
@@ -76,7 +76,7 @@ export const getAllRatings = (productId) => {
         type: GET_ALL_RATINGS_SUCCESS,
         payload: response.data
       });
-      console.log("all rating ", response.data);
+
     } catch (error) {
       dispatch({
         type: GET_ALL_RATINGS_FAILURE,

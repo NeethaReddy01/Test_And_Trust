@@ -22,11 +22,8 @@ export const findProducts = (reqData) => async (dispatch) => {
 
     const { data } = await api.get(
        `/api/products?category=${category}`
-    );console.log("API response data:", data);
-    console.log("Is data an array?", Array.isArray(data));
-    console.log("Data length:", data?.length);
+    );
 
-    console.log("get product by category - ", data);
     dispatch({
       type: FIND_PRODUCTS_BY_CATEGORY_SUCCESS,
       
@@ -49,7 +46,7 @@ export const findProductById = (reqData) => async (dispatch) => {
 
     const { data } = await api.get(`/api/products/id/${reqData.productId}`);
 
-    console.log("products by  id : ", data);
+
     dispatch({
       type: FIND_PRODUCT_BY_ID_SUCCESS,
       payload: data,
@@ -76,7 +73,6 @@ export const searchProduct = (keyword , sort) => async (dispatch) => {
       }
     });
 
-    console.log("products by  search : ", data);
     dispatch({
       type: SEARCH_PRODUCT_SUCCESS,
       payload: data,

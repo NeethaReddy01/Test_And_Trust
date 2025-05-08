@@ -11,7 +11,7 @@ import {
   import axios from 'axios';
   
   export const createPayment = (reqData) => async (dispatch) => {
-    console.log("create payment reqData ",reqData)
+
     try {
       dispatch({
         type: CREATE_PAYMENT_REQUEST,
@@ -26,7 +26,7 @@ import {
       };
   
       const { data } = await axios.post(`${API_BASE_URL}/api/payments/${reqData.orderId}`,null, config);
-  console.log("datta",data)
+
   if(data.payment_link_url){
     window.location.href=data.payment_link_url;
   }
@@ -49,7 +49,7 @@ import {
 
   export const updatePayment = (reqData) => {
     return async (dispatch) => {
-      console.log("update payment reqData ",reqData)
+
       dispatch(updatePaymentRequest());
       try {
         const config = {
@@ -59,7 +59,6 @@ import {
           },
         };
         const response = await axios.get(`${API_BASE_URL}/api/payments?payment_id=${reqData.paymentId}&order_id=${reqData.orderId}`,config);
-        console.log("updated data",response.data)
         dispatch(updatePaymentSuccess(response.data));
       } catch (error) {
         dispatch(updatePaymentFailure(error.message));

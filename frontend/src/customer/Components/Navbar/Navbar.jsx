@@ -10,11 +10,9 @@ function Navbar() {
 
   return (
     <Fragment>
-      {/* Navigation bar */}
       <nav className="bg-blue-700 text-white border-b border-gray-200 lg:px-20 px-2">
         <div className="mx-auto px-4 ">
           <div className="flex justify-between items-center ">
-            {/* Logo */}
             <Link to="/" className="flex items-center py-6">
               <img
                 src="frontend\public\logo192.png"
@@ -26,7 +24,6 @@ function Navbar() {
               </span>
             </Link>
 
-            {/* Navigation menu */}
             <ul className="hidden md:flex items-center space-x-4">
               <li>
                 <Link
@@ -54,7 +51,6 @@ function Navbar() {
               </li>
             </ul>
 
-            {/* Search bar */}
             <form className="hidden md:block flex-grow max-w-sm">
               <div className="relative w-full">
                 <input
@@ -83,7 +79,6 @@ function Navbar() {
               <span className="px-2">Cart</span>
             </div>
 
-            {/* Mobile navigation menu */}
             <div className="md:hidden flex items-center">
               <button onClick={handleShowMenu} className="text-white p-2">
                 <svg
@@ -103,7 +98,6 @@ function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile navigation menu */}
       {showMenu && (
         <div className="md:hidden bg-white">
           <ul className="flex flex-col py-4 space-y-2 px-5">

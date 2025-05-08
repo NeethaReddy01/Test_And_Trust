@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Button, Typography, Box, CircularProgress, Alert } from "@mui/material";
+import { Button, Box, CircularProgress, Alert } from "@mui/material";
 import * as XLSX from "xlsx";
 import { useDispatch, useSelector } from "react-redux";
 import { createMultipleProducts } from "../../../Redux/Admin/Product/Action";
@@ -10,12 +10,10 @@ const ExcelUploader = () => {
   const dispatch = useDispatch();
   const jwt = localStorage.getItem("jwt");
   
-  // Fixed selector to use adminsProduct instead of product
   const { loading: reduxLoading, uploadSuccess, uploadError } = useSelector(
     (state) => state.adminsProduct || {}
   );
   
-  // Update local state based on Redux state
   useEffect(() => {
     if (uploadSuccess) {
       setMessage({ text: uploadSuccess, type: "success" });
@@ -31,7 +29,6 @@ const ExcelUploader = () => {
     const file = event.target.files[0];
     if (!file) return;
 
-    // Check if file is Excel
     const fileExtension = file.name.split('.').pop().toLowerCase();
     if (fileExtension !== 'xlsx' && fileExtension !== 'xls') {
       setMessage({ text: "Please upload only Excel files (.xlsx or .xls)", type: "error" });
@@ -55,9 +52,7 @@ const ExcelUploader = () => {
           return;
         }
 
-        // Process and validate data
         const formattedProducts = jsonData.map((row, index) => {
-          // Convert Excel data to match your product structure
           return {
             imageUrl: row.imageUrl || "",
             brand: row.brand || "",
@@ -74,7 +69,6 @@ const ExcelUploader = () => {
           };
         });
 
-        // Use Redux action to submit products
         handleSubmitProducts(formattedProducts);
       } catch (error) {
         console.error("Error processing Excel file:", error);
@@ -92,7 +86,6 @@ const ExcelUploader = () => {
   };
 
   const handleSubmitProducts = (products) => {
-    // Dispatch Redux action for multiple products
     dispatch(createMultipleProducts(products, jwt))
       .catch(error => {
         console.error("Error in Redux action:", error);
@@ -112,15 +105,6 @@ const ExcelUploader = () => {
         style={{ display: "none" }}
         onChange={handleFileUpload}
       />
-      {/* <Button
-                      variant="contained"
-                      sx={{ p: 0.7 }}
-                      color="primary"
-                      size="large"
-                      type="submit"
-                    >
-                      Add New Product
-                    </Button> */}
       <Button
         variant="contained"
         color="primary"
