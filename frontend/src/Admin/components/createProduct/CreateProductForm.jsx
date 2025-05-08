@@ -8,12 +8,14 @@ import {
   InputLabel,
   Select,
   MenuItem,
+  Box,
 } from "@mui/material";
 
 import { Fragment } from "react";
 import "./CreateProductForm.css";
 import { useDispatch } from "react-redux";
 import { createProduct } from "../../../Redux/Admin/Product/Action";
+import ExcelUploader from "./ExcelUploader"; // Import the new component
 
 const CreateProductForm = () => {
   const initialProductData = {
@@ -62,11 +64,11 @@ const CreateProductForm = () => {
   };
 
   return (
-    <Fragment className="createProductContainer ">
+    <Fragment className="createProductContainer">
       <Typography
         variant="h3"
         sx={{ textAlign: "center" }}
-        className="py-10 text-center "
+        className="py-10 text-center"
       >
         Add New Product
       </Typography>
@@ -163,43 +165,43 @@ const CreateProductForm = () => {
             />
           </Grid>
           <Grid item xs={6} sm={4}>
-          <FormControl fullWidth>
-  <InputLabel>Top Level Category</InputLabel>
-  <Select
-    name="level1Category"
-    value={productData.level1Category}
-    onChange={handleChange}
-    label="Top Level Category"
-  >
-    <MenuItem value="skincare">Skincare</MenuItem>
-    <MenuItem value="bathbodyhygiene">bathbodyhygiene</MenuItem>
-    <MenuItem value="perfume">perfume</MenuItem>
-    <MenuItem value="PersonalCare">PersonalCare</MenuItem>
-    <MenuItem value="makeupproducts">makeupproducts</MenuItem>
-  </Select>
-</FormControl>
+            <FormControl fullWidth>
+              <InputLabel>Top Level Category</InputLabel>
+              <Select
+                name="level1Category"
+                value={productData.level1Category}
+                onChange={handleChange}
+                label="Top Level Category"
+              >
+                <MenuItem value="skincare">Skincare</MenuItem>
+                <MenuItem value="bathbodyhygiene">Bath & Body Hygiene</MenuItem>
+                <MenuItem value="perfume">Perfume</MenuItem>
+                <MenuItem value="PersonalCare">Personal Care</MenuItem>
+                <MenuItem value="makeupproducts">Makeup Products</MenuItem>
+              </Select>
+            </FormControl>
           </Grid>
           <Grid item xs={6} sm={4}>
-          <FormControl fullWidth>
-  <InputLabel>Second Level Category</InputLabel>
-  <Select
-    name="level2Category"
-    value={productData.level2Category}
-    onChange={handleChange}
-    label="Second Level Category"
-  >
-    <MenuItem value="Cleanser">Cleanser</MenuItem>
-    <MenuItem value="Moisturizer">Moisturizer</MenuItem>
-    <MenuItem value="Serum">Serum</MenuItem>
-    <MenuItem value="Sunscreen">Sunscreen</MenuItem>
-    <MenuItem value="Bath">Bath</MenuItem>
-    <MenuItem value="Body">Body</MenuItem>
-    <MenuItem value="Hygiene">Hygiene</MenuItem>
-    <MenuItem value="Fragnance">Fragnance</MenuItem>
-    <MenuItem value="HairCare">Haircare</MenuItem>
-    <MenuItem value="Makeup">Makeup</MenuItem>
-  </Select>
-</FormControl>
+            <FormControl fullWidth>
+              <InputLabel>Second Level Category</InputLabel>
+              <Select
+                name="level2Category"
+                value={productData.level2Category}
+                onChange={handleChange}
+                label="Second Level Category"
+              >
+                <MenuItem value="Cleanser">Cleanser</MenuItem>
+                <MenuItem value="Moisturizer">Moisturizer</MenuItem>
+                <MenuItem value="Serum">Serum</MenuItem>
+                <MenuItem value="Sunscreen">Sunscreen</MenuItem>
+                <MenuItem value="Bath">Bath</MenuItem>
+                <MenuItem value="Body">Body</MenuItem>
+                <MenuItem value="Hygiene">Hygiene</MenuItem>
+                <MenuItem value="Fragnance">Fragrance</MenuItem>
+                <MenuItem value="HairCare">Hair Care</MenuItem>
+                <MenuItem value="Makeup">Makeup</MenuItem>
+              </Select>
+            </FormControl>
           </Grid>
           <Grid item xs={12}>
             <TextField
@@ -213,17 +215,21 @@ const CreateProductForm = () => {
               value={productData.description}
             />
           </Grid>
-          <Grid item xs={12} >
-            <Button
-              variant="contained"
-              sx={{ p: 0.7 }}
-              color="primary"
-              size="large"
-              type="submit"
-            >
-              Add New Product
-            </Button>
-            
+          <Grid item xs={12}>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <Button
+                variant="contained"
+                sx={{ p: 0.7 }}
+                color="primary"
+                size="large"
+                type="submit"
+              >
+                Add New Product
+              </Button>
+              
+              {/* Excel Uploader Component */}
+              <ExcelUploader />
+            </Box>
           </Grid>
         </Grid>
       </form>

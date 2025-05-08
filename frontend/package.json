@@ -17,6 +17,7 @@
     "install": "^0.13.0",
     "lucide-react": "^0.488.0",
     "mdi-material-ui": "^7.7.0",
+    "netlify": "^13.3.5",
     "npm": "^10.9.2",
     "react": "^18.2.0",
     "react-alice-carousel": "^2.7.1",
@@ -28,7 +29,8 @@
     "recharts": "^2.15.3",
     "redux": "^4.2.1",
     "redux-thunk": "^2.4.2",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "xlsx": "^0.18.5"
   },
   "scripts": {
     "start": "react-scripts start",

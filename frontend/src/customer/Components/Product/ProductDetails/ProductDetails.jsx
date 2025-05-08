@@ -88,10 +88,19 @@ export default function ProductDetails() {
   };
   
   const handleSubmit = (e) => {
+    console.log("jwt", jwt);
     e.preventDefault();
-    const data = { productId };
-    dispatch(addItemToCart({ data, jwt }));
-    navigate("/cart");
+    if(!jwt  ){
+      console.log("entered");
+      
+      navigate("/");
+    }
+    else{
+
+      const data = { productId };
+      dispatch(addItemToCart({ data, jwt }));
+      navigate("/cart");
+    }
   };
 
   useEffect(() => {

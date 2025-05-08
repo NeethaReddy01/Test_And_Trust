@@ -12,6 +12,9 @@ import {
   DELETE_PRODUCT_REQUEST,
   DELETE_PRODUCT_SUCCESS,
   DELETE_PRODUCT_FAILURE,
+  CREATE_MULTIPLE_PRODUCTS_REQUEST,
+  CREATE_MULTIPLE_PRODUCTS_SUCCESS,
+  CREATE_MULTIPLE_PRODUCTS_FAILURE
 } from "./ActionTypes";
 import api, { API_BASE_URL } from "../../../config/api";
 
@@ -97,6 +100,38 @@ export const deleteProduct = (data) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: DELETE_PRODUCT_FAILURE,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+    
+    return Promise.reject(error);
+  }
+};
+
+// New action to handle multiple products
+export const createMultipleProducts = (products, jwt) => async (dispatch) => {
+  try {
+    dispatch({ type: CREATE_MULTIPLE_PRODUCTS_REQUEST });
+
+    const { data } = await api.post(
+      `${API_BASE_URL}/api/admin/products/creates`,
+      products
+    );
+
+    dispatch({
+      type: CREATE_MULTIPLE_PRODUCTS_SUCCESS,
+      payload: data,
+    });
+    
+    // Refresh products list after batch upload
+    dispatch(getProducts());
+    
+    return Promise.resolve(data);
+  } catch (error) {
+    dispatch({
+      type: CREATE_MULTIPLE_PRODUCTS_FAILURE,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message

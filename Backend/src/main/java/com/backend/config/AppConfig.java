@@ -27,7 +27,7 @@ public class AppConfig {
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 		.and()
 		.authorizeHttpRequests(Authorize -> Authorize
-				.requestMatchers("/api/**").authenticated()
+				.requestMatchers("/api/products","/api/products/id/*","/api/ratings/product/*","/api/reviews/product/*").permitAll().requestMatchers("/api/**").authenticated()
 				.anyRequest().permitAll()
 				)
 		.addFilterBefore(new JwtTokenValidator(), BasicAuthenticationFilter.class)
@@ -44,9 +44,7 @@ public class AppConfig {
 								"http://localhost:3000", 
 								"http://localhost:4000",
 								"http://localhost:4200",
-								"https://shopwithzosh.vercel.app",
-								"https://ecommerce-angular-blue.vercel.app/"
-								
+								"https://testandtrust.netlify.app/*"
 							)
 						);
 						//cfg.setAllowedMethods(Arrays.asList("GET", "POST","DELETE","PUT"));
