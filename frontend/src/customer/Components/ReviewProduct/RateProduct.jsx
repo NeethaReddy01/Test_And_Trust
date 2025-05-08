@@ -7,10 +7,8 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import { useDispatch, useSelector } from "react-redux";
-import { createReview } from "../../../Redux/Customers/Review/Action";
-import { createRating } from "../../../Redux/Customers/Review/Action";
+import { createReview, createRating } from "../../../Redux/Customers/Review/Action";
 import { useNavigate, useParams } from "react-router-dom";
 import { findProductById } from "../../../Redux/Customers/Product/Action";
 
@@ -22,11 +20,11 @@ const RateProduct = () => {
   const { customersProduct } = useSelector((store) => store);
   const { productId } = useParams();
   const navigate = useNavigate();
-  const jwt = localStorage.getItem("jwt");
 
-  const handleRateProduct = (e, value) => {
-    console.log("rating ----- ", value);
-    setRating(value);
+  // This function properly updates the rating state
+  const handleRatingChange = (event, newValue) => {
+    console.log("rating changed to:", newValue);
+    setRating(newValue);
   };
 
   const handleChange = (e) => {
@@ -38,9 +36,9 @@ const RateProduct = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    // Get the JWT token from localStorage
-    const jwt = localStorage.getItem("jwt");
+    
+    console.log("Submitting with rating:", rating);
+    console.log("Review text:", formData.review);
 
     // Create and dispatch the review request
     dispatch(createReview({
@@ -48,7 +46,7 @@ const RateProduct = () => {
       productId: Number(productId)
     }));
     
-    // Create and dispatch the rating request
+    // Create and dispatch the rating request with the current rating value
     dispatch(createRating({
       rating: rating,
       productId: Number(productId)
@@ -63,7 +61,6 @@ const RateProduct = () => {
   useEffect(() => {
     dispatch(findProductById({ productId }));
   }, [dispatch, productId]);
-
   return (
     <div className="px-5 lg:px-20">
       <h1 className="text-xl p-5 shadow-lg mb-8 font-bold">
@@ -89,25 +86,16 @@ const RateProduct = () => {
               {customersProduct.product?.brand}
             </p>
             <p>₹{customersProduct.product?.discountedPrice}</p>
-            <p>Size: {customersProduct.product?.sizes}</p>
             {customersProduct.product?.color && <p>Color: {customersProduct.product?.color}</p>}
             <div className="flex items-center space-x-3">
-              <Rating name="read-only" value={4.6} precision={0.5} readOnly />
-              <p className="opacity-60 text-sm">42807 Ratings</p>
+              <Rating name="read-only" value={(customersProduct.product?.ratings.reduce((sum, r) => sum + r.rating, 0) / customersProduct.product?.ratings.length).toFixed(1) || 0} precision={0.5} readOnly />
+              <p className="opacity-60 text-sm">
+                {customersProduct.product?.ratings.length || 0} Ratings
+              </p>
               <p className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">
-                {3789} reviews
+                {customersProduct.product?.reviews.length || 0} reviews
               </p>
             </div>
-            {/* <div>
-              <p className="space-y-2 font-semibold">
-                <FiberManualRecordIcon
-                  sx={{ width: "15px", height: "15px" }}
-                  className="text-green-600 mr-2"
-                />
-                <span>Delivered On Mar 03</span>{" "}
-              </p>
-              <p className="text-xs">Your Item Has Been Delivered</p>
-            </div> */}
           </div>
         </Grid>
         <Grid item xs={12} lg={6}>
@@ -117,12 +105,17 @@ const RateProduct = () => {
                 Rate This Product
               </Typography>
               <Rating
-                name="simple-controlled"
+                name="product-rating"
                 value={rating}
-                onChange={(event, newValue) => {
-                  handleRateProduct(event, newValue);
-                }}
+                onChange={handleRatingChange}
+                precision={1}
+                size="large"
               />
+              {rating > 0 && (
+                <Typography variant="body2" className="mt-2">
+                  Your rating: {rating} {rating === 1 ? 'star' : 'stars'}
+                </Typography>
+              )}
             </div>
             <form
               onSubmit={handleSubmit}

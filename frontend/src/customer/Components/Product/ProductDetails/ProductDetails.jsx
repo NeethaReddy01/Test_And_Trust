@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { RadioGroup } from "@headlessui/react";
 import { useNavigate, useParams } from "react-router-dom";
 import ProductReviewCard from "./ProductReviewCard";
 import { Box, Button, Grid, LinearProgress, Rating } from "@mui/material";
@@ -25,15 +23,10 @@ const product = {
   details:
     'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
 };
-const reviews = { href: "#", average: 4, totalCount: 117 };
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
+
 
 export default function ProductDetails() {
-  const [selectedSize, setSelectedSize] = useState();
-  const [activeImage, setActiveImage] = useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   
@@ -41,7 +34,6 @@ export default function ProductDetails() {
   const { customersProduct } = useSelector((store) => store);
   
   // Access the products state based on your actual Redux store structure
-  // This is what we're fixing - make sure this matches your store structure
   const productsState = useSelector((store) => store.products || store.customersProduct || {});
   const similarProducts = productsState.products || [];
   const loadingSimilarProducts = productsState.loading || false;
@@ -49,16 +41,51 @@ export default function ProductDetails() {
   const { productId } = useParams();
   const jwt = localStorage.getItem("jwt");
 
-  const handleSetActiveImage = (image) => {
-    setActiveImage(image);
+  // Get review state from Redux store
+  const reviewState = useSelector((state) => state.review || {});
+  const ratings = reviewState.ratings || [];
+  const reviews = reviewState.reviews || [];
+
+  // Calculate average rating
+  const calculateAverageRating = () => {
+    if (!ratings || ratings.length === 0) {
+      return 0;
+    }
+    const sum = ratings.reduce((total, rating) => total + rating.rating, 0);
+    return (sum / ratings.length).toFixed(1);
   };
 
-  const { ratings, reviews } = useSelector((state) => state.review);
+  const averageRating = calculateAverageRating();
 
-  useEffect(() => {
-    dispatch(getAllReviews(productId));
-    dispatch(getAllRatings(productId));
-  }, [dispatch, productId]);
+  // Count ratings by value (5 star, 4 star, etc.)
+  const getRatingCounts = () => {
+    const counts = {
+      5: 0, // Excellent
+      4: 0, // Very Good
+      3: 0, // Good
+      2: 0, // Average
+      1: 0, // Poor
+    };
+    
+    if (ratings && ratings.length > 0) {
+      ratings.forEach(rating => {
+        if (counts[rating.rating] !== undefined) {
+          counts[rating.rating]++;
+        }
+      });
+    }
+    
+    return counts;
+  };
+
+  const ratingCounts = getRatingCounts();
+  const totalRatings = ratings ? ratings.length : 0;
+
+  // Calculate percentage for progress bars
+  const calculatePercentage = (count) => {
+    if (totalRatings === 0) return 0;
+    return (count / totalRatings) * 100;
+  };
   
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -68,12 +95,13 @@ export default function ProductDetails() {
   };
 
   useEffect(() => {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
     const data = { productId: Number(productId), jwt };
     dispatch(findProductById(data));
     dispatch(getAllReviews(productId));
-    console.log("product:", productId);
-  }, [productId]);
+    dispatch(getAllRatings(productId));
+    console.log("Loading product:", productId);
+  }, [productId, dispatch]);
 
   // Fetch similar products when the product category is available
   useEffect(() => {
@@ -84,33 +112,28 @@ export default function ProductDetails() {
     }
   }, [dispatch, customersProduct.product?.category?.name]);
 
-  // For debugging
-  console.log("Redux state structure:", customersProduct);
-  console.log("Similar products state:", productsState);
-
   return (
     <div className="bg-white lg:px-20">
       <div className="pt-6">
         
-        {/* product details section - unchanged */}
+        {/* product details section */}
         <section className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-2 px-4 pt-10">
           {/* Image gallery */}
           <div className="flex flex-col items-center ">
             <div className=" overflow-hidden rounded-lg max-w-[30rem] max-h-[35rem]">
               <img
-                src={activeImage?.src || customersProduct.product?.imageUrl}
-                alt={"issue in getting images"}
+                src={customersProduct.product?.imageUrl}
+                alt={customersProduct.product?.title || "Product image"}
                 className="h-full w-full object-cover object-center"
               />
             </div>
             
           </div>
 
-          {/* Product info - unchanged */}
+          {/* Product info */}
           <div className="lg:col-span-1 mx-auto max-w-2xl px-4 pb-16 sm:px-6  lg:max-w-7xl  lg:px-8 lg:pb-24">
-            {/* Content unchanged */}
             <div className="lg:col-span-2">
-              <h1 className="text-lg lg:text-xl font-semibold tracking-tight text-gray-900  ">
+              <h1 className="text-lg lg:text-xl font-semibold tracking-tight text-gray-900">
                 {customersProduct.product?.brand}
               </h1>
               <h1 className="text-lg lg:text-xl tracking-tight text-gray-900 opacity-60 pt-1">
@@ -143,20 +166,19 @@ export default function ProductDetails() {
                 <div className="flex items-center space-x-3">
                   <Rating
                     name="read-only"
-                    value={4.6}
+                    value={parseFloat(averageRating) || 0}
                     precision={0.5}
                     readOnly
                   />
 
-                  <p className="opacity-60 text-sm">42807 Ratings</p>
+                  <p className="opacity-60 text-sm">{totalRatings} Ratings</p>
                   <p className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">
-                    {reviews.totalCount} reviews
+                    {reviews.length || 0} reviews
                   </p>
                 </div>
               </div>
 
               <form className="mt-10" onSubmit={handleSubmit}>
-               
                 <Button
                   variant="contained"
                   type="submit"
@@ -206,7 +228,7 @@ export default function ProductDetails() {
           </div>
         </section>
 
-        {/* rating and review section - unchanged */}
+        {/* rating and review section - UPDATED */}
         <section className="">
           <h1 className="font-semibold text-lg pb-4">
             Recent Review & Ratings
@@ -216,16 +238,22 @@ export default function ProductDetails() {
             <Grid container spacing={7}>
               <Grid item xs={7}>
                 <div className="space-y-5">
-                  {console.log("customer product :" , customersProduct)}
-                  {console.log("customer product . product :" , customersProduct.product)}
-                  {/* {console.log("customer product.product . reviews :" , customersProduct.product.reviews)} */}
-                  {customersProduct.product?.reviews.map((item, i) => (
-    <ProductReviewCard 
-      key={i} 
-      item={item} 
-      ratings={customersProduct.product?.ratings} 
-    />
-  ))}
+                  {reviews && reviews.length > 0 ? (
+                    reviews.map((review, i) => (
+                      <ProductReviewCard 
+                        key={i} 
+                        item={review} 
+                        ratings={ratings} 
+                      />
+                    ))
+                  ) : (
+                    <p>No reviews yet. Be the first to review this product!</p>
+                  )}
+                  {/* For debugging - remove in production */}
+                  <div style={{ display: 'none' }}>
+                    <p>Debug ratings: {JSON.stringify(ratings)}</p>
+                    <p>Debug reviews: {JSON.stringify(reviews)}</p>
+                  </div>
                 </div>
               </Grid>
 
@@ -234,12 +262,12 @@ export default function ProductDetails() {
                 <div className="flex items-center space-x-3 pb-10">
                   <Rating
                     name="read-only"
-                    value={4.6}
+                    value={parseFloat(averageRating) || 0}
                     precision={0.5}
                     readOnly
                   />
 
-                  <p className="opacity-60">42807 Ratings</p>
+                  <p className="opacity-60">{totalRatings} Ratings</p>
                 </div>
                 <Box>
                   <Grid
@@ -256,12 +284,12 @@ export default function ProductDetails() {
                         className=""
                         sx={{ bgcolor: "#d0d0d0", borderRadius: 4, height: 7 }}
                         variant="determinate"
-                        value={40}
+                        value={calculatePercentage(ratingCounts[5])}
                         color="success"
                       />
                     </Grid>
                     <Grid xs={2}>
-                      <p className="opacity-50 p-2">19259</p>
+                      <p className="opacity-50 p-2">{ratingCounts[5]}</p>
                     </Grid>
                   </Grid>
                 </Box>
@@ -280,12 +308,12 @@ export default function ProductDetails() {
                         className=""
                         sx={{ bgcolor: "#d0d0d0", borderRadius: 4, height: 7 }}
                         variant="determinate"
-                        value={30}
+                        value={calculatePercentage(ratingCounts[4])}
                         color="success"
                       />
                     </Grid>
                     <Grid xs={2}>
-                      <p className="opacity-50 p-2">19259</p>
+                      <p className="opacity-50 p-2">{ratingCounts[4]}</p>
                     </Grid>
                   </Grid>
                 </Box>
@@ -304,12 +332,12 @@ export default function ProductDetails() {
                         className="bg-[#885c0a]"
                         sx={{ bgcolor: "#d0d0d0", borderRadius: 4, height: 7 }}
                         variant="determinate"
-                        value={25}
-                        color="orange"
+                        value={calculatePercentage(ratingCounts[3])}
+                        color="warning"
                       />
                     </Grid>
                     <Grid xs={2}>
-                      <p className="opacity-50 p-2">19259</p>
+                      <p className="opacity-50 p-2">{ratingCounts[3]}</p>
                     </Grid>
                   </Grid>
                 </Box>
@@ -335,12 +363,11 @@ export default function ProductDetails() {
                           },
                         }}
                         variant="determinate"
-                        value={21}
-                        color="success"
+                        value={calculatePercentage(ratingCounts[2])}
                       />
                     </Grid>
                     <Grid xs={2}>
-                      <p className="opacity-50 p-2">19259</p>
+                      <p className="opacity-50 p-2">{ratingCounts[2]}</p>
                     </Grid>
                   </Grid>
                 </Box>
@@ -359,12 +386,12 @@ export default function ProductDetails() {
                         className=""
                         sx={{ bgcolor: "#d0d0d0", borderRadius: 4, height: 7 }}
                         variant="determinate"
-                        value={10}
+                        value={calculatePercentage(ratingCounts[1])}
                         color="error"
                       />
                     </Grid>
                     <Grid xs={2}>
-                      <p className="opacity-50 p-2">19259</p>
+                      <p className="opacity-50 p-2">{ratingCounts[1]}</p>
                     </Grid>
                   </Grid>
                 </Box>
@@ -373,7 +400,7 @@ export default function ProductDetails() {
           </div>
         </section>
 
-        {/* similar products section - UPDATED to use backend data safely */}
+        {/* similar products section */}
         <section className="pt-10">
           <h1 className="py-5 text-xl font-bold">Similar Products</h1>
           
@@ -386,7 +413,7 @@ export default function ProductDetails() {
               {similarProducts && similarProducts.length > 0 ? (
                 similarProducts
                   .filter(item => item.id !== Number(productId)) // Exclude current product
-                  .slice(0, 10) // Limit to 8 similar products
+                  .slice(0, 10) // Limit to 10 similar products
                   .map((item) => (
                     <div key={item.id}>
                       <HomeProductCard product={item} />

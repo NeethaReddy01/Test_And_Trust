@@ -1,11 +1,10 @@
 import AliceCarousel from "react-alice-carousel";
 import HomeProductCard from "./HomeProductCard";
-import "./HomeProductSection.css";
 import { Button } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { useEffect, useState, useRef } from "react";
 
-const HomeProductSection = ({ section, category, data }) => {
+const HomeProductSection = ({ section, data }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [maxIndex, setMaxIndex] = useState(0);
   const carouselRef = useRef(null);
@@ -49,7 +48,6 @@ const HomeProductSection = ({ section, category, data }) => {
 
   const syncActiveIndex = ({ item }) => {
     setActiveIndex(item);
-    console.log("Carousel changed to index:", item);
   };
 
   // Create carousel items only if data is an array and has items

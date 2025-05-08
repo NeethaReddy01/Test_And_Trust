@@ -2,11 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const HomeProductCard = ({ product }) => {
-  // window.scrollTo(0,0);
   const navigate = useNavigate();
   const fallbackImage =
     "https://via.placeholder.com/150?text=No+Image";
-    // console.log("home product " , product);
 
   return (
     <div
