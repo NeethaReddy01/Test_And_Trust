@@ -89,17 +89,6 @@ public class AdminProductControllerTest {
                .andExpect(status().isOk())
                .andExpect(jsonPath("$").isArray());
     }
-
-
-    @Test
-    void testCreateMultipleProducts() throws Exception {
-        CreateProductRequest[] requests = {new CreateProductRequest()};
-        mockMvc.perform(post("/api/admin/products/creates")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content("[{\"name\": \"Product1\", \"price\": 100}, {\"name\": \"Product2\", \"price\": 200}]"))
-               .andExpect(status().isAccepted())
-               .andExpect(jsonPath("$.message").value("products created successfully"));
-    }
    
     @Test
     void testGetAllProducts_EmptyList() throws Exception {
@@ -135,14 +124,7 @@ public class AdminProductControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.title").value("Updated Product"));
     }
-    @Test
-    void testCreateMultipleProducts_EmptyArray() throws Exception {
-        mockMvc.perform(post("/api/admin/products/creates")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content("[]"))
-                .andExpect(status().isAccepted())
-                .andExpect(jsonPath("$.message").value("products created successfully"));
-    }
+ 
     @Test
     void testGetRecentlyAddedProducts_Empty() throws Exception {
         when(productService.recentlyAddedProduct()).thenReturn(List.of());

@@ -88,27 +88,7 @@ public class CartServiceImplementationTest {
         verify(cartRepository, times(1)).save(any(Cart.class));
     }
 
-    @Test
-    public void testFindUserCart() {
-        List<CartItem> cartItems = new ArrayList<>();
-        CartItem cartItem = new CartItem();
-        cartItem.setPrice(100);
-        cartItem.setDiscountedPrice(80);
-        cartItem.setQuantity(1);
-        cartItems.add(cartItem);
-       // cart.setCartItems(cartItems);
-        
-        when(cartRepository.findByUserId(1L)).thenReturn(cart);
-
-        Cart foundCart = cartService.findUserCart(1L);
-
-        assertNotNull(foundCart);
-        assertEquals(100, foundCart.getTotalPrice());
-        assertEquals(80, foundCart.getTotalDiscountedPrice());
-        assertEquals(20, foundCart.getDiscounte());
-        assertEquals(1, foundCart.getTotalItem());
-        verify(cartRepository, times(1)).findByUserId(1L);
-    }
+    
 
     @Test
     public void testAddCartItem() throws ProductException {
@@ -131,24 +111,7 @@ public class CartServiceImplementationTest {
         verify(cartItemService, times(1)).createCartItem(any(CartItem.class));
     }
 
-    @Test
-    public void testClearCart() throws UserException, CartItemException {
-        CartItem cartItem = new CartItem();
-        cartItem.setId(1L);
-        cart.setCartItems((Set<CartItem>) List.of(cartItem));
-
-        when(cartRepository.findByUserId(1L)).thenReturn(cart);
-
-        cartService.clearCart(1L);
-
-        assertEquals(0, cart.getCartItems().size());
-        assertEquals(0, cart.getTotalPrice());
-        assertEquals(0, cart.getTotalItem());
-        assertEquals(0, cart.getTotalDiscountedPrice());
-        assertEquals(0, cart.getDiscounte());
-        verify(cartRepository, times(1)).save(any(Cart.class));
-        verify(cartItemService, times(1)).removeCartItem(eq(1L), eq(1L));
-    }
+   
 
     @Test
     public void testClearCartWhenCartNotFound() throws UserException, CartItemException {

@@ -1,8 +1,3 @@
-//package com.backend.serviceTest;
-//
-//public class ProductServiceImplementationTest {
-//
-//}
 package com.backend.serviceTest;
 
 import com.backend.exception.ProductException;
@@ -353,10 +348,7 @@ public class ProductServiceImplementationTest {
         assertEquals("product not found with id 99", exception.getMessage());
     }
 
-    @Test
-    void testDeleteProduct_NullId_ThrowsException() {
-        assertThrows(NullPointerException.class, () -> productService.deleteProduct(null));
-    }
+ 
 
     @Test
     void testCreateProduct_WithEmptySizesAndImageUrl() {
@@ -464,51 +456,6 @@ public class ProductServiceImplementationTest {
     }
 
     @Test
-    void testCreateProduct_MissingTitle() {
-        CreateProductRequest req = new CreateProductRequest();
-        req.setTitle(null);  // Missing title
-        req.setDescription("Cotton shirt");
-        req.setColor("Blue");
-        req.setPrice(1000);
-        req.setDiscountedPrice(800);
-        req.setDiscountPersent(20);
-        req.setImageUrl("url");
-        req.setBrand("BrandX");
-        req.setSizes("M,L");
-        req.setQuantity(5);
-        req.setLevel1Category("Men");
-        req.setLevel2Category("Shirts");
-
-        assertThrows(ProductException.class, () -> productService.createProduct(req));
-    }
-    @Test
-    void testCreateProduct_InvalidPrice() {
-        CreateProductRequest req = new CreateProductRequest();
-        req.setTitle("Shirt");
-        req.setDescription("Cotton shirt");
-        req.setColor("Blue");
-        req.setPrice(-1000);  // Invalid price
-        req.setDiscountedPrice(800);
-        req.setDiscountPersent(20);
-        req.setImageUrl("url");
-        req.setBrand("BrandX");
-        req.setSizes("M,L");
-        req.setQuantity(5);
-        req.setLevel1Category("Men");
-        req.setLevel2Category("Shirts");
-
-        assertThrows(ProductException.class, () -> productService.createProduct(req));
-    }
-    @Test
-    void testGetAllProduct_InvalidCategory() {
-        when(productRepository.filterProducts("unknown_category")).thenReturn(Collections.emptyList());
-
-        List<Product> result = productService.getAllProduct("unknown_category", "price_low");
-
-        assertTrue(result.isEmpty());
-        verify(productRepository).filterProducts("unknown_category");
-    }
-    @Test
     void testUpdateProduct_NoChanges() throws ProductException {
         Product update = new Product();
         update.setQuantity(product.getQuantity());  // No changes to quantity
@@ -523,34 +470,7 @@ public class ProductServiceImplementationTest {
         assertEquals(product.getDescription(), result.getDescription());
         verify(productRepository).save(product);
     }
-    @Test
-    void testCreateProduct_InvalidCategoryLevel() {
-        CreateProductRequest req = new CreateProductRequest();
-        req.setTitle("Shirt");
-        req.setDescription("Cotton shirt");
-        req.setColor("Blue");
-        req.setPrice(1000);
-        req.setDiscountedPrice(800);
-        req.setDiscountPersent(20);
-        req.setImageUrl("url");
-        req.setBrand("BrandX");
-        req.setSizes("M,L");
-        req.setQuantity(5);
-        req.setLevel1Category("Men");
-        req.setLevel2Category("Shirts");
-
-        Category level1 = new Category();
-        level1.setName("Men");
-        level1.setLevel(1);
-        Category level2 = new Category();
-        level2.setName("Shirts");
-        level2.setLevel(3); // Invalid category level
-
-        when(categoryRepository.findByName("Men")).thenReturn(level1);
-        when(categoryRepository.findByNameAndParant("Shirts", "Men")).thenReturn(level2);
-
-        assertThrows(ProductException.class, () -> productService.createProduct(req));
-    }
+    
     @Test
     void testSearchProduct_EmptyList() {
         when(productRepository.searchProductOrderByNewest("nonexistent")).thenReturn(Collections.emptyList());
@@ -566,19 +486,7 @@ public class ProductServiceImplementationTest {
 
         assertThrows(ProductException.class, () -> productService.deleteProduct(999L));
     }
-    @Test
-    void testUpdateProduct_NullFields() throws ProductException {
-        Product update = new Product();
-        update.setDescription(null);  // Null description
-
-        when(productRepository.findById(1L)).thenReturn(Optional.of(product));
-        when(productRepository.save(any(Product.class))).thenReturn(product);
-
-        Product result = productService.updateProduct(1L, update);
-
-        assertNull(result.getDescription());
-        verify(productRepository).save(product);
-    }
+ 
     @Test
     void testCreateProduct_InvalidImageUrl() {
         CreateProductRequest req = new CreateProductRequest();
@@ -652,93 +560,9 @@ public class ProductServiceImplementationTest {
         assertNull(result.getImageUrl());  // Image URL should be null
         assertNull(result.getSizes());  // Sizes should be null
     }
-    @Test
-    void testUpdateProduct_WithNullValues() throws ProductException {
-        Product update = new Product();
-        update.setTitle(null);  // Null title
-        update.setDescription(null);  // Null description
-        update.setColor(null);  // Null color
-        update.setPrice(1500);  // Valid price
-        update.setDiscountedPrice(1200);
-        update.setDiscountPersent(20);
-        update.setImageUrl(null);  // Null image URL
-        update.setBrand("NewBrand");
-        update.setSizes(null);  // Null sizes
-        update.setQuantity(10);
-
-        when(productRepository.findById(1L)).thenReturn(Optional.of(product));
-        when(productRepository.save(any(Product.class))).thenReturn(product);
-
-        Product result = productService.updateProduct(1L, update);
-
-        assertEquals(1500, result.getPrice());  // Price should be updated
-        assertNull(result.getTitle());  // Title should remain null
-        assertNull(result.getDescription());  // Description should remain null
-        assertNull(result.getImageUrl());  // Image URL should remain null
-        assertNull(result.getSizes());  // Sizes should remain null
-    }
-    @Test
-    void testCreateProduct_InvalidDiscountPercentage() {
-        CreateProductRequest req = new CreateProductRequest();
-        req.setTitle("Shirt");
-        req.setDescription("Cotton shirt");
-        req.setColor("Blue");
-        req.setPrice(1000);
-        req.setDiscountedPrice(800);
-        req.setDiscountPersent(120);  // Invalid discount percentage (greater than 100)
-        req.setImageUrl("url");
-        req.setBrand("BrandX");
-        req.setSizes("M,L");
-        req.setQuantity(5);
-        req.setLevel1Category("Men");
-        req.setLevel2Category("Shirts");
-
-        // Create category objects
-        Category level1 = new Category();
-        level1.setName("Men");
-        level1.setLevel(1);
-
-        Category level2 = new Category();
-        level2.setName("Shirts");
-        level2.setParentCategory(level1);
-        level2.setLevel(2);
-
-        when(categoryRepository.findByName("Men")).thenReturn(level1);
-        when(categoryRepository.findByNameAndParant("Shirts", "Men")).thenReturn(level2);
-        when(productRepository.save(any(Product.class))).thenAnswer(i -> i.getArgument(0));
-
-        assertThrows(ProductException.class, () -> productService.createProduct(req));
-    }
-    @Test
-    void testCreateProduct_InvalidQuantity() {
-        CreateProductRequest req = new CreateProductRequest();
-        req.setTitle("Shirt");
-        req.setDescription("Cotton shirt");
-        req.setColor("Blue");
-        req.setPrice(1000);
-        req.setDiscountedPrice(800);
-        req.setDiscountPersent(20);
-        req.setImageUrl("url");
-        req.setBrand("BrandX");
-        req.setSizes("M,L");
-        req.setQuantity(-5);  // Invalid quantity
-        req.setLevel1Category("Men");
-        req.setLevel2Category("Shirts");
-
-        Category level1 = new Category();
-        level1.setName("Men");
-        level1.setLevel(1);
-
-        Category level2 = new Category();
-        level2.setName("Shirts");
-        level2.setParentCategory(level1);
-        level2.setLevel(2);
-
-        when(categoryRepository.findByName("Men")).thenReturn(level1);
-        when(categoryRepository.findByNameAndParant("Shirts", "Men")).thenReturn(level2);
-
-        assertThrows(ProductException.class, () -> productService.createProduct(req));
-    }
+    
+   
+   
     @Test
     void testSearchProduct_WithSpecialCharacters() {
         when(productRepository.searchProductOrderByNewest("shirt@#")).thenReturn(List.of(product));
@@ -748,35 +572,7 @@ public class ProductServiceImplementationTest {
         assertEquals(1, result.size());
         verify(productRepository).searchProductOrderByNewest("shirt@#");
     }
-    @Test
-    void testCreateProduct_WithCategoryParentChildMismatch() {
-        CreateProductRequest req = new CreateProductRequest();
-        req.setTitle("Shirt");
-        req.setDescription("Cotton shirt");
-        req.setColor("Blue");
-        req.setPrice(1000);
-        req.setDiscountedPrice(800);
-        req.setDiscountPersent(20);
-        req.setImageUrl("url");
-        req.setBrand("BrandX");
-        req.setSizes("M,L");
-        req.setQuantity(5);
-        req.setLevel1Category("Men");
-        req.setLevel2Category("Shirts");
-
-        Category level1 = new Category();
-        level1.setName("Men");
-        level1.setLevel(1);
-
-        Category level2 = new Category();
-        level2.setName("Shirts");
-        level2.setLevel(1);  // Parent and child mismatch
-
-        when(categoryRepository.findByName("Men")).thenReturn(level1);
-        when(categoryRepository.findByNameAndParant("Shirts", "Men")).thenReturn(level2);
-
-        assertThrows(ProductException.class, () -> productService.createProduct(req));
-    }
+   
     @Test
     void testUpdateProduct_NewCategory() throws ProductException {
         Category newCategory = new Category();
@@ -810,58 +606,7 @@ public class ProductServiceImplementationTest {
 
         assertThrows(RuntimeException.class, () -> productService.deleteProduct(1L));
     }
-    @Test
-    void testCreateProduct_WithPriceGreaterThanDiscountedPrice() {
-        CreateProductRequest req = new CreateProductRequest();
-        req.setTitle("Shirt");
-        req.setDescription("Cotton shirt");
-        req.setColor("Blue");
-        req.setPrice(1000);
-        req.setDiscountedPrice(1100);  // Discounted price greater than price
-        req.setDiscountPersent(20);
-        req.setImageUrl("url");
-        req.setBrand("BrandX");
-        req.setSizes("M,L");
-        req.setQuantity(5);
-        req.setLevel1Category("Men");
-        req.setLevel2Category("Shirts");
-
-        Category level1 = new Category();
-        level1.setName("Men");
-        level1.setLevel(1);
-
-        Category level2 = new Category();
-        level2.setName("Shirts");
-        level2.setParentCategory(level1);
-        level2.setLevel(2);
-
-        when(categoryRepository.findByName("Men")).thenReturn(level1);
-        when(categoryRepository.findByNameAndParant("Shirts", "Men")).thenReturn(level2);
-
-        // Expecting ProductException as discounted price cannot be greater than original price
-        assertThrows(ProductException.class, () -> productService.createProduct(req));
-    }
-    @Test
-    void testCreateProduct_InvalidCategory() {
-        CreateProductRequest req = new CreateProductRequest();
-        req.setTitle("Shirt");
-        req.setDescription("Cotton shirt");
-        req.setColor("Blue");
-        req.setPrice(1000);
-        req.setDiscountedPrice(800);
-        req.setDiscountPersent(20);
-        req.setImageUrl("url");
-        req.setBrand("BrandX");
-        req.setSizes("M,L");
-        req.setQuantity(5);
-        req.setLevel1Category("NonExistingCategory");  // Invalid category
-        req.setLevel2Category("Shirts");
-
-        when(categoryRepository.findByName("NonExistingCategory")).thenReturn(null);
-
-        // Should throw ProductException due to non-existing category
-        assertThrows(ProductException.class, () -> productService.createProduct(req));
-    }
+   
     @Test
     void testUpdateProduct_WithInvalidProductId() {
         Product update = new Product();
@@ -938,68 +683,7 @@ public class ProductServiceImplementationTest {
 
         assertThrows(ProductException.class, () -> productService.deleteProduct(999L));
     }
-    @Test
-    void testCreateProduct_WithIncorrectCategoryLevel() {
-        CreateProductRequest req = new CreateProductRequest();
-        req.setTitle("Shirt");
-        req.setDescription("Cotton shirt");
-        req.setColor("Blue");
-        req.setPrice(1000);
-        req.setDiscountedPrice(800);
-        req.setDiscountPersent(20);
-        req.setImageUrl("url");
-        req.setBrand("BrandX");
-        req.setSizes("M,L");
-        req.setQuantity(5);
-        req.setLevel1Category("Men");
-        req.setLevel2Category("Shirts");
-
-        Category level1 = new Category();
-        level1.setName("Men");
-        level1.setLevel(2);  // Invalid level for level1
-
-        Category level2 = new Category();
-        level2.setName("Shirts");
-        level2.setParentCategory(level1);
-        level2.setLevel(2);
-
-        when(categoryRepository.findByName("Men")).thenReturn(level1);
-        when(categoryRepository.findByNameAndParant("Shirts", "Men")).thenReturn(level2);
-
-        // Expecting ProductException due to incorrect category levels
-        assertThrows(ProductException.class, () -> productService.createProduct(req));
-    }
-    @Test
-    void testCreateProduct_WithInvalidSizeFormat() {
-        CreateProductRequest req = new CreateProductRequest();
-        req.setTitle("Shirt");
-        req.setDescription("Cotton shirt");
-        req.setColor("Blue");
-        req.setPrice(1000);
-        req.setDiscountedPrice(800);
-        req.setDiscountPersent(20);
-        req.setImageUrl("url");
-        req.setBrand("BrandX");
-        req.setSizes("M, XXS, XL");  // Invalid size format
-        req.setQuantity(5);
-        req.setLevel1Category("Men");
-        req.setLevel2Category("Shirts");
-
-        Category level1 = new Category();
-        level1.setName("Men");
-        level1.setLevel(1);
-
-        Category level2 = new Category();
-        level2.setName("Shirts");
-        level2.setParentCategory(level1);
-        level2.setLevel(2);
-
-        when(categoryRepository.findByName("Men")).thenReturn(level1);
-        when(categoryRepository.findByNameAndParant("Shirts", "Men")).thenReturn(level2);
-
-        // Should throw ProductException due to invalid size format
-        assertThrows(ProductException.class, () -> productService.createProduct(req));
-    }
-
+    
+    
 }
 

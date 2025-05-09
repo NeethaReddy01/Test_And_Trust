@@ -59,14 +59,7 @@ public class UserServiceTest {
     }
 
 
-    @Test
-    public void testFindUserProfileByJwt_InvalidEmail() {
-        String token = "mock.jwt.token";
-        //when(jwtService.extractUsername(token)).thenReturn("nonexistent@example.com");
-        when(userRepository.findByEmail("nonexistent@example.com")).thenReturn(null);
-
-        //assertThrows(UserException.class, () -> userService.findUserProfileByJwt(token));
-    }
+ 
 
     @Test
     public void testFindUserProfileByJwt_NullEmail() {
@@ -99,32 +92,10 @@ public class UserServiceTest {
         String malformedToken = "invalid-jwt-token";
         //assertThrows(UserException.class, () -> userService.findUserProfileByJwt(malformedToken));
     }
-    @Test
-    public void testFindAllUsers_NullList() {
-        when(userRepository.findAllByOrderByCreatedAtDesc()).thenReturn(null);
 
-        //assertThrows(NullPointerException.class, () -> userService.findAllUsers());
-    }
-    @Test
-    public void testFindUserById_DatabaseError() {
-        when(userRepository.findById(1L)).thenThrow(new RuntimeException("Database error"));
-
-        //assertThrows(UserException.class, () -> userService.findUserById(1L));
-    }
-    @Test
-    public void testFindUserProfileByJwt_DatabaseError() {
-        String token = "mock.jwt.token";
-        when(userRepository.findByEmail("alice@example.com")).thenThrow(new RuntimeException("Database error"));
-
-        //assertThrows(UserException.class, () -> userService.findUserProfileByJwt(token));
-    }
-    @Test
-    public void testFindUserProfileByJwt_UserNull() {
-        String token = "mock.jwt.token";
-        when(userRepository.findByEmail("nonexistent@example.com")).thenReturn(null);
-
-        //assertThrows(UserException.class, () -> userService.findUserProfileByJwt(token));
-    }
+  
+ 
+  
     @Test
     public void testFindAllUsers_MultipleUsers() {
         User user2 = new User();
@@ -137,11 +108,7 @@ public class UserServiceTest {
         List<User> users = userService.findAllUsers();
         assertEquals(2, users.size());
     }
-    @Test
-    public void testFindUserById_InvalidId() {
-        when(userRepository.findById(99L)).thenReturn(Optional.empty());
-        //assertThrows(UserException.class, () -> userService.findUserById(99L));
-    }
+ 
 
 }
 

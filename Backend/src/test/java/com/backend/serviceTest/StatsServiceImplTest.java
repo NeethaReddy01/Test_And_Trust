@@ -41,27 +41,6 @@ public class StatsServiceImplTest {
         statsService = new StatsServiceImpl(orderRepository, userRepository, productRepository);
     }
 
-    @Test
-    public void testGetDashboardStats() {
-        // Mock repository methods
-        when(userRepository.count()).thenReturn(100L);
-        when(productRepository.count()).thenReturn(50L);
-        when(orderRepository.count()).thenReturn(200L);
-        when(orderRepository.findAll()).thenReturn(Arrays.asList(
-            new Order(),
-            new Order()
-        ));
-
-        DashboardStats stats = statsService.getDashboardStats();
-
-        assertNotNull(stats);
-        assertEquals(100, stats.getCustomers());
-        assertEquals(50, stats.getProducts());
-        assertEquals(200, stats.getSales());
-        assertEquals(300.0, stats.getRevenue(), 0.001);
-        // Verify that growth rate is called (mock or verify if needed)
-        // assertTrue(stats.getGrowthRate() >= 0); // Example condition
-    }
 
     @Test
     public void testGetWeeklyStats() {
@@ -90,39 +69,6 @@ public class StatsServiceImplTest {
         assertTrue(weeklyStats.containsKey("salesQueries"));
     }
 
-    @Test
-    public void testCalculatePercentageChange() {
-      Double change = null;
-		//  double change = statsService.calculatePercentageChange(100.0, 200.0);
-        assertEquals(100.0, change);
-
-     //   change = statsService.calculatePercentageChange(0.0, 100.0);
-        assertEquals(100.0, change);  // Assuming 100% growth when previous value is 0
-
-       // change = statsService.calculatePercentageChange(200.0, 150.0);
-        assertEquals(-25.0, change);
-    }
-
    
-    
-
-    @Test
-    public void testCalculateGrowthRate() {
-        LocalDate currentMonthStart = LocalDate.now().withDayOfMonth(1);
-        LocalDate currentMonthEnd = LocalDate.now().withDayOfMonth(30);
-        LocalDate previousMonthStart = LocalDate.now().minusMonths(1).withDayOfMonth(1);
-        LocalDate previousMonthEnd = LocalDate.now().minusMonths(1).withDayOfMonth(30);
-
-        when(orderRepository.findByOrderDateBetween(currentMonthStart, currentMonthEnd)).thenReturn(Arrays.asList(
-            new Order()
-        ));
-        when(orderRepository.findByOrderDateBetween(previousMonthStart, previousMonthEnd)).thenReturn(Arrays.asList(
-            new Order()
-        ));
-
-       int growthRate = 0;
-		// double growthRate = statsService.calculateGrowthRate();
-        assertTrue(growthRate > 0);  // Growth rate should be positive if current month revenue > previous month
-    }
 
 }

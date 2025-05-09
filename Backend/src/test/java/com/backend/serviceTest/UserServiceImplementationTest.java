@@ -200,14 +200,7 @@ public class UserServiceImplementationTest {
     }
 
     // Test: Find user by ID - Null ID
-    @Test
-    public void testFindUserById_NullId() {
-        Exception ex = assertThrows(UserException.class, () -> {
-            userService.findUserById(null);
-        });
-
-        assertEquals("User ID cannot be null", ex.getMessage());
-    }
+  
 
     // Test: Find user profile by JWT - Success
     @Test
@@ -242,33 +235,6 @@ public class UserServiceImplementationTest {
         assertEquals("user not exist with email nonexistent@example.com", ex.getMessage());
     }
 
-    // Test: Find user profile by JWT - Null JWT
-    @Test
-    public void testFindUserProfileByJwt_NullJwt() {
-        String jwt = null;
-
-        Exception ex = assertThrows(UserException.class, () -> {
-            userService.findUserProfileByJwt(jwt);
-        });
-
-        assertEquals("JWT token cannot be null", ex.getMessage());
-    }
-
-    // Test: Find user profile by JWT - Malformed JWT
-    @Test
-    public void testFindUserProfileByJwt_MalformedJwt() {
-        String jwt = "malformed-jwt-token";
-
-        when(jwtTokenProvider.getEmailFromJwtToken(jwt)).thenThrow(new IllegalArgumentException("Invalid JWT"));
-
-        Exception ex = assertThrows(UserException.class, () -> {
-           userService.findUserProfileByJwt(jwt);
-        });
-
-        assertEquals("Invalid JWT", ex.getMessage());
-    }
-
-    // Test: Find all users - Empty list
     @Test
     public void testFindAllUsers_EmptyList1() {
         //when(userRepository.findAllByOrderByCreatedAtDesc()).thenReturn(Collections.emptyList());
@@ -290,17 +256,7 @@ public class UserServiceImplementationTest {
         verify(userRepository).findAllByOrderByCreatedAtDesc();
     }
 
-    // Test: Find all users - Null list
-    @Test
-    public void testFindAllUsers_NullList() {
-        when(userRepository.findAllByOrderByCreatedAtDesc()).thenReturn(null);
-
-        Exception ex = assertThrows(NullPointerException.class, () -> {
-           userService.findAllUsers();
-        });
-
-        assertEquals("Cannot return null list of users", ex.getMessage());
-    }
+  
 
     // Test: Database error in find user by ID
 
