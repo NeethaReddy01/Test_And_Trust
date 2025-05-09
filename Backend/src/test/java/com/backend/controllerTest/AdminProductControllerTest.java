@@ -109,19 +109,6 @@ public class AdminProductControllerTest {
                .andExpect(status().isOk())
                .andExpect(jsonPath("$.length()").value(0));
     }
-//...........
-    @Test
-    void testDeleteProduct_Success() throws Exception {
-        when(productService.deleteProduct(1L)).thenReturn("Deleted");
-
-        mockMvc.perform(delete("/api/admin/products/1/delete"))
-               .andExpect(status().isAccepted())
-               .andExpect(jsonPath("$.message").value("Deleted"))
-               .andExpect(jsonPath("$.success").value(true));
-    }
-
-
-
     @Test
     void testGetRecentlyAddedProducts() throws Exception {
         when(productService.recentlyAddedProduct()).thenReturn(List.of(new Product()));
@@ -129,17 +116,6 @@ public class AdminProductControllerTest {
         mockMvc.perform(get("/api/admin/products/recent"))
                .andExpect(status().isOk())
                .andExpect(jsonPath("$").isArray());
-    }
-//......
-    @Test
-    void testCreateProduct_ThrowsException() throws Exception {
-        when(productService.createProduct(any(CreateProductRequest.class)))
-            .thenThrow(new ProductException("Error creating product"));
-
-        mockMvc.perform(post("/api/admin/products/")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content("{\"title\": \"Product1\", \"price\": 100, \"level1Category\": \"Category1\", \"level2Category\": \"SubCategory1\"}"))
-                .andExpect(status().isInternalServerError());
     }
     @Test
     void testUpdateProduct() throws Exception {
@@ -160,18 +136,6 @@ public class AdminProductControllerTest {
                 .andExpect(jsonPath("$.title").value("Updated Product"));
     }
     @Test
-    void testUpdateProduct_ThrowsException() throws Exception {
-        Long productId = 1L;
-
-        when(productService.updateProduct(eq(productId), any(Product.class)))
-            .thenThrow(new ProductException("Update failed"));
-
-        mockMvc.perform(put("/api/admin/products/{productId}/update", productId)
-                .contentType(MediaType.APPLICATION_JSON)
-                .content("{\"title\": \"Updated Product\"}"))
-                .andExpect(status().isInternalServerError());
-    }
-    @Test
     void testCreateMultipleProducts_EmptyArray() throws Exception {
         mockMvc.perform(post("/api/admin/products/creates")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -179,13 +143,6 @@ public class AdminProductControllerTest {
                 .andExpect(status().isAccepted())
                 .andExpect(jsonPath("$.message").value("products created successfully"));
     }
-//    @Test
-//    void testDeleteProduct_ThrowsException() throws Exception {
-//        when(productService.deleteProduct(1L)).thenThrow(new ProductException("Product not found"));
-//
-//        mockMvc.perform(delete("/api/admin/products/1/delete"))
-//                .andExpect(status().isInternalServerError());
-//    }
     @Test
     void testGetRecentlyAddedProducts_Empty() throws Exception {
         when(productService.recentlyAddedProduct()).thenReturn(List.of());

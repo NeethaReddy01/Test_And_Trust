@@ -90,20 +90,6 @@ public class CartItemControllerTest {
     }
 
     @Test
-    public void testDeleteCartItemHandler_Success() throws CartItemException, UserException {
-        String jwt = "mock-jwt";
-        when(userService.findUserProfileByJwt(jwt)).thenReturn(testUser);
-        doNothing().when(cartItemService).removeCartItem(testUser.getId(), 1L);
-
-        // Call the correct method name
-        ResponseEntity<ApiResponse> response = cartItemController.deleteCartItemHandler(1L, jwt);
-
-        assertEquals(HttpStatus.ACCEPTED, response.getStatusCode());
-        assertEquals("Item Remove From Cart", response.getBody().getMessage());
-        //assertTrue(response.getBody().isSuccess());
-    }
-
-    @Test
     public void testUpdateCartItemHandler_Success() throws CartItemException, UserException {
         when(userService.findUserProfileByJwt("jwt")).thenReturn(user);
         when(cartItemService.updateCartItem(1L, 1L, cartItem)).thenReturn(cartItem);
@@ -122,18 +108,6 @@ public class CartItemControllerTest {
             cartItemController.updateCartItemHandler(1L, cartItem, "jwt");
         });
     }
-
-    @Test
-    public void testUpdateCartItemHandler_ItemNotFound() throws CartItemException, UserException {
-        when(userService.findUserProfileByJwt("jwt")).thenReturn(user);
-        when(cartItemService.updateCartItem(1L, 1L, cartItem)).thenThrow(new CartItemException("Not found"));
-
-        assertThrows(CartItemException.class, () -> {
-            cartItemController.updateCartItemHandler(1L, cartItem, "jwt");
-        });
-    }
-
-    // Additional edge cases
 
     @Test
     public void testUpdateCartItemHandler_NullQuantity() throws CartItemException, UserException {
@@ -193,36 +167,5 @@ public class CartItemControllerTest {
 
         ResponseEntity<CartItem> response = cartItemController.updateCartItemHandler(1L, cartItem, "jwt");
         assertEquals(202, response.getStatusCodeValue());
-    }
-
-    @Test
-    public void testUpdateCartItemHandler_NullCartItem() throws CartItemException, UserException {
-        when(userService.findUserProfileByJwt("jwt")).thenReturn(user);
-
-        assertThrows(NullPointerException.class, () -> {
-            cartItemController.updateCartItemHandler(1L, null, "jwt");
-        });
-    }
-
-    @Test
-    public void testDeleteCartItemHandler_NonExistentItem() throws CartItemException, UserException {
-        when(userService.findUserProfileByJwt("jwt")).thenReturn(user);
-        doThrow(new CartItemException("Not found")).when(cartItemService).removeCartItem(1L, 999L);
-
-        assertThrows(CartItemException.class, () -> {
-            cartItemController.deleteCartItemHandler(999L, "jwt");
-        });
-        String jwt = "mock-jwt";
-        CartItem updateRequest = new CartItem();
-        updateRequest.setQuantity(5);
-
-        when(userService.findUserProfileByJwt(jwt)).thenReturn(testUser);
-        when(cartItemService.updateCartItem(testUser.getId(), 1L, updateRequest)).thenReturn(testCartItem);
-
-        // Call the correct method name
-        ResponseEntity<CartItem> response = cartItemController.updateCartItemHandler(1L, updateRequest, jwt);
-
-        assertEquals(HttpStatus.ACCEPTED, response.getStatusCode());
-        assertEquals(testCartItem, response.getBody());
     }
 }

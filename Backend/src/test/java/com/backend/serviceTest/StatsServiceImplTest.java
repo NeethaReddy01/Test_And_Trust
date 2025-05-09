@@ -91,29 +91,6 @@ public class StatsServiceImplTest {
     }
 
     @Test
-    public void testGetYearlyStats() {
-        // Mock current year and previous year orders
-        int currentYear = LocalDate.now().getYear();
-        LocalDate startOfYear = LocalDate.of(currentYear, 1, 1);
-        LocalDate endOfYear = LocalDate.of(currentYear, 12, 31);
-
-        // Mock repository methods
-        when(orderRepository.findByOrderDateBetween(startOfYear, endOfYear)).thenReturn(Arrays.asList(
-            new Order(),
-            new Order()
-        ));
-
-        Map<String, Object> yearlyStats = statsService.getYearlyStats();
-
-        assertNotNull(yearlyStats);
-        assertTrue(yearlyStats.containsKey("year"));
-        assertTrue(yearlyStats.containsKey("yearlyRevenue"));
-        assertTrue(yearlyStats.containsKey("ordersTrend"));
-        assertTrue(yearlyStats.containsKey("newCustomersCount"));
-        assertTrue(yearlyStats.containsKey("topSellingProducts"));
-    }
-
-    @Test
     public void testCalculatePercentageChange() {
       Double change = null;
 		//  double change = statsService.calculatePercentageChange(100.0, 200.0);

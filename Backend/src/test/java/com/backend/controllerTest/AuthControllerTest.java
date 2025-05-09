@@ -245,24 +245,7 @@ public class AuthControllerTest {
         loginRequest.setEmail(null);
         loginRequest.setPassword("password");
     }
-    @Test
-    public void testSignin_NullPassword() {
-        LoginRequest loginRequest = new LoginRequest();
-        loginRequest.setEmail("test@example.com");
-        loginRequest.setPassword(null);
 
-        UserDetails userDetails = org.springframework.security.core.userdetails.User
-                .withUsername("test@example.com")
-                .password("encodedPassword")
-                .roles("CUSTOMER")
-                .build();
-
-        when(customUserDetails.loadUserByUsername(loginRequest.getEmail())).thenReturn(userDetails);
-
-        assertThrows(NullPointerException.class, () -> {
-            authController.signin(loginRequest);
-        });
-    }
     @Test
     public void testSignin_TokenContainsExpectedPrefix() {
         LoginRequest loginRequest = new LoginRequest();

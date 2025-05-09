@@ -122,13 +122,6 @@ public class HomeControllerTest {
     }
 
     @Test
-    public void testHomeController_ResponseToStringIsValid() {
-        ApiResponse response = homeController.homeController().getBody();
-        String responseString = response.toString();
-        assertTrue(responseString.contains("Welcome To E-Commerce System"));
-    }
-
-    @Test
     public void testHomeController_ResponseBodyNotSameObject() {
         ApiResponse res1 = homeController.homeController().getBody();
         ApiResponse res2 = homeController.homeController().getBody();

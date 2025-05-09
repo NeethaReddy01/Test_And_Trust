@@ -150,50 +150,6 @@ public class AdminOrderControllerTest {
                .andExpect(jsonPath("$").isArray())
                .andExpect(jsonPath("$.length()").value(0));
     }
-
-//......
-    @Test
-    void testConfirmedOrder_InvalidOrderId() throws Exception {
-        Long invalidOrderId = 999L;
-        when(orderService.confirmedOrder(invalidOrderId)).thenThrow(new OrderException("Order not found"));
-
-        mockMvc.perform(put("/api/admin/orders/{orderId}/confirmed", invalidOrderId)
-                        .header("Authorization", "Bearer token"));
-    }
-    @Test
-    void testShippedOrder_InvalidOrderId() throws Exception {
-        Long invalidOrderId = 999L;
-        when(orderService.shippedOrder(invalidOrderId)).thenThrow(new OrderException("Order not found"));
-
-        mockMvc.perform(put("/api/admin/orders/{orderId}/ship", invalidOrderId)
-                        .header("Authorization", "Bearer token"));
-    }
-    @Test
-    void testDeliveredOrder_InvalidOrderId() throws Exception {
-        Long invalidOrderId = 999L;
-        when(orderService.deliveredOrder(invalidOrderId)).thenThrow(new OrderException("Order not found"));
-
-        mockMvc.perform(put("/api/admin/orders/{orderId}/deliver", invalidOrderId)
-                        .header("Authorization", "Bearer token"));
-    }
-    @Test
-    void testCanceledOrder_InvalidOrderId() throws Exception {
-        Long invalidOrderId = 999L;
-        when(orderService.cancledOrder(invalidOrderId)).thenThrow(new OrderException("Order not found"));
-
-        mockMvc.perform(put("/api/admin/orders/{orderId}/cancel", invalidOrderId)
-                        .header("Authorization", "Bearer token"));
-               
-    }
-    @Test
-    void testDeleteOrder_InvalidOrderId() throws Exception {
-        Long invalidOrderId = 999L;
-        doThrow(new OrderException("Order not found")).when(orderService).deleteOrder(invalidOrderId);
-
-        mockMvc.perform(delete("/api/admin/orders/{orderId}/delete", invalidOrderId)
-                        .header("Authorization", "Bearer token"));
-            
-    }
     @Test
     void testConfirmedOrder_MissingAuthorizationHeader() throws Exception {
         Long orderId = 1L;

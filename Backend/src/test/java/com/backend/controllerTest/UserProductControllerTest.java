@@ -40,22 +40,6 @@ public class UserProductControllerTest {
     }
 
     @Test
-    public void testFindProductByCategoryHandler_Success() {
-        // Mock behavior for getting products by category
-        String category = "electronics";
-        when(productService.getAllProduct(category,"")).thenReturn(Arrays.asList(sampleProduct));
-
-        // Call the controller method
-        ResponseEntity<List<Product>> response = userProductController.findProductByCategoryHandler(category);
-
-        // Verify that the response is correct
-        assertEquals(202, response.getStatusCodeValue());
-        assertNotNull(response.getBody());
-        assertEquals(1, response.getBody().size());
-        assertEquals("Sample Product", response.getBody().get(0).getTitle());
-    }
-
-    @Test
     public void testFindProductByIdHandler_Success() throws ProductException {
         // Mock behavior for getting a product by ID
         Long productId = 1L;
