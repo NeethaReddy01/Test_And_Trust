@@ -27,7 +27,7 @@ public class AppConfig {
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 		.and()
 		.authorizeHttpRequests(Authorize -> Authorize
-				.requestMatchers("/api/products","/api/products/id/*","/api/ratings/product/*","/api/reviews/product/*").permitAll().requestMatchers("/api/**").authenticated()
+				.requestMatchers("/api/products","/api/products/id/*","/api/ratings/product/*","/api/reviews/product/*","/api/products/*","/api/products/search").permitAll().requestMatchers("/api/**").authenticated()
 				.anyRequest().permitAll()
 				)
 		.addFilterBefore(new JwtTokenValidator(), BasicAuthenticationFilter.class)
