@@ -45,6 +45,17 @@ public class Rating {
     
     private LocalDateTime createdAt;
 
+	public void setReview(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Object getReview() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 
 
 

@@ -16,6 +16,10 @@ public class RatingRequest {
 	public void setRating(double rating) {
 		this.rating = rating;
 	}
+	public void setReview(String string) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 }
