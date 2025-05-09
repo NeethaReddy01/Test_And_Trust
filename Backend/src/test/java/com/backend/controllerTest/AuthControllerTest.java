@@ -18,7 +18,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
@@ -190,5 +189,98 @@ public class AuthControllerTest {
         assertThrows(RuntimeException.class, () -> {
             authController.signin(loginRequest);
         });
+    }
+    //.....
+    @Test
+    public void testSignin_UserDetailsWithoutAuthorities() {
+        LoginRequest loginRequest = new LoginRequest();
+        loginRequest.setEmail("test@example.com");
+        loginRequest.setPassword("password123");
+
+        UserDetails userDetails = mock(UserDetails.class);
+        when(userDetails.getUsername()).thenReturn("test@example.com");
+        when(userDetails.getPassword()).thenReturn("encodedPassword");
+        when(userDetails.getAuthorities()).thenReturn(null);
+
+        when(customUserDetails.loadUserByUsername(loginRequest.getEmail())).thenReturn(userDetails);
+        when(passwordEncoder.matches("password123", "encodedPassword")).thenReturn(true);
+        when(jwtTokenProvider.generateToken(any(Authentication.class))).thenReturn(token);
+
+        ResponseEntity<AuthResponse> response = authController.signin(loginRequest);
+
+        assertEquals(200, response.getStatusCodeValue());
+        assertEquals(token, response.getBody().getJwt());
+    }
+    @Test
+    public void testCreateUserHandler_NullRole() throws UserException {
+        user.setRole(null); // simulate null role
+
+        when(userRepository.findByEmail(user.getEmail())).thenReturn(null);
+        when(passwordEncoder.encode(user.getPassword())).thenReturn("encodedPassword");
+        when(userRepository.save(any(User.class))).thenReturn(user);
+        when(jwtTokenProvider.generateToken(any(Authentication.class))).thenReturn(token);
+
+        ResponseEntity<AuthResponse> response = authController.createUserHandler(user);
+
+        assertEquals(200, response.getStatusCodeValue());
+        assertEquals(token, response.getBody().getJwt());
+    }
+    @Test
+    public void testCreateUserHandler_EmptyFirstNameLastName() throws UserException {
+        user.setFirstName("");
+        user.setLastName("");
+
+        when(userRepository.findByEmail(user.getEmail())).thenReturn(null);
+        when(passwordEncoder.encode(user.getPassword())).thenReturn("encodedPassword");
+        when(userRepository.save(any(User.class))).thenReturn(user);
+        when(jwtTokenProvider.generateToken(any(Authentication.class))).thenReturn(token);
+
+        ResponseEntity<AuthResponse> response = authController.createUserHandler(user);
+
+        assertEquals(200, response.getStatusCodeValue());
+    }
+    @Test
+    public void testSignin_NullEmail() {
+        LoginRequest loginRequest = new LoginRequest();
+        loginRequest.setEmail(null);
+        loginRequest.setPassword("password");
+    }
+    @Test
+    public void testSignin_NullPassword() {
+        LoginRequest loginRequest = new LoginRequest();
+        loginRequest.setEmail("test@example.com");
+        loginRequest.setPassword(null);
+
+        UserDetails userDetails = org.springframework.security.core.userdetails.User
+                .withUsername("test@example.com")
+                .password("encodedPassword")
+                .roles("CUSTOMER")
+                .build();
+
+        when(customUserDetails.loadUserByUsername(loginRequest.getEmail())).thenReturn(userDetails);
+
+        assertThrows(NullPointerException.class, () -> {
+            authController.signin(loginRequest);
+        });
+    }
+    @Test
+    public void testSignin_TokenContainsExpectedPrefix() {
+        LoginRequest loginRequest = new LoginRequest();
+        loginRequest.setEmail("test@example.com");
+        loginRequest.setPassword("password123");
+
+        UserDetails userDetails = org.springframework.security.core.userdetails.User
+                .withUsername("test@example.com")
+                .password("encodedPassword")
+                .roles("CUSTOMER")
+                .build();
+
+        when(customUserDetails.loadUserByUsername(loginRequest.getEmail())).thenReturn(userDetails);
+        when(passwordEncoder.matches("password123", "encodedPassword")).thenReturn(true);
+        when(jwtTokenProvider.generateToken(any(Authentication.class))).thenReturn("Bearer mocked-jwt-token");
+
+        ResponseEntity<AuthResponse> response = authController.signin(loginRequest);
+
+        assertTrue(response.getBody().getJwt().startsWith("Bearer"));
     }
 }
