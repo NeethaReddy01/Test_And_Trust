@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const LOCALHOST = 'http://localhost:8080';
+const LOCALHOST = 'https://test-and-trust-backend-latest.onrender.com';
 export const API_BASE_URL = LOCALHOST;
 
 // Create API instance with base URL
@@ -29,7 +29,7 @@ api.interceptors.request.use(
 export const getDashboardStats = async () => {
   try {
     // Use the configured api instance that includes auth headers
-    const response = await api.get('http://localhost:8080/api/stats/dashboard');
+    const response = await api.get('/api/stats/dashboard');
     console.log("Stats data received:", response.data);
     return response.data;
   } catch (error) {
@@ -49,7 +49,7 @@ export const getDashboardStats = async () => {
 export const getWeeklyStats = async () => {
   try {
     // Use the configured api instance that includes auth headers
-    const response = await api.get('http://localhost:8080/api/stats/weekly');
+    const response = await api.get('/api/stats/weekly');
     console.log("Weekly stats data received:", response.data);
     return response.data;
   } catch (error) {
@@ -68,7 +68,7 @@ export const getWeeklyStats = async () => {
 export const getYearlyStats = async () => {
   try {
     // Use the configured api instance that includes auth headers
-    const response = await api.get('http://localhost:8080/api/stats/yearly');
+    const response = await api.get('/api/stats/yearly');
     console.log("Yearly stats data received:", response.data);
     return response.data;
   } catch (error) {
