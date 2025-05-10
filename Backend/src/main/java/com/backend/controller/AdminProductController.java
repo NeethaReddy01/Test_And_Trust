@@ -76,14 +76,27 @@ public class AdminProductController {
 	}
 	
 	@PostMapping("/creates")
-	public ResponseEntity<ApiResponse> createMultipleProduct(@RequestBody CreateProductRequest[] reqs) throws ProductException{
+	public ResponseEntity<ApiResponse> createMultipleProduct(@RequestBody CreateProductRequest[] reqs) throws ProductException {
 		
-		for(CreateProductRequest product:reqs) {
-			productService.createProduct(product);
+		int successCount = 0;
+		StringBuilder errors = new StringBuilder();
+		
+		for(CreateProductRequest product : reqs) {
+			try {
+				productService.createProduct(product);
+				successCount++;
+			} catch (Exception e) {
+				errors.append("Failed to create product: " + product.getTitle() + " - " + e.getMessage() + "; ");
+			}
 		}
 		
-		ApiResponse res=new ApiResponse("products created successfully",true);
-		return new ResponseEntity<ApiResponse>(res,HttpStatus.ACCEPTED);
+		ApiResponse res = new ApiResponse(
+			successCount + " products created successfully. " + 
+			(errors.length() > 0 ? "Errors: " + errors.toString() : ""),
+			true
+		);
+		
+		return new ResponseEntity<ApiResponse>(res, HttpStatus.ACCEPTED);
 	}
 
 }

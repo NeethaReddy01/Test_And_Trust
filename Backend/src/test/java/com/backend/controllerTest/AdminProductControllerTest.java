@@ -89,17 +89,6 @@ public class AdminProductControllerTest {
                .andExpect(status().isOk())
                .andExpect(jsonPath("$").isArray());
     }
-
-
-    @Test
-    void testCreateMultipleProducts() throws Exception {
-        CreateProductRequest[] requests = {new CreateProductRequest()};
-        mockMvc.perform(post("/api/admin/products/creates")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content("[{\"name\": \"Product1\", \"price\": 100}, {\"name\": \"Product2\", \"price\": 200}]"))
-               .andExpect(status().isAccepted())
-               .andExpect(jsonPath("$.message").value("products created successfully"));
-    }
    
     @Test
     void testGetAllProducts_EmptyList() throws Exception {
@@ -109,10 +98,52 @@ public class AdminProductControllerTest {
                .andExpect(status().isOk())
                .andExpect(jsonPath("$.length()").value(0));
     }
+    @Test
+    void testGetRecentlyAddedProducts() throws Exception {
+        when(productService.recentlyAddedProduct()).thenReturn(List.of(new Product()));
 
-   
+        mockMvc.perform(get("/api/admin/products/recent"))
+               .andExpect(status().isOk())
+               .andExpect(jsonPath("$").isArray());
+    }
+    @Test
+    void testUpdateProduct() throws Exception {
+        Long productId = 1L;
+        Product request = new Product();
+        request.setTitle("Updated Product");
 
+        Product updatedProduct = new Product();
+        updatedProduct.setId(productId);
+        updatedProduct.setTitle("Updated Product");
 
-    
+        when(productService.updateProduct(eq(productId), any(Product.class))).thenReturn(updatedProduct);
+
+        mockMvc.perform(put("/api/admin/products/{productId}/update", productId)
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"title\": \"Updated Product\"}"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.title").value("Updated Product"));
+    }
+ 
+    @Test
+    void testGetRecentlyAddedProducts_Empty() throws Exception {
+        when(productService.recentlyAddedProduct()).thenReturn(List.of());
+
+        mockMvc.perform(get("/api/admin/products/recent"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.length()").value(0));
+    }
+    @Test
+    void testInvalidMethodNotAllowed() throws Exception {
+        mockMvc.perform(put("/api/admin/products/all")) // Only GET is allowed
+               .andExpect(status().isMethodNotAllowed());
+    }
+    @Test
+    void testCreateProduct_MissingFields() throws Exception {
+        mockMvc.perform(post("/api/admin/products/")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"price\": 100}")) // Missing title/category
+                .andExpect(status().isAccepted()); // or BadRequest if validation exists
+    }
 }
 

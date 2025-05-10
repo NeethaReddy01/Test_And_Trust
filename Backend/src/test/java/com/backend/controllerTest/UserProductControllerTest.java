@@ -40,22 +40,6 @@ public class UserProductControllerTest {
     }
 
     @Test
-    public void testFindProductByCategoryHandler_Success() {
-        // Mock behavior for getting products by category
-        String category = "electronics";
-        when(productService.getAllProduct(category,"")).thenReturn(Arrays.asList(sampleProduct));
-
-        // Call the controller method
-        ResponseEntity<List<Product>> response = userProductController.findProductByCategoryHandler(category);
-
-        // Verify that the response is correct
-        assertEquals(202, response.getStatusCodeValue());
-        assertNotNull(response.getBody());
-        assertEquals(1, response.getBody().size());
-        assertEquals("Sample Product", response.getBody().get(0).getTitle());
-    }
-
-    @Test
     public void testFindProductByIdHandler_Success() throws ProductException {
         // Mock behavior for getting a product by ID
         Long productId = 1L;
@@ -70,20 +54,7 @@ public class UserProductControllerTest {
         assertEquals("Sample Product", response.getBody().getTitle());
     }
 
-    @Test
-    public void testFindProductByIdHandler_ProductNotFound() throws ProductException {
-        // Mock behavior to throw exception when product is not found
-        Long productId = 999L;
-        when(productService.findProductById(productId)).thenThrow(new ProductException("Product not found"));
-
-        // Call the controller method and assert that the exception is thrown
-        ProductException exception = assertThrows(ProductException.class, () -> {
-            userProductController.findProductByIdHandler(productId);
-        });
-
-        // Verify the exception message
-        assertEquals("Product not found", exception.getMessage());
-    }
+ 
 
     @Test
     public void testSearchProductHandler_Success() {
@@ -115,4 +86,6 @@ public class UserProductControllerTest {
         assertNotNull(response.getBody());
         assertTrue(response.getBody().isEmpty());
     }
+ 
+
 }

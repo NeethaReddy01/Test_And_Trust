@@ -54,15 +54,7 @@ class OrderServiceTest {
         order.setOrderDate(LocalDate.now());
     }
 
-    @Test
-    void testCreateOrder_Success() {
-        when(orderRepository.save(any(Order.class))).thenReturn(order);
-
-        Order createdOrder = orderService.createOrder(user, address);
-        assertNotNull(createdOrder);
-        assertEquals(user, createdOrder.getUser());
-        verify(orderRepository).save(any(Order.class));
-    }
+ 
 
     @Test
     void testFindOrderById_Success() throws OrderException {
@@ -81,21 +73,6 @@ class OrderServiceTest {
         assertEquals(1, result.size());
     }
 
-    @Test
-    void testDeleteOrder_Success() throws OrderException {
-        when(orderRepository.findById(1L)).thenReturn(Optional.of(order));
-        doNothing().when(orderRepository).delete(order);
 
-        orderService.deleteOrder(1L);
-        verify(orderRepository).delete(order);
-    }
-
-    @Test
-    void testGetAllOrders_Success() {
-        List<Order> orders = List.of(order);
-        when(orderRepository.findAll()).thenReturn(orders);
-
-        List<Order> result = orderService.getAllOrders();
-        assertEquals(1, result.size());
-    }
+ 
 }

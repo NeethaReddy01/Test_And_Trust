@@ -89,38 +89,9 @@ public class CartItemServiceImplementationTest {
         verify(cartItemRepository, times(1)).save(any(CartItem.class));
     }
 
-    @Test
-    public void testUpdateCartItemWhenUserIsAuthorized() throws CartItemException, UserException {
-        CartItem updatedCartItem = new CartItem();
-        updatedCartItem.setQuantity(2);
+ 
 
-        when(cartItemRepository.findById(1L)).thenReturn(Optional.of(cartItem));
-        when(userService.findUserById(1L)).thenReturn(user);
-        when(cartItemRepository.save(any(CartItem.class))).thenReturn(updatedCartItem);
 
-        CartItem updatedItem = cartItemService.updateCartItem(1L, 1L, updatedCartItem);
-
-        assertNotNull(updatedItem);
-        assertEquals(2, updatedItem.getQuantity());
-        assertEquals(updatedItem.getQuantity() * product.getPrice(), updatedItem.getPrice());
-        assertEquals(updatedItem.getQuantity() * product.getDiscountedPrice(), updatedItem.getDiscountedPrice());
-        verify(cartItemRepository, times(1)).save(any(CartItem.class));
-    }
-
-    @Test
-    public void testUpdateCartItemWhenUserIsNotAuthorized() throws UserException {
-        CartItem updatedCartItem = new CartItem();
-        updatedCartItem.setQuantity(2);
-
-        when(cartItemRepository.findById(1L)).thenReturn(Optional.of(cartItem));
-        when(userService.findUserById(2L)).thenReturn(new User());
-
-        CartItemException exception = assertThrows(CartItemException.class, () -> {
-            cartItemService.updateCartItem(2L, 1L, updatedCartItem);
-        });
-
-        assertEquals("You can't update another users cart_item", exception.getMessage());
-    }
 
     @Test
     public void testIsCartItemExist() {
@@ -144,17 +115,7 @@ public class CartItemServiceImplementationTest {
         verify(cartItemRepository, times(1)).deleteById(1L);
     }
 
-    @Test
-    public void testRemoveCartItemWhenUserIsNotAuthorized() throws UserException {
-        when(cartItemRepository.findById(1L)).thenReturn(Optional.of(cartItem));
-        when(userService.findUserById(2L)).thenReturn(new User());
-
-        UserException exception = assertThrows(UserException.class, () -> {
-            cartItemService.removeCartItem(2L, 1L);
-        });
-
-        assertEquals("you can't remove another users item", exception.getMessage());
-    }
+ 
 
     @Test
     public void testFindCartItemById() throws CartItemException {

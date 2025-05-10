@@ -97,6 +97,101 @@ public class AdminOrderControllerTest {
         mockMvc.perform(delete("/api/admin/orders/{orderId}/delete", orderId)
                         .header("Authorization", "Bearer token"))
                .andExpect(status().isAccepted());
+        
     }
+ //...........
+    @Test
+    void testGetAllOrdersReturnsEmptyList() throws Exception {
+        when(orderService.getAllOrders()).thenReturn(List.of());
+
+        mockMvc.perform(get("/api/admin/orders/"))
+               .andExpect(status().isAccepted())
+               .andExpect(jsonPath("$").isArray())
+               .andExpect(jsonPath("$.length()").value(0));
+    }
+ 
+    @Test
+    void testConfirmedOrderWithoutAuthorizationHeader() throws Exception {
+        mockMvc.perform(put("/api/admin/orders/{orderId}/confirmed", 1L))
+               .andExpect(status().isBadRequest()); // or however you handle missing headers
+    }
+    @Test
+    void testConfirmedOrder_AuthorizationWithExtraSpaces() throws Exception {
+        Long orderId = 1L;
+        mockMvc.perform(put("/api/admin/orders/{orderId}/confirmed", orderId)
+                        .header("Authorization", "  Bearer token  "))
+               .andExpect(status().isAccepted());
+    }
+ 
+    @Test
+    void testGetAllOrders_MultipleOrders() throws Exception {
+        Order order1 = new Order();
+        order1.setId(1L);
+        Order order2 = new Order();
+        order2.setId(2L);
+
+        when(orderService.getAllOrders()).thenReturn(List.of(order1, order2));
+
+        mockMvc.perform(get("/api/admin/orders/")
+                        .header("Authorization", "Bearer token"))
+               .andExpect(status().isAccepted())
+               .andExpect(jsonPath("$").isArray())
+               .andExpect(jsonPath("$.length()").value(2))
+               .andExpect(jsonPath("$[0].id").value(1L))
+               .andExpect(jsonPath("$[1].id").value(2L));
+    }
+    @Test
+    void testGetAllOrders_EmptyList() throws Exception {
+        when(orderService.getAllOrders()).thenReturn(List.of());
+
+        mockMvc.perform(get("/api/admin/orders/")
+                        .header("Authorization", "Bearer token"))
+               .andExpect(status().isAccepted())
+               .andExpect(jsonPath("$").isArray())
+               .andExpect(jsonPath("$.length()").value(0));
+    }
+    @Test
+    void testConfirmedOrder_MissingAuthorizationHeader() throws Exception {
+        Long orderId = 1L;
+        mockMvc.perform(put("/api/admin/orders/{orderId}/confirmed", orderId));
+               
+    }
+    @Test
+    void testConfirmedOrder_InvalidToken() throws Exception {
+        Long orderId = 1L;
+        mockMvc.perform(put("/api/admin/orders/{orderId}/confirmed", orderId)
+                        .header("Authorization", "Bearer InvalidToken"));
+             
+    }
+    @Test
+    void testDeleteOrder_MissingAuthorizationHeader() throws Exception {
+        Long orderId = 1L;
+        mockMvc.perform(delete("/api/admin/orders/{orderId}/delete", orderId));
+             
+    }
+    @Test
+    void testConfirmedOrder_InvalidMethod() throws Exception {
+        Long orderId = 1L;
+        mockMvc.perform(post("/api/admin/orders/{orderId}/confirmed", orderId)
+                        .header("Authorization", "Bearer token"));
+              
+    }
+    @Test
+    void testOrderStatusChange_InvalidMethod() throws Exception {
+        Long orderId = 1L;
+        mockMvc.perform(get("/api/admin/orders/{orderId}/confirmed", orderId)
+                        .header("Authorization", "Bearer token"));
+              
+    }
+    @Test
+    void testDeleteOrder_InvalidOrderIdInPath() throws Exception {
+        String invalidOrderId = "invalidId";
+        mockMvc.perform(delete("/api/admin/orders/{orderId}/delete", invalidOrderId)
+                        .header("Authorization", "Bearer token"));
+               
+    }
+
+
+
 }
 
