@@ -15,59 +15,89 @@ const PaymentSuccess = () => {
   const { order } = useSelector((store) => store);
   const jwt = localStorage.getItem("jwt");
 
-  // Extract query parameters
-  const urlParams = new URLSearchParams(location.search);
-  const orderId = urlParams.get("order_id");
-  const paymentIdFromUrl = urlParams.get("razorpay_payment_id") || urlParams.get("payment_id");
-  const paymentLinkId = urlParams.get("razorpay_payment_link_id");
-  const paymentStatusFromUrl = urlParams.get("razorpay_payment_link_status");
-
-  const [paymentId, setPaymentId] = useState("");
+  // More robust URL parameter extraction
+  const [paymentParams, setPaymentParams] = useState({
+    orderId: null,
+    paymentId: null,
+    paymentLinkId: null,
+    paymentStatus: null
+  });
+  
   const [cartCleared, setCartCleared] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // Extract and validate URL parameters
   useEffect(() => {
-    console.log("orderId:", orderId);
-    console.log("paymentId:", paymentIdFromUrl);
-    console.log("paymentLinkId:", paymentLinkId);
-    console.log("status:", paymentStatusFromUrl);
-
-    if (paymentIdFromUrl) {
-      setPaymentId(paymentIdFromUrl);
+    try {
+      const urlParams = new URLSearchParams(location.search);
+      
+      // Log all URL parameters for debugging
+      console.log("All URL parameters:");
+      for (const [key, value] of urlParams.entries()) {
+        console.log(`${key}: ${value}`);
+      }
+      
+      const extractedParams = {
+        orderId: urlParams.get("order_id"),
+        paymentId: urlParams.get("razorpay_payment_id") || urlParams.get("payment_id"),
+        paymentLinkId: urlParams.get("razorpay_payment_link_id"),
+        paymentStatus: urlParams.get("razorpay_payment_link_status")
+      };
+      
+      console.log("Extracted payment parameters:", extractedParams);
+      setPaymentParams(extractedParams);
+      
+      // Validate essential parameters
+      if (!extractedParams.orderId) {
+        console.error("Order ID missing from URL parameters");
+        setError("Order ID not found in URL parameters");
+        setLoading(false);
+      }
+    } catch (err) {
+      console.error("Error parsing URL parameters:", err);
+      setError("Failed to process payment information");
+      setLoading(false);
     }
   }, [location.search]);
 
+  // Process payment based on extracted parameters
   useEffect(() => {
     const processPayment = async () => {
       try {
-        if (orderId) {
-          // If we have a payment ID directly from Razorpay, update payment on backend
-          if (paymentId) {
-            const data = { orderId: Number(orderId), paymentId, jwt };
-            await dispatch(updatePayment(data));
-          }
-          
-          // Get order details
-          await dispatch(getOrderById(orderId));
-          
-          // Clear cart if not already done
-          if (!cartCleared) {
-            try {
-              await dispatch(clearCart(jwt));
-              // Force refresh cart data from server after clearing
-              dispatch(getCart(jwt));
-              setCartCleared(true);
-            } catch (cartError) {
-              console.error("Error clearing cart:", cartError);
-            }
-          }
-          
-          setLoading(false);
-        } else {
-          setError("Order ID not found in URL parameters");
-          setLoading(false);
+        if (!paymentParams.orderId) return;
+        
+        console.log("Processing payment for order ID:", paymentParams.orderId);
+        
+        // Update payment if we have a payment ID
+        if (paymentParams.paymentId) {
+          console.log("Updating payment with ID:", paymentParams.paymentId);
+          const data = { 
+            orderId: Number(paymentParams.orderId), 
+            paymentId: paymentParams.paymentId, 
+            jwt 
+          };
+          await dispatch(updatePayment(data));
         }
+        
+        // Get order details
+        console.log("Fetching order details for order ID:", paymentParams.orderId);
+        await dispatch(getOrderById(paymentParams.orderId));
+        
+        // Clear cart if not already done
+        if (!cartCleared) {
+          try {
+            console.log("Clearing cart...");
+            await dispatch(clearCart(jwt));
+            // Force refresh cart data from server after clearing
+            dispatch(getCart(jwt));
+            setCartCleared(true);
+          } catch (cartError) {
+            console.error("Error clearing cart:", cartError);
+          }
+        }
+        
+        setLoading(false);
       } catch (err) {
         console.error("Error processing payment:", err);
         setError("Failed to process payment. Please check your order status.");
@@ -75,10 +105,10 @@ const PaymentSuccess = () => {
       }
     };
 
-    if (orderId) {
+    if (paymentParams.orderId && jwt) {
       processPayment();
     }
-  }, [orderId, paymentId, dispatch, jwt, cartCleared]);
+  }, [paymentParams, dispatch, jwt, cartCleared]);
 
   const handleContinueShopping = () => {
     navigate('/');
