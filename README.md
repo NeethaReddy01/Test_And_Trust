@@ -25,7 +25,7 @@
 - React.js
 - Axios
 - React Router
-- Bootstrap / Tailwind CSS (or mention the UI framework used)
+- Tailwind CSS 
 
 ### Backend
 - Spring Boot (Java)
