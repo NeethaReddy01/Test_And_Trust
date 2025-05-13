@@ -39,8 +39,8 @@ pipeline {
         
         stage('Build and Pubat Docker Images') {
             steps {
-                withCredentials([string(credentialsId: 'docker-hub-credentials', variable: 'DOCKER_HUB_CREDENTIALS')]) {
-                    bat 'docker login -u %DOCKER_USERNAME% -p %DOCKER_PASSWORD%'
+                withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+    bat 'docker login -u %DOCKER_USERNAME% -p %DOCKER_PASSWORD%'
                     
                     dir('Backend') {
                         bat 'docker build -t %DOCKER_USERNAME%/test-and-trust-backend:%BUILD_NUMBER% .'
