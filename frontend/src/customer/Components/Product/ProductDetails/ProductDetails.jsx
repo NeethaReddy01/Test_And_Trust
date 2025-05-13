@@ -24,8 +24,6 @@ const product = {
     'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
 };
 
-
-
 export default function ProductDetails() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -90,13 +88,11 @@ export default function ProductDetails() {
   const handleSubmit = (e) => {
     console.log("jwt", jwt);
     e.preventDefault();
-    if(!jwt  ){
+    if(!jwt) {
       console.log("entered");
-      
       navigate("/");
     }
-    else{
-
+    else {
       const data = { productId };
       dispatch(addItemToCart({ data, jwt }));
       navigate("/cart");
@@ -120,6 +116,9 @@ export default function ProductDetails() {
       console.log("Fetching similar products for category:", customersProduct.product.category.name);
     }
   }, [dispatch, customersProduct.product?.category?.name]);
+
+  // Check if product is in stock (quantity > 0)
+  const isInStock = customersProduct.product?.quantity > 0;
 
   return (
     <div className="bg-white lg:px-20">
@@ -168,8 +167,17 @@ export default function ProductDetails() {
                 </p>
               </div>
 
+              {/* Stock Status Display */}
+              <div className="mt-3">
+                <p className={`text-sm ${isInStock ? 'text-green-600' : 'text-red-600'} font-medium`}>
+                  {isInStock 
+                    ? `In Stock (${customersProduct.product?.quantity} available)` 
+                    : 'Out of Stock'}
+                </p>
+              </div>
+
               {/* Reviews */}
-              <div className="mt-6">
+              <div className="mt-4">
                 <h3 className="sr-only">Reviews</h3>
 
                 <div className="flex items-center space-x-3">
@@ -188,20 +196,38 @@ export default function ProductDetails() {
               </div>
 
               <form className="mt-10" onSubmit={handleSubmit}>
-                <Button
-                  variant="contained"
-                  type="submit"
-                  sx={{ padding: ".8rem 2rem", marginTop: "2rem" }}
-                >
-                  Add To Cart
-                </Button>
+                {isInStock ? (
+                  <Button
+                    variant="contained"
+                    type="submit"
+                    sx={{ padding: ".8rem 2rem", marginTop: "2rem" }}
+                  >
+                    Add To Cart
+                  </Button>
+                ) : (
+                  <Button
+                    variant="contained"
+                    disabled
+                    sx={{ 
+                      padding: ".8rem 2rem", 
+                      marginTop: "2rem",
+                      backgroundColor: "#d1d5db",
+                      "&.Mui-disabled": { 
+                        backgroundColor: "#d1d5db",
+                        color: "#6b7280"
+                      }
+                    }}
+                  >
+                    Out Of Stock
+                  </Button>
+                )}
               </form>
             </div>
 
             <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
               {/* Description and details */}
               <div>
-              <h3 className="text-sm font-medium text-gray-900">
+                <h3 className="text-sm font-medium text-gray-900">
                   Description
                 </h3>
 

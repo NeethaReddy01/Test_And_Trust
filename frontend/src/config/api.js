@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const LOCALHOST = 'https://test-and-trust-backend-latest.onrender.com';
+const LOCALHOST = 'http://localhost:8080';
 export const API_BASE_URL = LOCALHOST;
 
 // Create API instance with base URL
