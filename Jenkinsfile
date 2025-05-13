@@ -27,15 +27,7 @@ pipeline {
             }
         }
         
-        stage('SonarQube Analysis') {
-            steps {
-                withSonarQubeEnv('SonarQube') {
-                    dir('Backend') {
-                        bat 'mvn sonar:sonar'
-                    }
-                }
-            }
-        }
+        
         
         stage('Build and Pubat Docker Images') {
             steps {
