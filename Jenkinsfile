@@ -15,14 +15,14 @@ pipeline {
         
         stage('Build and Test') {
             steps {
-                dir('backend') {
+                dir('Backend') {
                     bat 'mvn clean package'
                 }
             }
             post {
                 success {
-                    archiveArtifacts artifacts: 'backend/target/*.jar', fingerprint: true
-                    junit 'backend/target/surefire-reports/*.xml'
+                    archiveArtifacts artifacts: 'Backend/target/*.jar', fingerprint: true
+                    junit 'Backend/target/surefire-reports/*.xml'
                 }
             }
         }
@@ -30,7 +30,7 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') {
-                    dir('backend') {
+                    dir('Backend') {
                         bat 'mvn sonar:sonar'
                     }
                 }
@@ -40,14 +40,13 @@ pipeline {
         stage('Build and Pubat Docker Images') {
             steps {
                 withCredentials([string(credentialsId: 'docker-hub-credentials', variable: 'DOCKER_HUB_CREDENTIALS')]) {
-                    bat 'docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}'
+                    bat 'docker login -u %DOCKER_USERNAME% -p %DOCKER_PASSWORD%'
                     
-                    // Build and pubat backend image
-                    dir('backend') {
-                        bat 'docker build -t ${DOCKER_USERNAME}/test-and-trust-backend:${BUILD_NUMBER} .'
-                        bat 'docker tag ${DOCKER_USERNAME}/test-and-trust-backend:${BUILD_NUMBER} ${DOCKER_USERNAME}/test-and-trust-backend:latest'
-                        bat 'docker pubat ${DOCKER_USERNAME}/test-and-trust-backend:${BUILD_NUMBER}'
-                        bat 'docker pubat ${DOCKER_USERNAME}/test-and-trust-backend:latest'
+                    dir('Backend') {
+                        bat 'docker build -t %DOCKER_USERNAME%/test-and-trust-backend:%BUILD_NUMBER% .'
+                        bat 'docker tag %DOCKER_USERNAME%/test-and-trust-backend:%BUILD_NUMBER% %DOCKER_USERNAME%/test-and-trust-backend:latest'
+                        bat 'docker push %DOCKER_USERNAME%/test-and-trust-backend:%BUILD_NUMBER%'
+                        bat 'docker push %DOCKER_USERNAME%/test-and-trust-backend:latest'
                     }
                 }
             }
@@ -55,7 +54,7 @@ pipeline {
         
         stage('Deploy to Development') {
             steps {
-                bat 'docker-compose down || true'
+                bat 'docker-compose down || exit 0'
                 bat 'docker-compose up -d'
             }
         }
