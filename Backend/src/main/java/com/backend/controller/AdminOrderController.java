@@ -46,7 +46,7 @@ public class AdminOrderController {
 			@RequestHeader("Authorization") String jwt) throws OrderException{
 		Order order=orderService.shippedOrder(orderId);
 		return new ResponseEntity<Order>(order,HttpStatus.ACCEPTED);
-	}
+	} 
 	
 	@PutMapping("/{orderId}/deliver")
 	public ResponseEntity<Order> deliveredOrderHandler(@PathVariable Long orderId,

@@ -11,6 +11,7 @@ import java.util.Set;
 import org.springframework.stereotype.Service;
 
 import com.backend.exception.OrderException;
+import com.backend.exception.ProductException;
 import com.backend.modal.Address;
 import com.backend.modal.Cart;
 import com.backend.modal.CartItem;
@@ -33,16 +34,18 @@ public class OrderServiceImplementation implements OrderService {
 	private UserRepository userRepository;
 	private OrderItemService orderItemService;
 	private OrderItemRepository orderItemRepository;
+	private ProductService productService;
 	
 	public OrderServiceImplementation(OrderRepository orderRepository,CartService cartService,
 			AddressRepository addressRepository,UserRepository userRepository,
-			OrderItemService orderItemService,OrderItemRepository orderItemRepository) {
+			OrderItemService orderItemService,OrderItemRepository orderItemRepository,ProductService productService) {
 		this.orderRepository=orderRepository;
 		this.cartService=cartService;
 		this.addressRepository=addressRepository;
 		this.userRepository=userRepository;
 		this.orderItemService=orderItemService;
 		this.orderItemRepository=orderItemRepository;
+		this.productService=productService;
 	}
 
 	@Override
@@ -62,6 +65,11 @@ public class OrderServiceImplementation implements OrderService {
 			orderItem.setPrice(item.getPrice());
 			orderItem.setProduct(item.getProduct());
 			orderItem.setQuantity(item.getQuantity());
+			try {
+			    productService.updateProduct(item.getProduct().getId(), item.getQuantity());
+			} catch (ProductException e) {
+			    throw new RuntimeException("Product update failed", e);
+			}
 			orderItem.setSize(item.getSize());
 			orderItem.setUserId(item.getUserId());
 			orderItem.setDiscountedPrice(item.getDiscountedPrice());
@@ -110,7 +118,6 @@ public class OrderServiceImplementation implements OrderService {
 	public Order confirmedOrder(Long orderId) throws OrderException {
 		Order order=findOrderById(orderId);
 		order.setOrderStatus(OrderStatus.CONFIRMED);
-		
 		
 		return orderRepository.save(order);
 	}

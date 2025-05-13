@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.data.domain.Page;
 
 import com.backend.exception.ProductException;
+import com.backend.modal.CartItem;
+import com.backend.modal.OrderItem;
 import com.backend.modal.Product;
 import com.backend.request.CreateProductRequest;
 import com.backend.user.domain.ProductSubCategory;
@@ -16,7 +18,7 @@ public interface ProductService {
 	
 	public String deleteProduct(Long productId) throws ProductException;
 	
-	public Product updateProduct(Long productId,Product product)throws ProductException;
+	public Product updateProduct(Long productId,int req)throws ProductException;
 	
 	public List<Product> getAllProducts();
 	

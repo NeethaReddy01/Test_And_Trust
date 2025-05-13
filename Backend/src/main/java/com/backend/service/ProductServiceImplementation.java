@@ -13,7 +13,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.backend.exception.ProductException;
+import com.backend.modal.CartItem;
 import com.backend.modal.Category;
+import com.backend.modal.OrderItem;
 //import com.backend.modal.Category;
 import com.backend.modal.Product;
 import com.backend.repository.CategoryRepository;
@@ -98,19 +100,12 @@ public class ProductServiceImplementation implements ProductService {
   }
 
   @Override
-  public Product updateProduct(Long productId,Product req) throws ProductException {
+  public Product updateProduct(Long productId,int req) throws ProductException {
     Product product=findProductById(productId);
     
-    if(req.getQuantity()!=0) {
-      product.setQuantity(req.getQuantity());
+    if(req != 0) {
+      product.setQuantity(product.getQuantity()- req);
     }
-    if(req.getDescription()!=null) {
-      product.setDescription(req.getDescription());
-    }
-    
-    
-      
-    
     return productRepository.save(product);
   }
 

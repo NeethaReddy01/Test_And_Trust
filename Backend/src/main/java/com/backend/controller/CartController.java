@@ -49,7 +49,7 @@ public class CartController {
 	public ResponseEntity<CartItem> addItemToCart(@RequestBody AddItemRequest req, 
 			@RequestHeader("Authorization") String jwt) throws UserException, ProductException{
 		
-		User user=userService.findUserProfileByJwt(jwt);
+		User user=userService.findUserProfileByJwt(jwt); 
 		
 		CartItem item = cartService.addCartItem(user.getId(), req);
 		
