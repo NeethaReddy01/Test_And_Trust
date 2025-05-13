@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: test-and-trust-backend
     ports:
-      - "8080:8080"
+      - "8081:8080"
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/test_and_trust?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
       - SPRING_DATASOURCE_USERNAME=root
